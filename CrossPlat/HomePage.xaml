@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CrossPlat.HomePage">
+    <ContentPage.Content>
+        <StackLayout Margin="0,30">
+            <Label Text="Kitchen Sink" HorizontalTextAlignment="Center" FontSize="Large" FontAttributes="Bold" TextColor="Black" />
+            <Button Margin="5,10,5,5" Text="Layouts" BackgroundColor="Silver" TextColor="Black" Clicked="Layouts_Clicked" />
+            <Button Margin="5,10,5,5" Text="Controls" BackgroundColor="Silver" TextColor="Black" Clicked="Controls_Clicked" />
+            <Button Margin="5,10,5,5" Text="Complex Controls" BackgroundColor="Silver" TextColor="Black" Clicked="ComplexControls_Clicked" />
+            <Button Margin="5,10,5,5" Text="Pages" BackgroundColor="Silver" TextColor="Black" Clicked="Pages_Clicked" />
+            <Button Margin="5,10,5,5" Text="Tables" BackgroundColor="Silver" TextColor="Black" Clicked="Tables_Clicked" />
+            <Button Margin="5,10,5,5" Text="Database" BackgroundColor="Silver" TextColor="Black" Clicked="Database_Clicked" />
+            <Button Margin="5,10,5,5" Text="JSON Http" BackgroundColor="Silver" TextColor="Black" Clicked="Json_Clicked" />
+            <Button Margin="5,10,5,5" Text="Other" BackgroundColor="Silver" TextColor="Black" Clicked="Other_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

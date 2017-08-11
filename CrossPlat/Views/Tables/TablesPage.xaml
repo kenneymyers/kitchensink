@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CrossPlat.Views.Tables.TablesPage">
+    <ContentPage.Content>
+        <StackLayout Margin="0,30">
+            <Label Text="Table Views" HorizontalTextAlignment="Center" FontSize="Large" FontAttributes="Bold" TextColor="Black" />
+            <Button Margin="5,10,5,5" Text="Text Cell" BackgroundColor="Silver" TextColor="Black" Clicked="TextCellPage_Clicked" />
+            <Button Margin="5,10,5,5" Text="View Cell" BackgroundColor="Silver" TextColor="Black" Clicked="ViewCellPage_Clicked" />
+            <Button Margin="5,10,5,5" Text="Image Cell" BackgroundColor="Silver" TextColor="Black" Clicked="ImageCellPage_Clicked" />
+            <Button Margin="5,10,5,5" Text="Entry Cell" BackgroundColor="Silver" TextColor="Black" Clicked="EntryCellPage_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

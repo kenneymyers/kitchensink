@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CrossPlat.Views.Controls.LabelEntryPage">
+    <ContentPage.Content>
+        <StackLayout Margin="10,30,10,10" HorizontalOptions="FillAndExpand">
+            <StackLayout Orientation="Horizontal">
+                <Label HorizontalTextAlignment="Start" Text="Username" />
+                <Entry HorizontalOptions="FillAndExpand" x:Name="username" Placeholder="Enter username" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label HorizontalTextAlignment="Start" Text="Password" />
+                <Entry HorizontalOptions="FillAndExpand" x:Name="password" IsPassword="true" Placeholder="Enter password" />
+            </StackLayout>
+            <StackLayout>
+                <Button HorizontalOptions="FillAndExpand" BackgroundColor="Silver" x:Name="LoginButton" Text="Login" Clicked="Login_Clicked" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

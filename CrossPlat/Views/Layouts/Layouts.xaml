@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CrossPlat.Views.Layouts.Layouts">
+    <ContentPage.Content>
+        <StackLayout Margin="0,30">
+            <Label Text="Layouts" HorizontalTextAlignment="Center" FontSize="Large" FontAttributes="Bold" TextColor="Black" />
+            <Button Margin="5,10,5,5" Text="Stack Layout" BackgroundColor="Silver" TextColor="Black" Clicked="StackLayout_Clicked" />
+            <Button Margin="5,10,5,5" Text="Absolute Layout" BackgroundColor="Silver" TextColor="Black" Clicked="AbsoluteLayout_Clicked" />
+            <Button Margin="5,10,5,5" Text="Relative Layout" BackgroundColor="Silver" TextColor="Black" Clicked="RelativeLayout_Clicked" />
+            <Button Margin="5,10,5,5" Text="Grid Layout" BackgroundColor="Silver" TextColor="Black" Clicked="GridLayout_Clicked" />
+            <Button Margin="5,10,5,5" Text="Content View" BackgroundColor="Silver" TextColor="Black" Clicked="ContentView_Clicked" />
+            <Button Margin="5,10,5,5" Text="Scroll View" BackgroundColor="Silver" TextColor="Black" Clicked="ScrollView_Clicked" />
+            <Button Margin="5,10,5,5" Text="Frame View" BackgroundColor="Silver" TextColor="Black" Clicked="FrameView_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

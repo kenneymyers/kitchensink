@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CrossPlat.Views.Other.OtherPage">
+	<ContentPage.Content>
+        <StackLayout Margin="0,30">
+            <Label Text="Other Cool Stuff" HorizontalTextAlignment="Center" FontSize="Large" FontAttributes="Bold" TextColor="Black" />
+            <Button Margin="5,10,5,5" Text="Behaviors" BackgroundColor="Silver" TextColor="Black" Clicked="Behavior_Clicked" />
+            <Button Margin="5,10,5,5" Text="Binding" BackgroundColor="Silver" TextColor="Black" Clicked="Binding_Clicked" />
+            <Button Margin="5,10,5,5" Text="Setings" BackgroundColor="Silver" TextColor="Black" Clicked="Settings_Clicked" />
+        </StackLayout>           
+	</ContentPage.Content>
+</ContentPage>

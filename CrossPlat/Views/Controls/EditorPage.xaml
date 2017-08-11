@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CrossPlat.Views.Controls.EditorPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White" Margin="0,30" Padding="10,10,10,10">
+            <Label Text="Description" Font="Bold, Large" TextColor="Black" />
+            <Editor x:Name="edDescription" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Black" TextColor="Lime" />
+            <Button x:Name="btnSubmit" Text="Submit" Clicked="btnSubmitClicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

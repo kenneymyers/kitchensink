@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CrossPlat.Views.Controls.DateTimePage">
+	<ContentPage.Content>
+        <StackLayout Margin="0,30">
+            <Label Text="Reservation Date" Font="Bold, Large" />
+            <DatePicker x:Name="dtPicker" Format="dd-MMM-yyyy" DateSelected="dtPickerDateSelected" />
+             <Label Text="Pickup Time" Font="Bold, Large" />
+            <TimePicker x:Name="tiPicker" Format="hh:mm tt" />
+            <Button Text="Submit" Clicked="btnSubmitClicked" />
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

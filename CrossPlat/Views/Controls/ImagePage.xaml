@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CrossPlat.Views.Controls.ImagePage">
+    <ContentPage.Content>
+        <StackLayout Margin="0,30">
+            <Label Text="Embedded Image" Font="Bold, Large" />
+            <Image x:Name="imgEmbedded" />
+            <Label Text="Remote Image" Font="Bold, Large" />
+            <Image x:Name="imgRemote" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

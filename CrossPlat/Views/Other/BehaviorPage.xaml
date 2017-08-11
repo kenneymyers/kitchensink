@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:behave="clr-namespace:CrossPlat.Views.Other" 
+    xmlns:req="clr-namespace:CrossPlat.Views.Other"    
+    x:Class="CrossPlat.Views.Other.BehaviorPage">
+	<ContentPage.Content>
+        <TableView Intent="Form" HasUnevenRows="true">
+            <TableView.Root>
+                <TableSection Title="Book Info">
+                    <ViewCell>
+                        <ContentView>
+                            <StackLayout Orientation="Horizontal" Margin="15,10,10,10">
+                                <Label Text="Title" VerticalOptions="Center" />
+                                <Entry Text="Green &amp; Eggs Ham" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End">
+                                    <Entry.Triggers>
+                                        <!-- An event trigger that fires on the Entry's TextChanged event -->
+                                        <EventTrigger Event="TextChanged">
+                                            <req:RequiredValidationTriggerAction />
+                                        </EventTrigger>
+                                    </Entry.Triggers>
+                                </Entry>
+                                <RelativeLayout VerticalOptions="Center" HorizontalOptions="End">
+                                    <Label Text="REQ" FontSize="8" TextColor="Red" VerticalOptions="Center" HorizontalOptions="End" />
+                                </RelativeLayout>
+                            </StackLayout>
+                        </ContentView>
+                    </ViewCell>
+                    <ViewCell>
+                        <ContentView>
+                            <StackLayout Orientation="Horizontal" Margin="15,10,10,10">
+                                <Label Text="Year" VerticalOptions="Center" />
+                                <Entry Text="1954" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End">
+                                    <Entry.Behaviors>
+                                        <behave:NumericEntryBehavior />
+                                    </Entry.Behaviors>
+                                    <Entry.Triggers>
+                                        <!-- An event trigger that fires on the Entry's TextChanged event -->
+                                        <EventTrigger Event="TextChanged">
+                                            <req:RequiredValidationTriggerAction />
+                                        </EventTrigger>
+                                    </Entry.Triggers>
+                                </Entry>
+                                <RelativeLayout VerticalOptions="Center" HorizontalOptions="End">
+                                    <Label Text="REQ" FontSize="8" TextColor="Red" HorizontalOptions="End" />
+                                </RelativeLayout>                                
+                            </StackLayout>
+                        </ContentView>
+                    </ViewCell>
+                </TableSection>
+                <TableSection Title="Synapsis">
+                    <ViewCell>
+                        <ContentView HeightRequest="100" Margin="15,10,10,10">
+                            <Editor Text="I do not like green eggs and ham anywhere Sam I am">
+                                <Editor.Triggers>
+                                    <!-- Can have multiple setters in same trigger -->
+                                    <Trigger TargetType="Editor" Property="IsFocused" Value="True">
+                                        <Setter Property="BackgroundColor" Value="#FFF9C4">
+                                        </Setter>
+                                        <Setter Property="FontAttributes" Value="Bold">
+                                        </Setter>
+                                    </Trigger>
+                                </Editor.Triggers>
+                            </Editor>
+                        </ContentView>
+                    </ViewCell>
+                </TableSection>
+            </TableView.Root>
+        </TableView>
+
+	</ContentPage.Content>
+</ContentPage>

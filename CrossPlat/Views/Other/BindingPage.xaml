@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="CrossPlat.Views.Other.BindingPage">
+    <ContentPage.Content>
+        <StackLayout Margin="10,30,10,10">
+            <Label Text="One Way Binding" FontSize="24" />
+            <Entry Text="{Binding Text, Source={x:Reference onewaytxt}, Mode=OneWay }" />
+            <Entry Placeholder="enter one way text" x:Name="onewaytxt" />
+            <Label Text="Two Way Binding" FontSize="24" />
+            <Entry Text="{Binding Text, Source={x:Reference twowaytxt}, Mode=TwoWay }" />
+            <Entry Placeholder="enter two way text" x:Name="twowaytxt" />
+            <Label Text="One Way to Source" FontSize="24" />
+            <Entry Text="{Binding Text, Source={x:Reference onewaysourcetxt}, Mode=OneWayToSource }" />
+            <Entry Placeholder="enter one way to source" x:Name="onewaysourcetxt" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

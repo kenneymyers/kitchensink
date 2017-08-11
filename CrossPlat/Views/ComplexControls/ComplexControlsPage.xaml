@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CrossPlat.Views.ComplexControls.ComplexControlsPage">
+	<ContentPage.Content>
+        <StackLayout Margin="0,30">
+            <Label Text="Complex Controls" HorizontalTextAlignment="Center" FontSize="Large" FontAttributes="Bold" TextColor="Black" />
+            <Button Margin="5,10,5,5" Text="Activity Indicators" BackgroundColor="Silver" TextColor="Black" Clicked="Activity_Clicked" />
+            <Button Margin="5,10,5,5" Text="Search" BackgroundColor="Silver" TextColor="Black" Clicked="SearchPage_Clicked" />
+            <Button Margin="5,10,5,5" Text="Picker" BackgroundColor="Silver" TextColor="Black" Clicked="PickerPage_Clicked" />
+            <Button Margin="5,10,5,5" Text="ListView" BackgroundColor="Silver" TextColor="Black" Clicked="ListviewPage_Clicked" />
+            <Button Margin="5,10,5,5" Text="ListView Options" BackgroundColor="Silver" TextColor="Black" Clicked="ListViewOptionsPage_Clicked" />
+            <Button Margin="5,10,5,5" Text="WebView" BackgroundColor="Silver" TextColor="Black" Clicked="WebViewPage_Clicked" />
+        </StackLayout>         
+	</ContentPage.Content>
+</ContentPage>

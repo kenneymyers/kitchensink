@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CrossPlat.Views.Layouts.AbsoluteLayoutPage">
+	<ContentPage.Content>
+        <AbsoluteLayout Margin="0,30">
+            <Label Text="Label 1"
+                AbsoluteLayout.LayoutBounds = "0.5, 0.2, 0.6, 0.1"
+                AbsoluteLayout.LayoutFlags = "All"
+                BackgroundColor="Yellow" />
+            <Label Text="Label 2"
+                AbsoluteLayout.LayoutBounds = "0.4, 0.4, 0.2, 0.1"
+                AbsoluteLayout.LayoutFlags = "All"
+                BackgroundColor="Yellow" />                    
+        </AbsoluteLayout>
+	</ContentPage.Content>
+</ContentPage>

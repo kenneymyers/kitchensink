@@ -1,0 +1,2 @@
+/Users/ken/Desktop/Kitchen Sink/Droid/obj/Debug/CrossPlat.Droid.csprojResolveAssemblyReference.cache
+/Users/ken/Desktop/Kitchen Sink/Droid/obj/Debug/CrossPlat.Droid.csproj.CoreCompileInputs.cache

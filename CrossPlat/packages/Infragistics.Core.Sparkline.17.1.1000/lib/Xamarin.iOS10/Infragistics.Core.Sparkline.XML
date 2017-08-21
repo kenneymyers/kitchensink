@@ -1,0 +1,975 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Infragistics.Core.Sparkline</name>
+    </assembly>
+    <members>
+        <member name="T:Infragistics.Controls.Charts.Implementation.SparklineFormatLabelEventArgs">
+            <summary>
+            EventArgs class for axis FormatLabel events.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.SparklineFormatLabelEventArgs.Value">
+            <summary>
+            The data item in context.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.SparklineFormatLabelEventArgs.Label">
+            <summary>
+            Gets or sets the text of the label.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Implementation.XamSparkline">
+            <summary>
+            Represents a sparkline chart.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.XamSparkline.#ctor">
+            <summary>
+            Creates a new instance of XamSparkLine.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.BrushProperty">
+            <summary>
+            Identifies the Brush dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.Brush">
+            <summary>
+            Gets or sets the sparkline brush.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.NegativeBrushProperty">
+            <summary>
+            Identifies the NegativeBrush dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.NegativeBrush">
+            <summary>
+            Gets or sets the negative brush of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.MarkerBrushProperty">
+            <summary>
+            Identifies the MarkerBrush dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.MarkerBrush">
+            <summary>
+            Gets or sets the marker brush of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.NegativeMarkerBrushProperty">
+            <summary>
+            Identifies the NegativeMarkerBrush dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.NegativeMarkerBrush">
+            <summary>
+            Gets or sets the negative marker brush of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.FirstMarkerBrushProperty">
+            <summary>
+            Identifies the FirstMarkerBrush dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.FirstMarkerBrush">
+            <summary>
+            Gets or sets the first marker brush of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.LastMarkerBrushProperty">
+            <summary>
+            Identifies the LastMarkerBrush dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.LastMarkerBrush">
+            <summary>
+            Gets or sets the last marker brush of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.HighMarkerBrushProperty">
+            <summary>
+            Identifies the HighMarkerBrush dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.HighMarkerBrush">
+            <summary>
+            Gets or sets the high marker brush of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.LowMarkerBrushProperty">
+            <summary>
+            Identifies the LowMarkerBrush dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.LowMarkerBrush">
+            <summary>
+            Gets or sets the low marker brush of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.TrendLineBrushProperty">
+            <summary>
+            Identifies the TrendLineBrush dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.TrendLineBrush">
+            <summary>
+            Gets or sets the trendline brush of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.HorizontalAxisBrushProperty">
+            <summary>
+            Identifies the HorizontalAxisBrush dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.HorizontalAxisBrush">
+            <summary>
+            Gets or sets the horizontal axis line brush of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.VerticalAxisBrushProperty">
+            <summary>
+            Identifies the VerticalAxisBrush dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.VerticalAxisBrush">
+            <summary>
+            Gets or sets the vertical axis line brush of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.NormalRangeFillProperty">
+            <summary>
+            Identifies the NormalRangeFill dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.NormalRangeFill">
+            <summary>
+            Gets or sets the normal range brush of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.HorizontalAxisVisibilityProperty">
+            <summary>
+            Identifies the HorizontalAxisVisibility dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.HorizontalAxisVisibility">
+            <summary>
+            Gets or sets the display state of the horizontal axis.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.VerticalAxisVisibilityProperty">
+            <summary>
+            Identifies the VerticalAxisVisibility dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.VerticalAxisVisibility">
+            <summary>
+            Gets or sets the display state of the vertical axis.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.MarkerVisibilityProperty">
+            <summary>
+            Identifies the MarkerVisibility dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.MarkerVisibility">
+            <summary>
+            Gets or sets the marker visibility of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.NegativeMarkerVisibilityProperty">
+            <summary>
+            Identifies the NegativeMarkerVisibility dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.NegativeMarkerVisibility">
+            <summary>
+            Gets or sets the negative marker visibility of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.FirstMarkerVisibilityProperty">
+            <summary>
+            Identifies the FirstMarkerVisibility dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.FirstMarkerVisibility">
+            <summary>
+            Gets or sets the first marker visibility of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.LastMarkerVisibilityProperty">
+            <summary>
+            Identifies the LastMarkerVisibility dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.LastMarkerVisibility">
+            <summary>
+            Gets or sets the last marker visibility of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.LowMarkerVisibilityProperty">
+            <summary>
+            Identifies the LowMarkerVisibility dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.LowMarkerVisibility">
+            <summary>
+            Gets or sets the low marker visibility of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.HighMarkerVisibilityProperty">
+            <summary>
+            Identifies the HighMarkerVisibility dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.HighMarkerVisibility">
+            <summary>
+            Gets or sets the high marker visibility of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.NormalRangeVisibilityProperty">
+            <summary>
+            Identifies the NormalRangeVisibility dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.NormalRangeVisibility">
+            <summary>
+            Gets or sets the normal range visibility of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.MarkerSizeProperty">
+            <summary>
+            Identifies the MarkerSize dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.MarkerSize">
+            <summary>
+            Gets or sets the marker size of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.FirstMarkerSizeProperty">
+            <summary>
+            Identifies the FirstMarkerSize dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.FirstMarkerSize">
+            <summary>
+            Gets or sets the first marker size of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.LastMarkerSizeProperty">
+            <summary>
+            Identifies the LastMarkerSize dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.LastMarkerSize">
+            <summary>
+            Gets or sets the last marker size of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.HighMarkerSizeProperty">
+            <summary>
+            Identifies the HighMarkerSize dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.HighMarkerSize">
+            <summary>
+            Gets or sets the high marker size of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.LowMarkerSizeProperty">
+            <summary>
+            Identifies the LowMarkerSize dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.LowMarkerSize">
+            <summary>
+            Gets or sets the low marker size of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.NegativeMarkerSizeProperty">
+            <summary>
+            Identifies the NegativeMarkerSize dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.NegativeMarkerSize">
+            <summary>
+            Gets or sets the negative marker size of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.LineThicknessProperty">
+            <summary>
+            Identifies the LineThickness dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.LineThickness">
+            <summary>
+            Gets or sets the line thickness of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.MinimumProperty">
+            <summary>
+            Identifies the Minimum dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.Minimum">
+            <summary>
+            Gets or sets the minimum value of the y axis.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.MaximumProperty">
+            <summary>
+            Identifies the Maximum dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.Maximum">
+            <summary>
+            Gets or sets the maximum value of the y axis.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.ItemsSourceProperty">
+            <summary>
+            Identifies the ItemsSource dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.ItemsSource">
+            <summary>
+            Gets or sets the ItemsSource of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.ValueMemberPathProperty">
+            <summary>
+            Identifies the ValueMemberPath dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.ValueMemberPath">
+            <summary>
+            Gets or sets the string path to the value column.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.LabelMemberPathProperty">
+            <summary>
+            Identifies the LabelMemberPath dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.LabelMemberPath">
+            <summary>
+            String identifier of a column or property name to get labels from on each item in the data source.  These labels will be retrieved from the first and last item, and displayed by the horizontal axis.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.ToolTipProperty">
+            <summary>
+            Identifies the ToolTip dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.ToolTip">
+            <summary>
+            Gets or sets the tooltip of the sparkline.
+            </summary>
+            <remarks>
+            The tooltip applies to the entire sparkline control, not the data portion of it.
+            </remarks>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.ToolTipVisibilityProperty">
+            <summary>
+            Identifies the ToolTipVisibility dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.ToolTipVisibility">
+            <summary>
+            Determines the visibility of tooltips.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.TrendLineTypeProperty">
+            <summary>
+            Identifies the TrendLineType dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.TrendLineType">
+            <summary>
+            Gets or sets the type of trendline used by the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.TrendLinePeriodProperty">
+            <summary>
+            Identifies the TrendLinePeriod dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.TrendLinePeriod">
+            <summary>
+            Gets or sets the trendline period used by the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.TrendLineThicknessProperty">
+            <summary>
+            Identifies the TrendLineThickness dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.TrendLineThickness">
+            <summary>
+            Gets or sets the thickness of the sparkline's trendline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.NormalRangeMinimumProperty">
+            <summary>
+            Identifies the NormalRangeMinimum dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.NormalRangeMinimum">
+            <summary>
+            Gets or sets the minimum value of the normal range.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.NormalRangeMaximumProperty">
+            <summary>
+            Identifies the NormalRangeMaximum dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.NormalRangeMaximum">
+            <summary>
+            Gets or sets the maximum value of the normal range.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.DisplayTypeProperty">
+            <summary>
+            Identifies the DisplayType dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.DisplayType">
+            <summary>
+            Gets or sets the display type of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.UnknownValuePlottingProperty">
+            <summary>
+            Identifies the UnknownValuePlotting dependency property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.UnknownValuePlotting">
+            <summary>
+            Gets or sets the way null values are interpreted.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Charts.Implementation.XamSparkline.FormatLabel">
+            <summary>
+            Event raised for the purpose of determining the text of each label.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.XamSparkline.OnPropertyChanged(System.String,System.Object,System.Object)">
+            <summary>
+            Handles property changes.
+            </summary>
+            <param name="propertyName">Property Name</param>
+            <param name="oldValue">Old value</param>
+            <param name="newValue">New value</param>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.XamSparkline.Destroy">
+            <summary>
+            Clean up the sparkline control.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.XamSparkline.ProvideContainer(System.Object)">
+            <summary>
+            Provides a container to the sparkline control.
+            </summary>
+            <param name="container">The container.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.XamSparkline.NotifyResized">
+            <summary>
+            Notify that the control has resized.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.XamSparkline.NotifySetItem(System.Object,System.Int32,System.Object,System.Object)">
+            <summary>
+            Used to manually notify the XamSparkline that the data source has had an item set. Only necessary if that datasource is not observable.
+            </summary>
+            <param name="source_">The data source changed.</param>
+            <param name="index">The index of the change</param>
+            <param name="oldItem">The old item.</param>
+            <param name="newItem">The new item.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.XamSparkline.NotifyClearItems(System.Object)">
+            <summary>
+            Used to manually notify the XamSparkline that the data source has reset or cleared its items.  Invoking this method is only necessary if that datasource is not observable.
+            </summary>
+            <param name="source_">The data source which was cleared or reset.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.XamSparkline.NotifyInsertItem(System.Object,System.Int32,System.Object)">
+            <summary>
+            Used to manually notify the XamSparkline that the data source has had an item inserted. Only necessary if that datasource is not observable.
+            </summary>
+            <param name="source_">The data source changed.</param>
+            <param name="index">The index of the new item</param>
+            <param name="newItem">The new item.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.XamSparkline.NotifyRemoveItem(System.Object,System.Int32,System.Object)">
+            <summary>
+            Used to manually notify the XamSparkline that the data source has had an item removed. Only necessary if that datasource is not observable.
+            </summary>
+            <param name="source_">The data source changed.</param>
+            <param name="index">The index of the old item.</param>
+            <param name="oldItem">The old item.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.XamSparkline.ExportVisualData">
+            <summary>
+            Returns the sparkline visuals expressed as a SparklineVisualData object.
+            </summary>
+            <returns>A SparklineVisualData object representing the current sparkline visuals.</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.XamSparkline.ExportSerializedVisualData">
+            <summary>
+            Returns visuals as a serialized string.
+            </summary>
+            <returns>Visuals as a serialized string</returns>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.PixelScalingRatio">
+            <summary>
+            Gets or sets the scaling value used to affect the pixel density of the control.
+            </summary>
+            <remarks>
+            A higher scaling ratio will produce crisper visuals at the expense of memory.  Lower values will cause the control
+            to appear blurry.
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.ActualPixelScalingRatio">
+            <summary>
+            Gets the actual scaling value used by the component to affect the pixel density of the control.
+            </summary>
+            <remarks>
+            A higher scaling ratio will produce crisper visuals at the expense of memory.  Lower values will cause the control
+            to appear blurry.
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.TextStyle">
+            <summary>
+            Gets or sets CSS font property for labels on X-axis
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.TextColor">
+            <summary>
+            Gets or sets the text color for the axis labels.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Implementation.SparklineConnector">
+            <summary>
+            Represents a connector class that links Model, View and Controller together.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.SparklineConnector.#ctor(Infragistics.Portable.Components.DependencyObject,Infragistics.Controls.Charts.Implementation.XamSparklineView)">
+            <summary>
+            Creates a new sparkline connector.
+            </summary>
+            <param name="parent">Parent object.</param>
+            <param name="view">Instance of the sparkline view.</param>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Implementation.SparklineFormatLabelEventHandler">
+            <summary>
+            Delegate for Sparkline FormatLabel events.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="item">Contextual information about the event being raised.</param>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Implementation.HorizontalAxisView">
+            <summary>
+            View class for a horizontal axis in XamSparkline.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.HorizontalAxisView.#ctor(Infragistics.Controls.Charts.Implementation.XamSparkline)">
+            <summary>
+            HorizontalAxisView constructor.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Implementation.VerticalAxisView">
+            <summary>
+            View class for a vertical axis in XamSparkline.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.VerticalAxisView.#ctor(Infragistics.Controls.Charts.Implementation.XamSparkline)">
+            <summary>
+            VerticalAxisView constructor.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Implementation.XamSparklineView">
+            <summary>
+            Represents the visual component of a sparkline.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.XamSparklineView.#ctor">
+            <summary>
+            Creates a new instance of XamSparklineView.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.XamSparklineView.UpdateBrush(System.String,Infragistics.Portable.Graphics.Media.Brush,System.String,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="name">Name of path/brush</param>
+            <param name="brush">Not null only when set by property</param>
+            <param name="clr">Null if set by property and not null when set as css-default</param>
+            <param name="opacity">css-default when clr != null</param>
+            <param name="thickness">css-default when clr != null</param>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.SparklineToolTipContext">
+            <summary>
+            Represents the data context for the sparkline tooltip.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineToolTipContext.High">
+            <summary>
+            Gets or sets the High value.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineToolTipContext.Low">
+            <summary>
+            Gets or sets the Low value.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineToolTipContext.First">
+            <summary>
+            Gets or sets the First value.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineToolTipContext.Last">
+            <summary>
+            Gets or sets the Last value.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.SparkLayerType">
+            <summary>
+            Enumeration of spark layer types.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.SparklineDisplayType">
+            <summary>
+            Represents the type of sparkline
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.SparklineDisplayType.Line">
+            <summary>
+            Display the sparkline as a line.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.SparklineDisplayType.Area">
+            <summary>
+            Display the sparkline as a filled polygon.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.SparklineDisplayType.Column">
+            <summary>
+            Display the sparkline as a set of columns.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.SparklineDisplayType.WinLoss">
+            <summary>
+            Display the sparkline as a set of columns on a boolean scale.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.AxisRenderMessage">
+            <summary>
+            Message used to render an axis
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.ClearMessage">
+            <summary>
+            A clear message is used to clear out a particular layer of the sparkline.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.ColumnMessage">
+            <summary>
+            Message used to update sparkline columns.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.ConfigurationMessage">
+            <summary>
+            A base class for configuration type messages.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.InteractionMessage">
+            <summary>
+            A base class for interaction type messages.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.MarkerMessage">
+            <summary>
+            Message that updates the sparkline markers.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.Message">
+            <summary>
+            Base class for all sparkline messages.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.MessageChannel">
+            <summary>
+            A service used to send sparkline messages.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.MessageEventHandler">
+            <summary>
+            Delegate for message events.
+            </summary>
+            <param name="message">The message</param>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.MessageHandler">
+            <summary>
+            A class used to handle specific message types.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.MessageHandlerEventHandler">
+            <summary>
+            Delegate for receiving messages.
+            </summary>
+            <param name="m">The received message</param>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.MouseLeaveMessage">
+            <summary>
+            Message used when the mouse has left the sparkline control boundary.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.MouseMoveMessage">
+            <summary>
+            Message used when the mouse is moving over the sparkline control boundary.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.NormalRangeMessage">
+            <summary>
+            Message used for updating the sparkline range geometry.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.PolygonMessage">
+            <summary>
+            Message used for updating the main sparkline geometry.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.PropertyChangedMessage">
+            <summary>
+            A message that changes a property value.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.RenderingMessage">
+            <summary>
+            Base class for rendering type messages.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.ServiceProvider">
+            <summary>
+            Class used to manage services attached to the sparkline.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.ToolTipMessage">
+            <summary>
+            Message used to update the tooltip.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.ToolTipTemplateMessage">
+            <summary>
+            Message used to update the tooltip template.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.TrendLineMessage">
+            <summary>
+            Message used to update the trendline geometry.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.ViewportChangedMessage">
+            <summary>
+            A message that changes the sparkline viewport.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.ContainerSizeChangedMessage">
+            <summary>
+            A message that triggers a container resize.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.WinLossColumnMessage">
+            <summary>
+            Message used to update the WinLoss column geometry.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.ContainerMessage">
+            <summary>
+            Message used to provide a container.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.VisibilityChangedMessage">
+            <summary>
+            Message used to change a visibility property.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.BrushChangedMessage">
+            <summary>
+            Message used to change a brush property.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.NumberChangedMessage">
+            <summary>
+            Message used to change a number property.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.ContainerResizedMessage">
+            <summary>
+            Message used to notify that the container has resized.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.DataChangedMessage">
+            <summary>
+            Message used to change data.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.PixelRatioMessage">
+            <summary>
+            Message used to change the pixel ratio.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.VisualData.SparklineVisualData">
+            <summary>
+            Visual data for the XamSparkline.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.VisualData.SparklineVisualData.#ctor">
+            <summary>
+            Creates a new SparklineVisualData instance.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.Name">
+            <summary>
+            Gets or sets the name of the visual data.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.HorizontalAxis">
+            <summary>
+            Gets or sets the horizontal axis visual data.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.VerticalAxis">
+            <summary>
+            Gets or sets the vertical axis visual data.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.SparkPath">
+            <summary>
+            Gets or sets the visual data for the main sparkline geometry.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.NegativeSparkPath">
+            <summary>
+            Gets or sets the visual data for the negative sparkline geometry.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.TrendLinePath">
+            <summary>
+            Gets or sets the visual data for the trendline geometry.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.RangePath">
+            <summary>
+            Gets or sets the visual data for the range geometry.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.MarkersPath">
+            <summary>
+            Gets or sets the visual data for the marker geometry.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.NegativeMarkersPath">
+            <summary>
+            Gets or sets the visual data for the negative marker geometry.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.LowMarkersPath">
+            <summary>
+            Gets or sets the visual data for low marker geometry.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.HighMarkersPath">
+            <summary>
+            Gets or sets the visual data for the high marker geometry.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.FirstMarkerPath">
+            <summary>
+            Gets or sets the visual data for the first marker geometry.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.LastMarkerPath">
+            <summary>
+            Gets or sets the visual data for the last marker geometry.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.Viewport">
+            <summary>
+            Gets or sets the viewport.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.MarginViewport">
+            <summary>
+            Gets or sets the margin viewport.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.VisualData.SparklineVisualData.ScaleByViewport">
+            <summary>
+            Scales the sparkline data against a viewport to normalize the data for comparison.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.VisualData.SparklineVisualData.ScaleFromDevicePixels(Infragistics.Portable.VisualData.VisualDataPixelScalingOptions)">
+            <summary>
+            Scales the visual data from device pixels to device independent pixels.
+            </summary>
+            <param name="options">Options for the scaling operation.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.VisualData.SparklineVisualData.Serialize">
+            <summary>
+             Serializes this object to a string
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.VisualData.SparklineAxisVisualData">
+            <summary>
+            Visual data for the sparkline axis.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.VisualData.SparklineAxisVisualData.#ctor">
+            <summary>
+            Creates a new SparklineAxisVisualData instance.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.VisualData.SparklineAxisVisualData.Name">
+            <summary>
+            Gets or sets the name of the axis.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.VisualData.SparklineAxisVisualData.MinLabel">
+            <summary>
+            Gets or sets the label appearance data for the minimum label.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.VisualData.SparklineAxisVisualData.MaxLabel">
+            <summary>
+            Gets or sets the label appearance data for the maximum label.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.VisualData.SparklineAxisVisualData.AxisLine">
+            <summary>
+            Gets or sets the axis line visual data.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.VisualData.SparklineAxisVisualData.ScaleByViewport(Infragistics.Portable.VisualData.RectData)">
+            <summary>
+            Scales the axis data against a viewport to normalize the data for comparison.
+            </summary>
+            <param name="viewport">The viewport to scale by.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.VisualData.SparklineAxisVisualData.Serialize">
+            <summary>
+             Serializes this object to a string
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.VisualData.SparklineAxisVisualData.ScaleFromDevicePixels(Infragistics.Portable.VisualData.VisualDataPixelScalingOptions)">
+            <summary>
+            Scales the visual data from device pixels to device independent pixels.
+            </summary>
+            <param name="options">Options for the scaling operation.</param>
+        </member>
+    </members>
+</doc>

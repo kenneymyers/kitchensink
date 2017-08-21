@@ -1,0 +1,1686 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+    <assembly>
+        <name>Infragistics.XF.Gauges</name>
+    </assembly>
+    <members>
+        <member name="T:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph">
+            <summary>ブレット グラフを表します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.#ctor">
+            <summary>新しい <see cref="T:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph"/> を初期化します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ActualMaximumValueProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ActualMaximumValue"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ActualMaximumValue">
+            <summary>スケールの解決された最大値を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ActualMinimumValueProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ActualMinimumValue"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ActualMinimumValue">
+            <summary>スケールの解決済み最小値を取得します。</summary>
+        </member>
+      <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ActualPixelScalingRatioProperty">
+        <summary>
+          <see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ActualPixelScalingRatio"/> のバインド可能なプロパティを識別します。
+        </summary>
+      </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.AnimatingProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.Animating"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.Animating">
+            <summary>ブレット グラフがアニメーションを再生されているかどうかを示す値を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.BackingBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.BackingBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.BackingBrush">
+            <summary>ブレット グラフのバッキングを塗りつぶすために使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.BackingInnerExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.BackingInnerExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.BackingInnerExtent">
+            <summary>ブレット グラフ バッキングの内側範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.BackingOuterExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.BackingOuterExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.BackingOuterExtent">
+            <summary>ブレット グラフ バッキングの外側範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.BackingOutlineProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.BackingOutline"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.BackingOutline">
+            <summary>バッキングのアウトラインを描画するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.BackingStrokeThicknessProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.BackingStrokeThickness"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.BackingStrokeThickness">
+            <summary>バッキング アウトラインのストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.FontAttributesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.FontAttributes"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.FontAttributes">
+            <summary>テキストのフォント サイズを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.FontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.FontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.FontBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.FontBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.FontBrush">
+            <summary>ラベル フォントのブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.FontFamilyProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.FontFamily"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.FontFamily">
+            <summary>テキストのフォント ファミリを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.FontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.FontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.FontSizeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.FontSize"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.FontSize">
+            <summary>テキストのフォント サイズを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.FontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.FontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.IntervalProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.Interval"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.Interval">
+            <summary>スケールに使用する間隔を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.IsScaleInvertedProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.IsScaleInverted"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.IsScaleInverted">
+            <summary>スケールが反転されるかどうかを示す値を取得または設定します。スケールが反転された場合、スケール値が右から左へ増加します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.LabelExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.LabelExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.LabelExtent">
+            <summary>スケールの下から計測される、0 から 1 の値でラベルを配置する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレット グラフのラベルを非表示できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.LabelIntervalProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.LabelInterval"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.LabelInterval">
+            <summary>描画ラベルに使用する間隔を取得または設定します。このデフォルトはスケールの目盛りとして同じ間隔になります。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.LabelsPostInitialProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.LabelsPostInitial"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.LabelsPostInitial">
+            <summary>ラベルの追加を開始するための値で、スケールの MinimumValue に追加されます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.LabelsPreTerminalProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.LabelsPreTerminal"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.LabelsPreTerminal">
+            <summary>スケールの MaximumValue から差し引かれた、ラベルの追加を停止する値。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.MaximumValueProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.MaximumValue"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.MaximumValue">
+            <summary>このスケールの最大値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.MinimumValueProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.MinimumValue"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.MinimumValue">
+            <summary>このスケールの最小値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.MinorTickBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.MinorTickBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.MinorTickBrush">
+            <summary>副目盛のブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.MinorTickCountProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.MinorTickCount"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.MinorTickCount">
+            <summary>主目盛間に配置する副目盛数を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.MinorTickEndExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.MinorTickEndExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.MinorTickEndExtent">
+            <summary>ブレットグラフの前/下から計測される、0 から 1 の値で副目盛の描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.MinorTickStartExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.MinorTickStartExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.MinorTickStartExtent">
+            <summary>ブレットグラフの前/下から計測される、0 から 1 の値で副目盛の描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.MinorTickStrokeThicknessProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.MinorTickStrokeThickness"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.MinorTickStrokeThickness">
+            <summary>副目盛を描画するときに使用するストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.OrientationProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.Orientation"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.Orientation">
+            <summary>スケールの向きを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.PixelScalingRatioProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.PixelScalingRatio"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.PixelScalingRatio">
+            <summary>コントロールのピクセル密度に影響するために使用されるスケール値を取得または設定します。</summary>
+            <remarks>より高いスケール比率はビジュアルを向上しますが、メモリの使用を増加します。より低い値はコントロールをぼやけます。</remarks>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.RangeBrushesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.RangeBrushes"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.RangeBrushes">
+            <summary>ブレット グラフ範囲のパレットとして使用されるブラシのコレクションを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.RangeInnerExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.RangeInnerExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.RangeInnerExtent">
+            <summary>0 から 1 の値でコントロールの前と下から計測された、描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.RangeOuterExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.RangeOuterExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.RangeOuterExtent">
+            <summary>ブレットグラフの前/下から計測された、0 から 1 の値で範囲の描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.RangeOutlinesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.RangeOutlines"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.RangeOutlines">
+            <summary>ブレット グラフ アウトラインのパレットとして使用されるブラシのコレクションを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.RangesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.Ranges"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.Ranges">
+            <summary>ブレット グラフで描画するためのスケールの範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ScaleBackgroundBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ScaleBackgroundBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ScaleBackgroundBrush">
+            <summary>スケールの背景ブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ScaleBackgroundOutlineProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ScaleBackgroundOutline"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ScaleBackgroundOutline">
+            <summary>スケールの背景アウトラインを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ScaleBackgroundThicknessProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ScaleBackgroundThickness"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ScaleBackgroundThickness">
+            <summary>スケールの背景アウトラインの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ScaleEndExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ScaleEndExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ScaleEndExtent">
+            <summary>ブレットグラフの前/下から計測された、0 から 1 の値でスケールの描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ScaleStartExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ScaleStartExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ScaleStartExtent">
+            <summary>0 から 1 の値で ブレットグラフの前/下から計測される、実際値の形状の描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TargetValueProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TargetValue"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TargetValue">
+            <summary>ターゲット値バーで示された値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TargetValueBreadthProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TargetValueBreadth"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TargetValueBreadth">
+            <summary>ターゲット値要素の幅を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TargetValueBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TargetValueBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TargetValueBrush">
+            <summary>比較マーカーの塗りつぶしを描画する際に使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TargetValueInnerExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TargetValueInnerExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TargetValueInnerExtent">
+            <summary>0 から 1 の値でコントロールの前/下から計測される、ターゲット値の描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TargetValueOuterExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TargetValueOuterExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TargetValueOuterExtent">
+            <summary>0 から 1 の値でコントロールの前/下から計測される、ターゲット値の描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TargetValueOutlineProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TargetValueOutline"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TargetValueOutline">
+            <summary>ターゲット値のアウトラインを描画する際に使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TargetValueStrokeThicknessProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TargetValueStrokeThickness"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TargetValueStrokeThickness">
+            <summary>ターゲット値バーのアウトラインのストローク幅を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TickBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TickBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TickBrush">
+            <summary>主目盛のブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TickEndExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TickEndExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TickEndExtent">
+            <summary>ブレットグラフの前/下から計測される、0 から 1 の値で主目盛の描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TicksPostInitialProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TicksPostInitial"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TicksPostInitial">
+            <summary>スケールの MinimumValue に追加された、メモリの追加を開始する値。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TicksPreTerminalProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TicksPreTerminal"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TicksPreTerminal">
+            <summary>スケールの MinimumValue から差し引かれた、目盛りの追加を停止する値。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TickStartExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TickStartExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TickStartExtent">
+            <summary>ブレットグラフの前/下から計測された、0 から 1 の値で主目盛の描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TickStrokeThicknessProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TickStrokeThickness"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TickStrokeThickness">
+            <summary>目盛を描画するときに使用するストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TransitionDurationProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TransitionDuration"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TransitionDuration">
+            <summary>ブレットグラフで変更をアニメーション化するミリ秒を数値で取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TransitionProgressProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TransitionProgress"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.TransitionProgress">
+            <summary>コントロールがアニメーションを再生されているときのトランジション進行状況を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ValueProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.Value"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.Value">
+            <summary>バーが終了する値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ValueBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ValueBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ValueBrush">
+            <summary>実際の値要素に使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ValueInnerExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ValueInnerExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ValueInnerExtent">
+            <summary>0 から 1 の値でブレット グラフの前/下から計測された、実際の値の形状を描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ValueOuterExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ValueOuterExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ValueOuterExtent">
+            <summary>ブレットグラフの前/下から計測される、0 から 1 の値で実際値の形状の描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ValueOutlineProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ValueOutline"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ValueOutline">
+            <summary>実際の値要素のアウトラインに使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ValueStrokeThicknessProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ValueStrokeThickness"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ValueStrokeThickness">
+            <summary>実際の値要素を描画する際に使用するストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ExportSerializedVisualData">
+            <summary>シリアル化された文字列でビジュアルを返します。</summary>
+            <returns>シリアル化された文字列のビジュアル。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.ExportVisualData">
+            <summary>外部ツールと機能に使用するため、このコントロールに関するビジュアル情報をエクスポートします。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.Flush">
+            <summary>そのビジュアルの印刷または評価の前に、ブレット グラフで遅延されている作業を強制的に終了します。</summary>
+            <remarks>これは、ブレット グラフのビジュアルを同期して保存されるか評価される場合のみ呼び出されます。このメソッドを頻繁に呼び出すとブレット グラフのパフォーマンスが低下します。</remarks>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.GetValueForPoint(Xamarin.Forms.Point)">
+            <summary>ブレット グラフの範囲内で任意のポイントでブレット グラフのメイン スケールの値を取得します。</summary>
+            <param name="point">関連付けられている値を取得するポイント。</param>
+            <returns>必要なポイントと等しいブレット グラフ上の値。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.Init">
+            <summary>このコントロールのインスタンスを XAML で宣言する場合、ランタイムですべての必要な型が利用可能なことを確認するには、このメソッドをコードで呼び出します。</summary>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.AlignLabel">
+            <summary>ブレット グラフのラベルがスケールと整列されたときに発生するイベント。</summary>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Gauges.XamBulletGraph.FormatLabel">
+            <summary>ブレット グラフのラベルが書式設定されたときに発生するイベント。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge">
+            <summary>定義済みスケールで単一の値を表示するためのリニア ゲージ。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.#ctor">
+            <summary>新しい <see cref="T:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge"/> を初期化します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ActualMaximumValueProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ActualMaximumValue"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ActualMaximumValue">
+            <summary>スケールの解決された最大値を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ActualMinimumValueProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ActualMinimumValue"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ActualMinimumValue">
+            <summary>スケールの解決済み最小値を取得します。</summary>
+        </member>
+      <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ActualPixelScalingRatioProperty">
+        <summary>
+          <see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ActualPixelScalingRatio"/> のバインド可能なプロパティを識別します。
+        </summary>
+      </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.AnimatingProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.Animating"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.Animating">
+            <summary>ブレット グラフがアニメーションを再生されているかどうかを示す値を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.BackingBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.BackingBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.BackingBrush">
+            <summary>リニア ゲージのバッキングを塗りつぶすために使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.BackingInnerExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.BackingInnerExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.BackingInnerExtent">
+            <summary>リニア ゲージ バッキングの内部範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.BackingOuterExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.BackingOuterExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.BackingOuterExtent">
+            <summary>リニア ゲージ バッキングの外部範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.BackingOutlineProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.BackingOutline"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.BackingOutline">
+            <summary>バッキングのアウトラインを描画するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.BackingStrokeThicknessProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.BackingStrokeThickness"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.BackingStrokeThickness">
+            <summary>バッキング アウトラインのストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.FontAttributesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.FontAttributes"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.FontAttributes">
+            <summary>テキストのフォント サイズを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.FontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.FontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.FontBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.FontBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.FontBrush">
+            <summary>ラベル フォントのブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.FontFamilyProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.FontFamily"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.FontFamily">
+            <summary>テキストのフォント ファミリを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.FontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.FontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.FontSizeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.FontSize"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.FontSize">
+            <summary>テキストのフォント サイズを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.FontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.FontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.IntervalProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.Interval"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.Interval">
+            <summary>スケールに使用する間隔を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.IsNeedleDraggingEnabledProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.IsNeedleDraggingEnabled"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.IsNeedleDraggingEnabled">
+            <summary>針のドラッグが有効かどうかを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.IsScaleInvertedProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.IsScaleInverted"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.IsScaleInverted">
+            <summary>スケールが反転されるかどうかを示す値を取得または設定します。スケールが反転された場合、スケール値が右から左へ増加します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.LabelExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.LabelExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.LabelExtent">
+            <summary>スケールの下から計測される、0 から 1 の値でラベルを配置する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージのラベルを非表示できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.LabelIntervalProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.LabelInterval"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.LabelInterval">
+            <summary>描画ラベルに使用する間隔を取得または設定します。このデフォルトはスケールの目盛りとして同じ間隔になります。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.LabelsPostInitialProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.LabelsPostInitial"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.LabelsPostInitial">
+            <summary>ラベルの追加を開始するための値で、スケールの MinimumValue に追加されます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.LabelsPreTerminalProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.LabelsPreTerminal"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.LabelsPreTerminal">
+            <summary>スケールの MaximumValue から差し引かれた、ラベルの追加を停止する値。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.MaximumValueProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.MaximumValue"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.MaximumValue">
+            <summary>このスケールの最大値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.MinimumValueProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.MinimumValue"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.MinimumValue">
+            <summary>このスケールの最小値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.MinorTickBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.MinorTickBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.MinorTickBrush">
+            <summary>副目盛のブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.MinorTickCountProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.MinorTickCount"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.MinorTickCount">
+            <summary>主目盛間に配置する副目盛数を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.MinorTickEndExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.MinorTickEndExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.MinorTickEndExtent">
+            <summary>リニア ゲージの前/下から計測される、0 から 1 の値で副目盛の描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.MinorTickStartExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.MinorTickStartExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.MinorTickStartExtent">
+            <summary>リニア ゲージの前/下から計測される、0 から 1 の値で副目盛の描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.MinorTickStrokeThicknessProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.MinorTickStrokeThickness"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.MinorTickStrokeThickness">
+            <summary>副目盛を描画するときに使用するストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleBreadthProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleBreadth"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleBreadth">
+            <summary>針の幅を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleBrush">
+            <summary>針要素のブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleInnerBaseWidthProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleInnerBaseWidth"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleInnerBaseWidth">
+            <summary>針の内部ベースの幅を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleInnerExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleInnerExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleInnerExtent">
+            <summary>0 から 1 の値でリニア ゲージの前/下から計測される、針ジオメトリの描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleInnerPointExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleInnerPointExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleInnerPointExtent">
+            <summary>針の内部ポイントの範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleInnerPointWidthProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleInnerPointWidth"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleInnerPointWidth">
+            <summary>針の内部ポイントの幅を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleNameProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleName"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleName">
+            <summary>針に使用される名前を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleOuterBaseWidthProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleOuterBaseWidth"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleOuterBaseWidth">
+            <summary>針の外部ベースの幅を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleOuterExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleOuterExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleOuterExtent">
+            <summary>リニア ゲージの前/下から計測される、0 から 1 の値で針ジオメトリの描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleOuterPointExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleOuterPointExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleOuterPointExtent">
+            <summary>針の外部ポイントの範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleOuterPointWidthProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleOuterPointWidth"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleOuterPointWidth">
+            <summary>針の外部ポイントの幅を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleOutlineProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleOutline"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleOutline">
+            <summary>針要素のアウトラインを描画するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleShapeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleShape"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleShape">
+            <summary>多数のオプションから針を描画する際に使用する図形を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleStrokeThicknessProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleStrokeThickness"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleStrokeThickness">
+            <summary>実際の値要素を描画する際に使用するストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.OrientationProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.Orientation"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.Orientation">
+            <summary>スケールの向きを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.PixelScalingRatioProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.PixelScalingRatio"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.PixelScalingRatio">
+            <summary>コントロールのピクセル密度に影響するために使用されるスケール値を取得または設定します。</summary>
+            <remarks>より高いスケール比率はビジュアルを向上しますが、メモリの使用を増加します。より低い値はコントロールをぼやけます。</remarks>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.RangeBrushesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.RangeBrushes"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.RangeBrushes">
+            <summary>リニア ゲージ範囲のパレットとして使用されるブラシのコレクションを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.RangeInnerExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.RangeInnerExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.RangeInnerExtent">
+            <summary>0 から 1 の値でコントロールの前と下から計測された、描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.RangeOuterExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.RangeOuterExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.RangeOuterExtent">
+            <summary>リニア ゲージの前/下から計測される、0 から 1 の値で範囲の描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.RangeOutlinesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.RangeOutlines"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.RangeOutlines">
+            <summary>リニア ゲージ アウトラインのパレットとして使用されるブラシのコレクションを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.RangesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.Ranges"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.Ranges">
+            <summary>リニア ゲージで描画するためのスケールの範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ScaleBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ScaleBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ScaleBrush">
+            <summary>リニア ゲージのスケールを塗りつぶすために使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ScaleEndExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ScaleEndExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ScaleEndExtent">
+            <summary>リニア ゲージの前/下から計測される、0 から 1 の値でスケールの描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ScaleInnerExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ScaleInnerExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ScaleInnerExtent">
+            <summary>0 から 1 の値で (方向が水平/垂直の場合に) コントロールの下/前から計測された、スケールの描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ScaleOuterExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ScaleOuterExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ScaleOuterExtent">
+            <summary>(方向が水平/垂直の場合に) リニア ゲージの下/前から計測された、0 から 1 の値でスケールの描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ScaleOutlineProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ScaleOutline"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ScaleOutline">
+            <summary>スケールのアウトラインを描画するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ScaleStartExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ScaleStartExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ScaleStartExtent">
+            <summary>0 から 1 の値でリニア ゲージの前/下から計測される、スケールの描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ScaleStrokeThicknessProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ScaleStrokeThickness"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ScaleStrokeThickness">
+            <summary>スケールのアウトラインのストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TickBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TickBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TickBrush">
+            <summary>主目盛のブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TickEndExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TickEndExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TickEndExtent">
+            <summary>リニア ゲージの前/下から計測される、0 から 1 の値で主目盛の描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TicksPostInitialProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TicksPostInitial"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TicksPostInitial">
+            <summary>スケールの MinimumValue に追加された、メモリの追加を開始する値。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TicksPreTerminalProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TicksPreTerminal"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TicksPreTerminal">
+            <summary>スケールの MinimumValue から差し引かれた、目盛りの追加を停止する値。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TickStartExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TickStartExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TickStartExtent">
+            <summary>リニア ゲージの前/下から計測される、0 から 1 の値で主目盛の描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TickStrokeThicknessProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TickStrokeThickness"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TickStrokeThickness">
+            <summary>目盛を描画するときに使用するストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TransitionDurationProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TransitionDuration"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TransitionDuration">
+            <summary>リニア ゲージがアニメーション化する変更をミリ秒数を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TransitionProgressProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TransitionProgress"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.TransitionProgress">
+            <summary>コントロールがアニメーションを再生されているときのトランジション進行状況を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ValueProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.Value"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.Value">
+            <summary>針が配置する値を取得または設定します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ExportSerializedVisualData">
+            <summary>シリアル化された文字列でビジュアルを返します。</summary>
+            <returns>シリアル化された文字列のビジュアル。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ExportVisualData">
+            <summary>外部ツールと機能に使用するため、このコントロールに関するビジュアル情報をエクスポートします。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.Flush">
+            <summary>ビジュアルのプリントまたは評価の前に、保留中の作業をリニア ゲージで強制的に終了します。</summary>
+            <remarks>これは、リニア ゲージのビジュアルを同期して保存されるか評価される場合のみ呼び出されます。このメソッドを頻繁に呼び出すとリニア ゲージのパフォーマンスが低下します。</remarks>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.GetValueForPoint(Xamarin.Forms.Point)">
+            <summary>ゲージ内の境界線に特定のポイントのゲージのメイン スケールの値を取得します。</summary>
+            <param name="point">関連付けられている値を取得するポイント。</param>
+            <returns>指定したポイントと等しいゲージの値。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.Init">
+            <summary>このコントロールのインスタンスを XAML で宣言する場合、ランタイムにすべての必要な型が利用可能なことを確認するには、このメソッドをコードで呼び出します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleContainsPoint(Xamarin.Forms.Point)">
+            <summary>メイン ゲージの針境界ボックスが指定したポイントを含む場合に True を返します。それ以外の場合 False を返します。</summary>
+            <param name="point">チェックする点。</param>
+            <returns>針境界ボックスがポイントを含む場合は True。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.NeedleContainsPoint(Xamarin.Forms.Point,System.Boolean)">
+            <summary>メイン ゲージの針境界ボックスが指定したポイントを含む場合に True を返します。それ以外の場合 False を返します。</summary>
+            <param name="point">チェックする点。</param>
+            <param name="isFinger">タッチ対応の境界コンテナーを使用するかどうか。</param>
+            <returns>針境界ボックスがポイントを含む場合は True。</returns>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.AlignLabel">
+            <summary>リニア ゲージのラベルがスケールに沿って整列されるときに発生するイベント。</summary>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.FormatLabel">
+            <summary>ゲージのラベルが書式設定されるときに発生するイベント。</summary>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Gauges.XamLinearGauge.ValueChanged">
+            <summary>Value プロパティが変更されるときに発生されます。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange">
+            <summary>XamBulletGraph および XamLinearGauge コントロールの範囲を表します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.#ctor">
+            <summary><see cref="T:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange"/> クラスの新しいインスタンスを初期化します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.BrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.Brush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.Brush">
+            <summary>範囲を塗りつぶすために使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.EndValueProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.EndValue"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.EndValue">
+            <summary>スケールに沿って範囲を終了する値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.InnerEndExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.InnerEndExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.InnerEndExtent">
+            <summary>範囲の内側の移動を描画を終了するゲージの前/下からの距離 (0 から 1) を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準幅/高さを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.InnerStartExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.InnerStartExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.InnerStartExtent">
+            <summary>範囲の内側の移動を描画を開始するゲージの前/下からの距離 (0 から 1) を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準幅/高さを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.NameProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.Name"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.Name">
+            <summary>範囲の名前を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.OuterEndExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.OuterEndExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.OuterEndExtent">
+            <summary>範囲の外側の移動を描画を終了するゲージの前/下からの距離 (0 から 1) を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準幅/高さを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.OuterStartExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.OuterStartExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.OuterStartExtent">
+            <summary>範囲の外部スイープの描画を開始する、ブレットグラフの前/下から計測された距離 (0 から 1) を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準幅/高さを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.OutlineProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.Outline"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.Outline">
+            <summary>範囲を描画する際に使用するアウトラインを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.StartValueProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.StartValue"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.StartValue">
+            <summary>スケールに沿って範囲を開始する値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.StrokeThicknessProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.StrokeThickness"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRange.StrokeThickness">
+            <summary>この範囲のアウトラインを描画するときに使用するストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge">
+            <summary>定義済みスケールで単一の値を表示するためのラジアル ゲージ。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.#ctor">
+            <summary>新しい <see cref="T:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge"/> を初期化します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ActualMaximumValueProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ActualMaximumValue"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ActualMaximumValue">
+            <summary>スケールの解決された最大値を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ActualMinimumValueProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ActualMinimumValue"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ActualMinimumValue">
+            <summary>スケールの解決済み最小値を取得します。</summary>
+        </member>
+      <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ActualPixelScalingRatioProperty">
+        <summary>
+          <see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ActualPixelScalingRatio"/> のバインド可能なプロパティを識別します。
+        </summary>
+      </member>
+      <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ActualPixelScalingRatio">
+        <summary>スケール変換を適用するためにメイン キャンバスの描画コンテキストにより使用される実際のスケール値を取得または設定します。</summary>
+      </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.AnimatingProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.Animating"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.Animating">
+            <summary>ラジアル ゲージがアニメーションを再生されているかどうかを示す値を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingBrush">
+            <summary>ゲージのバッキングを塗りつぶすために使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingCornerRadiusProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingCornerRadius"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingCornerRadius">
+            <summary>フィット スケール バッキングに使用する角丸の半径を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingInnerExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingInnerExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingInnerExtent">
+            <summary>ゲージ バッキングの内部範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingOuterExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingOuterExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingOuterExtent">
+            <summary>ゲージ バッキングの外側の範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingOutlineProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingOutline"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingOutline">
+            <summary>バッキングのアウトラインを描画するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingOversweepProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingOversweep"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingOversweep">
+            <summary>フィットで表示する場合にバッキングに適用するオーバー スイープを取得または設定します。0 以上の値でなければなりません。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingShapeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingShape"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingShape">
+            <summary>ゲージのバッキングに使用する図形のタイプを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingStrokeThicknessProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingStrokeThickness"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.BackingStrokeThickness">
+            <summary>バッキング アウトラインのストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.CenterXProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.CenterX"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.CenterX">
+            <summary>値範囲 0 から 1 でゲージの中心の x 位置を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.CenterYProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.CenterY"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.CenterY">
+            <summary>値範囲 0 から 1 でゲージの中心の y 位置を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.DuplicateLabelOmissionStrategyProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.DuplicateLabelOmissionStrategy"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.DuplicateLabelOmissionStrategy">
+            <summary>最初と最後のラベルが同じ値の場合、ラベルを省く使用する方法を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.FontAttributesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.FontAttributes"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.FontAttributes">
+            <summary>テキストのフォント サイズを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.FontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.FontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.FontBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.FontBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.FontBrush">
+            <summary>ラベル フォントのブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.FontFamilyProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.FontFamily"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.FontFamily">
+            <summary>テキストのフォント ファミリを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.FontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.FontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.FontSizeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.FontSize"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.FontSize">
+            <summary>テキストのフォント サイズを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.FontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.FontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.IntervalProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.Interval"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.Interval">
+            <summary>スケールに使用する間隔を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.IsNeedleDraggingConstrainedProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.IsNeedleDraggingConstrained"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.IsNeedleDraggingConstrained">
+            <summary>ドラッグ操作で針が最小値と最大値の間の範囲に制約されるかどうかを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.IsNeedleDraggingEnabledProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.IsNeedleDraggingEnabled"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.IsNeedleDraggingEnabled">
+            <summary>針のドラッグが有効かどうかを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.LabelExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.LabelExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.LabelExtent">
+            <summary>ゲージの中央から計測される、0 から 1 の値でラベルを配置する位置を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.LabelIntervalProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.LabelInterval"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.LabelInterval">
+            <summary>描画ラベルに使用する間隔を取得または設定します。このデフォルトはスケールの目盛りとして同じ間隔になります。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.MaximumValueProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.MaximumValue"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.MaximumValue">
+            <summary>このスケールの最大値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.MinimumValueProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.MinimumValue"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.MinimumValue">
+            <summary>このスケールの最小値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.MinorTickBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.MinorTickBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.MinorTickBrush">
+            <summary>副目盛のブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.MinorTickCountProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.MinorTickCount"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.MinorTickCount">
+            <summary>主目盛間に配置する副目盛数を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.MinorTickEndExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.MinorTickEndExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.MinorTickEndExtent">
+            <summary>ゲージの中心から計測される、0 から 1 の値で副目盛の描画を終了する位置を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.MinorTickStartExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.MinorTickStartExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.MinorTickStartExtent">
+            <summary>ゲージの中心から計測される、0 から 1 の値で副目盛の描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.MinorTickStrokeThicknessProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.MinorTickStrokeThickness"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.MinorTickStrokeThickness">
+            <summary>副目盛を描画するときに使用するストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleBaseFeatureExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleBaseFeatureExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleBaseFeatureExtent">
+            <summary>0 から 1 の値でベース (bulb など) に最も近い機能の範囲を取得または設定します。Note: Only some needle shapes respect this property, namely: NeedleWithBulb, RectangleWithBulb, TrapezoidWithBulb, and TriangleWithBulb.0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleBaseFeatureWidthRatioProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleBaseFeatureWidthRatio"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleBaseFeatureWidthRatio">
+            <summary>0 から 1 の値でベース (bulb など) に最も近い機能で針の幅を取得または設定します。Note: Only some needle shapes respect this property, namely: NeedleWithBulb, RectangleWithBulb, TrapezoidWithBulb, and TriangleWithBulb.0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleBrush">
+            <summary>針の塗りつぶしを描画する際に使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleEndExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleEndExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleEndExtent">
+            <summary>ゲージの中心から測定される、針の描画を終了する範囲 ( -1 から 1) を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleEndWidthRatioProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleEndWidthRatio"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleEndWidthRatio">
+            <summary>(0 から 1) 値を使用するそのポイントの針の幅を取得または設定します。注: このプロパティでは、一部の針の形のみ優先されます。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleOutlineProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleOutline"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleOutline">
+            <summary>針のアウトラインを描画する際に使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePivotBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePivotBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePivotBrush">
+            <summary>針キャップを塗りつぶすために使用するブラシを取得または設定します。注: 特定のキャップの形のみに適用されます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePivotInnerWidthRatioProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePivotInnerWidthRatio"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePivotInnerWidthRatio">
+            <summary>0 から 1 の値で針キャップ内側の切り抜きセクションの幅を取得または設定します。注: 切抜きセクションのある針にキャップを設定した場合のみ効果があります。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePivotOutlineProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePivotOutline"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePivotOutline">
+            <summary>針キャップのアウトラインに使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePivotShapeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePivotShape"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePivotShape">
+            <summary>針キャップに使用する図形を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePivotStrokeThicknessProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePivotStrokeThickness"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePivotStrokeThickness">
+            <summary>針キャップのアウトラインに使用するストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePivotWidthRatioProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePivotWidthRatio"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePivotWidthRatio">
+            <summary>0 から 1 の値を使用する針のキャップ幅を取得または設定します。注: 針にキャップを設定する場合のみ効果があります。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePointFeatureExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePointFeatureExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePointFeatureExtent">
+            <summary>-1 から 1 の値でポイント (針のテーパリング ポイントなど) に最も近い機能の範囲を取得または設定します。注: このプロパティでは、一部の針の形のみ優先されます。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePointFeatureWidthRatioProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePointFeatureWidthRatio"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedlePointFeatureWidthRatio">
+            <summary>0 から 1 の値でポイント (針のテーパリング ポイントなど) に最も近い機能で針の幅を取得または設定します。注: このプロパティでは、一部の針の形のみ優先されます。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleShapeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleShape"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleShape">
+            <summary>多数のオプションから針を描画する際に使用する図形を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleStartExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleStartExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleStartExtent">
+            <summary>ゲージの中心から測定される、針の描画を開始する範囲 ( -1 から 1) を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleStartWidthRatioProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleStartWidthRatio"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleStartWidthRatio">
+            <summary>(0 から 1) 値を使用するそのポイントの針の幅を取得または設定します。注: このプロパティでは、一部の針の形のみ優先されます。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleStrokeThicknessProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleStrokeThickness"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleStrokeThickness">
+            <summary>針のアウトラインのストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.PixelScalingRatioProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.PixelScalingRatio"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.PixelScalingRatio">
+            <summary>コントロールのピクセル密度に影響するために使用されるスケール値を取得または設定します。</summary>
+            <remarks>より高いスケール比率はビジュアルを向上しますが、メモリの使用を増加します。より低い値はコントロールをぼやけます。</remarks>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.RadiusMultiplierProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.RadiusMultiplier"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.RadiusMultiplier">
+            <summary>ゲージの標準範囲に適用する倍数因子を取得または設定します。このゲージの半径は、コントロールの最小の幅と高さを 2.0 で割った値によって定義されます。値に倍数因子を取り入れます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.RangeBrushesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.RangeBrushes"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.RangeBrushes">
+            <summary>ゲージ範囲のパレットとして使用されるブラシのコレクションを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.RangeOutlinesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.RangeOutlines"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.RangeOutlines">
+            <summary>ゲージ アウトラインのパレットとして使用されるブラシのコレクションを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.RangesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.Ranges"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.Ranges">
+            <summary>ゲージで描画するための範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleBrush">
+            <summary>スケールの背景を塗りつぶすために使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleEndAngleProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleEndAngle"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleEndAngle">
+            <summary>スケールの終了角度を度数で取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleEndExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleEndExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleEndExtent">
+            <summary>ゲージの中心から計測される、0 から 1 の値でスケールの描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleOversweepProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleOversweep"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleOversweep">
+            <summary>スケール背景に適用するスイープの追加角度を取得または設定します。0 以上の値でなければなりません。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleOversweepShapeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleOversweepShape"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleOversweepShape">
+            <summary>スケールの塗りつぶし領域以外に使用するオーバースィープ図形を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleStartAngleProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleStartAngle"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleStartAngle">
+            <summary>スケールの開始角度を度数で取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleStartExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleStartExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleStartExtent">
+            <summary>0 から 1 の値でゲージの中心から計測される、スケールの描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleSweepDirectionProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleSweepDirection"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleSweepDirection">
+            <summary>スケールが開始角度から終了角度へ軸周辺を移動する方向を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.TickBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.TickBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.TickBrush">
+            <summary>主目盛のブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.TickEndExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.TickEndExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.TickEndExtent">
+            <summary>ゲージの中心から計測される、0 から 1 の値で主目盛の描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.TickStartExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.TickStartExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.TickStartExtent">
+            <summary>ゲージの中心から計測される、0 から 1 の値で主目盛の描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.TickStrokeThicknessProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.TickStrokeThickness"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.TickStrokeThickness">
+            <summary>目盛を描画するときに使用するストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.TransitionDurationProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.TransitionDuration"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.TransitionDuration">
+            <summary>ゲージがアニメーション化する変更をミリ秒数を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.TransitionEasingFunctionProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.TransitionEasingFunction"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.TransitionEasingFunction">
+            <summary>現在のシリーズをモーフィングするために使用するイージング関数を取得または設定します。<para>これは依存プロパティです。</para>
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.TransitionProgressProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.TransitionProgress"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.TransitionProgress">
+            <summary>コントロールがアニメーションを再生されているときのトランジション進行状況を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ValueProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.Value"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.Value">
+            <summary>ゲージの針がポイントする値を取得または設定します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ExportSerializedVisualData">
+            <summary>シリアル化された文字列でビジュアルを返します。</summary>
+            <returns>シリアル化された文字列のビジュアル。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ExportVisualData">
+            <summary>外部ツールと機能に使用するため、このコントロールに関するビジュアル情報をエクスポートします。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.Flush">
+            <summary>ビジュアルの印刷または評価の前に、ラジアル ゲージで遅延された作業を強制的に終了します。</summary>
+            <remarks>これは、ラジアル ゲージのビジュアルを同期して保存または評価される場合のみ呼び出されます。このメソッドを頻繁に呼び出すとラジアル ゲージのパフォーマンスが低下します。</remarks>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.GetPointForValue(System.Double,System.Double)">
+            <summary>特定のスケール値および範囲でゲージのポイントを取得します。</summary>
+            <param name="value">ゲージのスケールの値。</param>
+            <param name="extent">設定する範囲。</param>
+            <returns>特定の値および範囲に相対するポイント。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.GetValueForPoint(Xamarin.Forms.Point)">
+            <summary>ゲージ内の境界線に特定のポイントのゲージのメイン スケールの値を取得します。</summary>
+            <param name="point">関連付けられている値を取得するポイント。</param>
+            <returns>指定したポイントと等しいゲージの値。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.Init">
+            <summary>このコントロールのインスタンスを XAML で宣言する場合、ランタイムにすべての必要な型が利用可能なことを確認するには、このメソッドをコードで呼び出します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleContainsPoint(Xamarin.Forms.Point)">
+            <summary>メイン ゲージの針境界ボックスが指定したポイントを含む場合に True を返します。それ以外の場合 False を返します。</summary>
+            <param name="point">チェックする点。</param>
+            <returns>針境界ボックスがポイントを含む場合は True。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.NeedleContainsPoint(Xamarin.Forms.Point,System.Boolean)">
+            <summary>メイン ゲージの針境界ボックスが指定したポイントを含む場合に True を返します。それ以外の場合 False を返します。</summary>
+            <param name="point">チェックする点。</param>
+            <param name="isFinger">タッチ対応の境界コンテナーを使用するかどうか。</param>
+            <returns>針境界ボックスがポイントを含む場合は True。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ScaleValue(System.Double)">
+            <summary>ゲージのメイン スケールの値をゲージの中心点の周りのラジアン角度に変換します。</summary>
+            <param name="value">スケールする値。</param>
+            <returns>値のラジアン角度。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.UnscaleValue(System.Double)">
+            <summary>ラジアン角度の値をゲージのメイン スケールとともに表される値に変換します。</summary>
+            <param name="angle">値に変換するラジアン角度。</param>
+            <returns>ゲージのメイン スケールの値。</returns>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.AlignLabel">
+            <summary>ゲージ ラベルがスケールに沿って配置されると発生するイベント。</summary>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.FormatLabel">
+            <summary>ゲージ ラベルの書式設定時に発生するイベント。</summary>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Gauges.XamRadialGauge.ValueChanged">
+            <summary>Value プロパティが変更されるときに発生されます。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Gauges.AlignLinearGraphLabelEventArgs">
+            <summary>AlignLinearGraphLabel のイベント引数を表します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.AlignLinearGraphLabelEventArgs.#ctor">
+            <summary>新しい <see cref="T:Infragistics.XamarinForms.Controls.Gauges.AlignLinearGraphLabelEventArgs"/> を初期化します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.AlignLinearGraphLabelEventArgs.Height">
+            <summary>ラベルの高さを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.AlignLinearGraphLabelEventArgs.OffsetX">
+            <summary>ラベルの X オフセットを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.AlignLinearGraphLabelEventArgs.OffsetY">
+            <summary>ラベルの Y オフセットを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.AlignLinearGraphLabelEventArgs.Width">
+            <summary>ラベルの幅を取得または設定します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Gauges.AlignLinearGraphLabelHandler">
+            <summary>AlignLinearGraphLabel のデリゲートを表します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Gauges.AlignRadialGaugeLabelEventArgs">
+            <summary>AlignRadialGaugeLabel のイベント属性を表します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.AlignRadialGaugeLabelEventArgs.#ctor">
+            <summary>新しい <see cref="T:Infragistics.XamarinForms.Controls.Gauges.AlignRadialGaugeLabelEventArgs"/> を初期化します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.AlignRadialGaugeLabelEventArgs.Height">
+            <summary>ラベルの高さを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.AlignRadialGaugeLabelEventArgs.OffsetX">
+            <summary>ラベルの X オフセットを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.AlignRadialGaugeLabelEventArgs.OffsetY">
+            <summary>ラベルの Y オフセットを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.AlignRadialGaugeLabelEventArgs.Width">
+            <summary>ラベル幅を取得または設定します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Gauges.AlignRadialGaugeLabelHangler">
+            <summary>AlignRadialGaugeLabel のデリゲートを表します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Gauges.FormatLinearGraphLabelEventArgs">
+            <summary>FormatLinearGraphLabel のイベント引数を表します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.FormatLinearGraphLabelEventArgs.#ctor">
+            <summary>新しい <see cref="T:Infragistics.XamarinForms.Controls.Gauges.FormatLinearGraphLabelEventArgs"/> を初期化します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.FormatLinearGraphLabelEventArgs.ActualMaximumValue">
+            <summary>グラフの最大値を取得します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.FormatLinearGraphLabelEventArgs.ActualMinimumValue">
+            <summary>グラフの最小値を取得します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.FormatLinearGraphLabelEventArgs.Label">
+            <summary>使用するラベルを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.FormatLinearGraphLabelEventArgs.Value">
+            <summary>グラフの値を取得します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Gauges.FormatLinearGraphLabelHandler">
+            <summary>FormatLinearGraphLabel のデリゲートを表します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Gauges.FormatRadialGaugeLabelEventArgs">
+            <summary>FormatRadialGaugeLabel のイベント属性を表します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.FormatRadialGaugeLabelEventArgs.#ctor">
+            <summary>新しい <see cref="T:Infragistics.XamarinForms.Controls.Gauges.FormatRadialGaugeLabelEventArgs"/> を初期化します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.FormatRadialGaugeLabelEventArgs.ActualMaximumValue">
+            <summary>ラジアル ゲージの最大値を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.FormatRadialGaugeLabelEventArgs.ActualMinimumValue">
+            <summary>ラジアル ゲージの最小値を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.FormatRadialGaugeLabelEventArgs.Angle">
+            <summary>ラベル角度を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.FormatRadialGaugeLabelEventArgs.EndAngle">
+            <summary>ラベルの終了角度を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.FormatRadialGaugeLabelEventArgs.Label">
+            <summary>ラベル テキストを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.FormatRadialGaugeLabelEventArgs.StartAngle">
+            <summary>ラベルの開始角度を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.FormatRadialGaugeLabelEventArgs.Value">
+            <summary>ラベル値を取得または設定します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Gauges.FormatRadialGaugeLabelHandler">
+            <summary>FormatRadialGaugeLabel のデリゲートを表します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Gauges.LinearGraphNeedleShape">
+            <summary>プリセットの針図形の列挙体。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.LinearGraphNeedleShape.Custom">
+            <summary>カスタムなユーザー定義の針図形。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.LinearGraphNeedleShape.Rectangle">
+            <summary>長方形のような針図形。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.LinearGraphNeedleShape.Triangle">
+            <summary>三角形のような針図形。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.LinearGraphNeedleShape.Needle">
+            <summary>針のような針図形。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.LinearGraphNeedleShape.Trapezoid">
+            <summary>台形のような針図形。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Gauges.LinearGraphRangeCollection">
+            <summary>
+              リニア ゲージ範囲 (開始、終了など) を表すコレクション。System.Collections.ObjectModel.ObservableCollection から継承し、<see cref="T:Infragistics.Controls.Gauges.LinearGraphRange"/> オブジェクトを含みます。
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Gauges.LinearScaleOrientation">
+            <summary>リニア スケールの向きを説明します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.LinearScaleOrientation.Horizontal">
+            <summary>スケールは水平方向です。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.LinearScaleOrientation.Vertical">
+            <summary>スケールは水垂直向です。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeBackingShape">
+            <summary>ラジアル ゲージの背景領域に使用可能な図形を指定する列挙型。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeBackingShape.Circular">
+            <summary>円形の背景図形。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeBackingShape.Fitted">
+            <summary>フィットの背景図形。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeDuplicateLabelOmissionStrategy">
+            <summary>ラベルの解除の複数の方法を指定する列挙型。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeDuplicateLabelOmissionStrategy.OmitLast">
+            <summary>最後のラベルを解除します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeDuplicateLabelOmissionStrategy.OmitFirst">
+            <summary>最初のラベルを解除します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeDuplicateLabelOmissionStrategy.OmitNeither">
+            <summary>ラベルを解除しません。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeDuplicateLabelOmissionStrategy.OmitBoth">
+            <summary>両方のラベルを解除します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeNeedleShape">
+            <summary>プリセットの針図形を指定する列挙型。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeNeedleShape.None">
+            <summary>図形なし。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeNeedleShape.Rectangle">
+            <summary>長方形図形。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeNeedleShape.Triangle">
+            <summary>三角形図形。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeNeedleShape.Needle">
+            <summary>針の図形。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeNeedleShape.Trapezoid">
+            <summary>台形図形。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeNeedleShape.RectangleWithBulb">
+            <summary>端にバルブのある長方形図形。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeNeedleShape.TriangleWithBulb">
+            <summary>端にバルブのある三角形図形。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeNeedleShape.NeedleWithBulb">
+            <summary>端にバルブのある針図形。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeNeedleShape.TrapezoidWithBulb">
+            <summary>端にバルブのある台形図形。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Gauges.RadialGaugePivotShape">
+            <summary>針ピボットの図形を指定する列挙型。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugePivotShape.None">
+            <summary>ピボット図形なし。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugePivotShape.Circle">
+            <summary>丸図形のピボット。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugePivotShape.CircleWithHole">
+            <summary>穴を含む丸図形のピボット。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugePivotShape.CircleOverlay">
+            <summary>針の上にオーバーレイされる丸図形のピボット。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugePivotShape.CircleOverlayWithHole">
+            <summary>針の上にオーバーレイされる穴を含む丸図形のピボット。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugePivotShape.CircleUnderlay">
+            <summary>針の下に描画される丸図形のピボット。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugePivotShape.CircleUnderlayWithHole">
+            <summary>針の下に描画される穴を含む丸図形のピボット。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange">
+            <summary>XamRadialGauge コントロールの範囲を表します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.#ctor">
+            <summary>新しい <see cref="T:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange"/> を初期化します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.BrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.Brush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.Brush">
+            <summary>範囲を塗りつぶすために使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.EndValueProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.EndValue"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.EndValue">
+            <summary>スケールに沿って範囲を終了する値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.InnerEndExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.InnerEndExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.InnerEndExtent">
+            <summary>範囲の内側の移動を描画を終了するゲージの中心からの距離 (0 から 1) を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.InnerStartExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.InnerStartExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.InnerStartExtent">
+            <summary>範囲の外側の移動を描画を開始するゲージの中心からの距離 (0 から 1) を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.NameProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.Name"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.Name">
+            <summary>範囲の名前を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.OuterEndExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.OuterEndExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.OuterEndExtent">
+            <summary>範囲の外側の移動を描画を終了するゲージの中心からの距離 (0 から 1) を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.OuterStartExtentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.OuterStartExtent"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.OuterStartExtent">
+            <summary>範囲の外側の移動を描画を開始するゲージの中心からの距離 (0 から 1) を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.OutlineProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.Outline"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.Outline">
+            <summary>範囲を描画する際に使用するアウトラインを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.StartValueProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.StartValue"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.StartValue">
+            <summary>スケールに沿って範囲を開始する値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.StrokeThicknessProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.StrokeThickness"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRange.StrokeThickness">
+            <summary>この範囲のアウトラインを描画するときに使用するストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeRangeCollection">
+            <summary>
+              ラジアル ゲージ範囲 (開始、終了など) を表すコレクション。System.Collections.ObjectModel.ObservableCollection から継承し、<see cref="T:Infragistics.Controls.Gauges.RadialGaugeRange"/> オブジェクトを含みます。
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeScaleOversweepShape">
+            <summary>オーバースイープ図形を指定する列挙型。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeScaleOversweepShape.Auto">
+            <summary>デフォルトのオーバースイープ図形。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeScaleOversweepShape.Circular">
+            <summary>円形のオーバースイープ図形。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.RadialGaugeScaleOversweepShape.Fitted">
+            <summary>フィットのオーバースイープ図形。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Gauges.TitlesPosition">
+            <summary>スケールの開始/終了に相対するタイトルの位置を指定する列挙型。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.TitlesPosition.ScaleStart">
+            <summary>タイトルはスケールの開始 (最小値) に配置されます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Gauges.TitlesPosition.ScaleEnd">
+            <summary>タイトルはスケールの終了 (最大値) に配置されます。</summary>
+        </member>
+    </members>
+</doc>

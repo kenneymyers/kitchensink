@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+    <assembly>
+        <name>Infragistics.XF.Sparkline</name>
+    </assembly>
+    <members>
+      <member name="T:Infragistics.XamarinForms.Controls.Charts.SparklineFormatLabelEventArgs">
+        <summary>
+          軸の FormatLabel イベントの EventArgs クラス。
+        </summary>
+      </member>
+      <member name="M:Infragistics.XamarinForms.Controls.Charts.SparklineFormatLabelEventArgs.#ctor">
+        <summary>
+          新しい <see cref="T:Infragistics.XamarinForms.Controls.Charts.SparklineFormatLabelEventArgs"/> を初期化します。
+        </summary>
+      </member>
+      <member name="P:Infragistics.XamarinForms.Controls.Charts.SparklineFormatLabelEventArgs.Label">
+        <summary>
+          ラベルのテキストを取得または設定します。
+        </summary>
+      </member>
+      <member name="P:Infragistics.XamarinForms.Controls.Charts.SparklineFormatLabelEventArgs.Value">
+        <summary>
+          コンテキスト内のデータ項目。
+        </summary>
+      </member>
+      <member name="T:Infragistics.XamarinForms.Controls.Charts.SparklineFormatLabelEventHandler">
+        <summary>
+          スパークラインの FormatLabel イベントのデリゲート。
+        </summary>
+        <param name="sender">イベントのソース。</param>
+        <param name="item">発生するイベントについてのコンテキスト情報。</param>
+      </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Charts.XamSparkline">
+            <summary>スパークライン チャートを表します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Charts.XamSparkline.#ctor">
+            <summary>XamSparkLine のインスタンスを新規作成します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.ActualPixelScalingRatioProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.ActualPixelScalingRatio"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+      <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.ActualPixelScalingRatio">
+        <summary>コントロールのピクセル密度に影響するコンポーネントで使用される実際のスケーリング値を取得します。</summary>
+        <remarks>より高いスケール比率はビジュアルを向上します。が、メモリの使用を増加します。より低い値はコントロールがぼやけます。</remarks>
+      </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.BrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.Brush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.Brush">
+            <summary>スパークライン ブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.DisplayTypeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.DisplayType"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.DisplayType">
+            <summary>スパークラインの表示タイプを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FirstMarkerBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FirstMarkerBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FirstMarkerBrush">
+            <summary>スパークラインの始値マーカー ブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FirstMarkerSizeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FirstMarkerSize"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FirstMarkerSize">
+            <summary>スパークラインの始値マーカーのサイズを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FirstMarkerVisibilityProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FirstMarkerVisibility"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FirstMarkerVisibility">
+            <summary>スパークラインの始値マーカーの表示状態を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontAttributesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontAttributes"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+      <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontAttributes">
+        <summary>
+          軸ラベルのフォント サイズを返すか、設定します。
+        </summary>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontFamily"/>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontSize"/>
+      </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontFamilyProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontFamily"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+      <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontFamily">
+        <summary>
+          軸ラベルのフォント ファミリを返すか、設定します。
+        </summary>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontSize"/>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontAttributes"/>
+      </member>
+      <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontSizeProperty">
+        <summary>
+          <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontSize"/> のバインド可能なプロパティを識別します。
+        </summary>
+      </member>
+      <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontSize">
+        <summary>
+          軸ラベルのフォント サイズを返すか、設定します。
+        </summary>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontFamily"/>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontAttributes"/>
+      </member>  
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HighMarkerBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HighMarkerBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HighMarkerBrush">
+            <summary>スパークラインの最大値マーカー ブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HighMarkerSizeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HighMarkerSize"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HighMarkerSize">
+            <summary>スパークラインの最大値マーカーのサイズを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HighMarkerVisibilityProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HighMarkerVisibility"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HighMarkerVisibility">
+            <summary>スパークラインの最大値マーカーの表示状態を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HorizontalAxisBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HorizontalAxisBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HorizontalAxisBrush">
+            <summary>スパークラインの横軸線ブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HorizontalAxisVisibilityProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HorizontalAxisVisibility"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HorizontalAxisVisibility">
+            <summary>水平軸の表示状態を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.ItemsSourceProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.ItemsSource"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.ItemsSource">
+            <summary>スパークラインの ItemsSource を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LabelMemberPathProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LabelMemberPath"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LabelMemberPath">
+            <summary>データ ソースの各項目からラベルを取得するための列またはプロパティ名の文字列識別子。これらのラベルは最初の項目と最後の項目から取得され、水平軸によって表示されます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LastMarkerBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LastMarkerBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LastMarkerBrush">
+            <summary>スパークラインの終値マーカー ブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LastMarkerSizeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LastMarkerSize"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LastMarkerSize">
+            <summary>スパークラインの終値マーカーのサイズを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LastMarkerVisibilityProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LastMarkerVisibility"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LastMarkerVisibility">
+            <summary>スパークラインの終値マーカーの表示状態を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LineThicknessProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LineThickness"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LineThickness">
+            <summary>スパークラインの線の太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LowMarkerBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LowMarkerBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LowMarkerBrush">
+            <summary>スパークラインの最小値マーカー ブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LowMarkerSizeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LowMarkerSize"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LowMarkerSize">
+            <summary>スパークラインの最大値マーカーのサイズを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LowMarkerVisibilityProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LowMarkerVisibility"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LowMarkerVisibility">
+            <summary>スパークラインの最小値マーカーの表示状態を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.MarkerBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.MarkerBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.MarkerBrush">
+            <summary>スパークラインのマーカー ブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.MarkerSizeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.MarkerSize"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.MarkerSize">
+            <summary>スパークラインのマーカー サイズを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.MarkerVisibilityProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.MarkerVisibility"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.MarkerVisibility">
+            <summary>スパークラインのマーカーの表示状態を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeBrush">
+            <summary>スパークラインの負値のブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeMarkerBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeMarkerBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeMarkerBrush">
+            <summary>スパークラインの負値マーカー ブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeMarkerSizeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeMarkerSize"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeMarkerSize">
+            <summary>スパークラインの負値マーカーのサイズを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeMarkerVisibilityProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeMarkerVisibility"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeMarkerVisibility">
+            <summary>スパークラインの負値マーカーの表示状態を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeFillProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeFill"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeFill">
+            <summary>スパークラインの標準範囲ブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeMaximumProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeMaximum"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeMaximum">
+            <summary>標準範囲の最大値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeMinimumProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeMinimum"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeMinimum">
+            <summary>標準範囲の最小値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeVisibilityProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeVisibility"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeVisibility">
+            <summary>スパークラインの標準範囲の表示状態を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.PixelScalingRatioProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.PixelScalingRatio"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.PixelScalingRatio">
+            <summary>コントロールのピクセル密度に影響するために使用されるスケール値を取得または設定します。</summary>
+            <remarks>より高いスケール比率はビジュアルを向上しますが、メモリの使用を増加します。より低い値はコントロールをぼやけます。</remarks>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TextColorProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TextColor"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+      <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TextColor">
+        <summary>
+          軸ラベルのテキスト カラーを取得または設定します。
+        </summary>
+      </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLineBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLineBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLineBrush">
+            <summary>スパークラインのトレンドライン ブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLinePeriodProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLinePeriod"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLinePeriod">
+            <summary>スパークラインで使用するトレンドラインの範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLineThicknessProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLineThickness"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLineThickness">
+            <summary>スパークライン トレンドラインの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLineTypeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLineType"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLineType">
+            <summary>スパークラインで使用するトレンドラインのタイプを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.UnknownValuePlottingProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.UnknownValuePlotting"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.UnknownValuePlotting">
+            <summary>null 値の処理方法を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.ValueMemberPathProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.ValueMemberPath"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.ValueMemberPath">
+            <summary>値列への文字列パスを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.VerticalAxisBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.VerticalAxisBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.VerticalAxisBrush">
+            <summary>スパークラインの縦軸線ブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.VerticalAxisVisibilityProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.VerticalAxisVisibility"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.VerticalAxisVisibility">
+            <summary>垂直軸の表示状態を取得または設定します。</summary>
+        </member>
+      <member name="M:Infragistics.XamarinForms.Controls.Charts.XamSparkline.Destroy">
+        <summary>
+          スパークライン コントロールをクリーンアップします。
+        </summary>
+      </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Charts.XamSparkline.ExportSerializedVisualData">
+            <summary>シリアル化された文字列でビジュアルを返します。</summary>
+            <returns>シリアル化された文字列のビジュアル。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Charts.XamSparkline.ExportVisualData">
+            <summary>スパークラインのビジュアル要素を SparklineVisualData オブジェクトとして返します。</summary>
+            <returns>現在のスパークライン ビジュアル要素を表す SparklineVisualData オブジェクト。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Charts.XamSparkline.Init">
+            <summary>このコントロールのインスタンスを XAML で宣言する場合、ランタイムにすべての必要な型が利用可能なことを確認するには、このメソッドをコードで呼び出します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NotifyClearItems(System.Object)">
+            <summary>データソースで項目がリセット/クリアされたことを XamSparkline に手動的に通知するために使用されます。このメソッドの呼び出しは、そのデータ ソースが監視可能ではない場合に必要です。</summary>
+            <param name="source_">クリアまたはリセットされたデータ ソース。</param>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NotifyInsertItem(System.Object,System.Int32,System.Object)">
+            <summary>データソースに項目が挿入されたことを XamSparkline に手動的に通知するために使用されます。そのデータ ソースが監視可能ではない場合に必要です。</summary>
+            <param name="source_">データ ソースが変更されました。</param>
+            <param name="index">新しい項目のインデックス。</param>
+            <param name="newItem">新しい項目。</param>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NotifyRemoveItem(System.Object,System.Int32,System.Object)">
+            <summary>データソースで項目が削除されたことを XamSparkline に手動的に通知するために使用されます。そのデータ ソースが監視可能ではない場合に必要です。</summary>
+            <param name="source_">データ ソースが変更されました。</param>
+            <param name="index">以前の項目のインデックス。</param>
+            <param name="oldItem">以前の項目。</param>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NotifyResized">
+            <summary>コントロールがサイズ変更されたことを通知します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NotifySetItem(System.Object,System.Int32,System.Object,System.Object)">
+            <summary>データ ソースに項目が設定されたことを XamSparkline に手動的に通知するために使用されます。そのデータ ソースが監視可能ではない場合に必要です。</summary>
+            <param name="source_">データ ソースが変更されました。</param>
+            <param name="index">変更のインデックス</param>
+            <param name="oldItem">以前の項目。</param>
+            <param name="newItem">新しい項目。</param>
+        </member>
+      <member name="E:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FormatLabel">
+        <summary>
+          各ラベルのテキストを決定するために発生されるイベント。
+        </summary>
+      </member>
+    </members>
+</doc>

@@ -14,6 +14,8 @@ namespace CrossPlat.iOS
         {
             global::Xamarin.Forms.Forms.Init();
 
+            DevExpress.Mobile.Forms.Init();
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

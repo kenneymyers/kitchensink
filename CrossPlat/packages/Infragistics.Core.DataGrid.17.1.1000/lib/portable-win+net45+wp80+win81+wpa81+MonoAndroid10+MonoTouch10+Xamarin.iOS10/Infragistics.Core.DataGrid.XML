@@ -1,0 +1,3309 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Infragistics.Core.DataGrid</name>
+    </assembly>
+    <members>
+        <member name="T:Infragistics.Controls.Grid.GridSelectedItemsCollection">
+            <summary>
+            A list of selected items.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.GridSelectedKeysCollection">
+            <summary>
+            A list of selected keys.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.PrimaryKeyValue">
+            <summary>
+            A primary key value.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.PrimaryKeyValue.Key">
+            <summary>
+            The primary key associated with this value.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.PrimaryKeyValue.Value">
+            <summary>
+            The value of the keys for this primary key value.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.PrimaryKeyValue.#ctor(System.String[],System.Object[])">
+            <summary>
+            Constructs a primary key value.
+            </summary>
+            <param name="primaryKey">The primary key.</param>
+            <param name="primaryKeyValue">The value of the keys.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.PrimaryKeyValue.#ctor(System.Object[])">
+            <summary>
+            Consructs a primary key value.
+            </summary>
+            <param name="primaryKeyValue">The values of the keys.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.PrimaryKeyValue.#ctor(System.Object)">
+            <summary>
+            Constructs a primary key value.
+            </summary>
+            <param name="primaryKeyValue">The value of the key.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.PrimaryKeyValue.Equals(System.Object)">
+            <summary>
+            Determines if two primary key values are equal.
+            </summary>
+            <param name="other">The other key value to check against.</param>
+            <returns>True, if the primary key values are equal.</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.PrimaryKeyValue.GetHashCode">
+            <summary>
+            Gets the hash code of the primary key value.
+            </summary>
+            <returns>The hash code of the primary key value.</returns>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.CellModel">
+            <summary>
+            Represents info about the current cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.StyleKey">
+            <summary>
+            Gets the style key of the current cell, used for recycling.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.DataRow">
+            <summary>
+            Gets the absolute data row for the current cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.IsPositionDirty">
+            <summary>
+            Gets if the position of the cell is dirty.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.IsSizeDirty">
+            <summary>
+            Gets if the size of the cell is dirty.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.IsContentDirty">
+            <summary>
+            Gets if the content of the cell is dirty.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.IsLayerDirty">
+            <summary>
+            Gets if the layer of the cell is dirty.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.IsDataDirty">
+            <summary>
+            Gets if the data of the cell is dirty.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.IsPlaceholdContentNeeded">
+            <summary>
+            Gets if placeholder content is needed when virtualized.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.ActionManager">
+            <summary>
+            Gets the action manager to propagate actions back to the grid.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.CellModel.IsDirty(System.String)">
+            <summary>
+            Gets if a named property is dirty.
+            </summary>
+            <param name="propertyName">The property name to check.</param>
+            <returns>True, if the property is dirty.</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.CellModel.SetNamedValue(System.String,System.Object)">
+            <summary>
+            Sets a named value for the cell.
+            </summary>
+            <param name="valueName">The name of the value to set.</param>
+            <param name="value">The value to store.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.CellModel.HasNamedValue(System.String)">
+            <summary>
+            Returns if there is a named value stored for the cell.
+            </summary>
+            <param name="valueName">The name of the value to check.</param>
+            <returns>True, if the named value is stored.</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.CellModel.RemoveNamedValue(System.String)">
+            <summary>
+            Removes a named value from the cell.
+            </summary>
+            <param name="valueName">The name of the value to remove.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.CellModel.GetNamedValue(System.String)">
+            <summary>
+            Gets a named value from the cell.
+            </summary>
+            <param name="valueName">The name of the value to get.</param>
+            <returns>The value requested.</returns>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.RowItemPropertyName">
+            <summary>
+            Identifies the RowItem propety.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.RowItem">
+            <summary>
+            Gets the item for the row containing the cell.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.XPropertyName">
+            <summary>
+            Identifies the X property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.X">
+            <summary>
+            Gets the X position of the cell within the content.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.YPropertyName">
+            <summary>
+            Identifies the Y property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.Y">
+            <summary>
+            Gets the Y position of the cell within the content.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.SnappedXPropertyName">
+            <summary>
+            Identifies the SnappedX property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.SnappedX">
+            <summary>
+            Gets the pixel snapped X position of the cell within the content.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.SnappedYPropertyName">
+            <summary>
+            Identifies the SnappedY property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.SnappedY">
+            <summary>
+            Gets the snapped Y position of the cell within the content.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.ContentOpacityPropertyName">
+            <summary>
+            Identifies the ContentOpacity property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.ContentOpacity">
+            <summary>
+            Gets or sets the opacity of the content of the cell.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.OpacityPropertyName">
+            <summary>
+            Identifies the Opacity property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.Opacity">
+            <summary>
+            Gets or sets the opacity of the cell.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.HeightPropertyName">
+            <summary>
+            Identifies the height property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.Height">
+            <summary>
+            Gets the height of the cell.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.WidthPropertyName">
+            <summary>
+            Identifies the width property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.Width">
+            <summary>
+            Gets the width of the cell.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.IsSelectedPropertyName">
+            <summary>
+            Identifies the IsSelected property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.IsSelected">
+            <summary>
+            Gets if the cell is selected.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.SelectedStatusPropertyName">
+            <summary>
+            Identifies the SelectedStatus property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.SelectedStatus">
+            <summary>
+            Gets the amount that the cell is selected. This is a value between 0 and 1.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.HorizontalAlignmentPropertyName">
+            <summary>
+            Idenfities the HorizontalAlignment property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.HorizontalAlignment">
+            <summary>
+            Gets or sets the horiztonal alignment of the cell content.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.VerticalAlignmentPropertyName">
+            <summary>
+            Identifies the VerticalAlignment property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.VerticalAlignment">
+            <summary>
+            Gets or sets the vertical alignment of the cell content.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.BackgroundPropertyName">
+            <summary>
+            Identifies the Background property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.Background">
+            <summary>
+            Gets or sets the background color of the cell.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.SelectedBackgroundPropertyName">
+            <summary>
+            Identifies the SelectedBackground property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.SelectedBackground">
+            <summary>
+            Gets or sets the selected background color of the cell.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.OriginalValuePropertyName">
+            <summary>
+            Identifies the OriginalValue property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.OriginalValue">
+            <summary>
+            Gets or sets the original value for the cell, before processing.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.RenderValuePropertyName">
+            <summary>
+            Identifies the RenderValue property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.RenderValue">
+            <summary>
+            Gets or sets the text value, if any, which was rendered by a text cell.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.TextColorPropertyName">
+            <summary>
+            Identifies the TextColor property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.TextColor">
+            <summary>
+            Gets or sets the color of the text for the cell, if any.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.FontInfoPropertyName">
+            <summary>
+            Identifies the font properties for the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.LineBreakMode">
+            <summary>
+            Gets or sets the line break mode to use if text is present in the cell.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.VirtualizationPercentagePropertyName">
+            <summary>
+            Identifies the VirtualizationPercentage property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.VirtualizationPercentage">
+            <summary>
+            Gets or sets the virtualization percentage value. This is between 0 an 1, and indicates how virtual the content is at present.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.PaddingLeftPropertyName">
+            <summary>
+            Identifies the PaddingLeft property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.PaddingLeft">
+            <summary>
+            Gets or sets the left padding to use for the content.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.PaddingTopPropertyName">
+            <summary>
+            Identifies the PaddingTop property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.PaddingTop">
+            <summary>
+            Gets or sets the top padding to use for the content.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.PaddingRightPropertyName">
+            <summary>
+            Identifies the PaddingRight property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.PaddingRight">
+            <summary>
+            Gets or sets the right padding to use for the content.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.PaddingBottomPropertyName">
+            <summary>
+            Identifies the PaddingBottom property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.PaddingBottom">
+            <summary>
+            Gets or sets the bottom padding to use for the content.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellModel.SortDirectionPropertyName">
+            <summary>
+            Identifies the SortDirection property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellModel.SortDirection">
+            <summary>
+            Gets the current sort direction for the column containing the cell.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.CellStyleRequestedEventArgs">
+            <summary>
+            Information about the style request for a cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellStyleRequestedEventArgs.StyleKey">
+            <summary>
+            The proposed style key for the cell. Used for recycling the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellStyleRequestedEventArgs.ResolvedValue">
+            <summary>
+            The resolved value for the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.CellStyleRequestedEventArgs.RowNumber">
+            <summary>
+            The row number for the cell.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ColumnExchanger">
+            <summary>
+            Indicates a column that should be exchanged with another.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.ColumnExchanger.Column">
+            <summary>
+            Sets or gets the column to exchange for one in the grid.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.ColumnExchanger.TargetIndex">
+            <summary>
+            The desired location of the new column
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.ColumnExchanger.#ctor">
+            <summary>
+            Constructs a ColumnExchanger.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.ColumnExchanger.#ctor(Infragistics.Controls.Grid.Implementation.Column,System.Int32)">
+            <summary>
+            Constructs a ColumnExchanger.
+            </summary>
+            <param name="column">The column to exchange for one in the grid.</param>
+            <param name="targetIndex">The index of the existing column to swap out.</param>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ColumnExchangersCollection">
+            <summary>
+            A collection of information about columns that need to be exchanged with one another.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ColumnPropertySetter">
+            <summary>
+            Indicates that a specified column should have a specified property set to a value.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.ColumnPropertySetter.ColumnName">
+            <summary>
+            The name or key of the column to change the property of
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.ColumnPropertySetter.PropertyName">
+            <summary>
+            The name of the property to change
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.ColumnPropertySetter.Value">
+            <summary>
+            The new value of the property
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ColumnPropertySettersCollection">
+            <summary>
+            A collection of ColumnPropertySetters
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ColumnWidth">
+            <summary>
+            Represents a width of a column.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.ColumnWidth.IsStarSized">
+            <summary>
+            Gets or sets whether to use star sizing for the column's width
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.ColumnWidth.Value">
+            <summary>
+            Gets or sets the fixed width or the proportional width of the column, depending on whether this width is a star width.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.ColumnWidth.MinimumWidth">
+            <summary>
+            Gets or sets a minimum width to use when star sizing.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.ColumnWidth.Default">
+            <summary>
+            Gets a default ColumnWidth.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.DataBindingEventArgs">
+            <summary>
+            Information about the data binding taking place.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.DataBindingEventArgs.ResolvedValue">
+            <summary>
+            The resolved value for the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.DataBindingEventArgs.RowObject">
+            <summary>
+            The data for the row in which the cell is contained.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.DataBindingEventArgs.CellInfo">
+            <summary>
+            The backing information for the current cell.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.DefinitionBase">
+            <summary>
+            Base class for various definition types for the grid.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.DefinitionBase.Background">
+            <summary>
+            Gets or sets the background color to use.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.DefinitionBase.ActualBackground">
+            <summary>
+            Gets the actual background color that will be used.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.DefinitionBase.ContentOpacity">
+            <summary>
+            Gets or sets the opacity of the content.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.DefinitionBase.HorizontalAlignment">
+            <summary>
+            Gets or sets the horizontal alignment to use for the cell content.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.DefinitionBase.VerticalAlignment">
+            <summary>
+            Gets or sets the vertical alignment to use for the cell content.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.DefinitionBase.ActualHorizontalAlignment">
+            <summary>
+            Gets the actual horizontal alignment that will be used for the cell content.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.DefinitionBase.ActualVerticalAlignment">
+            <summary>
+            Gets the actual vertical alignment that will be used for the cell content.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.DefinitionBase.LineBreakMode">
+            <summary>
+            Gets or sets the line breaking mode to use if text is present in the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.DefinitionBase.ActualLineBreakMode">
+            <summary>
+            Gets the actual line break mode which will be used if text is present in the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.DefinitionBase.TextColor">
+            <summary>
+            Gets or sets the color to use for displaying text.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.DefinitionBase.ActualTextColor">
+            <summary>
+            Gets the actual color used for displaying text.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.DefinitionBase.CreateModelOverride(Infragistics.Controls.Grid.Implementation.CellPath)">
+            <summary>
+            Returns an instance of the correct model type for this definition.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.DefinitionBase.GetStyleKey(Infragistics.Controls.Grid.Implementation.CellPath,Infragistics.Controls.Grid.Implementation.Grid,System.Object)">
+            <summary>
+            Returns a styling key that assists the grid in pooling resources. Like cells should have like keys to avoid excess changes during scrolling.
+            A definition should return null if it does not care how resources are pooled.
+            </summary>
+            <param name="path">The path to the cell.</param>
+            <param name="grid">The owning grid.</param>
+            <param name="resolvedValue">The resolved data value.</param>
+            <returns>The style key to use for the cell.</returns>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.DefinitionBase.DataBinding">
+            <summary>
+            Called when a cell is data binding.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.DefinitionBase.DataBound">
+            <summary>
+            Called when a cell has been data bound.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.DefinitionBase.SetNamedValue(System.String,Infragistics.Controls.Grid.Implementation.CellPropertyAnimationType,System.Object)">
+            <summary>
+            Sets a named value for the cells associated with this definition.
+            </summary>
+            <param name="valueName">The name for the named value.</param>
+            <param name="animationType">The animation type to use when applying the value.</param>
+            <param name="value">The value to set.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.DefinitionBase.HasNamedValues">
+            <summary>
+            Returns if this definition has named value.
+            </summary>
+            <returns>True if this definition has named values.</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.DefinitionBase.HasNamedValue(System.String)">
+            <summary>
+            Returns if this definition has a named value with a given name.
+            </summary>
+            <param name="valueName">The named value name to check for.</param>
+            <returns>True if the requested named value is present.</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.DefinitionBase.RemoveNamedValue(System.String)">
+            <summary>
+            Removes the named value from this definition by name.
+            </summary>
+            <param name="valueName">The named value name to remove.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.DefinitionBase.GetNamedValue(System.String)">
+            <summary>
+            Gets the value for a named value from this definition.
+            </summary>
+            <param name="valueName">The named value name to check for.</param>
+            <returns>The value of the named value.</returns>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.DefinitionBase.CellStyleKeyRequested">
+            <summary>
+            Called when the style key for a cell is needed. Used for recycling the cell.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.Grid">
+            <summary>
+            An advanced grid for displaying data.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.Grid.ColumnExchangingAnimationCompleted">
+            <summary>
+            Called when a column exchanging animation is completed.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.Grid.ColumnExchangingAnimationCanceled">
+            <summary>
+            Called when a column exchanging animation is canceled.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.Grid.ColumnShowingAnimationCompleted">
+            <summary>
+            Called when a column showing animation is completed.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.Grid.ColumnShowingAnimationCanceled">
+            <summary>
+            Called when a column showing animation is canceled.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.Grid.ColumnMovingAnimationCompleted">
+            <summary>
+            Called when a column moving animation is completed.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.Grid.ColumnMovingAnimationCanceled">
+            <summary>
+            Called when a column moving animation is canceled.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.Grid.ColumnHidingAnimationCompleted">
+            <summary>
+            Called when a column hiding animation is completed.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.Grid.ColumnHidingAnimationCanceled">
+            <summary>
+            Called when a column hiding animation is canceled.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.Grid.CellPreviewPointerDown">
+            <summary>
+            Previews that a pointer is down on a cell.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.Grid.CellPreviewPointerUp">
+            <summary>
+            Previews that a pointer is up on a cell.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.Grid.CellPointerDown">
+            <summary>
+            Indicates a pointer is down on a cell.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.Grid.CellPointerUp">
+            <summary>
+            Indicates a pointer is up on a cell.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.Grid.CellClicked">
+            <summary>
+            Called when a cell is clicked.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Grid.#ctor">
+            <summary>
+            Constructs a new Grid.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.Grid.RowSeparatorPropertyName">
+            <summary>
+            Identifies the RowSeparator property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.RowSeparator">
+            <summary>
+            Gets or sets the row seperator settings.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.Grid.DataSourceDesiredPropertiesPropertyName">
+            <summary>
+            Identifies the DataSourceDesiredProperties property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.DataSourceDesiredProperties">
+            <summary>
+            Gets or sets the desired properties for the data source to load. If specified the data source may decide to constrain the properties it fetches to these properties and must make sure that at least those properties are loaded, rather than the default behavior for that data source.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.Grid.RowHeightPropertyName">
+            <summary>
+            Identifies the RowHeight property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.RowHeight">
+            <summary>
+            Gets or sets the height to use for the rows in the grid.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.Grid.DefaultColumnWidthPropertyName">
+            <summary>
+            Identifies the DefaultColumnWidth property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.DefaultColumnWidth">
+            <summary>
+            Gets or sets the default width to use on all columns.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.Grid.DefaultColumnMinWidthPropertyName">
+            <summary>
+            Identifies the DefaultColumnMinWidth property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.DefaultColumnMinWidth">
+            <summary>
+            Gets or sets the default minimum width to use on all columns. Ignored if NaN.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.Grid.HeaderHeightPropertyName">
+            <summary>
+            Identifies the HeaderHeight property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.HeaderHeight">
+            <summary>
+            Gets or sets the height to use for the header row.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.Grid.SectionHeaderHeightPropertyName">
+            <summary>
+            Identifies the SectionHeaderHeight property.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.Grid.ItemSourcePropertyName">
+            <summary>
+            Identifies the DataSourceDesiredProperties property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.ItemsSource">
+            <summary>
+            Gets or sets the data or data source instance to which to bind the grid.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.HeaderClickAction">
+            <summary>
+            Returns/sets the action to take when a column header is clicked.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.AutoGenerateColumns">
+            <summary>
+            Configures whether or not the grid will autogenerate columns when the data source is set.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.RowSeparatorHeight">
+            <summary>
+            Sets or gets the height to use for the row separators.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.IsPlaceholderRenderingEnabled">
+            <summary>
+            Configures whether or not place holders are used for cells who do not have their data yet.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.ColumnAddingAnimationMode">
+            <summary>
+            Sets or gets the Column Adding Animation mode to use.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.ColumnPropertyUpdatingAnimationMode">
+            <summary>
+            Sets or gets the Column Property Updating Animation mode to use.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.CellDataLoadedAnimationMode">
+            <summary>
+            Sets or gets the cell data loaded animation mode to use.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.RowSelectionAnimationMode">
+            <summary>
+            Sets or gets the row selection animation mode to use.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.ColumnAnimationSettings">
+            <summary>
+            Sets or gets the default column animation settings for all columns.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.AnimationSettings">
+            <summary>
+            Sets or gets the default animation settings for the grid.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.ColumnShowingAnimationMode">
+            <summary>
+            Sets or gets the column showing animation mode to use.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.ColumnMovingAnimationMode">
+            <summary>
+            Sets or gets the column moving animation mode to use.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.ColumnHidingAnimationMode">
+            <summary>
+            Sets or gets the column hiding animation mode to use.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.ColumnExchangingAnimationMode">
+            <summary>
+            Sets or gets the column exchanging animation mode to use.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.Inset">
+            <summary>
+            Represents how much the content is inset within the scroller.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.SelectionMode">
+            <summary>
+            Sets or gets the grid selection mode.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.SelectedItems">
+            <summary>
+            Gets which items are currently selected in the grid. Collection can be updated to programatically select items.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.SelectedKeys">
+            <summary>
+            Gets which primary key values are currently selected in the grid. Collection can be updated to programatically select items.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.ResponsiveStates">
+            <summary>
+            A set of states that can be applied to the columns of the grid based on available space.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.SortDescriptions">
+            <summary>
+            Gets the current sort that is applied to the grid. Collection can be updated to modify the sort for the grid. Once sort descriptions are in this collection, the grid will no longer listen for changes on their properties.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.FilterExpressions">
+            <summary>
+            Gets the current filter that is applied to the grid. Collection can be updated to modify the filter for the grid. Once filter expresisons are in this collection, the grid will no longer listen for changes on their properties.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Grid.Refresh">
+            <summary>
+            Forces a refresh of the grid content.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Grid.Flush">
+            <summary>
+            Makes sure pending work has completed if the grid need to be synchronously examined.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.ActualDataSource">
+            <summary>
+            Gets the actual data source that is being used by the grid. If a collection was provided for the grid data, an implicit LocalDataSource has been created, and this is available via this property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.PrimaryKey">
+            <summary>
+            Sets or gets the user provided primary key to assume for the data. Certain functionality of the grid requires a way to uniquely identify items in order to work correctly.
+            If a primary key cannot be inferred from the data source, you may need to provide one here.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.ActualPrimaryKey">
+            <summary>
+            Gets either the inferred primary key from the data source, or the user provided primary key, if present. Represents the actual primary key that the grid will use in operations that require it.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Grid.Columns">
+            <summary>
+            Gets the column definitions that are assigned to the grid. This collection can be modified to add or remove columns in the grid.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Grid.HideThenRemoveColumn(Infragistics.Controls.Grid.Implementation.Column)">
+            <summary>
+            Plays the hide animation for a column and then removes it once the hiding animation has completed.
+            </summary>
+            <param name="column">The column to hide and then remove.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Grid.ExchangeColumn(Infragistics.Controls.Grid.Implementation.Column,Infragistics.Controls.Grid.Implementation.Column)">
+            <summary>
+            Exchanges a column currently in the grid with another that is not presently in the grid.
+            </summary>
+            <param name="newColumn">The new column which is not yet in the grid.</param>
+            <param name="oldColumn">The old column which is currently in the grid.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Grid.MoveColumn(System.Int32,System.Int32)">
+            <summary>
+            Moves a column from one index to another in the grid.
+            </summary>
+            <param name="oldIndex">The old index from where to move the column.</param>
+            <param name="newIndex">The new index to move the column to.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Grid.ExportVisualModel">
+            <summary>
+            Exports visual information about the current state of the grid.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Grid.ExportSerializedVisualModel">
+            <summary>
+            Returns a serialized copy of the exported visual model
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Grid.ScrollToRowByIndex(System.Double)">
+            <summary>
+            Scrolls the grid to given row, by index
+            </summary>
+            <param name="rowNumber">The row index to scroll to.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Grid.ScrollToItem(System.Object)">
+            <summary>
+            Scrolls to an item, if found.
+            </summary>
+            <param name="item">The item to scroll to.</param>
+            <returns>true if the scroll could be performed.</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Grid.ScrollToPrimaryKey(System.Object[])">
+            <summary>
+            Scrolls to a primary key value if possible.
+            </summary>
+            <param name="key">The primary key value to scroll to.</param>
+            <returns>true if the scroll was possible.</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Grid.ScrollToColumnByIndex(System.Double)">
+            <summary>
+            Scrolls the grid to given column, by index
+            </summary>
+            <param name="columnNumber">The column number to scroll to.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Grid.GetLastVisibleIndex">
+            <summary>
+            Gets the last visible index in the grid.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Grid.GetFirstVisibleIndex">
+            <summary>
+            Gets the first visible index in the grid.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.Grid.ColumnsAutoGenerated">
+            <summary>
+            Called when the columns are autogenerated.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.Grid.SelectedItemsChanged">
+            <summary>
+            Called when the selected items change.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.Grid.SelectedKeysChanged">
+            <summary>
+            Called when the selected keys change.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Grid.InvalidateVisibleRows">
+            <summary>
+            Invalidates the bound data for the rows currently visible.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Grid.SetActiveResponsiveState(System.String)">
+            <summary>
+            Manually set the active responsive state of the grid.
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Grid.NotifySetItem(System.Int32,System.Object,System.Object)">
+            <summary>
+            Manually notifies the grid's data source that an item has been changed in the data it is bound to.
+            This should not be called the data that the grid is bound to is already observable.
+            </summary>
+            <param name="index">The index of the changed item.</param>
+            <param name="oldItem">The old item at the designated index. You can optionally omit this value only if IsVirtual == true for the grid's data source.</param>
+            <param name="newItem">The new item at the designated index. You can optionally omit this value only if IsVirtual == true for the grid's data source.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Grid.NotifyClearItems">
+            <summary>
+            Manually notifies the grid's data source that the data it has bound to has been cleared and needs to be re-examined.
+            This should not be called if the data that the grid is bound to is already observable.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Grid.NotifyInsertItem(System.Int32,System.Object)">
+            <summary>
+            Manually notifies the grid's data source that an item has been inserted in the data it is bound to.
+            This should not be called if the data that the grid is bound to is already observable.
+            </summary>
+            <param name="index">The index of the inserted item.</param>
+            <param name="newItem">The new item at the designated index. You can optionally omit this value only if IsVirtual == true for the grid's data source.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Grid.NotifyRemoveItem(System.Int32,System.Object)">
+            <summary>
+            Manually notifies the grid's data source that an item has been removed in the data it is bound to.
+            This should not be called if the data that the grid is bound to is already observable.
+            </summary>
+            <param name="index">The index of the removed item.</param>
+            <param name="oldItem">The old item at the designated index. You can optionally omit this value only if IsVirtual == true for the grid's data source.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Grid.DataIndexOfItem(System.Object)">
+            <summary>
+            Returns the data index of an item within the bound data source.
+            </summary>
+            <param name="item">The item from which to get the index.</param>
+            <returns>The index of the item, or -1 if not found or available.</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Grid.DataIndexOfPrimaryKey(System.Object[])">
+            <summary>
+            Returns the data index of a primary key value.
+            </summary>
+            <param name="key">The primary key value for which to get the index.</param>
+            <returns>The index of the key, or -1 if not found or available.</returns>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.GridAnimationPhaseSettings">
+            <summary>
+            This class is used to group the settings to define an animation phase.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridAnimationPhaseSettings.DurationMilliseconds">
+            <summary>
+            The duration of an animation, in milliseconds
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridAnimationPhaseSettings.HoldInitialMilliseconds">
+            <summary>
+            The amount of time to delay an animation, in milliseconds.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridAnimationPhaseSettings.PerItemDelayMilliseconds">
+            <summary>
+            The amount of time to delay each item animating, in milliseconds
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridAnimationPhaseSettings.SubItemDurationMilliseconds">
+            <summary>
+            The amount of time each item animating should take, in milliseconds
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridAnimationPhaseSettings.DesiredSubItemDurationMilliseconds">
+            <summary>
+            The desired amount of time each item animating should take, in milliseconds
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridAnimationPhaseSettings.ShouldItemsFinishSimultaneously">
+            <summary>
+            Configures whether all items animating should finish simultaneously
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridAnimationPhaseSettings.EasingFunctionType">
+            <summary>
+            Configures the Easing function used to animate the individual items
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.GridAnimationPhaseSettings.PropertyChanged">
+            <summary>
+            Indicates a property has changed.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.GridAnimationPhaseSettings.Clone">
+            <summary>
+            Clones the settings.
+            </summary>
+            <returns>The cloned settings.</returns>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.GridAnimationSettings">
+            <summary>
+            Animation settings for the grid.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.GridAnimationSettings.#ctor">
+            <summary>
+            Constructs a GridAnimationSettings.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridAnimationSettings.CellDataLoadedMainPhase">
+            <summary>
+            Sets or gets the animation settings for the main phase of the cell data loading animation.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridAnimationSettings.RowSelectionMainPhase">
+            <summary>
+            Sets or gets the animation settings for the main phase of the row selection animation.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.GridAnimationSettings.PropertyChanged">
+            <summary>
+            Indicates that a property has changed.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.GridCellEventArgs">
+            <summary>
+            Information about the cell in context.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridCellEventArgs.CellInfo">
+            <summary>
+            Gets information about the cell in context.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridCellEventArgs.Grid">
+            <summary>
+            Gets the grid owning the cell.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.GridColumnAnimationSettings">
+            <summary>
+            Column animation settings for the grid.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.GridColumnAnimationSettings.#ctor">
+            <summary>
+            Constructs a GridColumnAnimationSettings.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridColumnAnimationSettings.ColumnPropertyUpdatingMainPhase">
+            <summary>
+            Sets or gets the animation settings for the main phase of the column property updating animation.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridColumnAnimationSettings.ColumnAddingMainPhase">
+            <summary>
+            Sets or gets the animation settings for the main phase of the column adding animation.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridColumnAnimationSettings.ColumnAddingPrePhase">
+            <summary>
+            Sets or gets the animation settings for the pre phase of the column adding animation.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridColumnAnimationSettings.ColumnShowingMainPhase">
+            <summary>
+            Sets or gets the animation settings for the main phase of the column showing animation.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridColumnAnimationSettings.ColumnShowingPrePhase">
+            <summary>
+            Sets or gets the animation settings for the pre phase of the column showing animation.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridColumnAnimationSettings.ColumnMovingMainPhase">
+            <summary>
+            Sets or gets the animation settings for the main phase of the column moving animation.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridColumnAnimationSettings.ColumnMovingPrePhase">
+            <summary>
+            Sets or gets the animation settings for the pre phase of the column moving animation.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridColumnAnimationSettings.ColumnHidingMainPhase">
+            <summary>
+            Sets or gets the animation settings for the main phase of the column hiding animation.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridColumnAnimationSettings.ColumnHidingPostPhase">
+            <summary>
+            Sets or gets the animation settings for the post phase of the column hiding animation.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridColumnAnimationSettings.ColumnExchangingMainPhase">
+            <summary>
+            Sets or gets the animation settings for the main phase of the column exchanging animation.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridColumnAnimationSettings.ColumnExchangingCleanupPhase">
+            <summary>
+            Sets or gets the animation settings for the cleanup phase of the column exchanging animation.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.GridColumnAnimationSettings.PropertyChanged">
+            <summary>
+            Indicates that a property has changed.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.GridColumnsAutoGeneratedEventArgs">
+            <summary>
+            Information about the generated columns.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.GridSelectedItemsChangedEventArgs">
+            <summary>
+            Information about the changing selected items in the grid.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridSelectedItemsChangedEventArgs.AddedItems">
+            <summary>
+            The items added to the selection.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridSelectedItemsChangedEventArgs.RemovedItems">
+            <summary>
+            The items removed from the selection.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.GridSelectedKeysChangedEventArgs">
+            <summary>
+            Information about the change to the selected keys in the grid.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridSelectedKeysChangedEventArgs.AddedKeys">
+            <summary>
+            The keys added to the selection.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.GridSelectedKeysChangedEventArgs.RemovedKeys">
+            <summary>
+            The keys removed from the selection.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ResponsivePhase">
+            <summary>
+            Describes one phase of a responsive state to apply to the grid.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.ResponsivePhase.Name">
+            <summary>
+            The name of this responsive phase
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.ResponsivePhase.DelayMilliseconds">
+            <summary>
+            The amount of time to delay the responsive phase from starting, in milliseconds
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.ResponsivePhase.AddColumnPropertySetter(Infragistics.Controls.Grid.Implementation.ColumnPropertySetter)">
+            <summary>
+            Adds a column property setter to the phase.
+            </summary>
+            <param name="setter">The setter to add.</param>
+            <returns>This phase.</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.ResponsivePhase.AddColumnPropertySetter">
+            <summary>
+            Adds a column property setter to the phase, and returns it.
+            </summary>
+            <returns>The new setter.</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.ResponsivePhase.AddColumnExchanger(Infragistics.Controls.Grid.Implementation.ColumnExchanger)">
+            <summary>
+            Adds a column exchanger the the phase.
+            </summary>
+            <param name="exchanger">The exchanger to add.</param>
+            <returns>This phase.</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.ResponsivePhase.AddColumnExchanger">
+            <summary>
+            Adds a column exchanger to the phase and returns it.
+            </summary>
+            <returns>The new exchanger.</returns>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ResponsivePhasesCollection">
+            <summary>
+            A collection of ResponsivePhases.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ResponsiveState">
+            <summary>
+            Describes a state that the grid can enter based on a set of responsive conditions.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.ResponsiveState.Name">
+            <summary>
+            The name of the responsive state
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.ResponsiveState.MinimumWidth">
+            <summary>
+            Gets or sets the minimum width for which this state is active.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.ResponsiveState.MaximumWidth">
+            <summary>
+            Gets or sets the maximum width for which this state is active.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.ResponsiveState.StateEntering">
+            <summary>
+            Called when a state is being entered.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.ResponsiveState.StateEntered">
+            <summary>
+            Called when a state is entered.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.ResponsiveState.StateExited">
+            <summary>
+            Called when a state is exited.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.ResponsiveState.IsManualState">
+            <summary>
+            Configures this responsive state to only be manually actived
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.ResponsiveState.ResponsivePhases">
+            <summary>
+            Gets the responsive phases for this state.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.ResponsiveState.AddResponsivePhase(Infragistics.Controls.Grid.Implementation.ResponsivePhase)">
+            <summary>
+            Adds a responsive phase to the state.
+            </summary>
+            <param name="phase">The phase to add.</param>
+            <returns>This state.</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.ResponsiveState.AddResponsivePhase">
+            <summary>
+            Adds a responsive phase to the state and returns it.
+            </summary>
+            <returns>The new phase.</returns>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ResponsiveStateEnteredEventArgs">
+            <summary>
+            Information about the entered action.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ResponsiveStateEnteringEventArgs">
+            <summary>
+            Information about the entering action.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ResponsiveStateExitedEventArgs">
+            <summary>
+            Information about the exited state.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ResponsiveStatesCollection">
+            <summary>
+            A collection of ResponsiveStates
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.TemplateCellUpdatingEventArgs">
+            <summary>
+            Information about the cell that has content which is being created or updated.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.TemplateCellUpdatingEventArgs.CellInfo">
+            <summary>
+            Information about the cell that has content which is being created or updated. 
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.TemplateHeaderCellUpdatingEventArgs">
+            <summary>
+            Information about the header cell that has content which is being created or updated.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.TemplateHeaderCellUpdatingEventArgs.CellInfo">
+            <summary>
+            Information about the header cell that has content which is being created or updated. 
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.GridEasingFunctionType">
+            <summary>
+            Indicates the built in easing type to use for an animation.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.GridEasingFunctionType.Linear">
+            <summary>
+            Use linear easing.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.GridEasingFunctionType.CubicInOut">
+            <summary>
+            Use cubic in/out easing.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.GridEasingFunctionType.ExponentialInOut">
+            <summary>
+            Use exponential in/out easing.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.GridEasingFunctionType.CircleInOut">
+            <summary>
+            Use circle in/out easing.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ColumnShowingAnimationMode">
+            <summary>
+            Enumerates the options for how columns animate into view.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnShowingAnimationMode.Auto">
+            <summary>
+            Automatically selects the correct animation mode.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnShowingAnimationMode.None">
+            <summary>
+            No animation should be performed.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnShowingAnimationMode.SlideFromLeft">
+            <summary>
+            Cells slide in from the left.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnShowingAnimationMode.SlideFromRight">
+            <summary>
+            Cells slide in from the right.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnShowingAnimationMode.SlideFromTop">
+            <summary>
+            Cells slide in from the top.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnShowingAnimationMode.SlideFromBottom">
+            <summary>
+            Cells slide in from the bottom.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnShowingAnimationMode.FadeIn">
+            <summary>
+            Cells fade in.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnShowingAnimationMode.SlideFromLeftAndFadeIn">
+            <summary>
+            Cells slide in from the left and fade in.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnShowingAnimationMode.SlideFromRightAndFadeIn">
+            <summary>
+            Cells slide in from the right and fade in.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnShowingAnimationMode.SlideFromTopAndFadeIn">
+            <summary>
+            Cells slide in from the top and fade in.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnShowingAnimationMode.SlideFromBottomAndFadeIn">
+            <summary>
+            Cells slide in from the bottom and fade in.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ColumnMovingAnimationMode">
+            <summary>
+            Enumerates the options for how columns animate while moving.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnMovingAnimationMode.Auto">
+            <summary>
+            Automatically decides on the animation mode to use.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnMovingAnimationMode.None">
+            <summary>
+            No animation is performed.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnMovingAnimationMode.SlideOver">
+            <summary>
+            The cells slide on top of the others to its desired position.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ColumnPropertyUpdatingAnimationMode">
+            <summary>
+            Enumerates the options for how changes to column properties are animated.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnPropertyUpdatingAnimationMode.Auto">
+            <summary>
+            Automatically decides on the animation mode to use.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnPropertyUpdatingAnimationMode.None">
+            <summary>
+            No animation is performed.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnPropertyUpdatingAnimationMode.Interpolate">
+            <summary>
+            The previous value and the next value are interpolated between.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnPropertyUpdatingAnimationMode.InterpolateDeep">
+            <summary>
+            Deep values within the previous and next value are interpolated between.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.CellDataLoadedAnimationMode">
+            <summary>
+            Enumerates the options for how data loaded animations are displayed.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellDataLoadedAnimationMode.Auto">
+            <summary>
+            The correct animation mode is automatically selected.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellDataLoadedAnimationMode.None">
+            <summary>
+            No animation is performed.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellDataLoadedAnimationMode.CrossFade">
+            <summary>
+            The previous value and the next value are crossfaded between.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.RowSelectionAnimationMode">
+            <summary>
+            Enumerates the option for how row selection is animated.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.RowSelectionAnimationMode.Auto">
+            <summary>
+            The correct animation mode is automatically selected.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.RowSelectionAnimationMode.None">
+            <summary>
+            No animation is performed.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.RowSelectionAnimationMode.ColorBlend">
+            <summary>
+            The selection color and the normal background color are blended between.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ColumnHidingAnimationMode">
+            <summary>
+            Enumerates the options for how column hiding is animated.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnHidingAnimationMode.Auto">
+            <summary>
+            The correct animation mode is automatically selected.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnHidingAnimationMode.None">
+            <summary>
+            No animation is performed.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnHidingAnimationMode.SlideToLeft">
+            <summary>
+            The cells slide to the left.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnHidingAnimationMode.SlideToRight">
+            <summary>
+            The cells slide to the right.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnHidingAnimationMode.SlideToTop">
+            <summary>
+            The cells slide to the top.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnHidingAnimationMode.SlideToBottom">
+            <summary>
+            The cells slide to the bottom.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnHidingAnimationMode.FadeOut">
+            <summary>
+            The cells fade out.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnHidingAnimationMode.SlideToLeftAndFadeOut">
+            <summary>
+            The cells slide to the left and fade out.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnHidingAnimationMode.SlideToRightAndFadeOut">
+            <summary>
+            The cells slide to the right and fade out.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnHidingAnimationMode.SlideToTopAndFadeOut">
+            <summary>
+            The cells slide to the top and fade out.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnHidingAnimationMode.SlideToBottomAndFadeOut">
+            <summary>
+            The cells slide to the bottom and fade out.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ColumnExchangingAnimationMode">
+            <summary>
+            Enumerates the options for how column exchanging is animated.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnExchangingAnimationMode.Auto">
+            <summary>
+            The correct animation mode is automatically selected.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnExchangingAnimationMode.None">
+            <summary>
+            No animation is performed.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnExchangingAnimationMode.SlideToLeft">
+            <summary>
+            The cells slide to the left.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnExchangingAnimationMode.SlideToRight">
+            <summary>
+            The cells slide to the right.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnExchangingAnimationMode.SlideToTop">
+            <summary>
+            The cells slide to the top.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnExchangingAnimationMode.SlideToBottom">
+            <summary>
+            The cells slide to the bottom.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnExchangingAnimationMode.Crossfade">
+            <summary>
+            The cells crossfade.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnExchangingAnimationMode.SlideToLeftAndCrossfade">
+            <summary>
+            The cells slide to the left and crossfade.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnExchangingAnimationMode.SlideToRightAndCrossfade">
+            <summary>
+            The cells slide to the right and crossfade.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnExchangingAnimationMode.SlideToTopAndCrossfade">
+            <summary>
+            The cells slide to the top and crossfade.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnExchangingAnimationMode.SlideToBottomAndCrossfade">
+            <summary>
+            The cells slide to the bottom and crossfade.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.CellPropertyAnimationType">
+            <summary>
+            Enumerates the options for how cell property animates are applied.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellPropertyAnimationType.DoubleValue">
+            <summary>
+            The property is animated as a double value.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellPropertyAnimationType.NumberValue">
+            <summary>
+            The property is animated as a number value.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellPropertyAnimationType.BrushValue">
+            <summary>
+            The property is animated as a brush value.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellPropertyAnimationType.FontValue">
+            <summary>
+            The property is animated as a font value.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellPropertyAnimationType.EnumValue">
+            <summary>
+            The property is animated as a enum value.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellPropertyAnimationType.BoolValue">
+            <summary>
+            The property is animated as a bool value.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellPropertyAnimationType.IntValue">
+            <summary>
+            The property is animated as an int value.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellPropertyAnimationType.DateValue">
+            <summary>
+            The property is animated as a date value.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellPropertyAnimationType.StringValue">
+            <summary>
+            The propety is animated as a string value.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellPropertyAnimationType.ObjectValue">
+            <summary>
+            The property is animated as an object value.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellPropertyAnimationType.IgnoredValue">
+            <summary>
+            The property value is ignored and not propagated to live cells.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellPropertyAnimationType.None">
+            <summary>
+            The property value is not animated.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.DateTimeCellModel">
+            <summary>
+            Backing information about a date time cell for the grid.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.DateTimeCellModel.#ctor">
+            <summary>
+            Constructs a DateTimeCellModel.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.DateTimeCellModel.DateTimeValuePropertyName">
+            <summary>
+            Identifies the DateTimeValue property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.DateTimeCellModel.DateTimeValue">
+            <summary>
+            Sets or gets the DateTime value for the cell.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.DateTimeCellModel.FormatStringOverridePropertyName">
+            <summary>
+            Identifies the FormatString property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.DateTimeCellModel.FormatStringOverride">
+            <summary>
+            The format string to apply to the value
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.DateTimeCellModel.DateTimeFormatPropertyName">
+            <summary>
+            Identifies the DateTimeFormat property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.DateTimeCellModel.DateTimeFormat">
+            <summary>
+            Sets or gets the simple DateTimeFormat to use for the cell.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.DateTimeCellModel.IsOffsetValuePropertyName">
+            <summary>
+            Identifies the IsOffsetValue property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.DateTimeCellModel.IsOffsetValue">
+            <summary>
+            Sets or gets whether the value to use is a DateTimeOffset value.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ImageCellModel">
+            <summary>
+            Backing information for an image cell in the grid.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.ImageCellModel.#ctor">
+            <summary>
+            Constructs an ImageCellModel.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ImageCellModel.ImagePathPropertyName">
+            <summary>
+            Identifies the ImagePath property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.ImageCellModel.ImagePath">
+            <summary>
+            Sets or gets the resource path to use to get the image for the cell.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ImageCellModel.ImageStretchOptionPropertyName">
+            <summary>
+            Identifies the ImageStretchOption property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.ImageCellModel.ImageStretchOption">
+            <summary>
+            Sets or gets the image stretching behavior for the image.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ImageCellModel.ImageResourceTypePropertyName">
+            <summary>
+            Identifies the ImageResourceType property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.ImageCellModel.ImageResourceType">
+            <summary>
+            Sets or gets the image resource type. Indicates which type of resource should be fetched and how ImagePath should be interpreted.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.NumericCellModel">
+            <summary>
+            Backing information for a numeric cell in the grid.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.NumericCellModel.#ctor">
+            <summary>
+            Contstructs a NumericCellModel.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.NumericCellModel.NumericValuePropertyName">
+            <summary>
+            Identifies the NumericValue property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.NumericCellModel.NumericValue">
+            <summary>
+            Sets or gets the numeric value to use for the cell.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.NumericCellModel.HasDecimalValuePropertyName">
+            <summary>
+            Identifies the HasDecimalValue property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.NumericCellModel.HasDecimalValue">
+            <summary>
+            Sets or gets whether there is a decimal numeric value to use for the cell.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.NumericCellModel.DecimalNumericValuePropertyName">
+            <summary>
+            Identifies the DecimalNumericValue property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.NumericCellModel.DecimalNumericValue">
+            <summary>
+            Sets or gets the decimal numeric value to use for the cell.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.NumericCellModel.FormatStringOverridePropertyName">
+            <summary>
+            Identifies the FormatStringOverride property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.NumericCellModel.FormatStringOverride">
+            <summary>
+            The format string to apply to the value
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.NumericCellModel.NegativePrefixPropertyName">
+            <summary>
+            Identifies the NegativePrefix property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.NumericCellModel.NegativePrefix">
+            <summary>
+            Sets or gets the text prepended to a negative numeric value
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.NumericCellModel.PositivePrefixPropertyName">
+            <summary>
+            Identifies the PositivePrefix property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.NumericCellModel.PositivePrefix">
+            <summary>
+            Sets or gets the text prepended to a positive numeric value
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.NumericCellModel.NegativeSuffixPropertyName">
+            <summary>
+            Identifies the NegativePrefix property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.NumericCellModel.NegativeSuffix">
+            <summary>
+            Sets or gets the text appended to a negative numeric value
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.NumericCellModel.PositiveSuffixPropertyName">
+            <summary>
+            Identifies the PositiveSuffix property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.NumericCellModel.PositiveSuffix">
+            <summary>
+            Sets or gets the text appended to a positive numeric value
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.NumericCellModel.MaxFractionDigitsPropertyName">
+            <summary>
+            Identifies the MaxFractionDigits property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.NumericCellModel.MaxFractionDigits">
+            <summary>
+            The maximum number of decimal places to display when formatting
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.NumericCellModel.MinFractionDigitsPropertyName">
+            <summary>
+            Identifies the MinFractionDigits property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.NumericCellModel.MinFractionDigits">
+            <summary>
+            The minimum number of decimal places to display when formatting
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.NumericCellModel.MinIntegerDigitsPropertyName">
+            <summary>
+            Identifies the MinIntegerDigits property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.NumericCellModel.MinIntegerDigits">
+            <summary>
+            The minimum number of integer digits to display when formatting
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.NumericCellModel.ShowGroupingSeparatorPropertyName">
+            <summary>
+            Identifies the ShowGroupingSeparator property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.NumericCellModel.ShowGroupingSeparator">
+            <summary>
+            Sets or gets if the grouping separator is shown
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.RowSeparatorModel">
+            <summary>
+            Represents backing information for the row separators.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.RowSeparatorModel.#ctor">
+            <summary>
+            Constructs a RowSeparatorModel
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.TemplateHeaderCellModel">
+            <summary>
+            Backing information for the template header cells.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.TemplateCellModel">
+            <summary>
+            Represents backing information for a template cell.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.TemplateCellModel.ValuePropertyName">
+            <summary>
+            Identifies the Value property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.TemplateCellModel.Value">
+            <summary>
+            Sets or gets the value to provide to the template.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.TextCellModel">
+            <summary>
+            Backing information for a text cell in the grid.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.TextCellModel.TextValuePropertyName">
+            <summary>
+            Identifies the TextValue property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.TextCellModel.TextValue">
+            <summary>
+            Sets or gets the text value for the cell.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.TextCellModel.FormatStringPropertyName">
+            <summary>
+            Identifies the FormatString property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.TextCellModel.FormatString">
+            <summary>
+            Sets or gets the format string to use for the value.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.TextHeaderCellModel">
+            <summary>
+            Backing information for a text header cell.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.TextHeaderCellModel.#ctor">
+            <summary>
+            Constructs a TextHeaderCellModel.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.GridSelectedItemsChangedEventHandler">
+            <summary>
+            Called when the selected items in the grid change.
+            </summary>
+            <param name="sender">The grid.</param>
+            <param name="args">Information about the changed selected items.</param>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.GridSelectedKeysChangedEventHandler">
+            <summary>
+            Called when the selected keys in the grid change.
+            </summary>
+            <param name="sender">The grid.</param>
+            <param name="args">Information about the changed selected keys.</param>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.GridColumnsAutoGeneratedEventHandler">
+            <summary>
+            Called when the autogenerated columns in the grid change.
+            </summary>
+            <param name="sender">The grid.</param>
+            <param name="args">Information about the generated columns.</param>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.GridCellEventHandler">
+            <summary>
+            Called for an action on a grid cell.
+            </summary>
+            <param name="sender">The grid.</param>
+            <param name="args">Infromation about the cell in context.</param>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.DateTimeColumn">
+            <summary>
+            A column for displaying date/time values.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.DateTimeColumn.DateTimeFormat">
+            <summary>
+            Gets or sets the date time format to use for this column. If FormatString is specificied this value is ignored.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.DateTimeColumn.FormatString">
+            <summary>
+            Gets or sets the format string to apply to the value. If set, the other value formatting properties on this column are ignored.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.DateTimeColumn.#ctor">
+            <summary>
+            Constructs a DateTimeColumn.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.TextCellLineBreakMode">
+            <summary>
+            Indicates how to break lines of text for a cell.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.TextCellLineBreakMode.Ellipsis">
+            <summary>
+            Truncates the text content at the end and displays an ellipsis character if it can't fit on a line.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.TextCellLineBreakMode.NoWrap">
+            <summary>
+            Keeps the text on a single line, but does not attempt to insert an ellipsis character.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.TextCellLineBreakMode.WordWrap">
+            <summary>
+            If possible for the current platform, wraps to a new line on a word break, if necessary.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.TextCellLineBreakMode.CharacterWrap">
+            <summary>
+            If possible for the current platform, wraps to a new line whenever necessary.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.DataBindingEventHandler">
+            <summary>
+            Called when a cell's backing model is being bound.
+            </summary>
+            <param name="sender">The owner of the cell.</param>
+            <param name="args">The data binding information.</param>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.CellStyleRequestedEventHandler">
+            <summary>
+            Called when the style key for a cell is requested.
+            </summary>
+            <param name="sender">The owner of the cell.</param>
+            <param name="args">The arguments for the style request.</param>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.Column">
+            <summary>
+            A column in the data grid.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Column.#ctor">
+            <summary>
+            Constructs a Column.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Column.PaddingLeft">
+            <summary>
+            Gets or sets the amount of left padding to use for the cell content for this column.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Column.PaddingTop">
+            <summary>
+            Gets or sets the amount of top padding to use for the cell content for this column.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Column.PaddingRight">
+            <summary>
+            Gets or sets the amount of right padding to use for the cell content of this column.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Column.PaddingBottom">
+            <summary>
+            Gets or sets the amount of bottom padding to use for the cell content of this column.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Column.Name">
+            <summary>
+            Gets or sets an unique name of the Column
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Column.PropertyPath">
+            <summary>
+            Gets or sets the key used for the column binding
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Column.HeaderText">
+            <summary>
+            Gets or sets the text displayed in the header of the column
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Column.ActualHeaderText">
+            <summary>
+            Gets the actual text displayed in the header of the column
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Column.SelectedBackground">
+            <summary>
+            Gets or sets the background color to use for the cells when they are selected
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Column.ActualSelectedBackground">
+            <summary>
+            Gets the actual background color that is used for the cells when they are selected
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Column.AnimationSettings">
+            <summary>
+            Gets or sets the animation settings to use for this column.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Column.Width">
+            <summary>
+            Gets or sets the width to use for this column.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Column.MinWidth">
+            <summary>
+            Gets or sets the minimum width to use for this column. Overrides the DefaultColumnMinWidth from the grid, if set.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Column.IsAutoGenerated">
+            <summary>
+            Gets whether this column was auto generated.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Column.Header">
+            <summary>
+            Gets or sets the header definition for this column.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Column.IsHidden">
+            <summary>
+            Gets or sets whether or not a column is hidden from the grid
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Column.ShouldRemoveWhenHidden">
+            <summary>
+            Gets or sets if a column should be removed from the grid when it is fully hidden
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Column.SortDirection">
+            <summary>
+            Gets the current sort direction (None, Ascending, Descending) for this column.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Column.SetNamedHeaderValue(System.String,Infragistics.Controls.Grid.Implementation.CellPropertyAnimationType,System.Object)">
+            <summary>
+            Sets a named value that will be applied to the header cells for this column.
+            </summary>
+            <param name="valueName">The name of the value to set.</param>
+            <param name="animationType">The animation type to use for the change.</param>
+            <param name="value">The value to set.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Column.HasNamedHeaderValues">
+            <summary>
+            Returns if the column has named header values.
+            </summary>
+            <returns>True if there are named header values.</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Column.HasNamedHeaderValue(System.String)">
+            <summary>
+            Returns if there is a named header value with a given name.
+            </summary>
+            <param name="valueName">The named value to check for.</param>
+            <returns>True if the named value is present.</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Column.RemoveNamedHeaderValue(System.String)">
+            <summary>
+            Removes a named header value with the given name from the named header values for this column.
+            </summary>
+            <param name="valueName">The named header value to remove.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Column.GetNamedHeaderValue(System.String)">
+            <summary>
+            Gets the value of a named header value for this column by name.
+            </summary>
+            <param name="valueName">Name of the named header value to retrieve.</param>
+            <returns>The value of the named header value requested.</returns>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.Header">
+            <summary>
+            Represents a base class used to configure the appearance of the column header cells.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.Header.#ctor">
+            <summary>
+            Constructs a Header
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Header.PaddingLeft">
+            <summary>
+            Gets or sets the amount of left padding to use for the cell content.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Header.PaddingTop">
+            <summary>
+            Gets or sets the amount of top padding to use for the cell content.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Header.PaddingRight">
+            <summary>
+            Gets or sets the amount of right padding to use for the cell content.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.Header.PaddingBottom">
+            <summary>
+            Gets or sets the amount of bottom padding to use for the cell content.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ImageColumn">
+            <summary>
+            Represents an Image grid column, used to allow the developer to display an image in a cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.ImageColumn.ImageStretchOption">
+            <summary>
+            Gets or sets the stretch option to use when rendering images
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.ImageColumn.ImageResourceType">
+            <summary>
+            Gets or sets the image resource type so that the column knows how to interpret the image names.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.ImageColumn.#ctor">
+            <summary>
+            Constructs an ImageColumn
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.NumericColumn">
+            <summary>
+            Represents a Numeric grid column, used to allow the developer to display a formatted number in a cell.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.NumericColumn.#ctor">
+            <summary>
+            Constructs a NumericColumn
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.NumericColumn.NegativePrefix">
+            <summary>
+            Gets or sets the string to prefix a negative value. If FormatString is specificied this value is ignored.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.NumericColumn.PositivePrefix">
+            <summary>
+            Gets or sets the string to prefix a positive value. If FormatString is specificied this value is ignored.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.NumericColumn.NegativeSuffix">
+            <summary>
+            Gets or sets the string to suffix a negative value. If FormatString is specificied this value is ignored.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.NumericColumn.PositiveSuffix">
+            <summary>
+            Gets or sets the string to suffix a positive value. If FormatString is specificied this value is ignored.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.NumericColumn.MaxFractionDigits">
+            <summary>
+            Gets or sets the maximum fraction digits. If FormatString is specificied this value is ignored.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.NumericColumn.MinFractionDigits">
+            <summary>
+            Gets or sets the minimum fraction digits. If FormatString is specificied this value is ignored.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.NumericColumn.MinIntegerDigits">
+            <summary>
+            Gets or sets the minimum integer digits. If FormatString is specificied this value is ignored.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.NumericColumn.ShowGroupingSeparator">
+            <summary>
+            Gets or sets whether to show a grouping separator. If FormatString is specificied this value is ignored.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.NumericColumn.FormatString">
+            <summary>
+            Gets or sets the format string to apply to the value. If set, the other value formatting properties on this column are ignored.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.SectionFooter">
+            <summary>
+            Used to configure the appearance of the section footer cells.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.SectionHeader">
+            <summary>
+            Used to configure the appearance of the section header cells.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.RowSeparator">
+            <summary>
+            Represents a Row separator, this is used to visually separate the rows in a grid
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.RowSeparator.#ctor">
+            <summary>
+            Constructs a RowSeparator
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.TemplateHeader">
+            <summary>
+            A type of header with customizable content.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.TemplateHeader.#ctor">
+            <summary>
+            Constructs a TemplateHeader.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.TemplateHeader.CellUpdating">
+            <summary>
+            Called when the header cell content is being created or updated.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.TemplateColumn">
+            <summary>
+            A column with customizable content.
+            </summary>
+        </member>
+        <member name="E:Infragistics.Controls.Grid.Implementation.TemplateColumn.CellUpdating">
+            <summary>
+            Called when the cell content is being created or updated.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.TemplateCellUpdatingEventHandler">
+            <summary>
+            Called when the cell content is being created or updated.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.TemplateHeaderCellUpdatingEventHandler">
+            <summary>
+            Called when the header cell content is being created or updated.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.TextColumn">
+            <summary>
+            Represents a Text grid column, used to allow the developer to display a formatted text in a cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.Implementation.TextColumn.FormatString">
+            <summary>
+            Gets or sets the format string to apply to the text value
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.TextHeader">
+            <summary>
+            Represents a class used to configure the appearance of a text column header cells.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.Implementation.TextHeader.#ctor">
+            <summary>
+            Constructs a TextHeader.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.CellContentHorizontalAlignment">
+            <summary>
+            Indicates the horizontal alignment to use for a cell.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellContentHorizontalAlignment.Left">
+            <summary>
+            Aligns left.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellContentHorizontalAlignment.Center">
+            <summary>
+            Aligns center.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellContentHorizontalAlignment.Right">
+            <summary>
+            Aligns right.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellContentHorizontalAlignment.Stretch">
+            <summary>
+            Aligns stretch.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellContentHorizontalAlignment.Auto">
+            <summary>
+            Aligns auto.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.CellContentVerticalAlignment">
+            <summary>
+            Indicates the vertical alignment to use for a cell.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellContentVerticalAlignment.Top">
+            <summary>
+            Aligns top.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellContentVerticalAlignment.Center">
+            <summary>
+            Aligns center.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellContentVerticalAlignment.Bottom">
+            <summary>
+            Aligns bottom.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellContentVerticalAlignment.Stretch">
+            <summary>
+            Aligns stretch.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.CellContentVerticalAlignment.Auto">
+            <summary>
+            Aligns auto.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ColumnSortDirection">
+            <summary>
+            Indicates the direction to sort a column.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnSortDirection.None">
+            <summary>
+            No specified direction.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnSortDirection.Ascending">
+            <summary>
+            Column should be sorted ascending.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ColumnSortDirection.Descending">
+            <summary>
+            Column should be sorted descending.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.DateTimeFormats">
+            <summary>
+            Indicates some simple date formats to be used.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.DateTimeFormats.DateShort">
+            <summary>
+            A standard short date format is used.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.DateTimeFormats.DateLong">
+            <summary>
+            A standard long date format is used.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.DateTimeFormats.TimeShort">
+            <summary>
+            A standard short time format is used.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.DateTimeFormats.TimeLong">
+            <summary>
+            A standard long time format is used.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.DateTimeFormats.DateTimeShort">
+            <summary>
+            A standard short date/time format is used.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.DateTimeFormats.DateTimeLong">
+            <summary>
+            A standard long date/time format is used.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.GridSelectionMode">
+            <summary>
+            Indicates the selection mode to use for the grid.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.GridSelectionMode.None">
+            <summary>
+            No selection should be peformed based on interaction.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.GridSelectionMode.SingleRow">
+            <summary>
+            A single row is permitted to be selected at a time from interaction.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.GridSelectionMode.MultipleRow">
+            <summary>
+            Multiple rows are permitted to be selected at a time from interaction.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.HeaderClickAction">
+            <summary>
+            Indicates what should occur on a header click event.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.HeaderClickAction.SortByOneColumnOnly">
+            <summary>
+            Sorting by one column is permitted and toggles between ascending and descending.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.HeaderClickAction.SortByMultipleColumns">
+            <summary>
+            Sorting by multiple columns is permitted and each toggle between ascending and descending.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.HeaderClickAction.SortByOneColumnOnlyTriState">
+            <summary>
+            Sorting by one column is permitted and toggles between ascending, descending and unsorted.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.HeaderClickAction.SortByMultipleColumnsTriState">
+            <summary>
+            Sorting by multiple columns is permitted and toggles between ascending, descending and unsorted.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ImageResourceType">
+            <summary>
+            Indicates the image resource type to use.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ImageResourceType.Unspecified">
+            <summary>
+            Image resource type will attempt to be determined from any scheme specifiers on the paths.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ImageResourceType.LocalResource">
+            <summary>
+            Images are a local platform specific resource in the application.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ImageResourceType.LocalAsset">
+            <summary>
+            Images are a local platform specific asset in the application. For platforms that don't support assets, this will fall back on local resource.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ImageResourceType.EmbeddedResource">
+            <summary>
+            Images are a .NET embedded resource in the application. Path needs to be a valid embedded resource identifier.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ImageResourceType.RemoteResource">
+            <summary>
+            Images are a remote URL resource.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ImageStretchOptions">
+            <summary>
+            Indicates how the images will be stretched.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ImageStretchOptions.Uniform">
+            <summary>
+            Images stretch but try to maintain aspect ratio.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ImageStretchOptions.Fill">
+            <summary>
+            Image fills all available space but breaks aspect ratio.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.Implementation.ImageStretchOptions.None">
+            <summary>
+            Image is displayed unstreteched.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ResponsiveStateEnteringEventHandler">
+            <summary>
+            Called when a responsive state is being entered.
+            </summary>
+            <param name="sender">The state.</param>
+            <param name="eventArgs">Information about this action.</param>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ResponsiveStateEnteredEventHandler">
+            <summary>
+            Called when a responsive state has been entered.
+            </summary>
+            <param name="sender">The state.</param>
+            <param name="eventArgs">Information about this action.</param>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.Implementation.ResponsiveStateExitedEventHandler">
+            <summary>
+            Called when a responsive state has been exited.
+            </summary>
+            <param name="sender">The state.</param>
+            <param name="eventArgs">Information about this action.</param>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.ExportData.CellContentHorizontalAlignment">
+            <summary>
+            Indicates the desired horizontal alignment of the cell content.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.ExportData.CellContentHorizontalAlignment.Left">
+            <summary>
+            Align left.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.ExportData.CellContentHorizontalAlignment.Center">
+            <summary>
+            Align center.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.ExportData.CellContentHorizontalAlignment.Right">
+            <summary>
+            Align right.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.ExportData.CellContentHorizontalAlignment.Stretch">
+            <summary>
+            Align stretch
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.ExportData.CellContentHorizontalAlignment.Auto">
+            <summary>
+            Align auto
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.ExportData.CellContentVerticalAlignment">
+            <summary>
+            Indicates the desired vertical alignment of the cell content.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.ExportData.CellContentVerticalAlignment.Top">
+            <summary>
+            Align top.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.ExportData.CellContentVerticalAlignment.Center">
+            <summary>
+            Align center.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.ExportData.CellContentVerticalAlignment.Bottom">
+            <summary>
+            Align bottom.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.ExportData.CellContentVerticalAlignment.Stretch">
+            <summary>
+            Align stretch
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.ExportData.CellContentVerticalAlignment.Auto">
+            <summary>
+            Align auto
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.ExportData.ColumnSortDirection">
+            <summary>
+            Indicates the direction a column should be sorted in.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.ExportData.ColumnSortDirection.None">
+            <summary>
+            Not sort applied.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.ExportData.ColumnSortDirection.Ascending">
+            <summary>
+            Sort is ascending.
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Grid.ExportData.ColumnSortDirection.Descending">
+            <summary>
+            Sort is descending.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.ExportData.CellModelExport">
+            <summary>
+            Represents data about the grid cells for testing purposes.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.CellModelExport.X">
+            <summary>
+            The x position of the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.CellModelExport.Y">
+            <summary>
+            The y position of the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.CellModelExport.SnappedX">
+            <summary>
+            The pixel snapped x position of the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.CellModelExport.SnappedY">
+            <summary>
+            The pixel snapped y position of the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.CellModelExport.Height">
+            <summary>
+            The height of the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.CellModelExport.Width">
+            <summary>
+            The width of the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.CellModelExport.SelectedStatus">
+            <summary>
+            The selected status of the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.CellModelExport.BackgroundBrushData">
+            <summary>
+            The background brush of the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.CellModelExport.HorizontalAlignment">
+            <summary>
+            The horizontal alignment of the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.CellModelExport.VerticalAlignment">
+            <summary>
+            The vertical alignment of the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.CellModelExport.RenderValue">
+            <summary>
+            The resolved render vaue for the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.CellModelExport.TextColor">
+            <summary>
+            The text color for the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.CellModelExport.FontStyle">
+            <summary>
+            The font style for the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.CellModelExport.FontVariant">
+            <summary>
+            The font variant for the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.CellModelExport.FontWeight">
+            <summary>
+            The font weight for the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.CellModelExport.FontSize">
+            <summary>
+            The font size for the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.CellModelExport.FontFamily">
+            <summary>
+            The font family for the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.CellModelExport.FontStretch">
+            <summary>
+            The font stretch for the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.CellModelExport.VirtualizationPercentage">
+            <summary>
+            The virtualization amount for the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.CellModelExport.SortDirection">
+            <summary>
+            The sort direction for the column for the cell.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.ExportData.CellModelExport.Serialize">
+            <summary>
+            Serializes the cell data.
+            </summary>
+            <returns>The serialized data.</returns>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.CellModelExport.Type">
+            <summary>
+            Gets the type of the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.CellModelExport.LineBreakMode">
+            <summary>
+            Indicates the line breaking mode used on the text, if present.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.ExportData.CellModelExport.SerializeOverride(System.Text.StringBuilder)">
+            <summary>
+            Serializes the cell content.
+            </summary>
+            <param name="sb">The builder to serialize too.</param>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.ExportData.DateTimeCellModelExport">
+            <summary>
+            Information exported about a DateTime grid cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.DateTimeCellModelExport.DateTimeValue">
+            <summary>
+            The date time value of the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.DateTimeCellModelExport.DateTimeFormat">
+            <summary>
+            The date time format of the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.DateTimeCellModelExport.Type">
+            <summary>
+            Gets the type of the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.DateTimeCellModelExport.IsOffsetValue">
+            <summary>
+            Gets whether there is an offset value.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.ExportData.DateTimeCellModelExport.SerializeOverride(System.Text.StringBuilder)">
+            <summary>
+            Serializes the cell data.
+            </summary>
+            <param name="sb">The builder to add the serialization to.</param>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.ExportData.ImageCellModelExport">
+            <summary>
+            Exported information about an image cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.ImageCellModelExport.ImagePath">
+            <summary>
+            The path to the image.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.ImageCellModelExport.Type">
+            <summary>
+            Gets the type of the cell.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.ExportData.ImageCellModelExport.SerializeOverride(System.Text.StringBuilder)">
+            <summary>
+            Serializes the cell export.
+            </summary>
+            <param name="sb">The builder to add the serialization to.</param>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.ExportData.NumericCellModelExport">
+            <summary>
+            Exported information about a numeric grid cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.NumericCellModelExport.NumericValue">
+            <summary>
+            The numeric value of the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.NumericCellModelExport.MaxDecimalPlaces">
+            <summary>
+            The max decimal places.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.NumericCellModelExport.MinDecimalPlaces">
+            <summary>
+            The min decimal places.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.ExportData.NumericCellModelExport.SerializeOverride(System.Text.StringBuilder)">
+            <summary>
+            Serializes the cell information.
+            </summary>
+            <param name="sb">The builder to add the serialization to.</param>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.ExportData.RowSeparatorModelExport">
+            <summary>
+            Exports information about the row separator
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.RowSeparatorModelExport.Type">
+            <summary>
+            Gets the cell type.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.ExportData.RowSeparatorModelExport.SerializeOverride(System.Text.StringBuilder)">
+            <summary>
+            Serializes the cell information.
+            </summary>
+            <param name="sb">The builder to add the serialization to.</param>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.ExportData.TemplateHeaderCellModelExport">
+            <summary>
+            Exported information about a template header.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.TemplateHeaderCellModelExport.Value">
+            <summary>
+            The value of the template header.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.TemplateHeaderCellModelExport.Type">
+            <summary>
+            Gets the type of the cell.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.ExportData.TemplateHeaderCellModelExport.SerializeOverride(System.Text.StringBuilder)">
+            <summary>
+            Serializes the information about the cell.
+            </summary>
+            <param name="sb">The builder to serialize to.</param>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.ExportData.TemplateCellModelExport">
+            <summary>
+            Exported information about a template cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.TemplateCellModelExport.Value">
+            <summary>
+            The value of the templated cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.TemplateCellModelExport.Type">
+            <summary>
+            Gets the type of the cell.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.ExportData.TemplateCellModelExport.SerializeOverride(System.Text.StringBuilder)">
+            <summary>
+            Serializes the information about the cell.
+            </summary>
+            <param name="sb">The builder to add the serialization to.</param>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.ExportData.TextCellModelExport">
+            <summary>
+            Exported information about a text grid cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.TextCellModelExport.TextValue">
+            <summary>
+            The text value of the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.TextCellModelExport.FormatString">
+            <summary>
+            The format string of the cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.TextCellModelExport.Type">
+            <summary>
+             Gets the type of the cell.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.ExportData.TextCellModelExport.SerializeOverride(System.Text.StringBuilder)">
+            <summary>
+            Serializes information about the cell.
+            </summary>
+            <param name="sb">The builder to serialize to.</param>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.ExportData.TextHeaderCellModelExport">
+            <summary>
+            Exported information about a text header grid cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.TextHeaderCellModelExport.Type">
+            <summary>
+            Gets the type of the cell.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.ExportData.TextHeaderCellModelExport.SerializeOverride(System.Text.StringBuilder)">
+            <summary>
+            Serializes the information about the cell.
+            </summary>
+            <param name="sb">The builder to add the serialization to.</param>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.ExportData.GridLayerExport">
+            <summary>
+            Exported information about the DataGrid
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.GridLayerExport.Name">
+            <summary>
+            Gets or sets the name of the grid layer.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.GridLayerExport.Cells">
+            <summary>
+            Gets or sets all the cell in the grid.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.ExportData.GridLayerExport.#ctor(System.String)">
+            <summary>
+            Constructs a GridLayerExport
+            </summary>
+            <param name="name">The name of the grid layer.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.ExportData.GridLayerExport.Add(Infragistics.Controls.Grid.ExportData.CellModelExport)">
+            <summary>
+            Adds a cell export to the grid.
+            </summary>
+            <param name="export"></param>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.ExportData.GridLayerExport.Clear">
+            <summary>
+            Clears the cell exports from the grid.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.ExportData.GridLayerExport.Serialize">
+            <summary>
+            Serializes the exported information.
+            </summary>
+            <returns>The serialized information.</returns>
+        </member>
+        <member name="T:Infragistics.Controls.Grid.ExportData.VisualModelExport">
+            <summary>
+            Exports information about the visual model of the grid.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.ActualVisibleRegion">
+            <summary>
+            Gets or sets the actual visible region of the grid.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.AbsoluteWidth">
+            <summary>
+            Gets or sets the absolute width of the content.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.AbsoluteHeight">
+            <summary>
+            Gets or sets the absolute height of the content.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.FullHeaderHeight">
+            <summary>
+            Gets or sets the full height of the header.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.FixedRowHeight">
+            <summary>
+            Gets or sets the fixed row height.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.FixedColumnWidthLeft">
+            <summary>
+            Gets or sets the left fixed column width.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.FixedColumnWidthRight">
+            <summary>
+            Gets or sets the right fixed column width.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.ColumnSpacing">
+            <summary>
+            Gets or sets the column spacing.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.SeparatorLeft">
+            <summary>
+            Gets or sets the left separator.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.SeparatorRight">
+            <summary>
+            Gets or sets the right separator.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.Top">
+            <summary>
+            Gets or sets the top position of the visible content.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.Left">
+            <summary>
+            Gets or sets the left position of the visible content.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.Height">
+            <summary>
+            Gets or sets the height of the visible content.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.Width">
+            <summary>
+            Gets or sets the width of the visible content.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.SubContentLayer">
+            <summary>
+            Gets or sets the sub content layer.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.ContentLayer">
+            <summary>
+            Gets or sets the content layer.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.FixedLayer">
+            <summary>
+            Gets or sets the fixed layer.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.DecoratorLayer">
+            <summary>
+            Gets or sets the decorator layer.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.HeaderLayer">
+            <summary>
+            Gets or sets the header layer.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.HeaderDecoratorLayer">
+            <summary>
+            Gets or sets the header decorator layer.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.FixedHeaderLayer">
+            <summary>
+            Gets or sets the fixed header layer.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.HiddenLayer">
+            <summary>
+            Gets or sets the hidden layer.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.DipScalingRatio">
+            <summary>
+            Gets or sets the DIP Scaling ratio for the device.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.ExportData.VisualModelExport.#ctor">
+            <summary>
+            Constructs a VisualModelExport.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.GridLayers">
+            <summary>
+            Gets a list of grid layers from the export.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Grid.ExportData.VisualModelExport.HeaderHeight">
+            <summary>
+            Gets or sets the header height.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.ExportData.VisualModelExport.Reset">
+            <summary>
+            Resets the export.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Grid.ExportData.VisualModelExport.Serialize">
+            <summary>
+            Serializes the export.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Infragistics.Core.Controls.Grid.ICellActionManager">
+            <summary>
+            Allows you to route cell actions to the grid for processing.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Core.Controls.Grid.ICellActionManager.ClickCell">
+            <summary>
+            Notifies the grid that a cell has been clicked.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Core.Controls.Grid.ICellActionManager.PreviewPointerDownCell">
+            <summary>
+            Notifies the grid that a pointer is pressing on the cell.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Core.Controls.Grid.ICellActionManager.PreviewPointerUpCell">
+            <summary>
+            Notifies the grid that a pointer is releasing on a cell.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Core.Controls.Grid.ICellActionManager.PointerDownCell">
+            <summary>
+            Notifies the grid that a pointer is down on a cell.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Core.Controls.Grid.ICellActionManager.PointerUpCell">
+            <summary>
+            Notifies the grid that a pointer is up on a cell.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Core.Controls.Grid.ICellActionManager.IsClickActionDesired">
+            <summary>
+            Gets if the click action is desired to be reported.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Core.Controls.Grid.ICellActionManager.IsPreviewPointerDownActionDesired">
+            <summary>
+            Gets if the preview pointer down action is desired to be reported.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Core.Controls.Grid.ICellActionManager.IsPreviewPointerUpActionDesired">
+            <summary>
+            Gets if the preview pointer up action is desired to be reported.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Core.Controls.Grid.ICellActionManager.IsPointerDownActionDesired">
+            <summary>
+            Gets if the pointer down action is desired to be reported.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Core.Controls.Grid.ICellActionManager.IsPointerUpActionDesired">
+            <summary>
+            Gets if the pointer up action is desired to be reported.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,2410 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Infragistics.XF.Scheduler</name>
+    </assembly>
+    <members>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource">
+            <summary>
+            Abstract base class for a data source which provides <see cref="T:Infragistics.Scheduler.Appointment"/>
+            and <see cref="T:Infragistics.Scheduler.ScheduleResource"/> data.
+            </summary>
+            <remarks>
+            <p class="body">
+            ScheduleDataSource provides the ability to bind the
+            <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler"/> to a source of
+            data from which <see cref="T:Infragistics.Scheduler.Appointment"/> and
+            <see cref="T:Infragistics.Scheduler.ScheduleResource"/> objects can be created,
+            updated, and deleted.
+            </p>
+            <p class="body">
+            Use the <see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.GetAppointmentsInRange(Infragistics.Core.DateTimeRange)"/>
+            method to obtain a subset of <see cref="T:Infragistics.Scheduler.Appointment"/> objects which lie in a specific
+            date range.
+            </p>
+            <p class="body">
+            To update an existing <see cref="T:Infragistics.Scheduler.Appointment"/> object, call the
+            <see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.BeginEdit(Infragistics.Scheduler.Appointment)"/> method to begin
+            the edit session, and the <see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.EndEdit(Infragistics.Scheduler.Appointment,System.Boolean)"/> method
+            to commit changes made to the object.
+            </p>
+            <p class="body">
+            Similarly, a new Appointment can be created by calling the
+            <see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.CreateAppointment"/> method,
+            followed by a call to EndEdit to commit the changes.
+            </p>
+            <p class="body">
+            To delete an existing Appointment, use the <see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.DeleteAppointment(Infragistics.Scheduler.Appointment)"/>
+            method.
+            </p>
+            <p class="body">
+            Because the ScheduleDataSource class supports asynchronous interaction with
+            a data source, the create/read/update/delete related methods return an object
+            from which the data can be obtained synchronously or asynchronously, depending
+            on the derived class implementation.
+            </p>
+            <p class="body">
+            The <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource"/> class provides a concrete implementation
+            of ScheduleDataSource, for synchronous access to a locally stored data source.
+            See documentation of that class for details.
+            </p>
+            </remarks>
+            <seealso cref="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource"/>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+            <seealso cref="T:Infragistics.Scheduler.ScheduleResource"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.#ctor">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.BeginEdit(Infragistics.Scheduler.Appointment)">
+            <summary>
+            Begins an edit mode session on the specified <see cref="T:Infragistics.Scheduler.ActivityBase">activity</see>.
+            </summary>
+            <param name="appointment">The <see cref="T:Infragistics.Scheduler.Appointment"/> to be edited.</param>
+            <returns>
+            True if the operation was successful.
+            </returns>
+            <seealso cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.BeginEdit(Infragistics.Scheduler.Appointment)"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.BeginEdit(Infragistics.Scheduler.Appointment,System.Action{Infragistics.Scheduler.Data.DataError})">
+            <summary>
+            Begins an edit mode session on the specified <see cref="T:Infragistics.Scheduler.ActivityBase">activity</see>.
+            </summary>
+            <param name="appointment">The <see cref="T:Infragistics.Scheduler.Appointment"/> to be edited.</param>
+            <param name="errorCallback">Delegate which is called if an error occurs.</param>
+            <returns>
+            True if the operation was successful.
+            </returns>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+            <seealso cref="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource"/>
+            <seealso cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.CreateAppointment"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.CancelEdit(Infragistics.Scheduler.Appointment)">
+            <summary>
+            Reverses changes made to an <see cref="T:Infragistics.Scheduler.Appointment"/> during an edit mode
+            session initiated by the <see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.BeginEdit(Infragistics.Scheduler.Appointment)"/>
+            or <see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.CreateAppointment"/> methods.
+            </summary>
+            <param name="appointment">The <see cref="T:Infragistics.Scheduler.Appointment"/> being edited.</param>
+            <returns>An <see cref="T:Infragistics.Scheduler.Data.AppointmentOperationResult"/> instance containing the result of the operation.</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.CreateAppointment">
+            <summary>
+            When overridden in a derived class, creates a new <see cref="T:Infragistics.Scheduler.Appointment"/>.
+            </summary>
+            <returns>
+            A reference to the new <see cref="T:Infragistics.Scheduler.Appointment"/> or null if the operation fails.
+            </returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.CreateAppointment(System.Action{Infragistics.Scheduler.Data.DataError})">
+            <summary>
+            When overridden in a derived class, creates a new <see cref="T:Infragistics.Scheduler.Appointment"/>.
+            </summary>
+            <param name="errorCallback">Delegate which is called if an error occurs.</param>
+            <returns>
+            A reference to the new <see cref="T:Infragistics.Scheduler.Appointment"/> or null if the operation fails.
+            To receive detailed information about the reson the operation failed, a delegate
+            must be assigned to the <paramref name="errorCallback"/> parameter.
+            </returns>
+            <remarks>
+            <p class="body">
+            The CreateAppointment method returns a new, uninitialized <see cref="T:Infragistics.Scheduler.Appointment"/>
+            instance. This appointment is <b>not</b> associated with the data source until the
+            <see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.EndEdit(Infragistics.Scheduler.Appointment,System.Boolean)"/> method is called; as such, it will not appear
+            in activity queries or in the user interface of an attached <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler"/>.
+            </p>
+            <p class="body">
+            <b>Note</b> that the <see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.EndEdit(Infragistics.Scheduler.Appointment,System.Boolean)"/> method <b>must</b>
+            be called to commit the creation of the new appointment.
+            </p>
+            <p class="body">
+            Also note that the underlying item source for appointment data must support
+            creation of new objects. Typically this requires that the object expose a
+            parameterless constructor. Derived classes may provide alternative means
+            through which a new data object instance can be created.
+            </p>
+            </remarks>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+            <seealso cref="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.CreateAppointmentDataObjectCallback"/>
+            <seealso cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.DeleteAppointment(Infragistics.Scheduler.Appointment)"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.DeleteAppointment(Infragistics.Scheduler.Appointment)">
+            <summary>
+            When overridden in a derived class, deletes the specified <see cref="T:Infragistics.Scheduler.Appointment"/>.
+            </summary>
+            <param name="appointment">The appointment to be deleted.</param>
+            <returns>
+            An <see cref="T:Infragistics.Scheduler.Data.AppointmentOperationResult"/> instance which contains the result of the operation.
+            </returns>
+            <remarks>
+            <p class="body">
+            The DeleteAppointment method removes an existing <see cref="T:Infragistics.Scheduler.Appointment"/>
+            instance, and causes it to become disassociated from the data source. After
+            a successful deletion, the Appointment no longer appears in activity queries
+            or in the user interface.
+            </p>
+            <p class="body">
+            Note that the underlying item source for appointment data must support
+            removal of items.
+            </p>
+            </remarks>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+            <seealso cref="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource"/>
+            <seealso cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.CreateAppointment"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.EndEdit(Infragistics.Scheduler.Appointment,System.Boolean)">
+            <summary>
+            Commits changes made to an <see cref="T:Infragistics.Scheduler.ActivityBase"/> during an edit mode
+            session initiated by the <see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.BeginEdit(Infragistics.Scheduler.Appointment)"/>
+            or <see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.CreateAppointment"/> methods.
+            </summary>
+            <param name="appointment">The <see cref="T:Infragistics.Scheduler.Appointment"/> being edited.</param>
+            <param name="force">True to force exiting of edit mode.</param>
+            <returns>An <see cref="T:Infragistics.Scheduler.Data.AppointmentOperationResult"/> instance containing the result of the operation.</returns>
+            <seealso cref="T:Infragistics.Scheduler.Data.AppointmentOperationResult"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.GetAppointmentsInRange(Infragistics.Core.DateTimeRange)">
+            <summary>
+            Returns all <see cref="T:Infragistics.Scheduler.Appointment">appointments</see> which lie within the
+            specified date/time range.
+            </summary>
+            <param name="range">The range of time for which the appointments are to be returned.</param>
+            <returns>An <see cref="T:Infragistics.Scheduler.Data.AppointmentQueryResult"/> object containing the result of the query.</returns>
+            <remarks>
+            <p class="body">
+            Note that this method returns all appointments in the specified range, regardless
+            of which <see cref="T:Infragistics.Scheduler.ScheduleResource"/> the appointment may be associated with.
+            </p>
+            <p class="body">
+            Use the <see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.GetAppointmentsInRange(Infragistics.Core.DateTimeRange)"/>
+            overload to filter the returned appointment list by one or more <see cref="T:Infragistics.Scheduler.ScheduleResource"/>.
+            </p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.GetAppointmentsInRange(Infragistics.Core.DateTimeRange,System.Collections.Generic.IEnumerable{Infragistics.Scheduler.ScheduleResource})">
+            <summary>
+            When overridden in a derived class, returns the <see cref="T:Infragistics.Scheduler.Appointment">appointments</see>
+            which lie within the specified date/time range, optionally filtering by one or more
+            <see cref="T:Infragistics.Scheduler.ScheduleResource">resources</see>.
+            </summary>
+            <param name="range">The range of time for which the appointments are to be returned.</param>
+            <param name="resources">
+            Optional list of <see cref="T:Infragistics.Scheduler.ScheduleResource">resources</see> on which to filter.
+            If a non-null value is specified, only appointments which belong to one of the
+            specified resources is returned.
+            </param>
+            <returns>An <see cref="T:Infragistics.Scheduler.Data.AppointmentQueryResult"/> object containing the result of the query.</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.GetResources">
+            <summary>
+            Returns an enumerable list of the <see cref="T:Infragistics.Scheduler.ScheduleResource">resources</see>
+            associated with this data source.
+            </summary>
+            <remarks>
+            <p class="body">
+            A <see cref="T:Infragistics.Scheduler.ScheduleResource"/> provides the ability to group <see cref="T:Infragistics.Scheduler.Appointment"/>
+            data; activity queries can filter by a resource to limit the query result
+            so that only appointments associated with a given resource are returned.
+            </p>
+            <p class="body">
+            The manner in which resources are associated with the data source is dependent
+            on the derived class implementation; for example, <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource"/>
+            exposes a <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourceItemsSource"/> property through
+            which an item source for the resource data can be defined.
+            </p>
+            </remarks>
+            <seealso cref="T:Infragistics.Scheduler.ScheduleResource"/>
+            <seealso cref="P:Infragistics.Scheduler.ScheduleResource.Id"/>
+            <seealso cref="P:Infragistics.Scheduler.ActivityBase.Resource"/>
+            <seealso cref="P:Infragistics.Scheduler.ActivityBase.ResourceId"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.HasAppointmentsInRange(Infragistics.Core.DateTimeRange,System.Collections.Generic.IEnumerable{Infragistics.Scheduler.ScheduleResource},System.Boolean)">
+            <summary>
+            Returns an array of dates representing the days in the given date/time
+            range which contain appointments.
+            </summary>
+            <param name="range">The range of time to test.</param>
+            <param name="resources">
+            Optional list of <see cref="T:Infragistics.Scheduler.ScheduleResource">resources</see> on which to filter.
+            If a non-null value is specified, only appointments which belong to one of the
+            specified resources is returned.
+            </param>
+            <param name="findFirst">
+            If true the query terminates as soon as it encounters activity
+            in the given range. Use this if you are not interested in which dates
+            have activity, only whether each date in the specified range contains
+            <i>any</i> activity at all.
+            </param>
+            <returns>A <see cref="T:Infragistics.Scheduler.Data.DateQueryResult"/> object containing the result of the query.</returns>
+            <remarks>
+            <p class="body">
+            The HasAppointmentsInRange
+            </p>
+            </remarks>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.DataError">
+            <summary>
+            Occurs when an error was encountered during a data access operation.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource">
+             <summary>
+             <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource"/>-derived class for use with lists of
+             objects that provide data from which <see cref="T:Infragistics.Scheduler.Appointment">appointments</see>
+             and <see cref="T:Infragistics.Scheduler.ScheduleResource">resources</see> can be created.
+             </summary>
+             <remarks>
+             <p class="body">
+             The ScheduleListDataSource class provides the ability to bind a list of
+             "plain old CLR objects" (commonly referred to as a "POCOs"), which provide
+             <see cref="T:Infragistics.Scheduler.Appointment"/> and <see cref="T:Infragistics.Scheduler.ScheduleResource"/>
+             data. An existing class can be used to represent an appointment or a resource,
+             provided that the class exposes properties of the required type. If the names of
+             these properties are the same as the corresponding appointment/resource property,
+             these properties are automatically bound to their respective appointment/resource
+             properties; if the names are different, property mapping support is provided through
+             the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentPropertyMappings"/> and <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourcePropertyMappings"/>
+             collections.
+             </p>
+             <p class="body">
+             The <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentItemsSource"/> property accepts any value which implements
+             the <a href="https://msdn.microsoft.com/en-us/library/system.collections.ienumerable(v=vs.110).aspx">IEnumerable</a> 
+             interface. However, with a simple IEnumerable implementation, certain functionality
+             is not supported, most notably creation of new appointments, and deletion of existing ones.
+             External modifications to the item source are not reflected by the ScheduleListDataSource
+             class, since the IEnumerable interface does not provide any change notification mechanism.
+             </p>
+             <p class="body">
+             With an item source which implements the
+             <a href="https://msdn.microsoft.com/en-us/library/system.collections.ilist(v=vs.110).aspx">IList</a>
+             interface, creation and deletion of appointments through the ScheduleListDataSource API
+             is supported, but external changes to the item source are, as with an IEnumerable implementation,
+             not reflected by the ScheduleListDataSource, again due to the lack of a change notification mechanism.
+             Note that the <a href="https://msdn.microsoft.com/en-us/library/6sh2ey19(v=vs.110).aspx">List&lt;T&gt;</a>
+             class falls into this category as well.
+             </p>
+             <p class="body">
+             An item source which implements the IList and
+             <a href="https://msdn.microsoft.com/en-us/library/system.collections.specialized.inotifycollectionchanged(v=vs.110).aspx">INotifyCollectionChanged</a>
+             interfaces provides the most functionality, as content change methods as well as notification methods exist. In this
+             case, creation and deletion is supported both through the ScheduleListDataSource API and via external changes
+             to the collection. When possible, it is best to use the
+             <a href="https://msdn.microsoft.com/en-us/library/ms668604(v=vs.110).aspx">ObservableCollection&lt;T&gt;</a>
+             class, which supports both content change and notification mechanisms.
+             </p>
+             <p class="body">
+             Another requirement for the ability to create new appointments is a public parameterless
+             constructor exposed by the underlying data object class. If the class does not expose a
+             public parameterless constructor, the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.CreateAppointmentDataObjectCallback"/>
+             property can be used to provide a factory method which is called when a new Appointment
+             object is created. Without a parameterless constructor or a factory method, addition of
+             new appointments is not supported, regardless of whether the item source supports content
+             changes.
+             </p>
+             <p class="body">
+             The <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourceItemsSource"/> property works the same as AppointmentItemsSource,
+             although because adding/removing <see cref="T:Infragistics.Scheduler.ScheduleResource">resources</see> is not supported
+             through the user interface, it is not as important to use a list type which supports creation
+             and deletion.
+             </p>
+             <p class="body">
+             Note that the "POCO" object which provides the backing store for an appointment or resource
+             must implement the <a href="https://msdn.microsoft.com/en-us/library/system.componentmodel.inotifypropertychanged(v=vs.110).aspx">INotifyPropertyChanged</a>
+             interface in order to support external changes made to that object. Without such a property change
+             notification mechanism, ScheduleListDataSource cannot react to changes made to property values, and
+             as such will not be able to keep the corresponding properties of the appointment or resource object
+             synchronized. Changes made to property values of the Appointment and ScheduleResource class through
+             the API, however, are immediately reflected by ScheduleListDataSource, and are immediately propagated
+             back to the underlying data object as well.
+             </p>
+             <p class="body">
+             The following table summarizes the functionality which is available under each usage scenario:
+             </p>
+             <p class="body">
+             <table>
+             <tr>
+                 <th>Interface(s)</th>
+                 <th>Functionality</th>
+             </tr>
+             
+             <tr>
+                 <td>IEnumerable</td>
+                 <td>
+                     Provides only basic functionality. An appointment/resource is
+                     created for each item in the list, but adding new items and removing
+                     existing ones is not supported.
+                 </td>
+             </tr>
+             
+             <tr>
+                 <td>IList</td>
+                 <td>
+                     Provides the ability to add/remove appointments/resources, but only
+                     through the API.
+                 </td>
+             </tr>
+             
+             <tr>
+                 <td>INotifyCollectionChanged</td>
+                 <td>
+                     Provides the ability to add/remove appointments/resources through
+                     external changes made to the item source.
+                 </td>
+             </tr>
+             
+             <tr>
+                 <td>IList + INotifyCollectionChanged</td>
+                 <td>
+                     Addition and removal of appointments/resources is supported both
+                     through the API as well as external changes made to the item source.
+                     <b>For best results, the ObservableCollection&lt;T&gt; class is recommended</b>
+                     as this class implements both interfaces.
+                 </td>
+             </tr>
+             
+             <tr>
+                 <td>INotifyPropertyChanged</td>
+                 <td>
+                     If implemented on the underlying data object class (i.e., "POCO"),
+                     external changes made to properties of the object are immediately
+                     synchronized with the corresponding appointment/resource object.
+                     Note that <b>changes made through appointment/resource properties are always
+                     propagated back to the underlying data object</b>, so an INotifyPropertyChanged
+                     implementation is unnecessary in that scenario.
+                 </td>
+             </tr>
+            
+             </table>
+             </p>
+             </remarks>
+             <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentItemsSource"/>
+             <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentPropertyMappings"/>
+             <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.CreateAppointmentDataObjectCallback"/>
+             <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourceItemsSource"/>
+             <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourcePropertyMappings"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.OnPropertyChanged(System.String)">
+            <summary>
+            Called after a property has changed
+            </summary>
+            <param name="propertyName">the name of the property</param>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.#ctor">
+            <summary>
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentItemsSourceProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentItemsSource"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentItemsSource">
+            <summary>
+            Returns or sets the list of data objects from which
+            <see cref="T:Infragistics.Scheduler.Appointment">appointments</see> are created.
+            </summary>
+            <remarks>
+            <p class="body">
+            While any IEnumerable implementation can serve as a valid items source,
+            some functionality may not be available depending on the implementation.
+            </p>
+            <p class="body">
+            For example, if the specified item source does not implement the
+            <a href="https://msdn.microsoft.com/en-us/library/system.collections.ilist(v=vs.110).aspx">IList</a>
+            interface, appointments cannot be added or removed, since the IEnumerable interface alone
+            does not provide a way to modify the contents of the underlying list.
+            </p>
+            <p class="body">
+            Furthermore, the IList implementation must allow for content modification, i.e.,
+            it's <i>IsFixedSize</i> and <i>IsReadOnly</i> properties must return true.
+            </p>
+            <p class="body">
+            Also note that because the IList interface does not provide support
+            for content modification notifications, external changes to the item
+            source will not be recognized by the data source, resulting in synchronization
+            issues.
+            </p>
+            <p class="body">
+            If the application requires that external changes to the item source be
+            synchronized with the data source, it is necessary to use a class which 
+            implements the <a href="https://msdn.microsoft.com/en-us/library/system.collections.specialized.inotifycollectionchanged(v=vs.110).aspx">INotifyCollectionChanged</a>
+            interface, such as <a href="https://msdn.microsoft.com/en-us/library/ms668604(v=vs.110).aspx">ObservableCollection&lt;T&gt;</a>.
+            </p>
+            <p class="body">
+            In cases where the names or types of the data object properties which are bound
+            to appointment properties are disparate, use the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentPropertyMappings"/>
+            collection to provide a mapping between the data object and appointment.
+            </p>
+            <p class="body">
+            When an element in the item source cannot yield successful creation of an appointment
+            object, the <see cref="E:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.DataError"/> event occurs, providing a detailed
+            description of the direct cause of the rejection. This event can be useful during debugging
+            sessions.
+            </p>
+            </remarks>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentPropertyMappings"/>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourceItemsSource"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentPropertyMappingsProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentPropertyMappings"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentPropertyMappings">
+            <summary>
+            Returns a collection which enables the developer to map an <see cref="T:Infragistics.Scheduler.Appointment"/>
+            property to a property of the underlying data object which has a different name.
+            </summary>
+            <remarks>
+            <p class="body">
+            In cases where the names of the properties on the underlying data object
+            are <i>all</i> the same as that of the schedule object properties to which they are
+            bound, a mapping can be automatically assumed to exist. In this case, no explicit
+            mappings are necessary.
+            </p>
+            <p class="body">
+            In the case where a property of the underlying data object has the same name
+            as a schedule object property, but the developer does <b>not</b> want a mapping
+            to exist, add an <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMapping"/> with a null value for
+            the <see cref="!:SchedulePropertyMapping&lt;T&gt;.DataObjectPropertyName"/> property.
+            </p>
+            <p class="body">
+            In cases where the data type of the bound property does not match that of
+            the corresponding schedule object property, conversion is attempted, but is
+            limited by the functionality provided by the
+            <a href="https://msdn.microsoft.com/en-us/library/system.convert(v=vs.110).aspx">Convert</a>
+            class. For example, an appointment's <see cref="P:Infragistics.Scheduler.ActivityBase.Start">Start</see> property can be
+            mapped to a field of type string (assuming the data contained therein is a valid string
+            representation of a date/time). Similarly, the <see cref="P:Infragistics.Scheduler.ActivityBase.Id">Id</see> property
+            can be mapped to a field of type integer, since the numeric value can be converted to a string.
+            </p>
+            <p class="body">
+            In cases where the value of the bound property
+            is <b>not</b> convertible to that of the schedule object property, the
+            <see cref="!:SchedulePropertyMapping&lt;T&gt;.ConvertCallback"/> and
+            <see cref="!:SchedulePropertyMapping&lt;T&gt;.ConvertBackCallback"/>
+            methods can be used to convert data bi-directionally.
+            </p>
+            <p class="body">
+            The following <see cref="T:Infragistics.Scheduler.Appointment"/> properties require mappings:
+            <ul>
+            <li><see cref="P:Infragistics.Scheduler.ActivityBase.Id"/></li>
+            <li><see cref="P:Infragistics.Scheduler.ActivityBase.Start"/></li>
+            <li><see cref="P:Infragistics.Scheduler.ActivityBase.End"/></li>
+            </ul>
+            </p>
+            </remarks>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.CreateAppointmentDataObjectCallbackProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.CreateAppointmentDataObjectCallback"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.CreateAppointmentDataObjectCallback">
+            <summary>
+            Returns or sets a delegate which is called to create a data object
+            for a newly created <see cref="T:Infragistics.Scheduler.Appointment"/>.
+            </summary>
+            <remarks>
+            <p class="body">
+            In cases where it is not possible to determine the type of the items
+            contained within the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentItemsSource"/>, a new instance
+            of that type cannot be automatically created using reflection. This is also
+            the case for a type which does not publicly expose a parameterless constructor.
+            </p> 
+            <p class="body">
+            This property makes it possible for the developer to receive a callback at
+            the time of <see cref="T:Infragistics.Scheduler.Appointment"/> instance creation, thereby providing
+            a way for a corresponding data object to be created.
+            </p> 
+            </remarks>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentItemsSource"/>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+            <seealso cref="!:CreateAppointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.HandleAppointmentItemsPropertyChangedProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.HandleAppointmentItemsPropertyChanged"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.HandleAppointmentItemsPropertyChanged">
+            <summary>
+            Determines whether the <a href="https://msdn.microsoft.com/en-us/library/system.componentmodel.inotifypropertychanged.propertychanged(v=vs.110).aspx">INotifyPropertyChanged.PropertyChanged</a>
+            event is handled for <see cref="T:Infragistics.Scheduler.Appointment"/> <see cref="P:Infragistics.Scheduler.DataBindableItemBase.DataObject">data objects</see>.
+            </summary>
+            <remarks>
+            <p class="body">
+            In order to receive a notification when a property of an Appointment's underlying
+            data object changes value, the data source will register as a listener of the
+            data object's INotifyPropertyChanged.PropertyChanged event. This enables the
+            corresponding <see cref="T:Infragistics.Scheduler.Appointment"/> object to react to external changes and
+            synchronize it's own property values accordingly.
+            </p> 
+            <p class="body">
+            In cases where the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentItemsSource"/> contains a relatively
+            large number of items, this can affect performance and/or memory consumption
+            adversely.
+            </p> 
+            <p class="body">
+            This property provides a way for the developer to switch this behavior off,
+            thus signaling to the data source that the PropertyChanged event should <b>not</b>
+            be handled.
+            </p> 
+            <p class="body">
+            This property is only applicable when the underlying data object implements the
+            <i>INotifycPropertyChanged</i> interface.
+            </p> 
+            <p class="body">
+            Also note that the data source exposes a <see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.RaisePropertyChanged(System.Object,Infragistics.Scheduler.Data.AppointmentProperty)"/>
+            method, which routes through the same logic as the handler for the data object's PropertyChanged
+            event. Call this method directly to simulate the PropertyChanged event for the specified appointment
+            data object, thus achieving the same result as handling the PropertyChanged event.
+            </p> 
+            </remarks>
+            <seealso cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.RaisePropertyChanged(System.Object,Infragistics.Scheduler.Data.AppointmentProperty)"/>
+            <seealso cref="P:Infragistics.Scheduler.DataBindableItemBase.DataObject"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourceItemsSourceProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourceItemsSource"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourceItemsSource">
+            <summary>
+            Returns or sets the list of data objects from which
+            <see cref="T:Infragistics.Scheduler.Appointment">appointments</see> are created.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourcePropertyMappingsProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourcePropertyMappings"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourcePropertyMappings">
+            <summary>
+            Returns a collection which enables the developer to map a <see cref="T:Infragistics.Scheduler.ScheduleResource"/>
+            property to a property of the underlying data object which has a different name.
+            </summary>
+            <remarks>
+            <p class="body">
+            In cases where the names of the properties on the underlying data object
+            are <i>all</i> the same as that of the schedule object properties to which they are
+            bound, a mapping can be automatically assumed to exist. In this case, no explicit
+            mappings are necessary.
+            </p>
+            <p class="body">
+            In the case where a property of the underlying data object has the same name
+            as a schedule object property, but the developer does <b>not</b> want a mapping
+            to exist, add an <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMapping"/> with a null value for
+            the <see cref="!:SchedulePropertyMapping&lt;T&gt;.DataObjectPropertyName"/> property.
+            </p>
+            <p class="body">
+            Note that in cases where the data type of the bound property
+            does not match that of the schedule object property, the
+            <see cref="!:SchedulePropertyMapping&lt;T&gt;.ConvertCallback"/> and
+            <see cref="!:SchedulePropertyMapping&lt;T&gt;.ConvertBackCallback"/>
+            methods can be used to convert data bi-directionally.
+            </p>
+            <p class="body">
+            The following <see cref="T:Infragistics.Scheduler.ScheduleResource"/> properties require mappings:
+            <ul>
+            <li><see cref="P:Infragistics.Scheduler.ScheduleResource.Id"/></li>
+            <li><see cref="P:Infragistics.Scheduler.ScheduleResource.DisplayName"/></li>
+            </ul>
+            </p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.RaisePropertyChanged(System.Object,Infragistics.Scheduler.Data.AppointmentProperty)">
+            <summary>
+            Notifies the data source of a change to a property
+            value of the specified <paramref name="dataObject"/>.
+            </summary>
+            <param name="dataObject">The data object whose property value has changed.</param>
+            <param name="property">A <see cref="T:Infragistics.Scheduler.Data.AppointmentProperty">constant</see> identifying the property whose value has changed.</param>
+            <remarks>
+            <p class="body">
+            In cases where there are a relatively large number of data objects in the
+            <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentItemsSource"/>, performance may be adversely impacted
+            by handling the PropertyChanged event via the data object's INotifyPropertyChanged
+            interface. To avoid this, set the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.HandleAppointmentItemsPropertyChanged"/>
+            property to false.
+            </p>
+            <p class="body">
+            Note that if the data source is created in this manner, the state of the corresponding
+            <see cref="T:Infragistics.Scheduler.Appointment"/> object cannot be automatically synchronized with
+            that of the underlying data object.
+            </p>
+            <p class="body">
+            Use this method to manually send a property change notification for the affected
+            data object and property value, thus ensuring that the state of the appointment
+            object is synchronized with that of the underlying data object.
+            </p>
+            </remarks>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping">
+            <summary>
+            Encapsulates a property mapping for a schedule object such
+            as an <see cref="T:Infragistics.Scheduler.Appointment"/> or <see cref="T:Infragistics.Scheduler.ScheduleResource"/>.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.#ctor">
+            <summary>
+            Initializes a new <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping"/>.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.ConvertBackCallbackProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.ConvertBackCallback"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.ConvertBackCallback">
+            <summary>
+            Reference to a delegate which is invoked before the value of a schedule
+            object property is assigned 'back' to the underlying data object's corresponding
+            property, providing an opportunity to convert the value to the type expected
+            by that property.
+            </summary>
+            <remarks>
+            <p class="body">
+            To bypass conversion, return the same value that was passed into this method.
+            If null is returned, a value of null will be assigned to the underlying data
+            object property, which will cause an exception to be thrown if null is not a
+            valid value for that property.
+            </p> 
+            </remarks>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.ConvertCallbackProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.ConvertCallback"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.ConvertCallback">
+            <summary>
+            Reference to a delegate which is invoked before a value is assigned
+            to a schedule object property, providing an opportunity to convert
+            the value.
+            </summary>
+            <remarks>
+            <p class="body">
+            To bypass conversion, return the same value that was passed into this method.
+            If null is returned, a value of null will be assigned to the schedule object
+            property, which will cause an exception to be thrown if null is not a valid
+            value for that property.
+            </p> 
+            </remarks>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.DataObjectPropertyNameProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.DataObjectPropertyName"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.DataObjectPropertyName">
+            <summary>
+            The name of the property of the underlying data object with which this instance
+            is associated.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMappingCollection">
+            <summary>
+            Collection class for <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMapping"/> objects.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMappingCollection.Add(Infragistics.Scheduler.Data.AppointmentProperty,System.String)">
+            <summary>
+            Creates an <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMapping"/> with the specified
+            <see cref="!:SchedulePropertyMapping&lt;T&gt;.Property"/> and <see cref="!:SchedulePropertyMapping&lt;T&gt;.DataObjectPropertyName"/>.
+            </summary>
+            <param name="property">The <see cref="T:Infragistics.Scheduler.Data.AppointmentProperty"/> constant identifying the <see cref="T:Infragistics.Scheduler.Appointment"/> property for which a mapping is to be added.</param>
+            <param name="dataObjectPropertyName">The name of the property of the underlying data object to map.</param>
+            <returns>A <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMapping"/> instance.</returns>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMappingCollection">
+            <summary>
+            Collection class for <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMapping"/> objects.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMappingCollection.Add(Infragistics.Scheduler.Data.ScheduleResourceProperty,System.String)">
+            <summary>
+            Creates an <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMapping"/> with the specified
+            <see cref="!:SchedulePropertyMapping&lt;T&gt;.Property"/> and <see cref="!:SchedulePropertyMapping&lt;T&gt;.DataObjectPropertyName"/>.
+            </summary>
+            <param name="property">The <see cref="T:Infragistics.Scheduler.Data.ScheduleResourceProperty"/> constant identifying the <see cref="T:Infragistics.Scheduler.ScheduleResource"/> property for which a mapping is to be added.</param>
+            <param name="dataObjectPropertyName">The name of the property of the underlying data object to map.</param>
+            <returns>A <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMapping"/> instance.</returns>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler">
+            <summary>
+            Represents the primary view for the Scheduler component.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.OnPropertyChanging(System.String)">
+            <summary>
+            Called before a property is about to be changed
+            </summary>
+            <param name="propertyName">the name of the property</param>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.OnPropertyChanged(System.String)">
+            <summary>
+            Called after a property has changed
+            </summary>
+            <param name="propertyName">the name of the property</param>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.#ctor">
+            <summary>
+            Initializes a new <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler"/>.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeBackgroundBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeBackgroundBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeBackgroundBrush">
+            <summary>
+            Returns/sets the brush to use for filling the Background of an <see cref="T:Infragistics.Scheduler.Appointment"/> end time in an AgendaView.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontAttributesProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontAttributes"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontAttributes">
+            <summary>
+            Returns or sets the font style for the appointment end time in an AgendaView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontFamilyProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontFamily"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontFamily">
+            <summary>
+            Returns or sets the font family for the appointment end time in an AgendaView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontSize"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontSize">
+            <summary>
+            Returns or sets the font size for the appointment end time in an AgendaView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeSelectedBackgroundBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeSelectedBackgroundBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeSelectedBackgroundBrush">
+            <summary>
+            Returns/sets the brush to use for filling the Background of a selected <see cref="T:Infragistics.Scheduler.Appointment"/>'s end time in an AgendaView.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeSelectedTextBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeSelectedTextBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeSelectedTextBrush">
+            <summary>
+            Returns/sets the brush to use when rendering the text for a selected <see cref="T:Infragistics.Scheduler.Appointment"/>'s end time in the AgendaView.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeTextBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeTextBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeTextBrush">
+            <summary>
+            Returns/sets the brush to use when rendering the text for an <see cref="T:Infragistics.Scheduler.Appointment"/> end time in the AgendaView.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationBackgroundBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationBackgroundBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationBackgroundBrush">
+            <summary>
+            Returns/sets the brush to use for filling the Background of an <see cref="T:Infragistics.Scheduler.Appointment"/> location in an AgendaView.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontAttributesProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontAttributes"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontAttributes">
+            <summary>
+            Returns or sets the font style for the appointment location in an AgendaView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontFamilyProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontFamily"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontFamily">
+            <summary>
+            Returns or sets the font family for the appointment location in an AgendaView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontSize"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontSize">
+            <summary>
+            Returns or sets the font size for the appointment location in an AgendaView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationSelectedBackgroundBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationSelectedBackgroundBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationSelectedBackgroundBrush">
+            <summary>
+            Returns/sets the brush to use for filling the Background of a selected <see cref="T:Infragistics.Scheduler.Appointment"/>'s location in an AgendaView.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationSelectedTextBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationSelectedTextBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationSelectedTextBrush">
+            <summary>
+            Returns/sets the brush to use when rendering the text for a selected <see cref="T:Infragistics.Scheduler.Appointment"/>'s location in an AgendaView.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationTextBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationTextBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationTextBrush">
+            <summary>
+            Returns/sets the brush to use when rendering the text for an <see cref="T:Infragistics.Scheduler.Appointment"/> location in an AgendaView.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentMarginProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentMargin"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentMargin">
+            <summary>
+            Returns/sets the margin to use for rendering an <see cref="T:Infragistics.Scheduler.Appointment"/> an an AgendaView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentScopeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentScope"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentScope">
+            <summary>
+            Returns/sets the scope of appointments that are displayed in an AgendaView.
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.SelectedDate"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentScope"/>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSeparatorLineBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSeparatorLineBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSeparatorLineBrush">
+            <summary>
+            Returns/sets the brush to use when rendering the separator line between <see cref="T:Infragistics.Scheduler.Appointment"/>s in an AgendaView.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeBackgroundBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeBackgroundBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeBackgroundBrush">
+            <summary>
+            Returns/sets the brush to use for filling the Background of an <see cref="T:Infragistics.Scheduler.Appointment"/> start time in an AgendaView.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontAttributesProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontAttributes"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontAttributes">
+            <summary>
+            Returns or sets the font style for the appointment start time in an AgendaView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontFamilyProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontFamily"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontFamily">
+            <summary>
+            Returns or sets the font family for the appointment start time in an AgendaView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontSize"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontSize">
+            <summary>
+            Returns or sets the font size for the appointment start time in an AgendaView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeSelectedBackgroundBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeSelectedBackgroundBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeSelectedBackgroundBrush">
+            <summary>
+            Returns/sets the brush to use for filling the Background of a selected <see cref="T:Infragistics.Scheduler.Appointment"/>'s start time in an AgendaView.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeSelectedTextBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeSelectedTextBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeSelectedTextBrush">
+            <summary>
+            Returns/sets the brush to use when rendering the text for a selected <see cref="T:Infragistics.Scheduler.Appointment"/>'s start time in the AgendaView.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeTextBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeTextBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeTextBrush">
+            <summary>
+            Returns/sets the brush to use when rendering the text for an <see cref="T:Infragistics.Scheduler.Appointment"/> start time in the AgendaView.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectBackgroundBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectBackgroundBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectBackgroundBrush">
+            <summary>
+            Returns/sets the brush to use for filling the Background of an <see cref="T:Infragistics.Scheduler.Appointment"/> subject in an AgendaView.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontAttributesProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontAttributes"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontAttributes">
+            <summary>
+            Returns or sets the font style for the appointment subject in an AgendaView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontFamilyProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontFamily"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontFamily">
+            <summary>
+            Returns or sets the font family for the appointment subject in an AgendaView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontSize"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontSize">
+            <summary>
+            Returns or sets the font size for the appointment subject in an AgendaView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectSelectedBackgroundBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectSelectedBackgroundBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectSelectedBackgroundBrush">
+            <summary>
+            Returns/sets the brush to use for filling the Background of a selected <see cref="T:Infragistics.Scheduler.Appointment"/>'s subject in an AgendaView.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectSelectedTextBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectSelectedTextBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectSelectedTextBrush">
+            <summary>
+            Returns/sets the brush to use when rendering the text for a selected <see cref="T:Infragistics.Scheduler.Appointment"/>'s subject in an AgendaView.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectTextBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectTextBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectTextBrush">
+            <summary>
+            Returns/sets the brush to use when rendering the text for an <see cref="T:Infragistics.Scheduler.Appointment"/> subject in an AgendaView.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewBackgroundBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewBackgroundBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewBackgroundBrush">
+            <summary>
+            Returns/sets the brush to use for filling the Background of an AgendaView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderBackgroundBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderBackgroundBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderBackgroundBrush">
+            <summary>
+            Returns/sets the brush to use for filling the Background of a day header in an AgendaView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontAttributesProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontAttributes"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontAttributes">
+            <summary>
+            Returns or sets the font style for the day header in an AgendaView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontFamilyProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontFamily"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontFamily">
+            <summary>
+            Returns or sets the font family for the day header in an AgendaView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontSize"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontSize">
+            <summary>
+            Returns or sets the font size for the day header in an AgendaView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderMarginProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderMargin"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderMargin">
+            <summary>
+            Returns/sets the margin to use for rendering the text for the day header of a MonthView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderSeparatorLineBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderSeparatorLineBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderSeparatorLineBrush">
+            <summary>
+            Returns/sets the brush to use when rendering the separator line between a day header and the day's <see cref="T:Infragistics.Scheduler.Appointment"/>s in an AgendaView.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderTextBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderTextBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderTextBrush">
+            <summary>
+            Returns/sets the brush to use when rendering the text for a day header in an AgendaView.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewInterDaySpacingProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewInterDaySpacing"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewInterDaySpacing">
+            <summary>
+            Returns/sets the spacing between months in a MonthView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMaximumDateProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMaximumDate"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMaximumDate">
+            <summary>
+            Returns/sets the maximum date for which appointments should be displayed in an AgendaView.  When this property is set, its value will be constrained to the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MinimumDate"/> and <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MaximumDate"/> dates.
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MinimumDate"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MaximumDate"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMinimumDate"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontAttributesProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontAttributes"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontAttributes">
+            <summary>
+            Returns or sets the font style for the 'No Events' message in an AgendaView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontFamilyProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontFamily"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontFamily">
+            <summary>
+            Returns or sets the font family for the 'No Events' message in an AgendaView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontSize"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontSize">
+            <summary>
+            Returns or sets the font size for the 'No Events' message in an AgendaView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageTextBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageTextBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageTextBrush">
+            <summary>
+            Returns/sets the brush to use when rendering the text for the 'No Events' message in an AgendaView.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMinimumDateProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMinimumDate"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMinimumDate">
+            <summary>
+            Returns/sets the minimum date for which appointments should be displayed in an AgendaView.  When this property is set, its value will be constrained to the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MinimumDate"/> and <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MinimumDate"/> dates.
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MinimumDate"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MaximumDate"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMaximumDate"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.DataSourceProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.DataSource"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.DataSource">
+            <summary>
+            Returns/sets the <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource"/> to use for obtaining the activity data to display in the control.
+            </summary>
+            <seealso cref="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource"/>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MaximumDateProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MaximumDate"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MaximumDate">
+            <summary>
+            Returns/sets the earliest <see cref="T:System.DateTime"/> that can possibly be displayed in the control.  Defaults to a date that is 5 years later than the current date.
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MinimumDate"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMinimumDate"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMaximumDate"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MinimumDateProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MinimumDate"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MinimumDate">
+            <summary>
+            Returns/sets the latest <see cref="T:System.DateTime"/> that can possibly be displayed in the control.  Defaults to a date that is 5 years prior to the current date.
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MaximumDate"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMinimumDate"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMaximumDate"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAgendaVisibilityProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAgendaVisibility"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAgendaVisibility">
+            <summary>
+            Returns/sets the visibility of an AgendaView in a MonthView.  When true, the MonthView will display an AgendaView showing the Appointments for the currently selected day at the top of its list of Appointments.
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentScope"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMinimumDate"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMaximumDate"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontAttributesProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontAttributes"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontAttributes">
+            <summary>
+            Returns or sets the font style for the Appointment text in a MonthView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontFamilyProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontFamily"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontFamily">
+            <summary>
+            Returns or sets the font family for the Appointment text in a MonthView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontSize"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontSize">
+            <summary>
+            Returns or sets the font size for the Appointment text in a MonthView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewBackgroundBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewBackgroundBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewBackgroundBrush">
+            <summary>
+            Returns/sets the brush to use for filling the Background of a MonthView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayActivityIndicatorBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayActivityIndicatorBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayActivityIndicatorBrush">
+            <summary>
+            Returns/sets the brush to use for filling the activity content (indicator or subject) within a day in a MonthView when there 
+            is no resource assigned to an <see cref="T:Infragistics.Scheduler.Appointment"/>.  When there IS a <see cref="T:Infragistics.Scheduler.ScheduleResource"/> assigned to an 
+            <see cref="T:Infragistics.Scheduler.Appointment"/> this property is ignored and the brush associated with the <see cref="T:Infragistics.Scheduler.ScheduleResource"/> is used instead.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+            <seealso cref="T:Infragistics.Scheduler.ScheduleResource"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayContentDisplayMode"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayBackgroundBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayBackgroundBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayBackgroundBrush">
+            <summary>
+            Returns/sets the brush to use for filling the Background of a day in a MonthView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayContentDisplayModeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayContentDisplayMode"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayContentDisplayMode">
+            <summary>
+            Returns/sets the type of content displayed in a MonthView day.
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayContentDisplayMode"/>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+            <seealso cref="T:Infragistics.Scheduler.ActivityBase"/>
+            <seealso cref="T:Infragistics.Scheduler.ScheduleResource"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontAttributesProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontAttributes"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontAttributes">
+            <summary>
+            Returns or sets the font style for the day in a MonthView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontFamilyProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontFamily"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontFamily">
+            <summary>
+            Returns or sets the font family for the day in a MonthView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontSize"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontSize">
+            <summary>
+            Returns or sets the font size for the day in a MonthView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderBackgroundBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderBackgroundBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderBackgroundBrush">
+            <summary>
+            Returns/sets the brush to use for filling the background of a MonthView day of week header.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontAttributesProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontAttributes"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontAttributes">
+            <summary>
+            Returns or sets the font style for the day of week header in a MonthView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontFamilyProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontFamily"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontFamily">
+            <summary>
+            Returns or sets the font family for the day of week header in a MonthView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontSize"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontSize">
+            <summary>
+            Returns or sets the font size for the day of week header in a MonthView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderMarginProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderMargin"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderMargin">
+            <summary>
+            Returns/sets the margin to use for rendering the text for the month day of week header of a MonthView.
+            NOTE: Only the Top and Bottom margin values are applied - the Left and Right values are ignored.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderTextBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderTextBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderTextBrush">
+            <summary>
+            Returns/sets the brush to use for rendering the text for a MonthView day of week header.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderVisibilityProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderVisibility"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderVisibility">
+            <summary>
+            Returns/sets the visibility of the MonthView day of week headers.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayTextBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayTextBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayTextBrush">
+            <summary>
+            Returns/sets the brush to use when rendering the text for a day in the MonthView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewHorizontalSeparatorVisibilityProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewHorizontalSeparatorVisibility"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewHorizontalSeparatorVisibility">
+            <summary>
+            Returns/sets the visibility of the horizontal separators between weeks in the MonthView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewInterMonthSpacingProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewInterMonthSpacing"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewInterMonthSpacing">
+            <summary>
+            Returns/sets the spacing between months in a MonthView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayBackgroundBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayBackgroundBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayBackgroundBrush">
+            <summary>
+            Returns/sets the brush to use for filling the Background of a leading day in a MonthView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontAttributesProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontAttributes"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontAttributes">
+            <summary>
+            Returns or sets the font style for the leading day in a MonthView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontFamilyProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontFamily"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontFamily">
+            <summary>
+            Returns or sets the font family for the leading day in a MonthView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontSize"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontSize">
+            <summary>
+            Returns or sets the font size for the leading day in a MonthView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayTextBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayTextBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayTextBrush">
+            <summary>
+            Returns/sets the brush to use when rendering the text for a leading day in the MonthView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayVisibilityProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayVisibility"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayVisibility">
+            <summary>
+            Returns/sets the visibility of the leading days in a MonthView (i.e. days from the prior month that occur in the first week of a given month).
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameBackgroundBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameBackgroundBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameBackgroundBrush">
+            <summary>
+            Returns/sets the brush to use for filling the background of the month name in a MonthView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontAttributesProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontAttributes"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontAttributes">
+            <summary>
+            Returns or sets the font style for the month name in a MonthView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontFamilyProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontFamily"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontFamily">
+            <summary>
+            Returns or sets the font family for the month name in a MonthView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontSize"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontSize">
+            <summary>
+            Returns or sets the font size for the month name in a MonthView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameMarginProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameMargin"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameMargin">
+            <summary>
+            Returns/sets the margin to use for rendering the text for the month name of a MonthView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameSeparatorLineBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameSeparatorLineBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameSeparatorLineBrush">
+            <summary>
+            Returns/sets the brush to use when rendering the separator line below a month name in a MonthView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameTextBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameTextBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameTextBrush">
+            <summary>
+            Returns/sets the brush to use for rendering the text for the month name of a MonthView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameVisibilityProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameVisibility"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameVisibility">
+            <summary>
+            Returns/sets the visibility of the month name of a MonthView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewScrollDirectionProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewScrollDirection"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewScrollDirection">
+            <summary>
+            Returns/sets the <see cref="T:Infragistics.Scheduler.Core.SchedulerViewScrollDirection"/> which determines the direction in which the MonthView scrolls.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Core.SchedulerViewMode"/>
+            <seealso cref="T:Infragistics.Scheduler.Core.SchedulerViewScrollDirection"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewSelectedDayBackgroundBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewSelectedDayBackgroundBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewSelectedDayBackgroundBrush">
+            <summary>
+            Returns/sets the brush to use for filling the background of a selected day in a MonthView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewSelectedDayTextBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewSelectedDayTextBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewSelectedDayTextBrush">
+            <summary>
+            Returns/sets the brush to use for rendering the text of a selected day in a MonthView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewSeparatorLineBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewSeparatorLineBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewSeparatorLineBrush">
+            <summary>
+            Returns/sets the brush to use for rendering the separator lines of a MonthView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTodayHighlightBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTodayHighlightBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTodayHighlightBrush">
+            <summary>
+            Returns/sets the brush to use when rendering the highlight circle for the day in the MonthView that represents today.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTodayTextBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTodayTextBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTodayTextBrush">
+            <summary>
+            Returns/sets the brush to use when rendering the text for the day in the MonthView that represents today.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayBackgroundBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayBackgroundBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayBackgroundBrush">
+            <summary>
+            Returns/sets the brush to use for filling the Background of a trailing day in a MonthView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontAttributesProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontAttributes"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontAttributes">
+            <summary>
+            Returns or sets the font style for the trailing day in a MonthView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontFamilyProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontFamily"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontFamily">
+            <summary>
+            Returns or sets the font family for the trailing day in a MonthView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontSize"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontSize">
+            <summary>
+            Returns or sets the font size for the trailing day in a MonthView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayTextBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayTextBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayTextBrush">
+            <summary>
+            Returns/sets the brush to use when rendering the text for a trailing day in the MonthView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayVisibilityProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayVisibility"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayVisibility">
+            <summary>
+            Returns/sets the visibility of the trailing days in a MonthView (i.e. days from the following month that occur in the last week of a given month).
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewVerticalSeparatorVisibilityProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewVerticalSeparatorVisibility"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewVerticalSeparatorVisibility">
+            <summary>
+            Returns/sets the visibility of the vertical separators between days of the week in a MonthView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberBackgroundBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberBackgroundBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberBackgroundBrush">
+            <summary>
+            Returns/sets the brush to use for filling the background of a week number in a MonthView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontAttributesProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontAttributes"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontAttributes">
+            <summary>
+            Returns or sets the font style for the week number in a MonthView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontFamilyProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontFamily"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontFamily">
+            <summary>
+            Returns or sets the font family for the week number in a MonthView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontSize"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontSize">
+            <summary>
+            Returns or sets the font size for the week number in a MonthView..
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberTextBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberTextBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberTextBrush">
+            <summary>
+            Returns/sets the brush to use for rendering the text of a week number in the MonthView
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberVisibilityProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberVisibility"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberVisibility">
+            <summary>
+            Returns/sets the visibility of the week numbers in a MonthView.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.SelectedAppointmentProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.SelectedAppointment"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.SelectedAppointment">
+            <summary>
+            Returns/sets the <see cref="T:Infragistics.Scheduler.Appointment"/> that is currently selected in the .  Returns null if no <see cref="T:Infragistics.Scheduler.Appointment"/> is currently selected.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.SelectedDateProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.SelectedDate"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.SelectedDate">
+            <summary>
+            Returns/sets the date that is currently selected in the Scheduler.  Returns null if no date is currently selected.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewModeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewMode"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewMode">
+            <summary>
+            Returns/sets the <see cref="T:Infragistics.Scheduler.Core.SchedulerViewMode"/> which determines which view is currently displayed in the component.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Core.SchedulerViewMode"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewSplitOrientationProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewSplitOrientation"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewSplitOrientation">
+            <summary>
+            Returns/sets the <see cref="T:Infragistics.Scheduler.Core.SchedulerViewSplitOrientation"/> which determines whether the primary and secondary views are split vertically or horizontally.
+            </summary>
+            <seealso cref="T:Infragistics.Scheduler.Core.SchedulerViewMode"/>
+            <seealso cref="T:Infragistics.Scheduler.Core.SchedulerViewSplitOrientationMode"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewSplitOrientationModeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewSplitOrientationMode"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewSplitOrientationMode">
+            <summary>
+            Returns/sets the <see cref="T:Infragistics.Scheduler.Core.SchedulerViewSplitOrientationMode"/> which determines whether the orientation of the split between views is changed automatically based on
+            control aspect ratio changes or manually by the developer.
+            </summary>
+            <remarks>
+            When this property is set to <see cref="F:Infragistics.Scheduler.Core.SchedulerViewSplitOrientationMode.Auto"/> (the default), the control will automatically set the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewSplitOrientation"/> to a value
+            that makes best use of the control's current aspect ratio.  Specifically, if the control's width is greater than the control's height then the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewSplitOrientation"/>
+            will be automatically set to <see cref="F:Infragistics.Scheduler.Core.SchedulerViewSplitOrientation.Vertical"/> so that the views are arranged side by side to make the best use of the control's available
+            width.  Similarly, if the control's height is greater than the control's width then the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewSplitOrientation"/>
+            will be automatically set to <see cref="F:Infragistics.Scheduler.Core.SchedulerViewSplitOrientation.Horizontal"/> so that the views are arranged one above the other to make the best use of the control's available
+            height.
+            
+            When this property is set to <see cref="F:Infragistics.Scheduler.Core.SchedulerViewSplitOrientationMode.Manual"/> the control will not automatically set the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewSplitOrientation"/> - in this case the
+            developer is responsible for setting the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewSplitOrientation"/> property to a value that makes sense for the application.
+            </remarks>
+            <seealso cref="T:Infragistics.Scheduler.Core.SchedulerViewMode"/>
+            <seealso cref="T:Infragistics.Scheduler.Core.SchedulerViewSplitOrientation"/>
+            <seealso cref="T:Infragistics.Scheduler.Core.SchedulerViewSplitOrientationMode"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.EnsureDayVisibleInAgendaView(System.DateTime,System.Boolean,System.Boolean)">
+            <summary>
+            Ensures that the specified date is visible in the <see cref="F:Infragistics.Scheduler.Core.SchedulerViewMode.AgendaView"/>, and if not scrolls
+            the day into view.
+            </summary>
+            <remarks>
+            If an <see cref="F:Infragistics.Scheduler.Core.SchedulerViewMode.AgendaView"/> has not been selected as a primary or secondary view mode (see the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewMode"/> and 
+            <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAgendaVisibility"/> properties) calling this method has no effect and the call will return false.
+            </remarks>
+            <param name="date">The date that should be scrolled into view.  The date must fall within the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMinimumDate"/> and <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMaximumDate"/> unless <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentScope"/> is set to <see cref="F:Infragistics.Scheduler.Core.AgendaViewAppointmentScope.OnlyAppointmentsForSelectedDate"/>.</param>
+            <param name="animated">True to perform an animated scroll, false to perform an immediate scroll.</param>
+            <param name="scrollDayToTop">True to make sure the specified date is visible and scroll the date to the top of the visible area, false to simply make sure the specified date is visible.</param>
+            <returns>True if successful otherwise false.</returns>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewMode"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAgendaVisibility"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentScope"/>
+            <seealso cref="F:Infragistics.Scheduler.Core.AgendaViewAppointmentScope.OnlyAppointmentsForSelectedDate"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.EnsureDayVisibleInMonthView(System.DateTime,System.Boolean)">
+            <summary>
+            Ensures that the day represented by the specified date is visible in the <see cref="F:Infragistics.Scheduler.Core.SchedulerViewMode.MonthView"/>, and if not scrolls
+            the date into view.  
+            </summary>
+            <remarks>
+            If the control's <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewMode"/> property is not set to <see cref="F:Infragistics.Scheduler.Core.SchedulerViewMode.MonthView"/> calling this method has no effect and the call will return false.
+            </remarks>
+            <param name="date">The date representing the day that should be scrolled into view.  The date must fall between the control's Min and Max dates.</param>
+            <param name="animated">True to perform an animated scroll, false to perform an immediate scroll.</param>
+            <returns>True if successful otherwise false.</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.EnsureMonthVisibleInMonthView(System.DateTime,System.Boolean)">
+            <summary>
+            Ensures that the month containing the specified date is visible in the <see cref="F:Infragistics.Scheduler.Core.SchedulerViewMode.MonthView"/>, and if not scrolls
+            the month into view.
+            </summary>
+            <remarks>
+            If the control's <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewMode"/> property is not set to <see cref="F:Infragistics.Scheduler.Core.SchedulerViewMode.MonthView"/> calling this method has no effect and the call will return false.
+            </remarks>
+            <param name="date">The date whose containing month should be scrolled into view.  The date must fall between the control's Min and Max dates.</param>
+            <param name="animated">True to perform an animated scroll, false to perform an immediate scroll.</param>
+            <returns>True if successful otherwise false.</returns>
+            <seealso cref="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.EnsureDayVisibleInMonthView(System.DateTime,System.Boolean)"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ExportVisualModel">
+            <summary>
+            Returns the <see cref="T:Infragistics.Scheduler.Core.VisualModel"/> exported as a <see cref="T:Infragistics.Scheduler.Core.VisualModelExport"/> instance for the main view.  If the control is displaying
+            more than one view (e.g., MonthView plus AgendaView), and you want the export data for the secondary view, call the overload 
+            that takes a <see cref="T:Infragistics.Scheduler.Core.SchedulerViewMode"/> parameter.
+            </summary>
+            <returns>The VisualModel exported as a <see cref="T:Infragistics.Scheduler.Core.VisualModelExport"/> instance.</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ExportVisualModel(Infragistics.Scheduler.Core.SchedulerViewMode)">
+            <summary>
+            Returns the <see cref="T:Infragistics.Scheduler.Core.VisualModel"/> exported as a <see cref="T:Infragistics.Scheduler.Core.VisualModelExport"/> instance for the specified view.
+            </summary>
+            <param name="viewMode">The view whose <see cref="T:Infragistics.Scheduler.Core.VisualModel"/> should be exported.</param>
+            <returns>The <see cref="T:Infragistics.Scheduler.Core.VisualModel"/> exported as a <see cref="T:Infragistics.Scheduler.Core.VisualModelExport"/> instance.</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ExportVisualModelSerialized">
+            <summary>
+            Returns the <see cref="T:Infragistics.Scheduler.Core.VisualModel"/> serialized as a string for the main view.  If the control is displaying
+            more than one view (e.g., MonthView plus AgendaView), and you want the export data for the secondary view, call the overload 
+            that takes a <see cref="T:Infragistics.Scheduler.Core.SchedulerViewMode"/> parameter.
+            </summary>
+            <returns>The <see cref="T:Infragistics.Scheduler.Core.VisualModel"/> serialized as a string.</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ExportVisualModelSerialized(Infragistics.Scheduler.Core.SchedulerViewMode)">
+            <summary>
+            Returns the <see cref="T:Infragistics.Scheduler.Core.VisualModel"/> serialized as a string.
+            </summary>
+            <param name="viewMode">The view whose <see cref="T:Infragistics.Scheduler.Core.VisualModel"/> should be exported.</param>
+            <returns>The <see cref="T:Infragistics.Scheduler.Core.VisualModel"/> serialized as a string.</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.Init">
+            <summary>
+            When declaring an instance of this control in XAML, this method can be invoked in code to ensure all necessary types are available at runtime.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.Refresh">
+            <summary>
+            Invalidates the control's view and refreshes its layout visual contents.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.SuspendRefreshAndPerformAction(System.Action)">
+            <summary>
+            This method performs the specified action after temporarily suspending the refresh of the control layout.  Once
+            the action is completed, the control's layout is refreshed and and any changes made inside the action will be reflected
+            in the control's UI. Use this method to improve performance when you need to set multiple properties that affect the 
+            control's layout.
+            </summary>		
+            <param name="action">The Action to perform while the control's refresh is suspended.</param>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AppointmentClicked">
+            <summary>
+            Occurs when an <see cref="T:Infragistics.Scheduler.Appointment"/> is clicked in the <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler"/>.
+            </summary>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AppointmentSelected">
+            <summary>
+            Occurs when an <see cref="T:Infragistics.Scheduler.Appointment"/> is selected in the <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler"/>.
+            </summary>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.DayClicked">
+            <summary>
+            Occurs when a day is clicked
+            </summary>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.DayOfWeekHeaderClicked">
+            <summary>
+            Occurs when a day of week header is clicked
+            </summary>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthHeaderClicked">
+            <summary>
+            Occurs when a month header is clicked
+            </summary>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.SelectedDateChanged">
+            <summary>
+            Occurs when a new date is selected in the Scheduler.
+            </summary>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.WeekNumberClicked">
+            <summary>
+            Occurs when a week number is clicked
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentClickedEventArgs">
+            <summary>
+            Occurs when an <see cref="T:Infragistics.Scheduler.Appointment"/> is clicked in the <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler"/>.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.AppointmentClickedEventArgs.#ctor">
+            <summary>
+            Initializes a new <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentClickedEventArgs"/>.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.AppointmentClickedEventArgs.AllowSelection">
+            <summary>
+            Returns/sets whether this click should be processed and the <see cref="T:Infragistics.Scheduler.Appointment"/> selected.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.AppointmentClickedEventArgs.ClickedAppointment">
+            <summary>
+            Returns the <see cref="T:Infragistics.Scheduler.Appointment"/> that was clicked (read-only)
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.AppointmentClickedEventArgs.ClickedInDate">
+            <summary>
+            Returns the date within which the <see cref="T:Infragistics.Scheduler.Appointment"/> was clicked.  For single day <see cref="T:Infragistics.Scheduler.Appointment"/>s
+            this returns the day on which the <see cref="T:Infragistics.Scheduler.Appointment"/> occurs.  For multi-day <see cref="T:Infragistics.Scheduler.Appointment"/>s this
+            returns the day that contains the <see cref="T:Infragistics.Scheduler.Appointment"/> 'segment' that was clicked.  (read-only)
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.AppointmentClickedEventArgs.ViewMode">
+            <summary>
+            Returns the <see cref="T:Infragistics.Scheduler.Core.SchedulerViewMode"/> associated with the <see cref="T:Infragistics.Scheduler.Appointment"/> that was clicked (read-only)
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentClickedEventHandler">
+            <summary>
+            Handler for <see cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AppointmentClicked"/> event.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMapping">
+            <summary>
+            Encapsulates a property mapping for an <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentPropertyMappings"/>.
+            </summary>
+            <remarks>
+            <p class="body">
+            The <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource"/> class provides the ability to specify
+            an item source from which data objects which represent <see cref="T:Infragistics.Scheduler.Appointment">appointments</see>
+            can be obtained.
+            </p> 
+            <p class="body">
+            In cases where the name or data type of the data object property does not match
+            the name or data type of the corresponding appointment property, a mapping can
+            be used to resolve the name and/or type.
+            </p> 
+            <p class="body">
+            In cases where the name or data type of the data object property does not match
+            the name or data type of the corresponding appointment property, a mapping can
+            be used to resolve the name and/or type.
+            </p> 
+            <p class="body">
+            For example, assume there exists a data object property named 'StartDate', which
+            is the property from which the appointment's <see cref="P:Infragistics.Scheduler.ActivityBase.Start">Start</see>
+            property value is obtained.
+            </p> 
+            <p class="body">
+            To create a mapping between these two properties, a new AppointmentPropertyMapping
+            object is created with a <see cref="!:SchedulePropertyMapping&lt;T&gt;.Property">Property</see>
+            value of <see cref="T:Infragistics.Scheduler.Data.AppointmentProperty">Start</see>, and a <see cref="!:SchedulePropertyMapping&lt;T&gt;.DataObjectPropertyName">DataObjectPropertyName</see>
+            of 'StartDate', i.e., the actual name of the data object property.
+            </p> 
+            <p class="body">
+            This AppointmentPropertyMapping object is then added to the ScheduleListDataSource's
+            AppointmentPropertyMappings collection; this signifies to the data source that the value
+            the Appointment's Start property is to be obtained/assigned from/to a property named 'StartDate'
+            on the data object.
+            </p> 
+            <p class="body">
+            A property mapping can also be used to perform bi-directional conversions
+            between an appointment property and the corresponding data object property
+            using the <see cref="!:SchedulePropertyMapping&lt;T&gt;.ConvertCallback">ConvertCallback</see>
+            AND <see cref="!:SchedulePropertyMapping&lt;T&gt;.ConvertBackCallback">ConvertBackCallback</see>
+            properties. These properties accept a delegate which is invoked whenever data is transferred
+            between the appointment and it's underlying data object, providing the ability to
+            change the value.
+            </p> 
+            </remarks>
+            <seealso cref="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentPropertyMappings"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentItemsSource"/>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMapping.#ctor">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMapping.PropertyProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMapping.Property"/> bindable property.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMappingsCollection">
+            <summary>
+            Collection class for <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMapping"/> objects.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentSelectedEventArgs">
+            <summary>
+            Occurs when an <see cref="T:Infragistics.Scheduler.Appointment"/> is selected in the <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler"/>.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.AppointmentSelectedEventArgs.#ctor">
+            <summary>
+            Initializes a new <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentSelectedEventArgs"/>.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.AppointmentSelectedEventArgs.SelectedAppointment">
+            <summary>
+            Returns the new selected <see cref="T:Infragistics.Scheduler.Appointment"/> (read-only)
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.AppointmentSelectedEventArgs.SelectedInDate">
+            <summary>
+            Returns the date within which the <see cref="T:Infragistics.Scheduler.Appointment"/> was selected.  For single day <see cref="T:Infragistics.Scheduler.Appointment"/>s
+            this returns the day on which the <see cref="T:Infragistics.Scheduler.Appointment"/> occurs.  For multi-day <see cref="T:Infragistics.Scheduler.Appointment"/>s this
+            returns the day that contains the <see cref="T:Infragistics.Scheduler.Appointment"/> 'segment' that was selected.  (read-only)
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.AppointmentSelectedEventArgs.ViewMode">
+            <summary>
+            Returns the <see cref="T:Infragistics.Scheduler.Core.SchedulerViewMode"/> associated with the <see cref="T:Infragistics.Scheduler.Appointment"/> that was selected (read-only)
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentSelectedEventHandler">
+            <summary>
+            Handler for <see cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AppointmentSelected"/> event.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.DayClickedEventArgs">
+            <summary>
+            Occurs when a day is clicked 
+            </summary>
+            <seealso cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.DayClicked"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.DayClickedEventArgs.#ctor">
+            <summary>
+            Initializes a new <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.DayClickedEventArgs"/>.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.DayClickedEventArgs.ClickedDate">
+            <summary>
+            Returns the date that was clicked (read-only)
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.DayClickedEventArgs.ViewMode">
+            <summary>
+            Returns the <see cref="T:Infragistics.Scheduler.Core.SchedulerViewMode"/> associated with the day that was clicked (read-only)
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.DayClickedEventHandler">
+            <summary>
+            Handler for <see cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.DayClicked"/> event.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.DayOfWeekHeaderClickedEventArgs">
+            <summary>
+            Occurs when a day of week header is clicked 
+            </summary>
+            <seealso cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.DayOfWeekHeaderClicked"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.DayOfWeekHeaderClickedEventArgs.#ctor">
+            <summary>
+            Initializes a new <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.DayOfWeekHeaderClickedEventArgs"/>.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.DayOfWeekHeaderClickedEventArgs.DayOfWeek">
+            <summary>
+            Returns the day of week number (read-only)
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.DayOfWeekHeaderClickedEventArgs.Month">
+            <summary>
+            Returns the month number (read-only)
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.DayOfWeekHeaderClickedEventArgs.Year">
+            <summary>
+            Returns the year number (read-only)
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.DayOfWeekHeaderClickedEventHandler">
+            <summary>
+            Handler for <see cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.DayOfWeekHeaderClicked"/> event.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.MonthHeaderClickedEventArgs">
+            <summary>
+            Occurs when a month header is clicked 
+            </summary>
+            <seealso cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthHeaderClicked"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.MonthHeaderClickedEventArgs.#ctor">
+            <summary>
+            Initializes a new <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.MonthHeaderClickedEventArgs"/>.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.MonthHeaderClickedEventArgs.Month">
+            <summary>
+            Returns the month number (read-only)
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.MonthHeaderClickedEventArgs.Year">
+            <summary>
+            Returns the year number (read-only)
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.MonthHeaderClickedEventHandler">
+            <summary>
+            Handler for <see cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthHeaderClicked"/> event.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMapping">
+            <summary>
+            Encapsulates a property mapping for an <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourcePropertyMappings"/>.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMapping.#ctor">
+            <summary>Creates a new instance.</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMapping.PropertyProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMapping.Property"/> bindable property.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMappingsCollection">
+            <summary>
+            Collection class for <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMapping"/> objects.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMappingsCollection`1">
+            <summary>
+            Base class for property mapping collections.
+            </summary>
+            <typeparam name="T">An enumeration of type <see cref="T:Infragistics.Scheduler.Data.AppointmentProperty"/> or <see cref="T:Infragistics.Scheduler.Data.ScheduleResourceProperty"/></typeparam>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.SelectedDateChangedEventArgs">
+            <summary>
+            Occurs when a day is clicked 
+            </summary>
+            <seealso cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.SelectedDateChanged"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.SelectedDateChangedEventArgs.#ctor">
+            <summary>
+            Initializes a new <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.SelectedDateChangedEventArgs"/>.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.SelectedDateChangedEventArgs.SelectedDate">
+            <summary>
+            Returns the new selected date (read-only)
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.SelectedDateChangedEventHandler">
+            <summary>
+            Handler for <see cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.SelectedDateChanged"/> event.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.WeekNumberClickedEventArgs">
+            <summary>
+            Occurs when a week number is clicked 
+            </summary>
+            <seealso cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.WeekNumberClicked"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.WeekNumberClickedEventArgs.#ctor">
+            <summary>
+            Initializes a new <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.WeekNumberClickedEventArgs"/>.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.WeekNumberClickedEventArgs.Month">
+            <summary>
+            Returns the month number (read-only)
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.WeekNumberClickedEventArgs.WeekNumber">
+            <summary>
+            Returns the Week number (read-only)
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.WeekNumberClickedEventArgs.Year">
+            <summary>
+            Returns the year number (read-only)
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.WeekNumberClickedEventHandler">
+            <summary>
+            Handler for <see cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.WeekNumberClicked"/> event.
+            </summary>
+        </member>
+    </members>
+</doc>

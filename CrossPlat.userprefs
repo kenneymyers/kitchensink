@@ -1,28 +1,18 @@
-﻿<Properties StartupConfiguration="{8CED7D20-945F-4E63-890D-C4CA342C667C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CrossPlat/Views/Other/OtherPage.xaml.cs">
+﻿<Properties StartupConfiguration="{2CBECB6C-D73F-48AE-B100-C02EA6BE2C87}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/AppDelegate.cs">
     <Files>
-      <File FileName="CrossPlat/Views/DatabasePage.cs" Line="19" Column="9" />
-      <File FileName="Droid/SQLiteAndroid.cs" Line="17" Column="10" />
-      <File FileName="iOS/SQLiteIOS.cs" Line="10" Column="44" />
+      <File FileName="Droid/Resources/values/styles.xml" Line="2" Column="1" />
+      <File FileName="Droid/SQLiteAndroid.cs" Line="5" Column="3" />
+      <File FileName="Droid/MainActivity.cs" Line="25" Column="44" />
+      <File FileName="CrossPlat/Views/Other/DevExpressPage.xaml" Line="11" Column="15" />
+      <File FileName="CrossPlat/Views/Other/DevExpressPage.xaml.cs" Line="39" Column="29" />
+      <File FileName="CrossPlat/Views/Other/OtherPage.xaml" Line="9" Column="1" />
+      <File FileName="CrossPlat/Views/Other/OtherPage.xaml.cs" Line="34" Column="4" />
+      <File FileName="CrossPlat/Views/DatabasePage.cs" Line="18" Column="9" />
       <File FileName="iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="CrossPlat/Views/JsonPage.cs" Line="75" Column="1" />
-      <File FileName="CrossPlat/HomePage.xaml" Line="16" Column="15" />
-      <File FileName="CrossPlat/HomePage.xaml.cs" Line="79" Column="1" />
-      <File FileName="CrossPlat/Views/Other/OtherPage.xaml" Line="10" Column="24" />
-      <File FileName="CrossPlat/Views/Other/OtherPage.xaml.cs" Line="30" Column="4" />
-      <File FileName="CrossPlat/Views/Pages/PagesPage.xaml" Line="12" Column="1" />
-      <File FileName="CrossPlat/Views/Pages/PagesPage.xaml.cs" Line="28" Column="1" />
-      <File FileName="CrossPlat/Views/Other/BehaviorPage.xaml" Line="73" Column="1" />
-      <File FileName="CrossPlat/Views/Other/BehaviorPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="packages/Xamarin.Forms.2.3.4.261/build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Xamarin.Forms.targets" Line="68" Column="4" />
-      <File FileName="CrossPlat/Views/Other/NumericEntryBehavior.cs" Line="7" Column="6" />
-      <File FileName="CrossPlat/Views/Other/RequiredValidationTriggerAction.cs" Line="12" Column="3" />
-      <File FileName="CrossPlat/Views/Other/BindingPage.xaml" Line="18" Column="15" />
-      <File FileName="CrossPlat/Views/Other/BindingPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="packages/Xam.Plugins.Settings.3.0.1/readme.txt" Line="1" Column="1" />
-      <File FileName="CrossPlat/Helpers/Settings.cs" Line="3" Column="36" />
-      <File FileName="CrossPlat/Views/Other/SettingsPage.cs" Line="49" Column="13" />
-      <File FileName="CrossPlat/Views/Tables/EntryCellPage.cs" Line="10" Column="9" />
+      <File FileName="iOS/AppDelegate.cs" Line="15" Column="13" />
+      <File FileName="CrossPlat/Helpers/Settings.cs" Line="10" Column="9" />
+      <File FileName="CrossPlat/obj/Debug/CrossPlat.HomePage.xaml.g.cs" Line="19" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -30,7 +20,7 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.CrossPlat.Droid PreferredExecutionTarget="Android.Nexus_6_API_25" />
+  <MonoDevelop.Ide.ItemProperties.CrossPlat.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Nexus_6_API_25" />
   <MonoDevelop.Ide.ItemProperties.CrossPlat.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.0925AD4D-AD7F-4BD8-850D-3598CA09D40B" />
   <MultiItemStartupConfigurations />
 </Properties>

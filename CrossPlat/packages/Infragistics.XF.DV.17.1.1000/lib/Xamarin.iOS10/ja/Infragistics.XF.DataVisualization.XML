@@ -1,0 +1,615 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+    <assembly>
+        <name>Infragistics.XF.DataVisualization</name>
+    </assembly>
+    <members>
+        <member name="T:Infragistics.XamarinForms.Rect">
+            <summary>長方形領域を表す構造体。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.#ctor(System.Double,System.Double,System.Double,System.Double)">
+            <summary><see cref="T:Infragistics.XamarinForms.Rect"/> の新しいインスタンスを初期化します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.#ctor(System.Double,System.Double,Xamarin.Forms.Size)">
+            <summary><see cref="T:Infragistics.XamarinForms.Rect"/> の新しいインスタンスを初期化します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.#ctor(Xamarin.Forms.Point,Xamarin.Forms.Point)">
+            <summary><see cref="T:Infragistics.XamarinForms.Rect"/> の新しいインスタンスを初期化します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.#ctor(Xamarin.Forms.Point,Xamarin.Forms.Size)">
+            <summary><see cref="T:Infragistics.XamarinForms.Rect"/> の新しいインスタンスを初期化します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.op_Equality(Infragistics.XamarinForms.Rect,Infragistics.XamarinForms.Rect)">
+            <summary>== 演算子</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.op_Inequality(Infragistics.XamarinForms.Rect,Infragistics.XamarinForms.Rect)">
+            <summary>!= 演算子</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.Equals(System.Object)">
+            <summary>オブジェクトがこのオブジェクトと等しいかどうかを決定します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.GetHashCode">
+            <summary>ハッシュ コードを返します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.ToString">
+            <summary>X、Y、幅、および高さを含む文字列を返します。</summary>
+            <returns></returns>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Rect.Bottom">
+            <summary>長方形の下 (読み取り専用)。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Rect.Empty">
+            <summary>空の長方形を返します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Rect.Height">
+            <summary>長方形の高さを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Rect.IsEmpty">
+            <summary>長方形が空かどうかを返します (読み取り専用)。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Rect.Left">
+            <summary>長方形の左端 (読み取り専用)</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Rect.Right">
+            <summary>長方形の右端 (読み取り専用)</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Rect.Top">
+            <summary>長方形の上 (読み取り専用)。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Rect.Width">
+            <summary>長方形の幅を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Rect.X">
+            <summary>長方形の左端を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Rect.Y">
+            <summary>長方形の上端を取得または設定します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.Contains(System.Double,System.Double)">
+            <summary>この長方形がポイントを含むかどうかを決定します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.Contains(Xamarin.Forms.Point)">
+            <summary>この長方形がポイントを含むかどうかを決定します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.Contains(Infragistics.XamarinForms.Rect)">
+            <summary>この長方形が他の長方形を含むかどうかを決定します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.Inflate(System.Double,System.Double)">
+            <summary>この長方形をインフレイトします。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.Intersect(Infragistics.XamarinForms.Rect)">
+            <summary>この長方形を渡された長方形と自体の共通部分に変更します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.IntersectsWith(Infragistics.XamarinForms.Rect)">
+            <summary>この長方形が渡された長方形と交差するかどうかを決定します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.Union(Infragistics.XamarinForms.Rect)">
+            <summary>この長方形を渡された長方形と自体の集合に変更します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.RectTypeConverter">
+            <summary>文字列を Rect に変換します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.RectTypeConverter.CanConvertFrom(System.Type)">
+            <summary>型からの変換が可能かどうかを示します。</summary>
+            <param name="sourceType">チェックするタイプ</param>
+            <returns>型からの変換が可能な場合は True。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.RectTypeConverter.ConvertFromInvariantString(System.String)">
+            <summary>カルチャ不変の文字列から Infragistics ブラシに変換します。</summary>
+            <param name="value">変換元の文字列。</param>
+            <returns>作成したブラシ。</returns>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.BindableBase">
+            <summary>Infragistics BindableObject 派生タイプの基本クラスを表します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.BindableBase.OnPropertyChanged(System.String)">
+            <summary>バインド プロパティを変更すると呼び出されます。</summary>
+            <param name="propertyName">変更されたバインド プロパティ名。</param>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.ColorExtensions">
+            <summary>色のユーティリティ拡張メソッド。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.ColorExtensions.ToColor(Xamarin.Forms.Color)">
+            <summary>Xamarin Forms 色を Infragistics 色に変換します。</summary>
+            <param name="color">変換する Xamarin Forms 色。</param>
+            <returns>Infragistics 色。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.ColorExtensions.ToBrush(Xamarin.Forms.Color)">
+            <summary>Xamarin Forms 色を Infragistics ブラシに変換します。</summary>
+            <param name="color">変換する Xamarin Forms 色。</param>
+            <returns>Infragistics ブラシ。</returns>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.DataContext">
+            <summary>現在のコンテキスト内のデータを表します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataContext.Series">
+            <summary>コンテキストと関連するシリーズを取得します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataContext.#ctor">
+            <summary>新しい <see cref="T:Infragistics.XamarinForms.Controls.DataContext"/> を初期化します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataContext.ActualItemBrush">
+            <summary>コンテキスト内の項目に使用される実際の解決されたブラシを取得します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataContext.Item">
+            <summary>コンテキスト内の項目を取得します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataContext.ItemBrush">
+            <summary>コンテキスト内の項目に使用される可能なブラシを取得します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataContext.ItemLabel">
+            <summary>利用可能な場合、コンテキスト内の項目に使用されるラベルを取得します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataContext.LegendLabel">
+            <summary>利用可能な場合、コンテキスト内の項目に使用する凡例ラベルを取得します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataContext.Outline">
+            <summary>コンテキスト内の項目に使用されるアウトラインを取得します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataContext.Thickness">
+            <summary>コンテキスト内の項目の太さを取得します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataContext.OnPropertyChanged(System.String)">
+            <summary><see cref="E:Infragistics.XamarinForms.Controls.DataContext.PropertyChanged"/> イベントを呼び出します。</summary>
+            <seealso cref="T:System.ComponentModel.PropertyChangedEventArgs"/>
+            <seealso cref="E:Infragistics.XamarinForms.Controls.DataContext.PropertyChanged"/>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.DataContext.PropertyChanged">
+            <summary>プロパティが変更されたことを示します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.ElementBase">
+            <summary>Infragistics 要素タイプの基本クラスを表します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.ElementBase.OnPropertyChanged(System.String)">
+            <summary>バインド プロパティを変更すると呼び出されます。</summary>
+            <param name="propertyName">変更されたバインド プロパティ名。</param>
+        </member>
+      <member name="M:Infragistics.XamarinForms.Controls.ElementBase.OnParentSet">
+        <summary>親が設定されたときに呼び出されます。</summary>
+      </member>
+      <member name="M:Infragistics.XamarinForms.Controls.ElementBase.OnBindingContextChanged">
+        <summary>バインディング コンテキストが変更されたときに呼び出されます。</summary>
+      </member>
+        <member name="T:Infragistics.XamarinForms.Controls.IControlRenderer">
+            <summary>Xamarin Forms オブジェクトのレンダラーによって実装されるインターフェイス。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.IControlRenderer.Control">
+            <summary>レンダラーに関連付けられたネイティブ コントロールを返します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.CustomContentUpdateInfo">
+            <summary>生成されているか、更新されているカスタム コンテンツについてのコンテキスト情報を表します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.CustomContentUpdateInfo.#ctor">
+            <summary>CustomContentUpdateInfo を構築します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.CustomContentUpdateInfo.GetItem(System.String)">
+            <summary>情報から名前付き値を取得します。</summary>
+            <param name="key">取得する値のキー。</param>
+            <returns>取得された値。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.CustomContentUpdateInfo.SetItem(System.String,System.Object)">
+            <summary>情報の名前付き値を設定します。</summary>
+            <param name="key">値の名前。</param>
+            <param name="item">設定する値。</param>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.DataSeriesAdapter">
+            <summary>データ ソースを解析し、データに合わせるデータ視覚化のタイプを示します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesAdapter.#ctor">
+            <summary>DataSeriesAdapter を構築します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataSeriesAdapter.ExcludedProperties">
+            <summary>アダプターから除外されるプロパティ パスのセットを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataSeriesAdapter.IncludedProperties">
+            <summary>アダプターに含まれる (その他のパスは除外) プロパティ パスのセットを取得または設定します。null の場合、すべてのプロパティが含まれます。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataSeriesAdapter.ItemsSource">
+            <summary>データ アダプターのバッキング データを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataSeriesAdapter.SupportedSeriesTypes">
+            <summary>アダプターが同じメンバー パスにバインドされる複製のデータ シリーズを解除するかどうかを取得または設定します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesAdapter.NotifyClearItems(System.Object)">
+            <summary>データ ソースが項目をリセット/クリアされたことをアダプターに手動的に通知するために使用されます。そのデータ ソースが監視可能ではない場合に必要です。</summary>
+            <param name="dataSource">クリア/リセットされたデータ ソース。</param>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesAdapter.NotifyInsertItem(System.Object,System.Int32,System.Object)">
+            <summary>データ ソースが項目を挿入されたことをアダプターに手動的に通知するために使用されます。そのデータ ソースが監視可能ではない場合に必要です。</summary>
+            <param name="dataSource">データ ソースが変更されました。</param>
+            <param name="index">新しい項目のインデックス。</param>
+            <param name="newItem">新しい項目。</param>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesAdapter.NotifyRemoveItem(System.Object,System.Int32,System.Object)">
+            <summary>データ ソースに項目が削除されたことをアダプターに手動的に通知するために使用されます。そのデータ ソースが監視可能ではない場合に必要です。</summary>
+            <param name="dataSource">データ ソースが変更されました。</param>
+            <param name="index">以前の項目のインデックス。</param>
+            <param name="oldItem">以前の項目。</param>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesAdapter.NotifySetItem(System.Object,System.Int32,System.Object,System.Object)">
+            <summary>データ ソースに項目が設定されたことをアダプターに手動的に通知するために使用されます。そのデータ ソースが監視可能ではない場合に必要です。</summary>
+            <param name="dataSource">データ ソースが変更されました。</param>
+            <param name="index">変更のインデックス</param>
+            <param name="oldItem">以前の項目。</param>
+            <param name="newItem">新しい項目。</param>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesAdapter.Refresh">
+            <summary>DataSeriesAdapter の解析を更新することになります。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesAdapter.OnPropertyChanged(System.String)">
+            <summary><see cref="E:Infragistics.XamarinForms.Controls.DataSeriesAdapter.PropertyChanged"/> イベントを呼び出します。</summary>
+            <seealso cref="T:System.ComponentModel.PropertyChangedEventArgs"/>
+            <seealso cref="E:Infragistics.XamarinForms.Controls.DataSeriesAdapter.PropertyChanged"/>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.DataSeriesAdapter.PropertyChanged">
+            <summary>プロパティが変更されたことを示します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesAdapter.OnRemovingDuplicates(Infragistics.XamarinForms.Controls.DataSeriesAdapterRemovingDuplicatesEventArgs)">
+            <summary><see cref="E:Infragistics.XamarinForms.Controls.DataSeriesAdapter.RemovingDuplicates"/> イベントを呼び出します。</summary>
+            <seealso cref="T:Infragistics.XamarinForms.Controls.DataSeriesAdapterRemovingDuplicatesEventArgs"/>
+            <seealso cref="E:Infragistics.XamarinForms.Controls.DataSeriesAdapter.RemovingDuplicates"/>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.DataSeriesAdapter.RemovingDuplicates">
+            <summary>アダプターが重複したシリーズを解析から削除するときに呼び出されます。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesAdapter.OnRemovingUnsupported(Infragistics.XamarinForms.Controls.DataSeriesAdapterRunEventArgs)">
+            <summary><see cref="E:Infragistics.XamarinForms.Controls.DataSeriesAdapter.RemovingUnsupported"/> イベントを呼び出します。</summary>
+            <seealso cref="T:Infragistics.XamarinForms.Controls.DataSeriesAdapterRunEventArgs"/>
+            <seealso cref="E:Infragistics.XamarinForms.Controls.DataSeriesAdapter.RemovingUnsupported"/>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.DataSeriesAdapter.RemovingUnsupported">
+            <summary>アダプターがサポートされていないシリーズを解析から取得されているときに呼び出されます。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.DataSeriesAdapterRemovingDuplicatesEventArgs">
+            <summary>アダプターで複製のシリーズについての情報を表します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesAdapterRemovingDuplicatesEventArgs.#ctor">
+            <summary>新しい <see cref="T:Infragistics.XamarinForms.Controls.DataSeriesAdapterRemovingDuplicatesEventArgs"/> を初期化します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataSeriesAdapterRemovingDuplicatesEventArgs.DataSourcePath">
+            <summary>データ ソースの現在のパスを取得します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataSeriesAdapterRemovingDuplicatesEventArgs.DuplicatePath">
+            <summary>複製されたパスを取得します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataSeriesAdapterRemovingDuplicatesEventArgs.Handled">
+            <summary>この複製の処理が完了したかどうかを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataSeriesAdapterRemovingDuplicatesEventArgs.MatchingSeries">
+            <summary>複製されたパスと一致するすべてのシリーズを取得します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataSeriesAdapterRemovingDuplicatesEventArgs.RunContext">
+            <summary>現在の解析実行についての情報を取得します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.DataSeriesAdapterRemovingDuplicatesEventHandler">
+            <summary>データ シリーズ アダプターから複製のシリーズを削除するときに呼び出されます。</summary>
+            <param name="sender">アダプター。</param>
+            <param name="args">複製のシリーズについての情報。</param>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.DataSeriesAdapterRunEventArgs">
+            <summary>実行中の解析実行についての情報を表示します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesAdapterRunEventArgs.#ctor">
+            <summary>新しい <see cref="T:Infragistics.XamarinForms.Controls.DataSeriesAdapterRunEventArgs"/> を初期化します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataSeriesAdapterRunEventArgs.Handled">
+            <summary>現在のアクションが処理され、デフォルトの動作を回避するかどうかを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataSeriesAdapterRunEventArgs.RunContext">
+            <summary>実行中の解析についての情報を取得します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.DataSeriesAdapterRunEventHandler">
+            <summary>データ シリーズ アダプターの解析の実行に関連するアクションで呼び出されます。</summary>
+            <param name="sender">アダプター。</param>
+            <param name="args">解析引数。</param>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.DataSeriesCollection">
+            <summary>DataSeries のコレクション。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesCollection.#ctor">
+            <summary>新しい <see cref="T:Infragistics.XamarinForms.Controls.DataSeriesCollection"/> を初期化します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.DoubleValueChangedEventArgs">
+            <summary>double 値の変更イベントのデータを提供します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DoubleValueChangedEventArgs.#ctor(System.Double,System.Double)">
+            <summary>DoubleValueChangedEventArgs コンストラクター。</summary>
+            <param name="oldValue">前の値。</param>
+            <param name="newValue">新しい値。</param>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DoubleValueChangedEventArgs.NewValue">
+            <summary>新しい値を取得します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DoubleValueChangedEventArgs.OldValue">
+            <summary>変更前の値を取得します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.DoubleValueChangedEventHandler">
+            <summary>double 値の変更イベントを処理する方法を表します。</summary>
+            <param name="sender">イベント ハンドラーが関連付けられているオブジェクト。</param>
+            <param name="e">イベント データ。</param>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.InteractionState">
+            <summary>チャートまたは地理マップ コントロールのインタラクション状態を説明します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.InteractionState.None">
+            <summary>ユーザー動作はチャートの状態を変更しません。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.InteractionState.DragZoom">
+            <summary>ユーザー動作はチャートをズームするために矩形のドラッグを開始します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.InteractionState.DragPan">
+            <summary>ユーザー操作によってパン操作を開始し、チャート ウインドウを移動します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.InteractionState.Auto">
+            <summary>ユーザー動作はタッチ環境でパンニング操作を開始します。マウス環境でドラッグ矩形操作を開始します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.InterpolationMode">
+            <summary>色補間のモードを説明します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.InterpolationMode.RGB">
+            <summary>RGB スペースの補間です。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.InterpolationMode.HSV">
+            <summary>HSV スペースの補間です。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.PropertyUpdatedEventArgs">
+            <summary>プロパティが更新したイベントの EventArgs クラス。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.PropertyUpdatedEventArgs.NewValue">
+            <summary>更新されるプロパティの新しい値。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.PropertyUpdatedEventArgs.OldValue">
+            <summary>更新されるプロパティの古いまたは前の値。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.PropertyUpdatedEventArgs.PropertyName">
+            <summary>更新中のプロパティの名前。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.PropertyUpdatedEventHandler">
+            <summary>プロパティが更新したイベントの EventHandler デリゲート。</summary>
+            <param name="sender">イベントのソース。</param>
+            <param name="e">コンテキスト上の PropertyUpdatedEventArgs。</param>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.RectChangedEventArgs">
+            <summary>矩形変更イベントのデータを提供します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.RectChangedEventArgs.#ctor(Infragistics.XamarinForms.Rect,Infragistics.XamarinForms.Rect)">
+            <summary>RectChangedEventArgs コンストラクター。</summary>
+            <param name="oldRect">変更される矩形の変更前の値。</param>
+            <param name="newRect">変更される矩形の変更後の値。</param>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.RectChangedEventArgs.NewRect">
+            <summary>新しい矩形を取得します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.RectChangedEventArgs.OldRect">
+            <summary>変更前の矩形を取得します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.RectChangedEventHandler">
+            <summary>矩形変更イベントを処理する方法を表します。</summary>
+            <param name="sender">イベント ハンドラーが関連付けられているオブジェクト。</param>
+            <param name="e">イベント データ。</param>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.ScreenRectChangedEventArgs">
+            <summary>矩形変更イベントのデータを提供します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.ScreenRectChangedEventArgs.#ctor(Infragistics.XamarinForms.Rect,Infragistics.XamarinForms.Rect)">
+            <summary>RectChangedEventArgs コンストラクター。</summary>
+            <param name="oldRect">変更される矩形の変更前の値。</param>
+            <param name="newRect">変更される矩形の変更後の値。</param>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.ScreenRectChangedEventArgs.NewRect">
+            <summary>新しい矩形を取得します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.ScreenRectChangedEventArgs.OldRect">
+            <summary>変更前の矩形を取得します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.ScreenRectChangedEventHandler">
+            <summary>矩形変更イベントを処理する方法を表します。</summary>
+            <param name="sender">イベント ハンドラーが関連付けられているオブジェクト。</param>
+            <param name="e">イベント データ。</param>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.TrendLineType">
+            <summary>シリーズでサポートされるトレンドラインの利用可能なタイプを説明します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.None">
+            <summary>トレンド ラインは表示されません。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.LinearFit">
+            <summary>リニア フィット。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.QuadraticFit">
+            <summary>二次多項式フィット。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.CubicFit">
+            <summary>三次多項式フィット。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.QuarticFit">
+            <summary>四次多項式フィット。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.QuinticFit">
+            <summary>五次多項式フィット。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.LogarithmicFit">
+            <summary>対数フィット。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.ExponentialFit">
+            <summary>指数フィット。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.PowerLawFit">
+            <summary>べき乗フィット。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.SimpleAverage">
+            <summary>単純移動平均。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.ExponentialAverage">
+            <summary>指数移動平均。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.ModifiedAverage">
+            <summary>変更された移動平均。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.CumulativeAverage">
+            <summary>累積移動平均。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.WeightedAverage">
+            <summary>加重移動平均。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.UnknownValuePlotting">
+            <summary>シリーズで不明な値を持つデータをプロットする利用可能な方法を説明します。<para>Double.NaN および null は不明な値の例です。</para>
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.UnknownValuePlotting.LinearInterpolate">
+            <summary>線形補間を使用すると、不明な値を囲む定義した値の中にプロットします。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.UnknownValuePlotting.DontPlot">
+            <summary>不明な値はチャートにプロットしません。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.ViewBase">
+            <summary>すべての Infragistics ビュー タイプの派生元の基本クラスを表します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.ViewBase.OnPropertyChanged(System.String)">
+            <summary>バインド プロパティを変更すると呼び出されます。</summary>
+            <param name="propertyName">変更されたバインド プロパティ名。</param>
+        </member>
+      <member name="M:Infragistics.XamarinForms.Controls.ViewBase.OnParentSet">
+        <summary>親が設定されたときに呼び出されます。</summary>
+      </member>
+      <member name="M:Infragistics.XamarinForms.Controls.ViewBase.OnBindingContextChanged">
+        <summary>バインディング コンテキストが変更されたときに呼び出されます。</summary>
+      </member>
+        <member name="T:Infragistics.XamarinForms.Brush">
+            <summary>ブラシ タイプの基本クラスを表します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.SolidColorBrush">
+            <summary>ソリッド ブラシを表します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.SolidColorBrush.#ctor">
+            <summary>SolidColorBrush を構築します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.SolidColorBrush.#ctor(Xamarin.Forms.Color)">
+            <summary>Xamarin Forms 色が指定された場合、SolidColorBrush を構築します。</summary>
+            <param name="color">使用する Xamarin Forms 色。</param>
+        </member>
+        <member name="P:Infragistics.XamarinForms.SolidColorBrush.Color">
+            <summary>使用する Xamarin Forms 色を取得または設定します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.LinearGradientBrush">
+            <summary>線形グラデーションのブラシを表します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.LinearGradientBrush.#ctor">
+            <summary>LinearGradientBrush を構築します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.LinearGradientBrush.StartX">
+            <summary>グラデーションの x 開始位置を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.LinearGradientBrush.StartY">
+            <summary>グラデーションの y 開始位置を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.LinearGradientBrush.EndX">
+            <summary>グラデーションの x 終了位置を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.LinearGradientBrush.EndY">
+            <summary>グラデーションの y 終了位置を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.LinearGradientBrush.GradientStops">
+            <summary>ブラシに関連付けられたグラデーション境界を取得します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.GradientStopCollection">
+            <summary>GradientStop タイプのコレクションを表します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.GradientStop">
+            <summary>グラデーション ブラシのグラデーション境界を表します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.GradientStop.#ctor">
+            <summary>GradientStop を構築します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.GradientStop.Color">
+            <summary>境界と関連付けられた Xamarin Forms 色を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.GradientStop.Offset">
+            <summary>グラデーション境界のオフセットを取得または設定します。グラデーションの位置を示す 0 ~ 1 の値です。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.BrushCollection">
+            <summary>Brush オブジェクトのシンプルなコレクション</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.BrushCollection.#ctor">
+            <summary>新しい <see cref="T:Infragistics.XamarinForms.BrushCollection"/> を初期化します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.BrushCollection.InterpolationMode">
+            <summary>ブラシを補間するために使用される補間モードを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.BrushCollection.Item(System.Int32)">
+            <summary>指定したインデックスのブラシを取得または設定します。</summary>
+            <param name="index">返すブラシのインデックス。</param>
+            <returns>指定されたインデックスのブラシ。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.BrushCollection.Equals(System.Object)">
+            <summary>1 つの BrushCollection が別の BrushCollection と等しいかどうかを決定します。</summary>
+            <param name="obj">その他の BrushCollection。</param>
+            <returns>BrushCollection インスタンスが等しい場合は True。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.BrushCollection.GetInterpolatedBrush(System.Double)">
+            <summary>指定したインデックスでブラシを取得します。インデックスが整数ではない場合、この関数呼び出しの結果は、前と次のインデックス値のブラシ間で補間されたプラシになります。</summary>
+            <param name="index">返すブラシのインデックス。</param>
+            <returns>指定されたインデックスのブラシ、または指定されたインデックスが整数ではない場合、前と次のインデックス間の補間されたブラシ。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.BrushCollection.InterpolateRandom">
+            <summary>このコレクションのブラシから補間されたランダム ブラシを返します。</summary>
+            <returns>このコレクションのブラシから補間されたランダム ブラシ。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.BrushCollection.SelectRandom">
+            <summary>コレクションのランダム ブラシを返します。</summary>
+            <returns>このコレクションのランダム ブラシ。</returns>
+        </member>
+        <member name="T:Infragistics.XamarinForms.BrushTypeConverter">
+            <summary>文字列から Infragistics ブラシに変換します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.BrushTypeConverter.CanConvertFrom(System.Type)">
+            <summary>型からの変換が可能かどうかを示します。</summary>
+            <param name="sourceType">チェックするタイプ</param>
+            <returns>型からの変換が可能な場合は True。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.BrushTypeConverter.ConvertFromInvariantString(System.String)">
+            <summary>カルチャ不変の文字列から Infragistics ブラシに変換します。</summary>
+            <param name="value">変換元の文字列。</param>
+            <returns>作成したブラシ。</returns>
+        </member>
+        <member name="T:Infragistics.XamarinForms.BrushCollectionTypeConverter">
+            <summary>文字列をブラシのコレクションに変換します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.BrushCollectionTypeConverter.CanConvertFrom(System.Type)">
+            <summary>型からの変換が可能かどうかを示します。</summary>
+            <param name="sourceType">チェックするタイプ</param>
+            <returns>型からの変換が可能な場合は True。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.BrushCollectionTypeConverter.ConvertFromInvariantString(System.String)">
+            <summary>カルチャ不変の文字列から Infragistics ブラシのコレクションに変換します。</summary>
+            <param name="value">変換元の文字列。</param>
+            <returns>作成したブラシ。</returns>
+        </member>
+        <member name="T:Infragistics.XamarinForms.StringArrayTypeConverter">
+            <summary>文字列を文字列の配列に変換します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.StringArrayTypeConverter.CanConvertFrom(System.Type)">
+            <summary>このコンバーターがサポートする型を示すためにオーバーライドされます。</summary>
+            <param name="sourceType">チェックするタイプ</param>
+            <returns>コンバーターがこの型をサポートする場合は True。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.StringArrayTypeConverter.ConvertFromInvariantString(System.String)">
+            <summary>カルチャ不変の文字列から特定の型に変換します。</summary>
+            <param name="value">変換する文字列。</param>
+            <returns>必要な型のオブジェクト。</returns>
+        </member>
+        <member name="T:Xamarin.Forms.ColorExtensions">
+            <summary>Xamarin Forms 色から Infragistics 色およびブラシに変換するユーティリティ。</summary>
+        </member>
+        <member name="M:Xamarin.Forms.ColorExtensions.ToIGColor(Xamarin.Forms.Color)">
+            <summary>Xamarin Forms 色から Infragistics 色に変換します。</summary>
+            <param name="color">変換する Xamarin Forms 色。</param>
+            <returns>結果になる Infragistics 色。</returns>
+        </member>
+        <member name="M:Xamarin.Forms.ColorExtensions.ToBrush(Xamarin.Forms.Color)">
+            <summary>Xamarin Forms 色から Infragistics ブラシに変換します。</summary>
+            <param name="color">変換する Xamarin Forms 色。</param>
+            <returns>結果になる Infragistics ブラシ。</returns>
+        </member>
+    </members>
+</doc>

@@ -33,5 +33,12 @@ namespace CrossPlat.Views.Other
 			Navigation.PushAsync(new SettingsPage());
 		}
 
+		public void DevExpress_Clicked(Object sender, EventArgs e)
+		{
+			//do something
+
+			Navigation.PushAsync(new DevExpressPage());
+		}
+
     }
 }

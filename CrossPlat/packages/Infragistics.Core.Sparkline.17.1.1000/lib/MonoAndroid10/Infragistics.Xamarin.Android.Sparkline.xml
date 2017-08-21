@@ -1,0 +1,456 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Infragistics.Xamarin.Android.Sparkline</name>
+    </assembly>
+    <members>
+        <member name="T:Infragistics.Controls.Charts.SparklineView">
+            <summary>
+            Represents a sparkline chart.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.Dispose(System.Boolean)">
+            <summary>
+            Releases the resources used by the View.
+            </summary>
+            <param name="disposing">True if this method is being invoked in code, otherwise, it is being invoked by the garbage collector.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.OnDraw(Android.Graphics.Canvas)">
+            <summary>
+            Draws the view.
+            </summary>
+            <param name="canvas">The canvas to draw the view in</param>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.OnSizeChanged(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Called during layout when the size of this view has changed.
+            </summary>
+            <param name="w">Current width of the view</param>
+            <param name="h">Current height of the view</param>
+            <param name="oldw">Previous width of the view</param>
+            <param name="oldh">Previous height of the view</param>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.SuggestedMinimumHeight">
+            <summary>
+            The suggested minimum height for this view.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.SuggestedMinimumWidth">
+            <summary>
+            The suggested minimum width for this view.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.OnMeasure(System.Int32,System.Int32)">
+            <summary>
+            Measure the view.
+            </summary>
+            <param name="widthMeasureSpec">Horizontal space requirements as imposed by the parent.</param>
+            <param name="heightMeasureSpec">Vertical space requirements as imposed by the parent.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.#ctor(Android.Content.Context)">
+            <summary>
+            Creates a new instance of XamSparkLine.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.#ctor(Android.Content.Context,Android.Util.IAttributeSet)">
+            <summary>
+            Initializes a new <see cref="T:Infragistics.Controls.Charts.SparklineView"/>.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.#ctor(Android.Content.Context,Android.Util.IAttributeSet,System.Int32)">
+            <summary>
+            Initializes a new <see cref="T:Infragistics.Controls.Charts.SparklineView"/>.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.#ctor(Android.Content.Context,Android.Util.IAttributeSet,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new <see cref="T:Infragistics.Controls.Charts.SparklineView"/>.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.#ctor(System.IntPtr,Android.Runtime.JniHandleOwnership)">
+            <summary>
+            Initializes a new <see cref="T:Infragistics.Controls.Charts.SparklineView"/>.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.ActualPixelScalingRatio">
+            <summary>
+            Gets the actual scaling value used by the component to affect the pixel density of the control.
+            </summary>
+            <remarks>
+            A higher scaling ratio will produce crisper visuals at the expense of memory.  Lower values will cause the control
+            to appear blurry.
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.Brush">
+            <summary>
+            Gets or sets the sparkline brush.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.DisplayType">
+            <summary>
+            Gets or sets the display type of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.FirstMarkerBrush">
+            <summary>
+            Gets or sets the first marker brush of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.FirstMarkerSize">
+            <summary>
+            Gets or sets the first marker size of the sparkline.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.SetFirstMarkerSize(Android.Util.ComplexUnitType,System.Double)">
+            <summary>
+            Sets the <see cref="P:Infragistics.Controls.Charts.SparklineView.FirstMarkerSize"/> property to a value of the specified units.
+            </summary>
+            <seealso cref="P:Infragistics.Controls.Charts.SparklineView.FirstMarkerSize"/>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.FirstMarkerVisibility">
+            <summary>
+            Gets or sets the first marker visibility of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.FontFamily">
+            <summary>
+            Returns or sets the font family for the axis labels.
+            </summary>
+            <seealso cref="P:Infragistics.Controls.Charts.SparklineView.FontSize"/>
+            <seealso cref="P:Infragistics.Controls.Charts.SparklineView.FontStyle"/>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.FontSize">
+            <summary>
+            Returns or sets the font size for the axis labels.
+            </summary>
+            <seealso cref="P:Infragistics.Controls.Charts.SparklineView.FontFamily"/>
+            <seealso cref="P:Infragistics.Controls.Charts.SparklineView.FontStyle"/>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.SetFontSize(Android.Util.ComplexUnitType,System.Double)">
+            <summary>
+            Sets the <see cref="P:Infragistics.Controls.Charts.SparklineView.FontSize"/> property to a value of the specified units.
+            </summary>
+            <seealso cref="P:Infragistics.Controls.Charts.SparklineView.FontSize"/>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.FontStyle">
+            <summary>
+            Returns or sets the font style for the axis labels.
+            </summary>
+            <seealso cref="P:Infragistics.Controls.Charts.SparklineView.FontFamily"/>
+            <seealso cref="P:Infragistics.Controls.Charts.SparklineView.FontSize"/>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.HighMarkerBrush">
+            <summary>
+            Gets or sets the high marker brush of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.HighMarkerSize">
+            <summary>
+            Gets or sets the high marker size of the sparkline.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.SetHighMarkerSize(Android.Util.ComplexUnitType,System.Double)">
+            <summary>
+            Sets the <see cref="P:Infragistics.Controls.Charts.SparklineView.HighMarkerSize"/> property to a value of the specified units.
+            </summary>
+            <seealso cref="P:Infragistics.Controls.Charts.SparklineView.HighMarkerSize"/>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.HighMarkerVisibility">
+            <summary>
+            Gets or sets the high marker visibility of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.HorizontalAxisBrush">
+            <summary>
+            Gets or sets the horizontal axis line brush of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.HorizontalAxisVisibility">
+            <summary>
+            Gets or sets the display state of the horizontal axis.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.ItemsSource">
+            <summary>
+            Gets or sets the ItemsSource of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.LabelMemberPath">
+            <summary>
+            String identifier of a column or property name to get labels from on each item in the data source.  These labels will be retrieved from the first and last item, and displayed by the horizontal axis.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.LastMarkerBrush">
+            <summary>
+            Gets or sets the last marker brush of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.LastMarkerSize">
+            <summary>
+            Gets or sets the last marker size of the sparkline.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.SetLastMarkerSize(Android.Util.ComplexUnitType,System.Double)">
+            <summary>
+            Sets the <see cref="P:Infragistics.Controls.Charts.SparklineView.LastMarkerSize"/> property to a value of the specified units.
+            </summary>
+            <seealso cref="P:Infragistics.Controls.Charts.SparklineView.LastMarkerSize"/>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.LastMarkerVisibility">
+            <summary>
+            Gets or sets the last marker visibility of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.LineThickness">
+            <summary>
+            Gets or sets the line thickness of the sparkline.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.SetLineThickness(Android.Util.ComplexUnitType,System.Double)">
+            <summary>
+            Sets the <see cref="P:Infragistics.Controls.Charts.SparklineView.LineThickness"/> property to a value of the specified units.
+            </summary>
+            <seealso cref="P:Infragistics.Controls.Charts.SparklineView.LineThickness"/>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.LowMarkerBrush">
+            <summary>
+            Gets or sets the low marker brush of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.LowMarkerSize">
+            <summary>
+            Gets or sets the low marker size of the sparkline.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.SetLowMarkerSize(Android.Util.ComplexUnitType,System.Double)">
+            <summary>
+            Sets the <see cref="P:Infragistics.Controls.Charts.SparklineView.LowMarkerSize"/> property to a value of the specified units.
+            </summary>
+            <seealso cref="P:Infragistics.Controls.Charts.SparklineView.LowMarkerSize"/>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.LowMarkerVisibility">
+            <summary>
+            Gets or sets the low marker visibility of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.MarkerBrush">
+            <summary>
+            Gets or sets the marker brush of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.MarkerSize">
+            <summary>
+            Gets or sets the marker size of the sparkline.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.SetMarkerSize(Android.Util.ComplexUnitType,System.Double)">
+            <summary>
+            Sets the <see cref="P:Infragistics.Controls.Charts.SparklineView.MarkerSize"/> property to a value of the specified units.
+            </summary>
+            <seealso cref="P:Infragistics.Controls.Charts.SparklineView.MarkerSize"/>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.MarkerVisibility">
+            <summary>
+            Gets or sets the marker visibility of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.NegativeBrush">
+            <summary>
+            Gets or sets the negative brush of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.NegativeMarkerBrush">
+            <summary>
+            Gets or sets the negative marker brush of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.NegativeMarkerSize">
+            <summary>
+            Gets or sets the negative marker size of the sparkline.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.SetNegativeMarkerSize(Android.Util.ComplexUnitType,System.Double)">
+            <summary>
+            Sets the <see cref="P:Infragistics.Controls.Charts.SparklineView.NegativeMarkerSize"/> property to a value of the specified units.
+            </summary>
+            <seealso cref="P:Infragistics.Controls.Charts.SparklineView.NegativeMarkerSize"/>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.NegativeMarkerVisibility">
+            <summary>
+            Gets or sets the negative marker visibility of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.NormalRangeFill">
+            <summary>
+            Gets or sets the normal range brush of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.NormalRangeMaximum">
+            <summary>
+            Gets or sets the maximum value of the normal range.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.NormalRangeMinimum">
+            <summary>
+            Gets or sets the minimum value of the normal range.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.NormalRangeVisibility">
+            <summary>
+            Gets or sets the normal range visibility of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.PixelScalingRatio">
+            <summary>
+            Gets or sets the scaling value used to affect the pixel density of the control.
+            </summary>
+            <remarks>
+            A higher scaling ratio will produce crisper visuals at the expense of memory.  Lower values will cause the control
+            to appear blurry.
+            </remarks>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.TextColor">
+            <summary>
+            Gets or sets the text color for the axis labels.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.TrendLineBrush">
+            <summary>
+            Gets or sets the trendline brush of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.TrendLinePeriod">
+            <summary>
+            Gets or sets the trendline period used by the sparkline.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.TrendLineThickness">
+            <summary>
+            Gets or sets the thickness of the sparkline's trendline.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.SetTrendLineThickness(Android.Util.ComplexUnitType,System.Double)">
+            <summary>
+            Sets the <see cref="P:Infragistics.Controls.Charts.SparklineView.TrendLineThickness"/> property to a value of the specified units.
+            </summary>
+            <seealso cref="P:Infragistics.Controls.Charts.SparklineView.TrendLineThickness"/>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.TrendLineType">
+            <summary>
+            Gets or sets the type of trendline used by the sparkline.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.UnknownValuePlotting">
+            <summary>
+            Gets or sets the way null values are interpreted.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.ValueMemberPath">
+            <summary>
+            Gets or sets the string path to the value column.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.VerticalAxisBrush">
+            <summary>
+            Gets or sets the vertical axis line brush of the sparkline.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineView.VerticalAxisVisibility">
+            <summary>
+            Gets or sets the display state of the vertical axis.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.Destroy">
+            <summary>
+            Clean up the sparkline control.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.ExportSerializedVisualData">
+            <summary>
+            Returns visuals as a serialized string.
+            </summary>
+            <returns>Visuals as a serialized string</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.ExportVisualData">
+            <summary>
+            Returns the sparkline visuals expressed as a SparklineVisualData object.
+            </summary>
+            <returns>A SparklineVisualData object representing the current sparkline visuals.</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.NotifyClearItems(System.Object)">
+            <summary>
+            Used to manually notify the XamSparkline that the data source has reset or cleared its items.  Invoking this method is only necessary if that datasource is not observable.
+            </summary>
+            <param name="source_">The data source which was cleared or reset.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.NotifyInsertItem(System.Object,System.Int32,System.Object)">
+            <summary>
+            Used to manually notify the XamSparkline that the data source has had an item inserted. Only necessary if that datasource is not observable.
+            </summary>
+            <param name="source_">The data source changed.</param>
+            <param name="index">The index of the new item</param>
+            <param name="newItem">The new item.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.NotifyRemoveItem(System.Object,System.Int32,System.Object)">
+            <summary>
+            Used to manually notify the XamSparkline that the data source has had an item removed. Only necessary if that datasource is not observable.
+            </summary>
+            <param name="source_">The data source changed.</param>
+            <param name="index">The index of the old item.</param>
+            <param name="oldItem">The old item.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.NotifyResized">
+            <summary>
+            Notify that the control has resized.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.NotifySetItem(System.Object,System.Int32,System.Object,System.Object)">
+            <summary>
+            Used to manually notify the XamSparkline that the data source has had an item set. Only necessary if that datasource is not observable.
+            </summary>
+            <param name="source_">The data source changed.</param>
+            <param name="index">The index of the change</param>
+            <param name="oldItem">The old item.</param>
+            <param name="newItem">The new item.</param>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineView.OnFormatLabel(Infragistics.Controls.Charts.SparklineFormatLabelEventArgs)">
+            <summary>
+            Used to invoke the <see cref="E:Infragistics.Controls.Charts.SparklineView.FormatLabel"/> event.
+            </summary>
+            <seealso cref="T:Infragistics.Controls.Charts.SparklineFormatLabelEventArgs"/>
+            <seealso cref="E:Infragistics.Controls.Charts.SparklineView.FormatLabel"/>
+        </member>
+        <member name="E:Infragistics.Controls.Charts.SparklineView.FormatLabel">
+            <summary>
+            Event raised for the purpose of determining the text of each label.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.SparklineFormatLabelEventArgs">
+            <summary>
+            EventArgs class for axis FormatLabel events.
+            </summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.SparklineFormatLabelEventArgs.#ctor">
+            <summary>
+            Initializes a new <see cref="T:Infragistics.Controls.Charts.SparklineFormatLabelEventArgs"/>.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineFormatLabelEventArgs.Label">
+            <summary>
+            Gets or sets the text of the label.
+            </summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineFormatLabelEventArgs.Value">
+            <summary>
+            The data item in context.
+            </summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.SparklineFormatLabelEventHandler">
+            <summary>
+            Delegate for Sparkline FormatLabel events.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="item">Contextual information about the event being raised.</param>
+        </member>
+    </members>
+</doc>

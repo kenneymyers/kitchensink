@@ -1,0 +1,562 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Infragistics.XF.Sparkline</name>
+    </assembly>
+    <members>
+        <member name="T:Infragistics.XamarinForms.Controls.Charts.SparklineFormatLabelEventArgs">
+            <summary>
+            EventArgs class for axis FormatLabel events.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Charts.SparklineFormatLabelEventArgs.#ctor">
+            <summary>
+            Initializes a new <see cref="T:Infragistics.XamarinForms.Controls.Charts.SparklineFormatLabelEventArgs"/>.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.SparklineFormatLabelEventArgs.Label">
+            <summary>
+            Gets or sets the text of the label.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.SparklineFormatLabelEventArgs.Value">
+            <summary>
+            The data item in context.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Charts.SparklineFormatLabelEventHandler">
+            <summary>
+            Delegate for Sparkline FormatLabel events.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="item">Contextual information about the event being raised.</param>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Charts.XamSparkline">
+            <summary>
+            Represents a sparkline chart.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Charts.XamSparkline.#ctor">
+            <summary>
+            Creates a new instance of XamSparkLine.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.ActualPixelScalingRatioProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.ActualPixelScalingRatio"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.ActualPixelScalingRatio">
+            <summary>
+            Gets the actual scaling value used by the component to affect the pixel density of the control.
+            </summary>
+            <remarks>
+            A higher scaling ratio will produce crisper visuals at the expense of memory.  Lower values will cause the control
+            to appear blurry.
+            </remarks>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.BrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.Brush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.Brush">
+            <summary>
+            Gets or sets the sparkline brush.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.DisplayTypeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.DisplayType"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.DisplayType">
+            <summary>
+            Gets or sets the display type of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FirstMarkerBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FirstMarkerBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FirstMarkerBrush">
+            <summary>
+            Gets or sets the first marker brush of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FirstMarkerSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FirstMarkerSize"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FirstMarkerSize">
+            <summary>
+            Gets or sets the first marker size of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FirstMarkerVisibilityProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FirstMarkerVisibility"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FirstMarkerVisibility">
+            <summary>
+            Gets or sets the first marker visibility of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontAttributesProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontAttributes"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontAttributes">
+            <summary>
+            Returns or sets the font style for the axis labels.
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontFamilyProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontFamily"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontFamily">
+            <summary>
+            Returns or sets the font family for the axis labels.
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontSize"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontSize">
+            <summary>
+            Returns or sets the font size for the axis labels.
+            </summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HighMarkerBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HighMarkerBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HighMarkerBrush">
+            <summary>
+            Gets or sets the high marker brush of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HighMarkerSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HighMarkerSize"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HighMarkerSize">
+            <summary>
+            Gets or sets the high marker size of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HighMarkerVisibilityProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HighMarkerVisibility"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HighMarkerVisibility">
+            <summary>
+            Gets or sets the high marker visibility of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HorizontalAxisBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HorizontalAxisBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HorizontalAxisBrush">
+            <summary>
+            Gets or sets the horizontal axis line brush of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HorizontalAxisVisibilityProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HorizontalAxisVisibility"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.HorizontalAxisVisibility">
+            <summary>
+            Gets or sets the display state of the horizontal axis.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.ItemsSourceProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.ItemsSource"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.ItemsSource">
+            <summary>
+            Gets or sets the ItemsSource of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LabelMemberPathProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LabelMemberPath"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LabelMemberPath">
+            <summary>
+            String identifier of a column or property name to get labels from on each item in the data source.  These labels will be retrieved from the first and last item, and displayed by the horizontal axis.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LastMarkerBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LastMarkerBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LastMarkerBrush">
+            <summary>
+            Gets or sets the last marker brush of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LastMarkerSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LastMarkerSize"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LastMarkerSize">
+            <summary>
+            Gets or sets the last marker size of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LastMarkerVisibilityProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LastMarkerVisibility"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LastMarkerVisibility">
+            <summary>
+            Gets or sets the last marker visibility of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LineThicknessProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LineThickness"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LineThickness">
+            <summary>
+            Gets or sets the line thickness of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LowMarkerBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LowMarkerBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LowMarkerBrush">
+            <summary>
+            Gets or sets the low marker brush of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LowMarkerSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LowMarkerSize"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LowMarkerSize">
+            <summary>
+            Gets or sets the low marker size of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LowMarkerVisibilityProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LowMarkerVisibility"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.LowMarkerVisibility">
+            <summary>
+            Gets or sets the low marker visibility of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.MarkerBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.MarkerBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.MarkerBrush">
+            <summary>
+            Gets or sets the marker brush of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.MarkerSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.MarkerSize"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.MarkerSize">
+            <summary>
+            Gets or sets the marker size of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.MarkerVisibilityProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.MarkerVisibility"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.MarkerVisibility">
+            <summary>
+            Gets or sets the marker visibility of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeBrush">
+            <summary>
+            Gets or sets the negative brush of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeMarkerBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeMarkerBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeMarkerBrush">
+            <summary>
+            Gets or sets the negative marker brush of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeMarkerSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeMarkerSize"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeMarkerSize">
+            <summary>
+            Gets or sets the negative marker size of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeMarkerVisibilityProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeMarkerVisibility"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NegativeMarkerVisibility">
+            <summary>
+            Gets or sets the negative marker visibility of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeFillProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeFill"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeFill">
+            <summary>
+            Gets or sets the normal range brush of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeMaximumProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeMaximum"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeMaximum">
+            <summary>
+            Gets or sets the maximum value of the normal range.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeMinimumProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeMinimum"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeMinimum">
+            <summary>
+            Gets or sets the minimum value of the normal range.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeVisibilityProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeVisibility"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NormalRangeVisibility">
+            <summary>
+            Gets or sets the normal range visibility of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.PixelScalingRatioProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.PixelScalingRatio"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.PixelScalingRatio">
+            <summary>
+            Gets or sets the scaling value used to affect the pixel density of the control.
+            </summary>
+            <remarks>
+            A higher scaling ratio will produce crisper visuals at the expense of memory.  Lower values will cause the control
+            to appear blurry.
+            </remarks>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TextColorProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TextColor"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TextColor">
+            <summary>
+            Gets or sets the text color for the axis labels.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLineBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLineBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLineBrush">
+            <summary>
+            Gets or sets the trendline brush of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLinePeriodProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLinePeriod"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLinePeriod">
+            <summary>
+            Gets or sets the trendline period used by the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLineThicknessProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLineThickness"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLineThickness">
+            <summary>
+            Gets or sets the thickness of the sparkline's trendline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLineTypeProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLineType"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.TrendLineType">
+            <summary>
+            Gets or sets the type of trendline used by the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.UnknownValuePlottingProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.UnknownValuePlotting"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.UnknownValuePlotting">
+            <summary>
+            Gets or sets the way null values are interpreted.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.ValueMemberPathProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.ValueMemberPath"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.ValueMemberPath">
+            <summary>
+            Gets or sets the string path to the value column.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.VerticalAxisBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.VerticalAxisBrush"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.VerticalAxisBrush">
+            <summary>
+            Gets or sets the vertical axis line brush of the sparkline.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Charts.XamSparkline.VerticalAxisVisibilityProperty">
+            <summary>
+            Identifies the <see cref="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.VerticalAxisVisibility"/> bindable property.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Charts.XamSparkline.VerticalAxisVisibility">
+            <summary>
+            Gets or sets the display state of the vertical axis.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Charts.XamSparkline.Destroy">
+            <summary>
+            Clean up the sparkline control.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Charts.XamSparkline.ExportSerializedVisualData">
+            <summary>
+            Returns visuals as a serialized string.
+            </summary>
+            <returns>Visuals as a serialized string</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Charts.XamSparkline.ExportVisualData">
+            <summary>
+            Returns the sparkline visuals expressed as a SparklineVisualData object.
+            </summary>
+            <returns>A SparklineVisualData object representing the current sparkline visuals.</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Charts.XamSparkline.Init">
+            <summary>
+            When declaring an instance of this control in XAML, this method can be invoked in code to ensure all necessary types are available at runtime.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NotifyClearItems(System.Object)">
+            <summary>
+            Used to manually notify the XamSparkline that the data source has reset or cleared its items.  Invoking this method is only necessary if that datasource is not observable.
+            </summary>
+            <param name="source_">The data source which was cleared or reset.</param>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NotifyInsertItem(System.Object,System.Int32,System.Object)">
+            <summary>
+            Used to manually notify the XamSparkline that the data source has had an item inserted. Only necessary if that datasource is not observable.
+            </summary>
+            <param name="source_">The data source changed.</param>
+            <param name="index">The index of the new item</param>
+            <param name="newItem">The new item.</param>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NotifyRemoveItem(System.Object,System.Int32,System.Object)">
+            <summary>
+            Used to manually notify the XamSparkline that the data source has had an item removed. Only necessary if that datasource is not observable.
+            </summary>
+            <param name="source_">The data source changed.</param>
+            <param name="index">The index of the old item.</param>
+            <param name="oldItem">The old item.</param>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NotifyResized">
+            <summary>
+            Notify that the control has resized.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Charts.XamSparkline.NotifySetItem(System.Object,System.Int32,System.Object,System.Object)">
+            <summary>
+            Used to manually notify the XamSparkline that the data source has had an item set. Only necessary if that datasource is not observable.
+            </summary>
+            <param name="source_">The data source changed.</param>
+            <param name="index">The index of the change</param>
+            <param name="oldItem">The old item.</param>
+            <param name="newItem">The new item.</param>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Charts.XamSparkline.FormatLabel">
+            <summary>
+            Event raised for the purpose of determining the text of each label.
+            </summary>
+        </member>
+    </members>
+</doc>

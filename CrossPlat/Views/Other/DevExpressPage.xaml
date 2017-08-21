@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:dxGrid="clr-namespace:DevExpress.Mobile.DataGrid;assembly=DevExpress.Mobile.Grid.v17.1" x:Class="CrossPlat.Views.Other.DevExpressPage">
+    <ContentPage.Content>
+        <dxGrid:GridControl x:Name="grid" ItemsSource="{Binding Products}" IsReadOnly="true" SortMode="Multiple">
+            <dxGrid:GridControl.Columns>
+                <dxGrid:TextColumn FieldName="Name" Caption="Name" Width="170" SortOrder="Descending" SortIndex="0" />
+                <dxGrid:TextColumn FieldName="Description" Caption="Description"  />
+            </dxGrid:GridControl.Columns>
+        </dxGrid:GridControl>
+    </ContentPage.Content>
+</ContentPage>

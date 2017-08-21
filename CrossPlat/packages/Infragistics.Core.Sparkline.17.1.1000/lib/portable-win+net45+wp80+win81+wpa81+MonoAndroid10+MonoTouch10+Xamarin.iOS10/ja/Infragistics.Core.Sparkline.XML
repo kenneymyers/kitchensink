@@ -1,0 +1,611 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+    <assembly>
+        <name>Infragistics.Core.Sparkline</name>
+    </assembly>
+    <members>
+      <member name="T:Infragistics.Controls.Charts.Implementation.SparklineFormatLabelEventArgs">
+        <summary>軸の FormatLabel イベントの EventArgs クラス。</summary>
+      </member>
+      <member name="P:Infragistics.Controls.Charts.Implementation.SparklineFormatLabelEventArgs.Value">
+        <summary>コンテキスト内のデータ項目。</summary>
+      </member>
+      <member name="P:Infragistics.Controls.Charts.Implementation.SparklineFormatLabelEventArgs.Label">
+        <summary>ラベルのテキストを取得または設定します。</summary>
+      </member>
+        <member name="T:Infragistics.Controls.Charts.Implementation.XamSparkline">
+            <summary>スパークライン チャートを表します。</summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.XamSparkline.#ctor">
+            <summary>XamSparkLine のインスタンスを新規作成します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.BrushProperty">
+            <summary>Brushes 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.Brush">
+            <summary>スパークライン ブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.NegativeBrushProperty">
+            <summary>NegativeBrush 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.NegativeBrush">
+            <summary>スパークラインの負値のブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.MarkerBrushProperty">
+            <summary>MarkerBrush 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.MarkerBrush">
+            <summary>スパークラインのマーカー ブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.NegativeMarkerBrushProperty">
+            <summary>NegativeMarkerBrush 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.NegativeMarkerBrush">
+            <summary>スパークラインの負値マーカー ブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.FirstMarkerBrushProperty">
+            <summary>FirstMarkerBrush 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.FirstMarkerBrush">
+            <summary>スパークラインの始値マーカー ブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.LastMarkerBrushProperty">
+            <summary>LastMarkerBrush 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.LastMarkerBrush">
+            <summary>スパークラインの終値マーカー ブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.HighMarkerBrushProperty">
+            <summary>HighMarkerBrush 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.HighMarkerBrush">
+            <summary>スパークラインの最大値マーカー ブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.LowMarkerBrushProperty">
+            <summary>LowMarkerBrush 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.LowMarkerBrush">
+            <summary>スパークラインの最小値マーカー ブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.TrendLineBrushProperty">
+            <summary>TrendLineBrush 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.TrendLineBrush">
+            <summary>スパークラインのトレンドライン ブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.HorizontalAxisBrushProperty">
+            <summary>HorizontalAxisBrush 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.HorizontalAxisBrush">
+            <summary>スパークラインの横軸線ブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.VerticalAxisBrushProperty">
+            <summary>VerticalAxisBrush 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.VerticalAxisBrush">
+            <summary>スパークラインの縦軸線ブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.NormalRangeFillProperty">
+            <summary>NormalRangeFill 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.NormalRangeFill">
+            <summary>スパークラインの標準範囲ブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.HorizontalAxisVisibilityProperty">
+            <summary>HorizontalAxisVisibility 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.HorizontalAxisVisibility">
+            <summary>水平軸の表示状態を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.VerticalAxisVisibilityProperty">
+            <summary>VerticalAxisVisibility 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.VerticalAxisVisibility">
+            <summary>垂直軸の表示状態を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.MarkerVisibilityProperty">
+            <summary>MarkerVisibility 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.MarkerVisibility">
+            <summary>スパークラインのマーカーの表示状態を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.NegativeMarkerVisibilityProperty">
+            <summary>NegativeMarkerVisibility 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.NegativeMarkerVisibility">
+            <summary>スパークラインの負値マーカーの表示状態を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.FirstMarkerVisibilityProperty">
+            <summary>FirstMarkerVisibility 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.FirstMarkerVisibility">
+            <summary>スパークラインの始値マーカーの表示状態を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.LastMarkerVisibilityProperty">
+            <summary>LastMarkerVisibility 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.LastMarkerVisibility">
+            <summary>スパークラインの終値マーカーの表示状態を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.LowMarkerVisibilityProperty">
+            <summary>LowMarkerVisibility 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.LowMarkerVisibility">
+            <summary>スパークラインの最小値マーカーの表示状態を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.HighMarkerVisibilityProperty">
+            <summary>HighMarkerVisibility 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.HighMarkerVisibility">
+            <summary>スパークラインの最大値マーカーの表示状態を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.NormalRangeVisibilityProperty">
+            <summary>NormalRangeVisibility 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.NormalRangeVisibility">
+            <summary>スパークラインの標準範囲の表示状態を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.MarkerSizeProperty">
+            <summary>MarkerSize 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.MarkerSize">
+            <summary>スパークラインのマーカー サイズを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.FirstMarkerSizeProperty">
+            <summary>FirstMarkerSize 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.FirstMarkerSize">
+            <summary>スパークラインの始値マーカーのサイズを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.LastMarkerSizeProperty">
+            <summary>LastMarkerSize 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.LastMarkerSize">
+            <summary>スパークラインの終値マーカーのサイズを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.HighMarkerSizeProperty">
+            <summary>HighMarkerSize 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.HighMarkerSize">
+            <summary>スパークラインの最大値マーカーのサイズを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.LowMarkerSizeProperty">
+            <summary>LowMarkerSize 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.LowMarkerSize">
+            <summary>スパークラインの最大値マーカーのサイズを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.NegativeMarkerSizeProperty">
+            <summary>NegativeMarkerSize 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.NegativeMarkerSize">
+            <summary>スパークラインの負値マーカーのサイズを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.LineThicknessProperty">
+            <summary>LineThickness 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.LineThickness">
+            <summary>スパークラインの線の太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.MinimumProperty">
+            <summary>Minimum 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.Minimum">
+            <summary>y 軸の最小値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.MaximumProperty">
+            <summary>Maximum 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.Maximum">
+            <summary>y 軸の最大値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.ItemsSourceProperty">
+            <summary>ItemsSource 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.ItemsSource">
+            <summary>スパークラインの ItemsSource を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.ValueMemberPathProperty">
+            <summary>ValueMemberPath 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.ValueMemberPath">
+            <summary>値列への文字列パスを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.LabelMemberPathProperty">
+            <summary>LabelMemberPath 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.LabelMemberPath">
+            <summary>データ ソースの各項目からラベルを取得するための列またはプロパティ名の文字列識別子。これらのラベルは最初の項目と最後の項目から取得され、水平軸によって表示されます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.ToolTipProperty">
+            <summary>ToolTip 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.ToolTip">
+            <summary>スパークラインのヒントを取得または設定します。</summary>
+            <remarks>ヒントは、データ部分だけではなく、スパークライン コントロール全体に適用されます。</remarks>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.ToolTipVisibilityProperty">
+            <summary>ToolTipVisibility 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.ToolTipVisibility">
+            <summary>ツールチップの表示状態を決定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.TrendLineTypeProperty">
+            <summary>TrendLineType 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.TrendLineType">
+            <summary>スパークラインで使用するトレンドラインのタイプを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.TrendLinePeriodProperty">
+            <summary>TrendLinePeriod 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.TrendLinePeriod">
+            <summary>スパークラインで使用するトレンドラインの範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.TrendLineThicknessProperty">
+            <summary>TrendLineThickness 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.TrendLineThickness">
+            <summary>スパークライン トレンドラインの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.NormalRangeMinimumProperty">
+            <summary>NormalRangeMinimum 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.NormalRangeMinimum">
+            <summary>標準範囲の最小値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.NormalRangeMaximumProperty">
+            <summary>NormalRangeMaximum 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.NormalRangeMaximum">
+            <summary>標準範囲の最大値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.DisplayTypeProperty">
+            <summary>DisplayType 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.DisplayType">
+            <summary>スパークラインの表示タイプを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.UnknownValuePlottingProperty">
+            <summary>UnknownValuePlotting 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.UnknownValuePlotting">
+            <summary>null 値の処理方法を取得または設定します。</summary>
+        </member>
+      <member name="E:Infragistics.Controls.Charts.Implementation.XamSparkline.FormatLabel">
+        <summary>各ラベルのテキストを決定するために発生されるイベント。</summary>
+      </member>
+      <member name="M:Infragistics.Controls.Charts.Implementation.XamSparkline.OnPropertyChanged(System.String,System.Object,System.Object)">
+        <summary>プロパティの変更を処理します。</summary>
+        <param name="propertyName">プロパティ名</param>
+        <param name="oldValue">古い値。</param>
+        <param name="newValue">新しい値。</param>
+      </member>
+      <member name="M:Infragistics.Controls.Charts.Implementation.XamSparkline.Destroy">
+        <summary>スパークライン コントロールをクリーンアップします。</summary>
+      </member>
+      <member name="M:Infragistics.Controls.Charts.Implementation.XamSparkline.ProvideContainer(System.Object)">
+        <summary>スパークライン コントロールのコンテナーを提供します。</summary>
+        <param name="container">コンテナー。</param>
+      </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.FormatLabel">
+            <summary>オブジェクトを取得して、チャートの表示のために書式設定されるラベルを作成する関数を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.Implementation.XamSparkline.FormatLabelProperty">
+            <summary>FormatLabel 依存プロパティを識別します。</summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.XamSparkline.OnPropertyChanged(System.String,System.Object,System.Object)">
+            <summary>プロパティの変更を処理します。</summary>
+            <param name="propertyName">プロパティ名</param>
+            <param name="oldValue">古い値。</param>
+            <param name="newValue">新しい値。</param>
+        </member>
+      <member name="M:Infragistics.Controls.Charts.Implementation.XamSparkline.NotifyResized">
+        <summary>コントロールがサイズ変更されたことを通知します。</summary>
+      </member>
+      <member name="M:Infragistics.Controls.Charts.Implementation.XamSparkline.NotifySetItem(System.Object,System.Int32,System.Object,System.Object)">
+        <summary>データソースに項目が設定されたことを XamSparkline に手動的に通知するために使用されます。そのデータ ソースが監視可能ではない場合に必要です。</summary>
+        <param name="source_">データ ソースが変更されました。</param>
+        <param name="index">変更のインデックス</param>
+        <param name="oldItem">以前の項目。</param>
+        <param name="newItem">新しい項目。</param>
+      </member>
+      <member name="M:Infragistics.Controls.Charts.Implementation.XamSparkline.NotifyClearItems(System.Object)">
+        <summary>データソースで項目がリセット/クリアされたことを XamSparkline に手動的に通知するために使用されます。このメソッドの呼び出しは、そのデータ ソースが監視可能ではない場合に必要です。</summary>
+        <param name="source_">クリアまたはリセットされたデータ ソース。</param>
+      </member>
+      <member name="M:Infragistics.Controls.Charts.Implementation.XamSparkline.NotifyInsertItem(System.Object,System.Int32,System.Object)">
+        <summary>データソースに項目が挿入されたことを XamSparkline に手動的に通知するために使用されます。そのデータ ソースが監視可能ではない場合に必要です。</summary>
+        <param name="source_">データ ソースが変更されました。</param>
+        <param name="index">新しい項目のインデックス。</param>
+        <param name="newItem">新しい項目。</param>
+      </member>
+      <member name="M:Infragistics.Controls.Charts.Implementation.XamSparkline.NotifyRemoveItem(System.Object,System.Int32,System.Object)">
+        <summary>データソースで項目が削除されたことを XamSparkline に手動的に通知するために使用されます。そのデータ ソースが監視可能ではない場合に必要です。</summary>
+        <param name="source_">データ ソースが変更されました。</param>
+        <param name="index">以前の項目のインデックス。</param>
+        <param name="oldItem">以前の項目。</param>
+      </member>
+      <member name="M:Infragistics.Controls.Charts.Implementation.XamSparkline.ExportVisualData">
+        <summary>スパークラインのビジュアル要素を SparklineVisualData オブジェクトとして返します。</summary>
+        <returns>現在のスパークライン ビジュアル要素を表す SparklineVisualData オブジェクト。</returns>
+      </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.XamSparkline.ExportSerializedVisualData">
+            <summary>シリアル化された文字列でビジュアルを返します。</summary>
+            <returns>シリアル化された文字列のビジュアル。</returns>
+        </member>
+      <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.PixelScalingRatio">
+        <summary>コントロールのピクセル密度に影響するために使用されるスケール値を取得または設定します。</summary>
+        <remarks>より高いスケール比率はビジュアルを向上しますが、メモリの使用を増加します。より低い値はコントロールをぼやけます。</remarks>
+      </member>
+      <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.ActualPixelScalingRatio">
+        <summary>コントロールのピクセル密度に影響するコンポーネントで使用される実際のスケーリング値を取得します。</summary>
+        <remarks>より高いスケール比率はビジュアルを向上します。が、メモリの使用を増加します。より低い値はコントロールがぼやけます。</remarks>
+      </member>
+        <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.TextStyle">
+            <summary>X 軸のラベルに CSS フォント プロパティを取得または設定します。</summary>
+        </member>
+      <member name="P:Infragistics.Controls.Charts.Implementation.XamSparkline.TextColor">
+        <summary>軸ラベルのテキスト カラーを取得または設定します。</summary>
+      </member>
+        <member name="T:Infragistics.Controls.Charts.Implementation.SparklineConnector">
+            <summary>Model、View、および Controller をまとめてリンクするコネクタ クラスを表します。</summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.SparklineConnector.#ctor(Infragistics.Portable.Components.DependencyObject,Infragistics.Controls.Charts.Implementation.XamSparklineView)">
+            <summary>新しい スパークライン コネクタを作成します。</summary>
+            <param name="parent">親オブジェクト。</param>
+            <param name="view">スパークライン ビューのインスタンス。</param>
+        </member>
+      <member name="T:Infragistics.Controls.Charts.Implementation.SparklineFormatLabelEventHandler">
+        <summary>スパークラインの FormatLabel イベントのデリゲート。</summary>
+        <param name="sender">イベントのソース。</param>
+        <param name="item">発生するイベントについてのコンテキスト情報。</param>
+      </member>
+        <member name="T:Infragistics.Controls.Charts.Implementation.HorizontalAxisView">
+            <summary>XamSparkline での横軸の View クラス。</summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.HorizontalAxisView.#ctor(Infragistics.Controls.Charts.Implementation.XamSparkline)">
+            <summary>HorizontalAxisView コンストラクター。</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Implementation.VerticalAxisView">
+            <summary>XamSparkline での縦軸の View クラス。</summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.VerticalAxisView.#ctor(Infragistics.Controls.Charts.Implementation.XamSparkline)">
+            <summary>VerticalAxisView コンストラクター。</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Implementation.XamSparklineView">
+            <summary>スパークラインのビジュアル成分を表します。</summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.XamSparklineView.#ctor">
+            <summary>XamSparklineView のインスタンスを新規作成します。</summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.Implementation.XamSparklineView.UpdateBrush(System.String,Infragistics.Portable.Graphics.Media.Brush,System.String,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="name">パス/ブラシの名前</param>
+            <param name="brush">プロパティで設定される場合のみ null 値以外です。</param>
+            <param name="clr">プロパティで設定される場合に null 値。css-default として設定される場合に null 値以外。</param>
+            <param name="opacity">clr != null の場合に css-default。</param>
+            <param name="thickness">clr != null の場合に css-default。</param>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.SparklineToolTipContext">
+            <summary>スパークラインのヒントのデータ コンテキストを表します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineToolTipContext.High">
+            <summary>最大値を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineToolTipContext.Low">
+            <summary>最小値を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineToolTipContext.First">
+            <summary>始値を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Charts.SparklineToolTipContext.Last">
+            <summary>終値を取得または設定します。</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.SparkLayerType">
+            <summary>スパーク レイヤーの種類を示す列挙値。</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.SparklineDisplayType">
+            <summary>スパークラインの種類を表します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.SparklineDisplayType.Line">
+            <summary>スパークラインを線として表示します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.SparklineDisplayType.Area">
+            <summary>スパークラインを塗りつぶされた多角形として表示します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.SparklineDisplayType.Column">
+            <summary>スパークラインをワンセットの柱状チャートとして表示します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Charts.SparklineDisplayType.WinLoss">
+            <summary>スパークラインをワンセットの柱状チャートとしてブール値単位で表示します。</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.AxisRenderMessage">
+            <summary>軸の描画に使用するメッセージ</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.ClearMessage">
+            <summary>明瞭な説明を入れてスパークラインの特定のレイヤーを取り除く。</summary>
+        </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.ColumnMessage">
+        <summary>スパークライン列の更新で使用されるメッセージ。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.ConfigurationMessage">
+        <summary>構成型メッセージの基本クラス。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.InteractionMessage">
+        <summary>操作型メッセージの基本クラス。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.MarkerMessage">
+        <summary>スパークライン マーカーを更新するメッセージ。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.Message">
+        <summary>すべてのスパークライン メッセージの基本クラス。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.MessageChannel">
+        <summary>スパークライン メッセージを送信するために使用されるサービス。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.MessageEventHandler">
+        <summary>メッセージ イベントのデリゲート。</summary>
+        <param name="message">メッセージ</param>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.MessageHandler">
+        <summary>特定のメッセージ型を処理するクラス。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.MessageHandlerEventHandler">
+        <summary>メッセージ受信のデリゲート。</summary>
+        <param name="m">受信したメッセージ</param>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.MouseLeaveMessage">
+        <summary>マウスがスパークライン コントロールの境界線から出たときに使用されるメッセージ。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.MouseMoveMessage">
+        <summary>マウスがスパークライン コントロールの境界線の上に移動しているときに使用されるメッセージ。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.NormalRangeMessage">
+        <summary>スパークライン範囲のジオメトリの更新で使用されるメッセージ。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.PolygonMessage">
+        <summary>メイン スパークラインのジオメトリの更新で使用されるメッセージ。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.PropertyChangedMessage">
+        <summary>プロパティ値を変更するメッセージ。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.RenderingMessage">
+        <summary>描画型メッセージの基本クラス。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.ServiceProvider">
+        <summary>スパークラインにアタッチされたサービスを管理するクラス。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.ToolTipMessage">
+        <summary>ツールチップの更新で使用されるメッセージ。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.ToolTipTemplateMessage">
+        <summary>ツールチップ テンプレートの更新で使用されるメッセージ。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.TrendLineMessage">
+        <summary>トレンドライン ジオメトリの更新で使用されるメッセージ。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.ViewportChangedMessage">
+        <summary>スパークライン ビューポートを変更するメッセージ。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.ContainerSizeChangedMessage">
+        <summary>コンテナーのサイズ変更をトリガーするメッセージ。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.WinLossColumnMessage">
+        <summary>WinLoss 列のジオメトリの更新で使用されるメッセージ。</summary>
+      </member>
+        <member name="T:Infragistics.Controls.Charts.Messaging.ContainerMessage">
+            <summary>コンテナーを提供するために使用されるメッセージ。</summary>
+        </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.VisibilityChangedMessage">
+        <summary>表示状態プロパティを変更するために使用されるメッセージ。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.BrushChangedMessage">
+        <summary>ブラシ プロパティを変更するために使用されるメッセージ。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.NumberChangedMessage">
+        <summary>数値プロパティを変更するために使用されるメッセージ。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.ContainerResizedMessage">
+        <summary>コンテナーがサイズ変更されたことを通知するために使用されるメッセージ。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.DataChangedMessage">
+        <summary>データを変更するために使用されるメッセージ。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.Messaging.PixelRatioMessage">
+        <summary>ピクセル比率を変更するために使用されるメッセージ。</summary>
+      </member>
+      <member name="T:Infragistics.Controls.Charts.VisualData.SparklineVisualData">
+        <summary>XamSparkline のビジュアル データ。</summary>
+      </member>
+      <member name="M:Infragistics.Controls.Charts.VisualData.SparklineVisualData.#ctor">
+        <summary>新しい SparklineVisualData インスタンスを作成します。</summary>
+      </member>
+      <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.Name">
+        <summary>ビジュアル データの名前を取得または設定します。</summary>
+      </member>
+      <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.HorizontalAxis">
+        <summary>水平軸のビジュアル データを取得または設定します。</summary>
+      </member>
+      <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.VerticalAxis">
+        <summary>垂直軸のビジュアル データを取得または設定します。</summary>
+      </member>
+      <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.SparkPath">
+        <summary>メイン スパークラインのジオメトリのビジュアル データを取得または設定します。</summary>
+      </member>
+      <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.NegativeSparkPath">
+        <summary>負のスパークラインのジオメトリのビジュアル データを取得または設定します。</summary>
+      </member>
+      <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.TrendLinePath">
+        <summary>トレンドラインのジオメトリのビジュアル データを取得または設定します。</summary>
+      </member>
+      <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.RangePath">
+        <summary>範囲のジオメトリのビジュアル データを取得または設定します。</summary>
+      </member>
+      <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.MarkersPath">
+        <summary>マーカーのジオメトリのビジュアル データを取得または設定します。</summary>
+      </member>
+      <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.NegativeMarkersPath">
+        <summary>負のマーカーのジオメトリのビジュアル データを取得または設定します。</summary>
+      </member>
+      <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.LowMarkersPath">
+        <summary>低いマーカーのジオメトリのビジュアル データを取得または設定します。</summary>
+      </member>
+      <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.HighMarkersPath">
+        <summary>高いマーカーのジオメトリのビジュアル データを取得または設定します。</summary>
+      </member>
+      <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.FirstMarkerPath">
+        <summary>最初マーカーのジオメトリのビジュアル データを取得または設定します。</summary>
+      </member>
+      <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.LastMarkerPath">
+        <summary>最後マーカーのジオメトリのビジュアル データを取得または設定します。</summary>
+      </member>
+      <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.Viewport">
+        <summary>ビューポイントを取得または設定します。</summary>
+      </member>
+      <member name="P:Infragistics.Controls.Charts.VisualData.SparklineVisualData.MarginViewport">
+        <summary>マージン ビューポートを取得または設定します。</summary>
+      </member>
+        <member name="M:Infragistics.Controls.Charts.VisualData.SparklineVisualData.ScaleByViewport">
+            <summary>比較のため、ビューポートに対してスパークラインを拡大/縮小して正規化します。</summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.VisualData.SparklineVisualData.ScaleFromDevicePixels(Infragistics.Portable.VisualData.VisualDataPixelScalingOptions)">
+            <summary>ビジュアル データをデバイス ピクセルからデバイスに依存しないピクセルに拡大縮小します。</summary>
+            <param name="options">拡大縮小操作のオプション。</param>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.VisualData.SparklineVisualData.Serialize">
+            <summary>このオブジェクトを文字列にシリアル化します。</summary>
+        </member>
+      <member name="T:Infragistics.Controls.Charts.VisualData.SparklineAxisVisualData">
+        <summary>スパークライン軸のビジュアル データ。</summary>
+      </member>
+      <member name="M:Infragistics.Controls.Charts.VisualData.SparklineAxisVisualData.#ctor">
+        <summary>新しい SparklineAxisVisualData インスタンスを作成します。</summary>
+      </member>
+      <member name="P:Infragistics.Controls.Charts.VisualData.SparklineAxisVisualData.Name">
+        <summary>軸の名前を取得または設定します。</summary>
+      </member>
+      <member name="P:Infragistics.Controls.Charts.VisualData.SparklineAxisVisualData.MinLabel">
+        <summary>最小値のラベルのラベル外観データを取得または設定します。</summary>
+      </member>
+      <member name="P:Infragistics.Controls.Charts.VisualData.SparklineAxisVisualData.MaxLabel">
+        <summary>最大値のラベルのラベル外観データを取得または設定します。</summary>
+      </member>
+      <member name="P:Infragistics.Controls.Charts.VisualData.SparklineAxisVisualData.AxisLine">
+        <summary>軸線のビジュアル データを取得または設定します。</summary>
+      </member>
+      <member name="M:Infragistics.Controls.Charts.VisualData.SparklineAxisVisualData.ScaleByViewport(Infragistics.Portable.VisualData.RectData)">
+        <summary>比較のため、ビューポートに対して軸データを拡大/縮小して正規化します。</summary>
+        <param name="viewport">拡大/縮小するビューポート。</param>
+      </member>
+        <member name="M:Infragistics.Controls.Charts.VisualData.SparklineAxisVisualData.Serialize">
+            <summary>このオブジェクトを文字列にシリアル化します。</summary>
+        </member>
+        <member name="M:Infragistics.Controls.Charts.VisualData.SparklineAxisVisualData.ScaleFromDevicePixels(Infragistics.Portable.VisualData.VisualDataPixelScalingOptions)">
+            <summary>ビジュアル データをデバイス ピクセルからデバイスに依存しないピクセルに拡大縮小します。</summary>
+            <param name="options">拡大縮小操作のオプション。</param>
+        </member>
+    </members>
+</doc>

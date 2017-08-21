@@ -1,0 +1,545 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+    <assembly>
+        <name>Infragistics.Core.Documents</name>
+    </assembly>
+    <members>
+        <member name="T:Infragistics.Documents.Core.Packaging.IPackageFactory">
+            <summary>ストリームと FileMode を使用して IPackage を作成するのに使用されるファクトリ クラスです。</summary>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.IPackageFactory.Open(System.IO.Stream,Infragistics.IO.FileMode)">
+            <summary>指定した IO ストリームとファイル モードを使用して IPackage を開きます。</summary>
+            <param name="stream">IPackage を開く IO ストリームです。</param>
+            <param name="packageMode">IPackage を開くファイル モードです。</param>
+            <returns>開かれた IPackage です。</returns>
+        </member>
+        <member name="T:Infragistics.Documents.Core.Packaging.IPackage">
+            <summary>複数データー オブジェクトの保存ができるコンテナーを表します。</summary>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.IPackage.CreatePart(System.Uri,System.String)">
+            <summary>指定する URI とコンテンツ タイプを使用して、非圧縮形式の部分を新しく作成します。</summary>
+            <param name="partUri">新しい部分の URI (Uniform Resource Identifier) です。</param>
+            <param name="contentType">データ ストリームのコンテンツ タイプです。</param>
+            <returns>新しく作成された部分です。</returns>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.IPackage.CreateRelationship(System.Uri,Infragistics.Documents.Core.Packaging.RelationshipTargetMode,System.String,System.String)">
+            <summary>指定する URI、ターゲット モード、関係タイプと識別子 (ID) を作成します。</summary>
+            <param name="targetUri">ターゲット 部分の URI (Uniform Resource Identifier) です。</param>
+            <param name="targetMode">ターゲット パートがパッケージの System.IO.Packaging.TagertMode.Internal または System.IO.Packaging.TargetMode.External かどうかを示します。</param>
+            <param name="relationshipType">関係のロールを一意に定義する URI です。</param>
+            <param name="id">一意の XML 識別子です。</param>
+            <returns>指定した部分のパッケージ レベル関係です。</returns>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.IPackage.GetRelationships">
+            <summary>すべてのパケージ レベル関係のコレクションを返します。</summary>
+            <returns>パケージに含まれるすべてのパケージ レベル関係のコレクションです。</returns>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.IPackage.GetRelationship(System.String)">
+            <summary>指定した IPackageRelationship.Id の関係を返します。</summary>
+            <param name="id">返される関係の IPackageRelationship.Id です。</param>
+            <returns>指定した ID と一致する関係です。</returns>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.IPackage.GetPart(System.Uri)">
+            <summary>指定した URI の部分を返します。</summary>
+            <param name="partUri">URI (Uniform Resource Identifier) の返される部分です。</param>
+            <returns>指定した URI を持つ部分です。</returns>        
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.IPackage.GetParts">
+            <summary>パケージの全部分のコレクションを返します。</summary>
+            <returns>パケージに含まれるすべての System.IO.Packaging.PackagePart 要素のコレクションです。</returns>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.IPackage.PartExists(System.Uri)">
+            <summary>指定した URI の部分がパケージに含まれているかどうかを示します。</summary>
+            <param name="partUri">確認する部分の System.Uri です。</param>
+            <returns>指定した partUri がパケージに含まれている場合は、true です。それ以外 false です。</returns>
+        </member>
+        <member name="T:Infragistics.Documents.Core.Packaging.IPackagePart">
+            <summary>Sytem.IO.Packaging.Package に保存される部分の基本クラスを提供します。抽象クラスです。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.IPackagePart.Package">
+            <summary>部分の親パケージを取得します。</summary>        
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.IPackagePart.Uri">
+            <summary>部分の URI を取得します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.IPackagePart.ContentType">
+            <summary>コンテンツ ストリームの MIME タイプを取得します。</summary>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.IPackagePart.GetStream(Infragistics.IO.FileMode,Infragistics.IO.FileAccess)">
+            <summary>指定した System.IO.FileMode と System.IO.FileAccess で開いた部分コンテンツ ストリームを返します。</summary>
+            <param name="mode">コンテンツ ストリームを開く IO モードです。</param>
+            <param name="access">コンテンツ ストリームを開く時のアクセス権限です。</param>
+            <returns>部分のコンテンツ ストリームです。</returns>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.IPackagePart.CreateRelationship(System.Uri,Infragistics.Documents.Core.Packaging.RelationshipTargetMode,System.String,System.String)">
+            <summary>指定したターゲット IPackagePart か外部リソースとこの IPackagePart の部分レベル関係を作成します。</summary>
+            <param name="targetUri">ターゲット部分の URI です。</param>
+            <param name="targetMode">列挙値の １ つです。たとえば、ターゲット部分が IPackage に含まれる場合は RelationshipTargetMode.Internal になります。ターゲットが IPackage の外のリソースの場合は RelationshipTargetMode.External になります。</param>
+            <param name="relationshipType">関係のロールです。</param>
+            <param name="id">関係の一意 ID です。</param>
+            <returns>ターゲット IPackagePart か外部リソースとこの IPackagePart の部分レベルです。</returns>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.IPackagePart.GetRelationships">
+            <summary>この部分に所有されるすべての関係のコレクションを返します。</summary>
+            <returns>この部分に所有されるすべての関係のコレクションです。</returns>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.IPackagePart.GetRelationship(System.String)">
+            <summary>指定した IPackageRelationship.Id の関係を返します。</summary>
+            <param name="id">返される関係の IPackageRelationship.Id です。</param>
+            <returns>指定した ID と一致する関係です。</returns>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.IPackagePartEx.CreateExternalRelationship(System.String,System.String,System.String)">
+            <summary>特定のターゲット、関係タイプ、および識別子 (ID) を持つ部分とのパッケージ レベル関係を作成します。</summary>
+            <param name="target">ターゲット部分のターゲット アドレス。</param>
+            <param name="relationshipType">関係のロールを一意に定義する URI です。</param>
+            <param name="id">一意の XML 識別子です。</param>
+            <returns>指定した部分のパッケージ レベル関係です。</returns>
+        </member>
+        <member name="T:Infragistics.Documents.Core.Packaging.IPackageRelationship">
+            <summary>ソース IPackage か IPackagePart とターゲット オブジェクト (IPackagePart か外部のリソース) の関連付けを表します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.IPackageRelationship.SourceUri">
+            <summary>関係のあるパッケージ部分の URI を取得します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.IPackageRelationship.TargetUri">
+            <summary>関係のターゲット リソースの URI を取得します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.IPackageRelationship.Id">
+            <summary>関係を識別文字列を取得します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.IPackageRelationship.RelationshipType">
+            <summary>関係の修飾の型名を取得します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.IPackageRelationship.TargetMode">
+            <summary>関係のターゲットは IPackage に RelationshipTargetMode.Internal または RelationshipTargetMode.External かどうかを示す値を取得します。</summary>
+        </member>
+        <member name="T:Infragistics.Documents.Core.Packaging.RelationshipTargetMode">
+            <summary>IPackageRelationship のターゲットは IPackage 内か外部ですか指定します。</summary>
+        </member>
+        <member name="F:Infragistics.Documents.Core.Packaging.RelationshipTargetMode.Internal">
+            <summary>関係はパケージ内の部分を参照します。</summary>
+        </member>
+        <member name="F:Infragistics.Documents.Core.Packaging.RelationshipTargetMode.External">
+            <summary>関係はパケージ内の部分を参照します。</summary>
+        </member>
+        <member name="T:Infragistics.Documents.Core.Packaging.PackagePartExposedStream">
+            <summary>基になる zip エンティティ ストリームをラップし、zip ライブラリによって保存される前に破棄されるのを防ぎます。</summary>
+        </member>
+        <member name="T:Infragistics.Documents.Core.Packaging.PackageRelationship">
+            <summary>ソース IPackage か IPackagePart とターゲット オブジェクト (IPackagePart か外部のリソース) の関連付けを表します。</summary>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.PackageRelationship.#ctor(System.Uri,Infragistics.Documents.Core.Packaging.RelationshipTargetMode,System.String,System.String)">
+            <summary><see cref="T:Infragistics.Documents.Core.Packaging.PackageRelationship"/> クラスの新しいインスタンスを作成します。</summary>
+            <param name="targetUri"></param>
+            <param name="id"></param>
+            <param name="relationshipType"></param>
+            <param name="targetMode"></param>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.PackageRelationship.#ctor(System.Uri,System.Uri,Infragistics.Documents.Core.Packaging.RelationshipTargetMode,System.String,System.String)">
+            <summary><see cref="T:Infragistics.Documents.Core.Packaging.PackageRelationship"/> クラスの新しいインスタンスを作成します。</summary>
+            <param name="sourceUri"></param>
+            <param name="targetUri"></param>
+            <param name="id"></param>
+            <param name="relationshipType"></param>
+            <param name="targetMode"></param>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.PackageRelationship.SourceUri">
+            <summary>関係のあるパッケージ部分の URI を取得します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.PackageRelationship.TargetUri">
+            <summary>関係のターゲット リソースの URI を取得します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.PackageRelationship.Id">
+            <summary>関係を識別文字列を取得します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.PackageRelationship.RelationshipType">
+            <summary>関係の修飾の型名を取得します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.PackageRelationship.TargetMode">
+            <summary>関係のターゲットが Package に対して Internal または External であるかどうかを示す値を取得します。</summary>
+        </member>
+        <member name="T:Infragistics.Documents.Core.Packaging.PackagePart">
+            <summary><see cref="P:Infragistics.Documents.Core.Packaging.PackagePart.Package"/> で保存される部分を表します。</summary>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.PackagePart.#ctor(Infragistics.Documents.Core.Packaging.IPackage,System.Uri,System.String)">
+            <summary><see cref="T:Infragistics.Documents.Core.Packaging.PackagePart"/> クラスの新しいインスタンスを作成します。</summary>
+            <param name="package"></param>
+            <param name="partUri"></param>
+            <param name="contentType"></param>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.PackagePart.Package">
+            <summary>部分の親 <see cref="P:Infragistics.Documents.Core.Packaging.PackagePart.Package"/> を取得します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.PackagePart.Uri">
+            <summary>所有する <see cref="P:Infragistics.Documents.Core.Packaging.PackagePart.Package"/> の部分のパスを取得します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.PackagePart.ContentType">
+            <summary>コンテンツ ストリームの MIME タイプを取得します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.PackagePart.ZipEntry">
+            <summary>この部分が表す <see cref="P:Infragistics.Documents.Core.Packaging.PackagePart.ZipEntry"/> を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.PackagePart.PartStream">
+            <summary>部分コンテンツのデータ ストリームを取得または設定します。</summary>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.PackagePart.GetStream(Infragistics.IO.FileMode,Infragistics.IO.FileAccess)">
+            <summary>部分コンテンツのデータ ストリームを返します。</summary>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.PackagePart.CreateRelationship(System.Uri,Infragistics.Documents.Core.Packaging.RelationshipTargetMode,System.String,System.String)">
+            <summary>指定したターゲット PackagePart か外部リソースとこの PackagePart の部分レベル関係を作成します。</summary>
+            <param name="targetUri"></param>
+            <param name="targetMode"></param>
+            <param name="relationshipType"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.PackagePart.GetRelationships">
+            <summary>この部分に所有されるすべての関係のコレクションを返します。</summary>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.PackagePart.GetRelationship(System.String)">
+            <summary>指定した Id を持つ関係を返します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.PackagePart.RelationsXmlDocument">
+            <summary>この部分の関係を表すドキュメントを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.PackagePart.ContentTypesXmlDocument">
+            <summary>パッケージのコンテンツ タイプを指定するドキュメントを取得します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.PackagePart.Relationships">
+            <summary>この部分に所有されるすべての関係のコレクションを返します。</summary>
+        </member>
+        <member name="T:Infragistics.Documents.Core.Packaging.Package">
+            <summary>複数データー オブジェクトの保存ができるコンテナーを表します。</summary>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.Package.#ctor(System.IO.Stream,Infragistics.IO.FileMode)">
+            <summary><see cref="T:Infragistics.Documents.Core.Packaging.Package"/> クラスの新しいインスタンスを作成します。</summary>
+            <param name="stream"></param>
+            <param name="packageMode"></param>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.Package.RelationsXmlDocument">
+            <summary>このパッケージの関係を表すドキュメントを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.Package.ContentTypesXmlDocument">
+            <summary>パッケージのコンテンツ タイプを指定するドキュメントを取得します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.Package.Relationships">
+            <summary>このパッケージに所有されるすべての関係のコレクションを返します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.Package.Parts">
+            <summary>パスによってキーを設定してパッケージのすべての部分のコレクションを返します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.Package.PackageMode">
+            <summary>パッケージを開くために使用される <see cref="T:Infragistics.IO.FileMode"/> を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.Package.ZipFile">
+            <summary>パッケージが表す <see cref="P:Infragistics.Documents.Core.Packaging.Package.ZipFile"/> を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.Package.RelationsZipEntry">
+            <summary>パッケージの関係を含む <see cref="T:System.IO.Compression.ZipArchiveEntry"/> を取得します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.Package.ContentTypesZipEntry">
+            <summary>パッケージのコンテンツ タイプを含む <see cref="T:System.IO.Compression.ZipArchiveEntry"/> を取得します。</summary>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.Package.CreatePart(System.Uri,System.String)">
+            <summary>指定する URI とコンテンツ タイプを使用して、非圧縮形式の部分を新しく作成します。</summary>
+            <param name="partUri">新しい部分の URI (Uniform Resource Identifier) です。</param>
+            <param name="contentType">データ ストリームのコンテンツ タイプです。</param>
+            <returns>新しく作成された部分です。</returns>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.Package.CreateRelationship(System.Uri,Infragistics.Documents.Core.Packaging.RelationshipTargetMode,System.String,System.String)">
+            <summary>指定する URI、ターゲット モード、関係タイプと識別子 (ID) を作成します。</summary>
+            <param name="targetUri">ターゲット 部分の URI (Uniform Resource Identifier) です。</param>
+            <param name="targetMode">ターゲット パートがパッケージの System.IO.Packaging.TagertMode.Internal または System.IO.Packaging.TargetMode.External かどうかを示します。</param>
+            <param name="relationshipType">関係のロールを一意に定義する URI です。</param>
+            <param name="id">一意の XML 識別子です。</param>
+            <returns>指定した部分のパッケージ レベル関係です。</returns>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.Package.GetRelationships">
+            <summary>すべてのパケージ レベル関係のコレクションを返します。</summary>
+            <returns>パケージに含まれるすべてのパケージ レベル関係のコレクションです。</returns>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.Package.GetPart(System.Uri)">
+            <summary>指定した URI の部分を返します。</summary>
+            <param name="partUri">URI (Uniform Resource Identifier) の返される部分です。</param>
+            <returns>指定した URI を持つ部分です。</returns>        
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.Package.GetParts">
+            <summary>パケージの全部分のコレクションを返します。</summary>
+            <returns>パケージに含まれるすべての System.IO.Packaging.PackagePart 要素のコレクションです。</returns>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.Package.GetRelationship(System.String)">
+            <summary>指定した IPackageRelationship.Id の関係を返します。</summary>
+            <param name="id">返される関係の IPackageRelationship.Id です。</param>
+            <returns>指定した ID と一致する関係です。</returns>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.Package.PartExists(System.Uri)">
+            <summary>指定した URI の部分がパケージに含まれているかどうかを示します。</summary>
+            <param name="partUri">確認する部分の System.Uri です。</param>
+            <returns>指定した partUri がパケージに含まれている場合は、true です。それ以外 false です。</returns>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.Package.Dispose">
+            <summary>パッケージを破棄します。</summary>
+        </member>
+        <member name="T:Infragistics.Documents.Core.Packaging.PackageFactory">
+            <summary>ストリームと FileMode を使用して IPackage を作成するのに使用されるファクトリ クラスです。</summary>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.PackageFactory.Open(System.IO.Stream,Infragistics.IO.FileMode)">
+            <summary>指定した IO ストリームとファイル モードを使用して IPackage を開きます。</summary>
+            <param name="stream">IPackage を開く IO ストリームです。</param>
+            <param name="packageMode">IPackage を開くファイル モードです。</param>
+            <returns>開かれた IPackage です。</returns>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.RelationshipsWriter.BuildRelationshipXml(Infragistics.Documents.Core.Packaging.IPackageExtensions)">
+            <summary>関係情報を含む xml ファイルをビルドします。</summary>
+            <param name="packagePart"></param>
+        </member>
+        <member name="T:Infragistics.Documents.Core.Packaging.Extenssions">
+            <summary>文字列のヘルパー拡張子を含みます。</summary>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Packaging.Extenssions.FixDirectoryPath(System.String)">
+            <summary>ディレクトリ パスをクリーンアップします。</summary>
+        </member>
+        <member name="T:Infragistics.Documents.Core.Packaging.IPackageExtensions">
+            <summary><see cref="T:Infragistics.Documents.Core.Packaging.IPackage"/> の拡張されたインターフェイス。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.IPackageExtensions.RelationsXmlDocument">
+            <summary>このパッケージの関係を表すドキュメントを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.IPackageExtensions.ContentTypesXmlDocument">
+            <summary>パッケージのコンテンツ タイプを指定するドキュメントを取得します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Packaging.IPackageExtensions.Relationships">
+            <summary>このパッケージに所有されるすべての関係のコレクションを返します。</summary>
+        </member>
+        <member name="T:Infragistics.Documents.Core.DocumentsCoreResourceCustomizer">
+            <summary>リソース文字列のカスタマイズ機能を提供するクラス。</summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.Documents.Core.DocumentsCoreResourceCustomizer.GetCustomizedString(System.String)">
+            <summary>指定した文字列リソース名によって識別されるカスタマイズされた文字列を取得します。</summary>
+            <param name="name">カスタマイズされた文字列リソース名。</param>
+            <returns>カスタマイズした文字列。リソースがカスタマイズされていなければ null。</returns>
+            <seealso cref="M:Infragistics.Documents.Core.DocumentsCoreResourceCustomizer.ResetAllCustomizedStrings"/>
+            <seealso cref="M:Infragistics.Documents.Core.DocumentsCoreResourceCustomizer.ResetCustomizedString(System.String)"/>
+            <seealso cref="M:Infragistics.Documents.Core.DocumentsCoreResourceCustomizer.SetCustomizedString(System.String,System.String)"/>
+        </member>
+        <member name="M:Infragistics.Documents.Core.DocumentsCoreResourceCustomizer.ResetAllCustomizedStrings">
+            <summary><see cref="M:Infragistics.Documents.Core.DocumentsCoreResourceCustomizer.SetCustomizedString(System.String,System.String)"/> メソッドを呼び出してカスタマイズした文字列をすべてクリアします。</summary>
+            <seealso cref="M:Infragistics.Documents.Core.DocumentsCoreResourceCustomizer.SetCustomizedString(System.String,System.String)"/>
+            <seealso cref="M:Infragistics.Documents.Core.DocumentsCoreResourceCustomizer.ResetCustomizedString(System.String)"/>
+        </member>
+        <member name="M:Infragistics.Documents.Core.DocumentsCoreResourceCustomizer.ResetCustomizedString(System.String)">
+            <summary>特定の文字列リソース名で識別されるカスタマイズ文字列をリセットします。</summary>
+            <param name="name">リセット後、対象の文字列はリソースファイルから読み込みされるようになります。</param>
+            <seealso cref="M:Infragistics.Documents.Core.DocumentsCoreResourceCustomizer.SetCustomizedString(System.String,System.String)"/>
+        </member>
+        <member name="M:Infragistics.Documents.Core.DocumentsCoreResourceCustomizer.SetCustomizedString(System.String,System.String)">
+            <summary>指定された文字列リソース名によって識別されるカスタマイズされた文字列を設定します。</summary>
+            <param name="name">リセット後、対象の文字列はリソースファイルから読み込みされるようになります。</param>
+            <param name="customizedText">カスタマイズした文字列。null の場合、<see cref="M:Infragistics.Documents.Core.DocumentsCoreResourceCustomizer.ResetCustomizedString(System.String)"/> を呼び出したときと同じ結果になります。</param>
+            <seealso cref="M:Infragistics.Documents.Core.DocumentsCoreResourceCustomizer.ResetAllCustomizedStrings"/>
+            <seealso cref="M:Infragistics.Documents.Core.DocumentsCoreResourceCustomizer.ResetCustomizedString(System.String)"/>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Utilities.SortMergeGeneric``1(System.Collections.Generic.List{``0},System.Collections.Generic.IComparer{``0})">
+            <summary>渡されたリストを、渡された比較演算子に基づき、変更されたマージソートアルゴリズムを使用して並べ替えます。</summary>
+            <param name="list">並べ替えるリスト。</param>
+            <param name="comparer">比較子演算子 (null は指定できません)。</param>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Utilities.SortMergeGeneric``1(``0[],``0[],System.Collections.Generic.IComparer{``0})">
+            <summary>渡された配列を、渡された比較子に基づき、変更されたマージソートアルゴリズムを使用して並べ替えます。オプションで、arr と同じサイズ (またはより大きいサイズ) の一時配列を渡すことができます。この場合は、一時配列を割り当てる代わりに、指定した配列が使用されます。null を渡した場合は、一時配列が割り当てられます。項目比較操作の負荷が高い場合はマージソートが使用されます。</summary>
+            <param name="arr">並べ替える配列。</param>
+            <param name="tmpArr">null、または arr と同じサイズ (またはより大きいサイズ) の一時配列。</param>
+            <param name="comparer">比較子。</param>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Utilities.SortMergeGeneric``1(``0[],``0[],System.Collections.Generic.IComparer{``0},System.Int32,System.Int32)">
+            <summary>渡された配列を、渡された比較子に基づき、変更されたマージソートアルゴリズムを使用して並べ替えます。オプションで、arr と同じサイズ (またはより大きいサイズ) の一時配列を渡すことができます。この場合は、一時配列を割り当てる代わりに、指定した配列が使用されます。null を渡した場合は、一時配列が割り当てられます。項目比較操作の負荷が高い場合はマージソートが使用されます。</summary>
+            <param name="arr">並べ替える配列。</param>
+            <param name="tmpArr">null、または arr と同じサイズ (またはより大きいサイズ) の一時配列。</param>
+            <param name="comparer">比較子。</param>
+            <param name="si">配列内の開始インデックス。</param>
+            <param name="ei">配列内の終了インデックス。</param>
+        </member>
+        <member name="T:Infragistics.Documents.Core.DocumentEncryptedException">
+            <summary>暗号化された文書を開くときにパスワードを使用しない場合に発生するエラーを表します。</summary>
+        </member>
+        <member name="M:Infragistics.Documents.Core.DocumentEncryptedException.#ctor">
+            <summary>新しい <see cref="T:Infragistics.Documents.Core.DocumentEncryptedException"/> インスタンスを作成します。</summary>
+        </member>
+        <member name="M:Infragistics.Documents.Core.DocumentEncryptedException.#ctor(System.String)">
+            <summary>新しい <see cref="T:Infragistics.Documents.Core.DocumentEncryptedException"/> インスタンスを作成します。</summary>
+            <param name="message">エラーを説明するメッセージ。</param>
+        </member>
+        <member name="M:Infragistics.Documents.Core.DocumentEncryptedException.#ctor(System.String,System.Exception)">
+            <summary>新しい <see cref="T:Infragistics.Documents.Core.DocumentEncryptedException"/> インスタンスを作成します。</summary>
+            <param name="message">エラーを説明するメッセージ。</param>
+            <param name="innerException">この例外を発生した例外。</param>
+        </member>
+        <member name="T:Infragistics.Documents.Core.Sgml.CaseFolding">
+            <summary>SGML は大文字と小文字を区別しません。小文字または大文字のタグに変換することができます。「None」に設定すると、大文字と小文字を変換しません。終了タグは開始タグと一致するためのみに変換されます。</summary>
+        </member>
+        <member name="T:Infragistics.Documents.Core.Sgml.HWStack">
+            <summary>メモリ割り当てを減らすために、クライアントがスタックのオブジェクトを再使用するために割り当てたオブジェクトの最大サイズを保存します。各要素の要素スタックのパーサーの現在状態、および属性を保存するために使用されます。</summary>
+        </member>
+        <member name="T:Infragistics.Documents.Core.Sgml.Attribute">
+            <summary>このクラスは属性を表します。AttDef が検証プロセスから割り当て、デフォルト値を提供するために使用されます。</summary>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Sgml.Attribute.Reset(System.String,System.String,System.Char)">
+            <summary>メモリ割り当てを減らすために属性オブジェクトが解析で再使用されます。Reset メソッドはそのためのものです。</summary>
+        </member>
+        <member name="T:Infragistics.Documents.Core.Sgml.Node">
+            <summary>このクラスは XML ノードをモデルします。解析で検証のためにスコープの要素の配列が保存されています。この Node オブジェクトは、オブジェクトの割り当てを減らすために再使用されます。Reset メソッドはそのためのものです。</summary>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Sgml.Node.Reset(System.String,System.Xml.XmlNodeType,System.String)">
+            <summary>メモリ割り当てを減らすために属性オブジェクトが解析で再使用されます。Reset メソッドはそのためのものです。</summary>
+        </member>
+        <member name="T:Infragistics.Documents.Core.Sgml.WhitespaceHandling">
+            <summary>空白の処理方法を指定します。</summary>
+        </member>
+        <member name="F:Infragistics.Documents.Core.Sgml.WhitespaceHandling.All">
+            <summary>Whitespace および SignificantWhitespace ノードを返します。これがデフォルト設定です。</summary>
+        </member>
+        <member name="F:Infragistics.Documents.Core.Sgml.WhitespaceHandling.Significant">
+            <summary>SignificantWhitespace ノードのみを返します。</summary>
+        </member>
+        <member name="F:Infragistics.Documents.Core.Sgml.WhitespaceHandling.None">
+            <summary>Whitespace および SignificantWhitespace ノードを返しません。</summary>
+        </member>
+        <member name="T:Infragistics.Documents.Core.Sgml.SgmlReader">
+            <summary>SgmlReader は SGML ドキュメントの XmlReader API です。HTML のサポートは定義済みです。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Sgml.SgmlReader.Dtd">
+            <summary>SgmlDtd オブジェクトを直接指定します。Dtd をキャッシュし、複数の SgmlReader の間で共有することが可能になります。URL から DTD を読み込むには、SystemLiteral プロパティを使用します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Sgml.SgmlReader.DocType">
+            <summary>DOCTYPE タグに指定したルート要素の名前。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Sgml.SgmlReader.PublicIdentifier">
+            <summary>DOCTYPE タグの PUBLIC 識別子。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Sgml.SgmlReader.SystemLiteral">
+            <summary>DTD の位置を識別する DOCTYPE タグの SYSTEM リテラル。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Sgml.SgmlReader.InternalSubset">
+            <summary>DOCTYPE タグの DTD 内部サブセット。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Sgml.SgmlReader.InputStream">
+            <summary>解析する SGML データを含む入力ストリーム。Read() を呼び出す前に、このプロパティまたは Href プロパティを指定する必要があります。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Sgml.SgmlReader.WebProxy">
+            <summary>ファイアウォール以外から HTTP によってデータを読み込むためにプロキシ サーバーを指定する可能性があります。例: "itgproxy:80"。</summary>
+        </member>
+        <member name="M:Infragistics.Documents.Core.Sgml.SgmlReader.SetBaseUri(System.String)">
+            <summary>ベース URI は、SystemLiteral および Href プロパティなどの相対 URI を解決するために使用されます。BaseURI はベース XmlReader クラスの読み取り専用プロパティであるため、これはメソッドになります。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Sgml.SgmlReader.Href">
+            <summary>入力 SGML ドキュメントの場所を URL として指定します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Sgml.SgmlReader.StripDocType">
+            <summary>入力から DOCTYPE タグを解除するかどうか。デフォルト値は true です。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.Core.Sgml.SgmlReader.ErrorLog">
+            <summary>DTD 検証エラーはこのストリームに書き込んでいます。</summary>
+        </member>
+        <member name="M:Infragistics.Documents.OfficeOpenXml.Core.OfficeDocumentManager.GetConformance">
+            <summary>コンストラクターに指定されたいない場合、ドキュメントの整合性を取得します。</summary>
+        </member>
+        <member name="P:Infragistics.Documents.OfficeOpenXml.Core.OfficeDocumentManager.ZipPackage">
+            <summary>ドキュメントを読み込む/保存する ZIP パッケージを取得します。</summary>
+        </member>
+        <member name="M:Infragistics.Documents.OfficeOpenXml.Excel.ExcelDocumentManager.GetConformance">
+            <summary>コンストラクターに指定されたいない場合、ドキュメントの整合性を取得します。</summary>
+        </member>
+        <member name="M:Infragistics.Documents.OfficeOpenXml.Word.WordDocumentManager.GetConformance">
+            <summary>コンストラクターに指定されたいない場合、ドキュメントの整合性を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.Imaging.ImageFormat.BmpGuid">
+            <summary>ビットマップ (BMP) 画像形式を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.Imaging.ImageFormat.DibGuid">
+            <summary>デバイスに依存しないビットマップ (DIB) 画像形式を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.Imaging.ImageFormat.EmfGuid">
+            <summary>拡張メタファイル (EMF) 画像形式を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.Imaging.ImageFormat.GifGuid">
+            <summary>グラフィックス交換形式 (GIF) 画像形式を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.Imaging.ImageFormat.JpegGuid">
+            <summary>Joint Photographic Experts Group (JPEG) 画像形式を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.Imaging.ImageFormat.PngGuid">
+            <summary>W3C ポータブル ネットワーク グラフィックス (PNG) 画像形式を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.Imaging.ImageFormat.TiffGuid">
+            <summary>Tagged Image File Format (TIFF) 画像形式を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.Imaging.ImageFormat.WmfGuid">
+            <summary>Windows メタファイル (WMF) 画像形式を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.Imaging.ImageFormat.Bmp">
+            <summary>Bmp 画像形式の静的変数</summary>
+        </member>
+        <member name="F:Infragistics.Imaging.ImageFormat.Dib">
+            <summary>Dib 画像フォーマットの静的変数</summary>
+        </member>
+        <member name="F:Infragistics.Imaging.ImageFormat.Emf">
+            <summary>Emf 画像形式の静的変数</summary>
+        </member>
+        <member name="F:Infragistics.Imaging.ImageFormat.Gif">
+            <summary>Gif 画像フォーマットの静的変数</summary>
+        </member>
+        <member name="F:Infragistics.Imaging.ImageFormat.Jpeg">
+            <summary>Jpeg 画像フォーマットの静的変数</summary>
+        </member>
+        <member name="F:Infragistics.Imaging.ImageFormat.Png">
+            <summary>Png 画像フォーマットの静的変数</summary>
+        </member>
+        <member name="F:Infragistics.Imaging.ImageFormat.Tiff">
+            <summary>Tiff 画像フォーマットの静的変数</summary>
+        </member>
+        <member name="F:Infragistics.Imaging.ImageFormat.Wmf">
+            <summary>Wmf 画像形式の静的変数</summary>
+        </member>
+        <member name="M:Infragistics.Imaging.ImageFormat.#ctor(System.Guid)">
+            <summary><see cref="T:Infragistics.Imaging.ImageFormat"/> クラスの新しいインスタンスを初期化します。</summary>
+            <param name="formatGuid">この <see cref="T:Infragistics.Imaging.ImageFormat"/> を示すために使用する <see cref="P:Infragistics.Imaging.ImageFormat.Guid"/>。</param>
+        </member>
+        <member name="P:Infragistics.Imaging.ImageFormat.Guid">
+            <summary>この <see cref="T:Infragistics.Imaging.ImageFormat"/> を識別する <see cref="P:Infragistics.Imaging.ImageFormat.Guid"/> を取得します。</summary>
+        </member>
+        <member name="T:Infragistics.IO.FileAccess">
+            <summary>ファイル アクセス権利を指定します。</summary>
+        </member>
+        <member name="F:Infragistics.IO.FileAccess.Read">
+            <summary>読み取りアクセス権限のみが許可されます。</summary>
+        </member>
+        <member name="F:Infragistics.IO.FileAccess.Write">
+            <summary>書き込みアクセス権限のみが許可されます。</summary>
+        </member>
+        <member name="F:Infragistics.IO.FileAccess.ReadWrite">
+            <summary>読み取りと書き込みアクセス権限が許可されます。</summary>
+        </member>
+        <member name="T:Infragistics.IO.FileMode">
+            <summary>ファイルの開く方法</summary>
+        </member>
+        <member name="F:Infragistics.IO.FileMode.CreateNew">
+            <summary>新規ファイルを作成します。ファイルが既に存在する場合、例外がスローされます。</summary>
+        </member>
+        <member name="F:Infragistics.IO.FileMode.Create">
+            <summary>新規ファイルを作成します。すでに存在する場合、上書きされます。</summary>
+        </member>
+        <member name="F:Infragistics.IO.FileMode.Open">
+            <summary>既存のファイルを開きます。ファイルが見つからない場合、例外が発生されます。</summary>
+        </member>
+        <member name="F:Infragistics.IO.FileMode.OpenOrCreate">
+            <summary>既存のファイルを開くか、新しいファイルを作成します。</summary>
+        </member>
+        <member name="F:Infragistics.IO.FileMode.Truncate">
+            <summary>既存のファイルを開き、長さを 0 に設定します。</summary>
+        </member>
+        <member name="F:Infragistics.IO.FileMode.Append">
+            <summary>既存のファイルを開くか、新しいファイルを作成し、ファイル ストリームをファイルの終了に配置します。</summary>
+        </member>
+    </members>
+</doc>

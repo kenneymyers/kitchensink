@@ -1,0 +1,967 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Infragistics.XF.DataVisualization</name>
+    </assembly>
+    <members>
+        <member name="T:Infragistics.XamarinForms.Rect">
+            <summary>
+            A struct that represents a rectangular area
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.#ctor(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Initaize a new instance of <see cref="T:Infragistics.XamarinForms.Rect"/>
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.#ctor(System.Double,System.Double,Xamarin.Forms.Size)">
+            <summary>
+            Initaize a new instance of <see cref="T:Infragistics.XamarinForms.Rect"/>
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.#ctor(Xamarin.Forms.Point,Xamarin.Forms.Point)">
+            <summary>
+            Initaize a new instance of <see cref="T:Infragistics.XamarinForms.Rect"/>
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.#ctor(Xamarin.Forms.Point,Xamarin.Forms.Size)">
+            <summary>
+            Initaize a new instance of <see cref="T:Infragistics.XamarinForms.Rect"/>
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.op_Equality(Infragistics.XamarinForms.Rect,Infragistics.XamarinForms.Rect)">
+            <summary>
+            == operator
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.op_Inequality(Infragistics.XamarinForms.Rect,Infragistics.XamarinForms.Rect)">
+            <summary>
+            != operator
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.Equals(System.Object)">
+            <summary>
+            Determines if the object is equal to this obect
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.GetHashCode">
+            <summary>
+            Returns a hash code
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.ToString">
+            <summary>
+            Returns a string containing the X, Y, Width and Height values
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Rect.Bottom">
+            <summary>
+            The bottom of the rectangle (read-only)
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Rect.Empty">
+            <summary>
+            Returns an empty rect
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Rect.Height">
+            <summary>
+            Gets/sets the height of the Rectangle
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Rect.IsEmpty">
+            <summary>
+            Returns whether the rect is empty (read-only)
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Rect.Left">
+            <summary>
+            The left edge of the rectangle (read-only)
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Rect.Right">
+            <summary>
+            The right edge of the rectangle (read-only)
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Rect.Top">
+            <summary>
+            The top of the rectangle (read-only)
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Rect.Width">
+            <summary>
+            Gets/sets the width of the Rectangle
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Rect.X">
+            <summary>
+            Gets/sets the left edge of the Rectangle
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Rect.Y">
+            <summary>
+            Gets/sets the top edge of the Rectangle
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.Contains(System.Double,System.Double)">
+            <summary>
+            Determines if this rect contains a point
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.Contains(Xamarin.Forms.Point)">
+            <summary>
+            Determines if this rect contains a point
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.Contains(Infragistics.XamarinForms.Rect)">
+            <summary>
+            Determines if this rect completely contains another rect
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.Inflate(System.Double,System.Double)">
+            <summary>
+            Inflates this rect
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.Intersect(Infragistics.XamarinForms.Rect)">
+            <summary>
+            Modifies this rect to be the intersection of itself with the passed in rect
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.IntersectsWith(Infragistics.XamarinForms.Rect)">
+            <summary>
+            Determines if this rect intersects with the passed in rect.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Rect.Union(Infragistics.XamarinForms.Rect)">
+            <summary>
+            Modifies this rect to the the union of itself and the passed in rect
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.RectTypeConverter">
+            <summary>
+            Converts a string to a Rect
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.RectTypeConverter.CanConvertFrom(System.Type)">
+            <summary>
+            Indicates if a type can be converted from.
+            </summary>
+            <param name="sourceType">The type to check.</param>
+            <returns>True, if the type can be converted from.</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.RectTypeConverter.ConvertFromInvariantString(System.String)">
+            <summary>
+            Converts from a culture invariant string to an Infragistics brush.
+            </summary>
+            <param name="value">The string to convert from.</param>
+            <returns>The created brush.</returns>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.BindableBase">
+            <summary>
+            Represents the base class for Infragistics BindableObject derived types.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.BindableBase.OnPropertyChanged(System.String)">
+            <summary>
+            Invoked when a bound property is changed.
+            </summary>
+            <param name="propertyName">The name of the bound property that changed.</param>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.ColorExtensions">
+            <summary>
+            Utility extension methods for colors.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.ColorExtensions.ToColor(Xamarin.Forms.Color)">
+            <summary>
+            Converts a Xamarin Forms color to an Infragistics color.
+            </summary>
+            <param name="color">The Xamarin Forms color to convert.</param>
+            <returns>The Infragistics color.</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.ColorExtensions.ToBrush(Xamarin.Forms.Color)">
+            <summary>
+            Converts a Xamarin Forms color to an Infragistics Brush.
+            </summary>
+            <param name="color">The Xamarin Forms color to convert.</param>
+            <returns>The Infragistics Brush</returns>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.DataContext">
+            <summary>
+            Represents the data currently in context.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataContext.Series">
+            <summary>
+            Gets the series associated with the context.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataContext.#ctor">
+            <summary>
+            Initializes a new <see cref="T:Infragistics.XamarinForms.Controls.DataContext"/>.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataContext.ActualItemBrush">
+            <summary>
+            Gets the actual resolved brush in use for the item that is in context.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataContext.Item">
+            <summary>
+            Gets the item that is in context.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataContext.ItemBrush">
+            <summary>
+            Gets the potential brush in usage for the item in context.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataContext.ItemLabel">
+            <summary>
+            Gets the label in use for the item in context, if available.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataContext.LegendLabel">
+            <summary>
+            Gets the legend label to use for the item in context, if available.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataContext.Outline">
+            <summary>
+            Gets the outline in use for the item in context.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataContext.Thickness">
+            <summary>
+            Gets the thickness of the item in context.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataContext.OnPropertyChanged(System.String)">
+            <summary>
+            Used to invoke the <see cref="E:Infragistics.XamarinForms.Controls.DataContext.PropertyChanged"/> event.
+            </summary>
+            <seealso cref="T:System.ComponentModel.PropertyChangedEventArgs"/>
+            <seealso cref="E:Infragistics.XamarinForms.Controls.DataContext.PropertyChanged"/>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.DataContext.PropertyChanged">
+            <summary>
+            Indicates that a property has changed.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.ElementBase">
+            <summary>
+            Represents the base class for Infragistics Element types.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.ElementBase.OnPropertyChanged(System.String)">
+            <summary>
+            Invoked when a bound property is changed.
+            </summary>
+            <param name="propertyName">The name of the bound property that changed.</param>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.ElementBase.OnParentSet">
+            <summary>
+            Called when the parent is set
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.ElementBase.OnBindingContextChanged">
+            <summary>
+            Called when the binding context changes
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.IControlRenderer">
+            <summary>
+            Interface implemented by the renderer for a Xamarin Forms object.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.IControlRenderer.Control">
+            <summary>
+            Returns the native control associated with the renderer.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.CustomContentUpdateInfo">
+            <summary>
+            Represents contextual information about the custom content being generated or updated.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.CustomContentUpdateInfo.#ctor">
+            <summary>
+            Constructs a CustomContentUpdateInfo.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.CustomContentUpdateInfo.GetItem(System.String)">
+            <summary>
+            Gets a named value from the info.
+            </summary>
+            <param name="key">The key for the value to retrieve.</param>
+            <returns>The retrieved value.</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.CustomContentUpdateInfo.SetItem(System.String,System.Object)">
+            <summary>
+            Sets a named value for the info.
+            </summary>
+            <param name="key">The name for the value.</param>
+            <param name="item">The value to set.</param>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.DataSeriesAdapter">
+            <summary>
+            Analyzes a data source and indicates which types of data visualizations might be a good fit for the data.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesAdapter.#ctor">
+            <summary>
+            Constructs a DataSeriesAdapter.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataSeriesAdapter.ExcludedProperties">
+            <summary>
+            Gets or sets a set of property paths that should be exluced from consideration by the adapter.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataSeriesAdapter.IncludedProperties">
+            <summary>
+            Gets or sets a set of property paths that should be included for consideration by the adapter, leaving the remaineder excluded. If null, all properties will be considered.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataSeriesAdapter.ItemsSource">
+            <summary>
+            Gets or sets the backing data for the data adapter.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataSeriesAdapter.SupportedSeriesTypes">
+            <summary>
+            Gets or sets whether the adapter should remove duplicate data series bound to the same member paths.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesAdapter.NotifyClearItems(System.Object)">
+            <summary>
+            Used to manually notify the adapter that the data source has reset/cleared its items. Only necessary if that datasource is not observable.
+            </summary>
+            <param name="dataSource">The data source cleared/reset.</param>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesAdapter.NotifyInsertItem(System.Object,System.Int32,System.Object)">
+            <summary>
+            Used to manually notify the adapter that the data source has had an item inserted. Only necessary if that datasource is not observable.
+            </summary>
+            <param name="dataSource">The data source changed.</param>
+            <param name="index">The index of the new item</param>
+            <param name="newItem">The new item.</param>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesAdapter.NotifyRemoveItem(System.Object,System.Int32,System.Object)">
+            <summary>
+            Used to manually notify the adapter that the data source has had an item removed. Only necessary if that datasource is not observable.
+            </summary>
+            <param name="dataSource">The data source changed.</param>
+            <param name="index">The index of the old item.</param>
+            <param name="oldItem">The old item.</param>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesAdapter.NotifySetItem(System.Object,System.Int32,System.Object,System.Object)">
+            <summary>
+            Used to manually notify the adapter that the data source has had an item set. Only necessary if that datasource is not observable.
+            </summary>
+            <param name="dataSource">The data source changed.</param>
+            <param name="index">The index of the change</param>
+            <param name="oldItem">The old item.</param>
+            <param name="newItem">The new item.</param>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesAdapter.Refresh">
+            <summary>
+            Causes the DataSeriesAdapter to refresh its analysis.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesAdapter.OnPropertyChanged(System.String)">
+            <summary>
+            Used to invoke the <see cref="E:Infragistics.XamarinForms.Controls.DataSeriesAdapter.PropertyChanged"/> event.
+            </summary>
+            <seealso cref="T:System.ComponentModel.PropertyChangedEventArgs"/>
+            <seealso cref="E:Infragistics.XamarinForms.Controls.DataSeriesAdapter.PropertyChanged"/>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.DataSeriesAdapter.PropertyChanged">
+            <summary>
+            Indicates that a property has changed.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesAdapter.OnRemovingDuplicates(Infragistics.XamarinForms.Controls.DataSeriesAdapterRemovingDuplicatesEventArgs)">
+            <summary>
+            Used to invoke the <see cref="E:Infragistics.XamarinForms.Controls.DataSeriesAdapter.RemovingDuplicates"/> event.
+            </summary>
+            <seealso cref="T:Infragistics.XamarinForms.Controls.DataSeriesAdapterRemovingDuplicatesEventArgs"/>
+            <seealso cref="E:Infragistics.XamarinForms.Controls.DataSeriesAdapter.RemovingDuplicates"/>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.DataSeriesAdapter.RemovingDuplicates">
+            <summary>
+            Called when the adapter is removing duplicate series from consideration.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesAdapter.OnRemovingUnsupported(Infragistics.XamarinForms.Controls.DataSeriesAdapterRunEventArgs)">
+            <summary>
+            Used to invoke the <see cref="E:Infragistics.XamarinForms.Controls.DataSeriesAdapter.RemovingUnsupported"/> event.
+            </summary>
+            <seealso cref="T:Infragistics.XamarinForms.Controls.DataSeriesAdapterRunEventArgs"/>
+            <seealso cref="E:Infragistics.XamarinForms.Controls.DataSeriesAdapter.RemovingUnsupported"/>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.DataSeriesAdapter.RemovingUnsupported">
+            <summary>
+            Called when the adapter is removing unsupported series from consideration.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.DataSeriesAdapterRemovingDuplicatesEventArgs">
+            <summary>
+            Represents information about the duplicate series in the adapter.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesAdapterRemovingDuplicatesEventArgs.#ctor">
+            <summary>
+            Initializes a new <see cref="T:Infragistics.XamarinForms.Controls.DataSeriesAdapterRemovingDuplicatesEventArgs"/>.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataSeriesAdapterRemovingDuplicatesEventArgs.DataSourcePath">
+            <summary>
+            Gets the current path within the data source.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataSeriesAdapterRemovingDuplicatesEventArgs.DuplicatePath">
+            <summary>
+            Gets the path that is duplicated.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataSeriesAdapterRemovingDuplicatesEventArgs.Handled">
+            <summary>
+            Sets or gets whether the handling of this duplicate should be considered complete.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataSeriesAdapterRemovingDuplicatesEventArgs.MatchingSeries">
+            <summary>
+            Gets all the series that match the duplicated path.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataSeriesAdapterRemovingDuplicatesEventArgs.RunContext">
+            <summary>
+            Gets information about the current analysis run.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.DataSeriesAdapterRemovingDuplicatesEventHandler">
+            <summary>
+            Called when removing duplicate series from the data series adapter.
+            </summary>
+            <param name="sender">The adapter.</param>
+            <param name="args">Information about the duplicate series.</param>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.DataSeriesAdapterRunEventArgs">
+            <summary>
+            Presents information about the analysis run in progress.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesAdapterRunEventArgs.#ctor">
+            <summary>
+            Initializes a new <see cref="T:Infragistics.XamarinForms.Controls.DataSeriesAdapterRunEventArgs"/>.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataSeriesAdapterRunEventArgs.Handled">
+            <summary>
+            Sets or gets whether the current action should be considered handled and the default behavior prevented.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DataSeriesAdapterRunEventArgs.RunContext">
+            <summary>
+            Gets information about the analysis in progress.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.DataSeriesAdapterRunEventHandler">
+            <summary>
+            Called for actions related to running the data series adapter's analysis.
+            </summary>
+            <param name="sender">The adapter.</param>
+            <param name="args">The analysis arguments.</param>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.DataSeriesCollection">
+            <summary>
+            A collection of DataSeries.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DataSeriesCollection.#ctor">
+            <summary>
+            Initializes a new <see cref="T:Infragistics.XamarinForms.Controls.DataSeriesCollection"/>.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.DoubleValueChangedEventArgs">
+            <summary>
+            Provides data for double value change events. 
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.DoubleValueChangedEventArgs.#ctor(System.Double,System.Double)">
+            <summary>
+            DoubleValueChangedEventArgs constructor.
+            </summary>
+            <param name="oldValue">The previous value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DoubleValueChangedEventArgs.NewValue">
+            <summary>
+            Gets the new value.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.DoubleValueChangedEventArgs.OldValue">
+            <summary>
+            Gets the value before the change.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.DoubleValueChangedEventHandler">
+            <summary>
+            Represents the method that will handle double value change events. 
+            </summary>
+            <param name="sender">The object where the event handler is attached.</param>
+            <param name="e">The event data.</param>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.InteractionState">
+            <summary>
+            Describes available interaction states of the chart or geographic map control.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.InteractionState.None">
+            <summary>
+            User gesture will not change the state of the chart.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.InteractionState.DragZoom">
+            <summary>
+            User gesture will start a drag rectangle to zoom the chart.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.InteractionState.DragPan">
+            <summary>
+            User gesture will start a pan action to move the chart's window.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.InteractionState.Auto">
+            <summary>
+            User gesture will start a pan action in a touch environment and a drag rectangle in a mouse environment.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.InterpolationMode">
+            <summary>
+            Describes available modes for color interpolation.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.InterpolationMode.RGB">
+            <summary>
+            Interpolation in RGB space.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.InterpolationMode.HSV">
+            <summary>
+            Interpolation in HSV space.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.PropertyUpdatedEventArgs">
+            <summary>
+            EventArgs class for property updated events.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.PropertyUpdatedEventArgs.NewValue">
+            <summary>
+            New or current value of the property being updated.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.PropertyUpdatedEventArgs.OldValue">
+            <summary>
+            Old or previous value of the property being updated.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.PropertyUpdatedEventArgs.PropertyName">
+            <summary>
+            Name of the property being updated.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.PropertyUpdatedEventHandler">
+            <summary>
+            EventHandler delegate for property updated events.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The PropertyUpdatedEventArgs in context.</param>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.RectChangedEventArgs">
+            <summary>
+            Provides data for rectangle changed events. 
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.RectChangedEventArgs.#ctor(Infragistics.XamarinForms.Rect,Infragistics.XamarinForms.Rect)">
+            <summary>
+            RectChangedEventArgs constructor.
+            </summary>
+            <param name="oldRect">The previous value of the rectangle which is changing.</param>
+            <param name="newRect">The new value of the rectangle which is changing.</param>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.RectChangedEventArgs.NewRect">
+            <summary>
+            Gets the new rectangle.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.RectChangedEventArgs.OldRect">
+            <summary>
+            Gets the rectangle before the change.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.RectChangedEventHandler">
+            <summary>
+            Represents the method that will handle rectangle changed events. 
+            </summary>
+            <param name="sender">The object where the event handler is attached.</param>
+            <param name="e">The event data.</param>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.ScreenRectChangedEventArgs">
+            <summary>
+            Provides data for rectangle changed events. 
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.ScreenRectChangedEventArgs.#ctor(Infragistics.XamarinForms.Rect,Infragistics.XamarinForms.Rect)">
+            <summary>
+            RectChangedEventArgs constructor.
+            </summary>
+            <param name="oldRect">The previous value of the rectangle which is changing.</param>
+            <param name="newRect">The new value of the rectangle which is changing.</param>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.ScreenRectChangedEventArgs.NewRect">
+            <summary>
+            Gets the new rectangle.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.ScreenRectChangedEventArgs.OldRect">
+            <summary>
+            Gets the rectangle before the change.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.ScreenRectChangedEventHandler">
+            <summary>
+            Represents the method that will handle rectangle changed events. 
+            </summary>
+            <param name="sender">The object where the event handler is attached.</param>
+            <param name="e">The event data.</param>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.TrendLineType">
+            <summary>
+            Describes available types of trend lines supported by series.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.None">
+            <summary>
+            No trend line will be displayed.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.LinearFit">
+            <summary>
+            Linear fit.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.QuadraticFit">
+            <summary>
+            Quadratic polynomial fit.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.CubicFit">
+            <summary>
+            Cubic polynomial fit.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.QuarticFit">
+            <summary>
+            Quartic polynomial fit.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.QuinticFit">
+            <summary>
+            Quintic polynomial fit.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.LogarithmicFit">
+            <summary>
+            Logarithmic fit.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.ExponentialFit">
+            <summary>
+            Exponential fit.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.PowerLawFit">
+            <summary>
+            Powerlaw fit.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.SimpleAverage">
+            <summary>
+            Simple moving average.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.ExponentialAverage">
+            <summary>
+            Exponential moving average.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.ModifiedAverage">
+            <summary>
+            Modified moving average.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.CumulativeAverage">
+            <summary>
+            Cumulative moving average.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.TrendLineType.WeightedAverage">
+            <summary>
+            Weighted moving average.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.UnknownValuePlotting">
+            <summary>
+            Describes available methods of plotting data with unknown values in a series.  
+            <para>Double.NaN and null are examples of unknown values.</para>
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.UnknownValuePlotting.LinearInterpolate">
+            <summary>
+            Plot the unknown value as the midpoint between surrounding known values using linear interpolation.
+            </summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.UnknownValuePlotting.DontPlot">
+            <summary>
+            Do not plot the unknown value on the chart.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.ViewBase">
+            <summary>
+            Represents the base class from which all Infragistics View types are derived.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.ViewBase.OnPropertyChanged(System.String)">
+            <summary>
+            Invoked when a bound property is changed.
+            </summary>
+            <param name="propertyName">The name of the bound property that changed.</param>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.ViewBase.OnParentSet">
+            <summary>
+            Called when the parent is set
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.ViewBase.OnBindingContextChanged">
+            <summary>
+            Called when the binding context changes
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Brush">
+            <summary>
+            Represents a base class for brush types 
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.SolidColorBrush">
+            <summary>
+            Represents a soild brush
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.SolidColorBrush.#ctor">
+            <summary>
+            Constructs a SolidColorBrush.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.SolidColorBrush.#ctor(Xamarin.Forms.Color)">
+            <summary>
+            Constructs a SolidColorBrush given a Xamarin Forms color.
+            </summary>
+            <param name="color">The Xamarin Forms color to use.</param>
+        </member>
+        <member name="P:Infragistics.XamarinForms.SolidColorBrush.Color">
+            <summary>
+            Sets or gets the Xamarin Forms color to use.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.LinearGradientBrush">
+            <summary>
+            Represents a linear gradient brush
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.LinearGradientBrush.#ctor">
+            <summary>
+            Constructs a LinearGradientBrush.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.LinearGradientBrush.StartX">
+            <summary>
+            Sets or gets the x starting position of the gradient.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.LinearGradientBrush.StartY">
+            <summary>
+            Sets or gets the y starting position of the gradient.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.LinearGradientBrush.EndX">
+            <summary>
+            Sets or gets the x ending position of the gradient.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.LinearGradientBrush.EndY">
+            <summary>
+            Sets or gets the y ending position of the gradient.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.LinearGradientBrush.GradientStops">
+            <summary>
+            Gets the gradient stops associated with the brush.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.GradientStopCollection">
+            <summary>
+            Represents a collecton of GradientStop types
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.GradientStop">
+            <summary>
+            Represents a gradient stop for gradient brush
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.GradientStop.#ctor">
+            <summary>
+            Constructs a GradientStop.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.GradientStop.Color">
+            <summary>
+            Sets or gets the Xamarin Forms color associated with the stop.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.GradientStop.Offset">
+            <summary>
+            Gets or gets the offset of the gradient stop. Should be a value between 0 and 1, indicating position along the gradient.
+            </summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.BrushCollection">
+            <summary>
+            Simple collection of Brush objects
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.BrushCollection.#ctor">
+            <summary>
+            Initializes a new <see cref="T:Infragistics.XamarinForms.BrushCollection"/>.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.BrushCollection.InterpolationMode">
+            <summary>
+            Sets or gets the interpolation mode used to interpolate brushes.
+            </summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.BrushCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets a brush at the specified index.
+            </summary>
+            <param name="index">The index of the brush to return.</param>
+            <returns>A brush for the specified index.</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.BrushCollection.Equals(System.Object)">
+            <summary>
+            Determines if a BrushCollection is equivalent to another.
+            </summary>
+            <param name="obj">The other BrushCollection.</param>
+            <returns>True if the BrushCollections are equivalent.</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.BrushCollection.GetInterpolatedBrush(System.Double)">
+            <summary>
+            Gets the brush at the specified index.  If index is not an integer, the result of this function call will be a brush interpolated between the brushes at the previous and following index values.
+            </summary>
+            <param name="index">The index of the brush to return.</param>
+            <returns>The brush at the specified index, or if the specified index is not an integer, an interpolated brush between the previous and next index.</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.BrushCollection.InterpolateRandom">
+            <summary>
+            Returns a random brush interpolated from the brushes in this collection.
+            </summary>
+            <returns>A random brush interpolated from the brushes in this collection.</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.BrushCollection.SelectRandom">
+            <summary>
+            Returns a random brush in the collection.
+            </summary>
+            <returns>A random brush in this collection.</returns>
+        </member>
+        <member name="T:Infragistics.XamarinForms.BrushTypeConverter">
+            <summary>
+            Converts from a string to an Infragistics Brush.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.BrushTypeConverter.CanConvertFrom(System.Type)">
+            <summary>
+            Indicates if a type can be converted from.
+            </summary>
+            <param name="sourceType">The type to check.</param>
+            <returns>True, if the type can be converted from.</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.BrushTypeConverter.ConvertFromInvariantString(System.String)">
+            <summary>
+            Converts from a culture invariant string to an Infragistics brush.
+            </summary>
+            <param name="value">The string to convert from.</param>
+            <returns>The created brush.</returns>
+        </member>
+        <member name="T:Infragistics.XamarinForms.BrushCollectionTypeConverter">
+            <summary>
+            Converts a string to a collection of brushes.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.BrushCollectionTypeConverter.CanConvertFrom(System.Type)">
+            <summary>
+            Indicates if a type can be converted from.
+            </summary>
+            <param name="sourceType">The type to check.</param>
+            <returns>True, if the type can be converted from.</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.BrushCollectionTypeConverter.ConvertFromInvariantString(System.String)">
+            <summary>
+            Converts from a culture invariant string to a collection of Infragistics brushes.
+            </summary>
+            <param name="value">The string to convert from.</param>
+            <returns>The created brushes.</returns>
+        </member>
+        <member name="T:Infragistics.XamarinForms.StringArrayTypeConverter">
+            <summary>
+            Converts a string to an array of strings.
+            </summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.StringArrayTypeConverter.CanConvertFrom(System.Type)">
+            <summary>
+            Overriden to indicate which types this converter supports.
+            </summary>
+            <param name="sourceType">The type to check.</param>
+            <returns>True, if the converter supports this type.</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.StringArrayTypeConverter.ConvertFromInvariantString(System.String)">
+            <summary>
+            Converts from a culture invariant string to the desired type.
+            </summary>
+            <param name="value">The string to convert.</param>
+            <returns>An object of the desired type.</returns>
+        </member>
+        <member name="T:Xamarin.Forms.ColorExtensions">
+            <summary>
+            Utilities for converting from Xamarin Forms colors to Infragistics colors and brushes.
+            </summary>
+        </member>
+        <member name="M:Xamarin.Forms.ColorExtensions.ToIGColor(Xamarin.Forms.Color)">
+            <summary>
+            Converts from a Xamarin Forms color to an Infragistics color.
+            </summary>
+            <param name="color">The Xamarin Forms Color to convert.</param>
+            <returns>The resulting Infragistics Color.</returns>
+        </member>
+        <member name="M:Xamarin.Forms.ColorExtensions.ToBrush(Xamarin.Forms.Color)">
+            <summary>
+            Converts from a Xamarin Forms color to an Infragistics brush.
+            </summary>
+            <param name="color">The Xamarin Forms Color to convert.</param>
+            <returns>The resulting Infragistics brush.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,1561 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+    <assembly>
+        <name>Infragistics.XF.Scheduler</name>
+    </assembly>
+    <members>
+      <member name="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource">
+        <summary>
+          <see cref="T:Infragistics.Scheduler.Appointment"/> および <see cref="T:Infragistics.Scheduler.ScheduleResource"/> データを提供するデータ ソースの抽象基本クラス。
+        </summary>
+        <remarks>
+          <p class="body">
+            ScheduleDataSource は、<see cref="T:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler"/> を <see cref="T:Infragistics.Scheduler.Appointment"/> および <see cref="T:Infragistics.Scheduler.ScheduleResource"/> オブジェクトが作成、更新、削除できるデータ ソースにバインドする機能を提供します。
+          </p>
+          <p class="body">
+            指定した日付範囲にある <see cref="T:Infragistics.Scheduler.Appointment"/> オブジェクトのサブセットを取得するには <see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.GetAppointmentsInRange(Infragistics.Core.DateTimeRange)"/> メソッドを使用します。
+          </p>
+          <p class="body">
+            既存の <see cref="T:Infragistics.Scheduler.Appointment"/> オブジェクトを更新するには、編集セッションを開始するために <see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.BeginEdit(Infragistics.Scheduler.Appointment)"/> メソッドを呼び出し、オブジェクトの変更を保存するために <see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.EndEdit(Infragistics.Scheduler.Appointment,System.Boolean)"/> メソッドを呼び出します。
+          </p>
+          <p class="body">
+            同様に、新しい Appointment を作成するために <see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.CreateAppointment"/> メソッドを呼び出して、変更を保存する EndEdit を呼び出します。
+          </p>
+          <p class="body">
+            既存の Appointment を削除するために <see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.DeleteAppointment(Infragistics.Scheduler.Appointment)"/> メソッドを使用します。
+          </p>
+          <p class="body">ScheduleDataSource クラスがデータ ソースとの非同期操作をサポートするので、作成/読み込み/更新/削除に関連するメソッドが、派生クラスの実装に基づいて同期または非同期にデータを取得できるオブジェクトを返します。</p>
+          <p class="body">
+            ローカルに保存されるデータ ソースへの同期アクセスのため、<see cref="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource"/> クラスは ScheduleDataSource の実装を提供します。詳細については、そのクラスのヘルプを参照してください。
+          </p>
+        </remarks>
+        <seealso cref="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource"/>
+        <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        <seealso cref="T:Infragistics.Scheduler.ScheduleResource"/>
+      </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.#ctor">
+            <summary>新しいインスタンスを作成します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.BeginEdit(Infragistics.Scheduler.Appointment)">
+            <summary>指定した<see cref="T:Infragistics.Scheduler.ActivityBase">アクティビティ</see>で編集モードセッションを開始します。</summary>
+            <param name="appointment">編集される <see cref="T:Infragistics.Scheduler.Appointment"/>。</param>
+            <returns>操作が成功した場合は True。</returns>
+            <seealso cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.BeginEdit(Infragistics.Scheduler.Appointment)"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.BeginEdit(Infragistics.Scheduler.Appointment,System.Action{Infragistics.Scheduler.Data.DataError})">
+            <summary>指定した<see cref="T:Infragistics.Scheduler.ActivityBase">アクティビティ</see>で編集モードセッションを開始します。</summary>
+            <param name="appointment">編集される <see cref="T:Infragistics.Scheduler.Appointment"/>。</param>
+            <param name="errorCallback">エラーが発生する場合に呼び出されるデリゲート。</param>
+            <returns>操作が成功した場合は True。</returns>
+          <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+          <seealso cref="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource"/>
+          <seealso cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.CreateAppointment"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.CancelEdit(Infragistics.Scheduler.Appointment)">
+            <summary><see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.BeginEdit(Infragistics.Scheduler.Appointment)"/> または <see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.CreateAppointment"/> メソッドから開始された編集モード セッションで実行された <see cref="T:Infragistics.Scheduler.Appointment"/> への変更を元に戻します。</summary>
+            <param name="appointment">編集している <see cref="T:Infragistics.Scheduler.Appointment"/>。</param>
+            <returns>操作の結果を含む <see cref="T:Infragistics.Scheduler.Data.AppointmentOperationResult"/> インスタンス。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.CreateAppointment">
+            <summary>派生クラスでオーバーライドされる場合、新しい <see cref="T:Infragistics.Scheduler.Appointment"/> を作成します。</summary>
+            <returns>新しい <see cref="T:Infragistics.Scheduler.Appointment"/> への参照、または操作が失敗する場合に null。</returns>
+        </member>
+      <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.CreateAppointment(System.Action{Infragistics.Scheduler.Data.DataError})">
+        <summary>
+          派生クラスでオーバーライドされる場合、新しい <see cref="T:Infragistics.Scheduler.Appointment"/> を作成します。
+        </summary>
+        <param name="errorCallback">エラーが発生する場合に呼び出されるデリゲート。</param>
+        <returns>
+          新しい <see cref="T:Infragistics.Scheduler.Appointment"/> への参照、または操作が失敗する場合に null。操作の失敗の理由についての詳細情報を受けるには、デリゲートを <paramref name="errorCallback"/> パラメーターに割り当てます。
+        </returns>
+        <remarks>
+          <p class="body">
+            CreateAppointment メソッドは、新しい初期化されていない <see cref="T:Infragistics.Scheduler.Appointment"/> インスタンスを返します。予定は  <see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.EndEdit(Infragistics.Scheduler.Appointment,System.Boolean)"/> メソッドが呼び出されるまでにデータ ソースと関連付けられて<b>いません</b>。つまり、アタッチされた <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler"/> のユーザー インターフェイスまたはアクティビティ クエリで表示されません。
+          </p>
+          <p class="body">
+            <b>注:</b> 新しい予定の作成をコミットするために <see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.EndEdit(Infragistics.Scheduler.Appointment,System.Boolean)"/> メソッドを呼び出す<b>必要があります</b>。
+          </p>
+          <p class="body">また、予定データの基本の項目ソースが新しいオブジェクトの作成をサポートする必要があります。全般的、オブジェクトがパラメーターなしのコンストラクターを公開する必要があります。派生クラスは新しいデータ オブジェクト インスタンスを生成する代わりの方法を提供できます。</p>
+        </remarks>
+        <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        <seealso cref="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource"/>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.CreateAppointmentDataObjectCallback"/>
+        <seealso cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.DeleteAppointment(Infragistics.Scheduler.Appointment)"/>
+      </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.DeleteAppointment(Infragistics.Scheduler.Appointment)">
+            <summary>派生クラスでオーバーライドされる場合、指定した <see cref="T:Infragistics.Scheduler.Appointment"/> を削除します。</summary>
+            <param name="appointment">削除する予定。</param>
+            <returns>操作の結果を含む <see cref="T:Infragistics.Scheduler.Data.AppointmentOperationResult"/> インスタンス。</returns>
+          <remarks>
+            <p class="body">
+              DeleteAppointment メソッドは既存の <see cref="T:Infragistics.Scheduler.Appointment"/> インスタンスを削除し、データ ソースとの関係を削除します。正常な削除の後、Appointment がアクティビティ クエリまたはユーザー インターフェイスに表示されていません。
+            </p>
+            <p class="body">注: 予定データの基本の項目ソースが項目の削除をサポートする必要があります。</p>
+          </remarks>
+          <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+          <seealso cref="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource"/>
+          <seealso cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.CreateAppointment"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.EndEdit(Infragistics.Scheduler.Appointment,System.Boolean)">
+            <summary><see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.BeginEdit(Infragistics.Scheduler.Appointment)"/> または <see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.CreateAppointment"/> メソッドから開始された編集モード セッションで実行された <see cref="T:Infragistics.Scheduler.ActivityBase"/> への変更をコミットします。</summary>
+            <param name="appointment">編集している <see cref="T:Infragistics.Scheduler.Appointment"/>。</param>
+            <param name="force">True の場合、編集モードを終了します。</param>
+            <returns>操作の結果を含む <see cref="T:Infragistics.Scheduler.Data.AppointmentOperationResult"/> インスタンス。</returns>
+          <seealso cref="T:Infragistics.Scheduler.Data.AppointmentOperationResult"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.GetAppointmentsInRange(Infragistics.Core.DateTimeRange)">
+            <summary>指定した日時範囲内のすべての<see cref="T:Infragistics.Scheduler.Appointment">予定</see>を返します。</summary>
+            <param name="range">予定が返される時間範囲。</param>
+            <returns>クエリの結果を含む <see cref="T:Infragistics.Scheduler.Data.AppointmentQueryResult"/> オブジェクト。</returns>
+            <remarks>
+            <p class="body">予定に関連する <see cref="T:Infragistics.Scheduler.ScheduleResource"/> に関係なしで、このメソッドが指定した範囲ですべての予定を返します。</p>
+            <p class="body">返された予定リストを 1 つ以上の <see cref="T:Infragistics.Scheduler.ScheduleResource"/> によってフィルターするには、<see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.GetAppointmentsInRange(Infragistics.Core.DateTimeRange)"/> オーバーロードを使用します。</p>
+            </remarks>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.GetAppointmentsInRange(Infragistics.Core.DateTimeRange,System.Collections.Generic.IEnumerable{Infragistics.Scheduler.ScheduleResource})">
+            <summary>派生クラスでオーバーライドされる場合、指定した日時範囲での<see cref="T:Infragistics.Scheduler.Appointment">予定</see>を返します。1 つ以上の<see cref="T:Infragistics.Scheduler.ScheduleResource">リソース</see>によりフィルターがオプションです。</summary>
+            <param name="range">予定が返される時間範囲。</param>
+            <param name="resources">フィルターする<see cref="T:Infragistics.Scheduler.ScheduleResource">リソース</see>のオプションのリスト。null 以外の値が指定される場合、指定したリソースのみの予定が返されます。</param>
+            <returns>クエリの結果を含む <see cref="T:Infragistics.Scheduler.Data.AppointmentQueryResult"/> オブジェクト。</returns>
+        </member>
+      <member name="M:Infragistics.Controls.Scheduler.ScheduleDataSource.GetResources">
+        <summary>
+          このデータ ソースと関連付けられた<see cref="T:Infragistics.Scheduler.ScheduleResource">リソース</see>の列挙可能なリストを返します。
+        </summary>
+        <remarks>
+          <p class="body">
+            <see cref="T:Infragistics.Scheduler.ScheduleResource"/> は <see cref="T:Infragistics.Scheduler.Appointment"/> データをグループ化する機能を提供します。アクティビティ クエリが、特定のリソースと関連付けられた予定のみが返されるために、リソースによってフィルターできます。
+          </p>
+          <p class="body">
+            リソースがデータ ソースと関連つける方法は派生クラスの実装に基づきます。たとえば、<see cref="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource"/> はリソース データの項目ソースが定義する <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourceItemsSource"/> プロパティを公開します。
+          </p>
+        </remarks>
+        <seealso cref="T:Infragistics.Scheduler.ScheduleResource"/>
+        <seealso cref="P:Infragistics.Scheduler.ScheduleResource.Id"/>
+        <seealso cref="P:Infragistics.Scheduler.ActivityBase.Resource"/>
+        <seealso cref="P:Infragistics.Scheduler.ActivityBase.ResourceId"/>
+      </member>
+      <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.HasAppointmentsInRange(Infragistics.Core.DateTimeRange,System.Collections.Generic.IEnumerable{Infragistics.Scheduler.ScheduleResource},System.Boolean)">
+        <summary>指定した日時範囲で予定を含む日を表す日付の配列を返します。</summary>
+        <param name="range">テストする時間範囲。</param>
+        <param name="resources">
+          フィルターする<see cref="T:Infragistics.Scheduler.ScheduleResource">リソース</see>のオプションのリスト。null 以外の値が指定される場合、指定したリソースのみの予定が返されます。
+        </param>
+        <param name="findFirst">
+          True の場合、指定した範囲でアクティビティが見つかったときにクエリが終了します。アクティビティを持つ日付に興味なくて、指定した範囲で各日付にアクティビティがある<i>かどうか</i>が必要な場合、これを使用します。
+        </param>
+        <returns>
+          クエリの結果を含む <see cref="T:Infragistics.Scheduler.Data.DateQueryResult"/> オブジェクト。
+        </returns>
+        <remarks>
+          <p class="body">HasAppointmentsInRange。</p>
+        </remarks>
+      </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.DataError">
+            <summary>データ アクセス操作でエラーが発生した場合に発生します。</summary>
+        </member>
+      <member name="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource">
+        <summary>
+          <see cref="T:Infragistics.Scheduler.Appointment">予定</see>および<see cref="T:Infragistics.Scheduler.ScheduleResource">リソース</see>が作成可能なデータを提供するオブジェクトのリストと使用する <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource"/> から派生されるクラス。
+        </summary>
+        <remarks>
+          <p class="body">
+            ScheduleListDataSource クラスは、<see cref="T:Infragistics.Scheduler.Appointment"/> および <see cref="T:Infragistics.Scheduler.ScheduleResource"/> データを提供する「標準 CLR オブジェクト」(POCO) のリストにバインドする機能を提供します。既存のクラスが必須な型のプロパティを公開する場合、そのクラスが予定またはリソースを表すために使用できます。これらのプロパティ名が対応する予定/リソース プロパティと同じ場合、このプロパティが対応する予定/リソース プロパティに自動的にバインドされます。名前が異なる場合、プロパティ マッピング サポートは <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentPropertyMappings"/> および <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourcePropertyMappings"/> コレクションで提供されます。
+          </p>
+          <p class="body">
+            <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentItemsSource"/> プロパティは <a href="https://msdn.microsoft.com/ja-jp/library/system.collections.ienumerable(v=vs.110).aspx">IEnumerable</a> インターフェイスを実装する値を受けます。ただし、簡易な IEnumerable 実装で特定の機能はサポートされません。特に新しい予定の作成と既存の予定の削除がサポートされません。IEnumerable インターフェイスが変更通知方法を提供しないため、項目ソースへの外部変更が ScheduleListDataSource クラスで実行されません。
+          </p>
+          <p class="body">
+            <a href="https://msdn.microsoft.com/ja-jp/library/system.collections.ilist(v=vs.110).aspx">IList</a> インターフェイスを実装する項目ソースの場合、予定の作成と削除が ScheduleListDataSource API でサポートされますが、IEnumerable 実装と同じように変更通知方法を提供しないため項目ソースへの外部変更が ScheduleListDataSource で実行されません。注: <a href="https://msdn.microsoft.com/ja-jp/library/6sh2ey19(v=vs.110).aspx">List&lt;T&gt;</a> クラスはこのカテゴリにあります。
+          </p>
+          <p class="body">
+            コンテンツ変更メソッドおよび通知メソッドが存在するため、IList および <a href="https://msdn.microsoft.com/ja-jp/library/system.collections.specialized.inotifycollectionchanged(v=vs.110).aspx">INotifyCollectionChanged</a> インターフェイスを実装する項目ソースは多数の機能を提供します。この場合、作成および削除が ScheduleListDataSource API およびコレクションへの外部変更によってサポートされます。可能な場合、コンテンツ変更および通知方法をサポートする <a href="https://msdn.microsoft.com/ja-jp/library/ms668604(v=vs.110).aspx">ObservableCollection&lt;T&gt;</a> クラスを使用してください。
+          </p>
+          <p class="body">
+            また、新しい予定を作成するには、基本データ オブジェクト クラスから公開される公開用パラメーターなしコンストラクターが要件です。クラスが公開用パラメーターなしコンストラクターを公開しない場合、<see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.CreateAppointmentDataObjectCallback"/> を使用して新しい Appointment オブジェクトが作成されたときに呼び出されるファクトリ メソッドを設定できます。パラメーターなしコンストラクターまたはファクトリ メソッドがない場合、項目ソースのコンテンツ変更のサポートに関係なく、新しい予定の追加はサポートされません。
+          </p>
+          <p class="body">
+            <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourceItemsSource"/> プロパティは AppointmentItemsSource と同じように操作しますが、<see cref="T:Infragistics.Scheduler.ScheduleResource">リソース</see>の追加/削除がユーザー インターフェイスでサポートされていないため、作成および削除をサポートするリスト型の使用が重要になりません。
+          </p>
+          <p class="body">
+            そのオブジェクトに実行される外部の変更をサポートするには、予定またはリソースのバッキング ストアを提供する POCO オブジェクトが <a href="https://msdn.microsoft.com/ja-jp/library/system.componentmodel.inotifypropertychanged(v=vs.110).aspx">INotifyPropertyChanged</a> インターフェイスを実装する必要があります。このようなプロパティ変更通知メカニズムなしで ScheduleListDataSource はプロパティ値に加えた変更に反応できません。そのため、同期された予定またはリソース オブジェクトの対応プロパティを保持できません。予定のプロパティ値および API を介した ScheduleResource クラスの変更は、ScheduleListDataSource によって直ちに反映され、更に基になるデータ オブジェクトへ伝達が直ちに返されます。
+          </p>
+          <p class="body">以下の表は、それぞれの使用シナリオで利用できる機能の概要です。</p>
+          <p class="body">
+            <table>
+              <tr>
+                <th>インターフェイス</th>
+                <th>機能</th>
+              </tr>
+
+              <tr>
+                <td>IEnumerable</td>
+                <td>基本的な機能のみ提供します。予定/リソースがリストの各項目に作成されますが、新しい項目の追加および既存項目の削除はサポートされません。</td>
+              </tr>
+
+              <tr>
+                <td>IList</td>
+                <td>予定の削除やリソースを追加および削除するための機能提供しますが、API を介してのみです。</td>
+              </tr>
+
+              <tr>
+                <td>INotifyCollectionChanged</td>
+                <td>項目ソースに対する外部変更を介して予定やリソースの追加および削除する機能を提供します。</td>
+              </tr>
+
+              <tr>
+                <td>IList + INotifyCollectionChanged</td>
+                <td>
+                  予定やリソースの追加および削除は API および項目ソースに対する外部変更を介してサポートされます。このクラスは両方のインターフェイスを実装するため、<b>最良の結果を得るには、 ObservableCollection&lt;T&gt; クラスが推奨されます</b>
+                </td>
+              </tr>
+
+              <tr>
+                <td>INotifyPropertyChanged</td>
+                <td>基になるデータ オブジェクト クラス (POCO) で実装した場合、オブジェクトのプロパティに加えられた外部変更は対応する予定およびリソース オブジェクトで直ちに同期されます。予定やリソースのプロパティを介した変更は常に基になるデータ オブジェクトへ伝達が返されるため、INotifyPropertyChanged 実装はこのシナリオでは必要ありません。</td>
+              </tr>
+
+            </table>
+          </p>
+        </remarks>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentItemsSource"/>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentPropertyMappings"/>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.CreateAppointmentDataObjectCallback"/>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourceItemsSource"/>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourcePropertyMappings"/>
+      </member>
+      <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.OnPropertyChanged(System.String)">
+        <summary>
+          プロパティが変更された後に呼び出されます。
+        </summary>
+        <param name="propertyName">プロパティ名。</param>
+      </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.#ctor">
+            <summary>新しいインスタンスを作成します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentItemsSourceProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentItemsSource"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentItemsSource">
+            <summary><see cref="T:Infragistics.Scheduler.Appointment">appointments</see>が作成されるデータ オブジェクトのリストを返すか、設定します。</summary>
+          <remarks>
+            <p class="body">IEnumerable 実装が有効な項目ソースとして使用できる場合、実装によっては使用できない機能がある場合があります。</p>
+            <p class="body">
+              たとえば、指定した項目ソースが <a href="https://msdn.microsoft.com/ja-jp/library/system.collections.ilist(v=vs.110).aspx">IList</a> インターフェイスを実行しない場合、IEnumerable インターフェイスで基になるリストのコンテンツを変更できないため予定を追加または削除できません。
+            </p>
+            <p class="body">
+              IList 実装はコンテンツの変更を許可する必要があります。つまり、<i>IsFixedSize</i> および <i>IsReadOnly</i> プロパティは true を返す必要があります。
+            </p>
+            <p class="body">IList インターフェイスがコンテンツの変更通知をサポートしないため、項目ソースの外部の変更はデータソースによって認識されずに同期で問題が発生します。</p>
+            <p class="body">
+              アプリケーションで項目ソースの外部の変更を同期する必要がある場合、<a href="https://msdn.microsoft.com/ja-jp/library/ms668604(v=vs.110).aspx">ObservableCollection&lt;T&gt;</a> など <a href="https://msdn.microsoft.com/ja-jp/library/system.collections.specialized.inotifycollectionchanged(v=vs.110).aspx">INotifyCollectionChanged</a> インターフェイスを実装するクラスを使用する必要があります。
+            </p>
+            <p class="body">
+              予定プロパティにバインドされたデータ オブジェクト プロパティの名前またはタイプが異なる場合、<see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentPropertyMappings"/> コレクションを使用してデータ オブジェクトと予定をマッピングします。
+            </p>
+            <p class="body">
+              項目ソースの要素が予定オブジェクトを作成できない場合、拒否の原因について詳細な説明を提供する <see cref="E:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource.DataError"/> イベントが発生します。このイベントはデバッグ セッションで役立ちます。
+            </p>
+          </remarks>
+          <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentPropertyMappings"/>
+          <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+          <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourceItemsSource"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentPropertyMappingsProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentPropertyMappings"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+      <member name="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentPropertyMappings">
+        <summary>
+          異なる名前を持つ基となるデータ オブジェクトのプロパティに <see cref="T:Infragistics.Scheduler.Appointment"/> プロパティをマップできるコレクションを返します。
+        </summary>
+        <remarks>
+          <p class="body">基となるデータ オブジェクトのプロパティの名前が、それがバインドされているスケジュール オブジェクトのプロパティの名前とすべて同じである場合、マッピングは自動的に存在すると見なします。この場合、明示的なマッピングは必要ありません。</p>
+          <p class="body">
+            基となるデータ オブジェクトのプロパティがスケジュール オブジェクト プロパティと同じ名前を持つが、開発者がマッピングを設定しない場合は、<see cref="!:SchedulePropertyMapping&lt;T&gt;.DataObjectPropertyName"/> プロパティとして null 値を持つ <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMapping"/> を追加します。
+          </p>
+          <p class="body">
+            バインドされたプロパティのデータ型が対応するスケジュール オブジェクト プロパティのデータ型と一致しない場合、変換が試みられますが、<a href="https://msdn.microsoft.com/ja-jp/library/system.convert(v=vs.110).aspx">Convert</a> クラスの機能の制限を受けることがあります。たとえば、予定の <see cref="P:Infragistics.Scheduler.ActivityBase.Start">Start</see> プロパティを文字列型のフィールドにマップできます (含まれるデータが日付/時刻の有効な文字列形式であると仮定します)。同様に、数値を文字列に変換できるため、<see cref="P:Infragistics.Scheduler.ActivityBase.Id">Id</see> プロパティは整数型のフィールドにマップできます。
+          </p>
+          <p class="body">
+            バインド プロパティの値がスケジュール オブジェクト プロパティの値に変換できない場合、 <see cref="!:SchedulePropertyMapping&lt;T&gt;.ConvertCallback"/> および <see cref="!:SchedulePropertyMapping&lt;T&gt;.ConvertBackCallback"/> メソッドを使用してデータを双方向に変換することができます。
+          </p>
+          <p class="body">
+            以下の <see cref="T:Infragistics.Scheduler.Appointment"/> プロパティにマッピングが必要です。<ul>
+              <li>
+                <see cref="P:Infragistics.Scheduler.ActivityBase.Id"/>
+              </li>
+              <li>
+                <see cref="P:Infragistics.Scheduler.ActivityBase.Start"/>
+              </li>
+              <li>
+                <see cref="P:Infragistics.Scheduler.ActivityBase.End"/>
+              </li>
+            </ul>
+          </p>
+        </remarks>
+      </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.CreateAppointmentDataObjectCallbackProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.CreateAppointmentDataObjectCallback"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+      <member name="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.CreateAppointmentDataObjectCallback">
+        <summary>
+          新しく作成された <see cref="T:Infragistics.Scheduler.Appointment"/> のデータ オブジェクトを作成するために呼び出されるデリゲートを返すか、設定します。
+        </summary>
+        <remarks>
+          <p class="body">
+            <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentItemsSource"/> 内に含まれる項目のタイプを決定できない場合、そのタイプの新しいインスタンスはリフレクションを使用して自動的に作成できません。パラメータターがないコンストラクターをパブリックに公開しないタイプの場合も同様です。
+          </p>
+          <p class="body">
+            このプロパティは、<see cref="T:Infragistics.Scheduler.Appointment"/> インスタンスの作成時にコールバックを取得できます。その結果、対応するデータ オブジェクトを作成できます。
+          </p>　
+        </remarks>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentItemsSource"/>
+        <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        <seealso cref="!:CreateAppointment"/>
+      </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.HandleAppointmentItemsPropertyChangedProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.HandleAppointmentItemsPropertyChanged"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.HandleAppointmentItemsPropertyChanged">
+            <summary><a href="https://msdn.microsoft.com/ja-jp/library/system.componentmodel.inotifypropertychanged.propertychanged(v=vs.110).aspx">INotifyPropertyChanged.PropertyChanged</a> イベントが <see cref="T:Infragistics.Scheduler.Appointment"/> <see cref="P:Infragistics.Scheduler.DataBindableItemBase.DataObject">データ オブジェクト</see> を処理するかどうかを決定します。</summary>
+            <remarks>
+            <p class="body">Appointment の元になるデータ オブジェクトのプロパティが値を変更するときに通知を取得するためには、データソースはデータ オブジェクトの INotifyPropertyChanged.PropertyChanged イベントのリスナーとして登録します。これによって対応する <see cref="T:Infragistics.Scheduler.Appointment"/> オブジェクトを有効にし、外部の変更に応答して自身のプロパティ値を状況に応じて同期します。</p> 
+            <p class="body"><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentItemsSource"/> が比較的多くの項目を含む場合、パフォーマンスおよびメモリ使用量、あるいはそのいずれかに影響することがあります。</p> 
+            <p class="body">このプロパティは、この動作をオフに切り替えることができるため、PropertyChanged イベントを処理しないことをデータソースへ通知します。</p> 
+            <p class="body">このプロパティは、基になるデータ オブジェクトが <i>INotifycPropertyChanged</i> インターフェイスを実行する場合のみ使用できます。</p> 
+            <p class="body">データソースがデータ オブジェクトの PropertyChanged イベントのハンドラーとして同じロジックで <see cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.RaisePropertyChanged(System.Object,Infragistics.Scheduler.Data.AppointmentProperty)"/> メソッドを公開することに注意してください。このメソッドを直接呼び出して指定した予定データ オブジェクトの PropertyChanged イベントをシュミレーションするため、PropertyChanged イベントを処理する場合と同じ結果となります。</p> 
+            </remarks>
+            <seealso cref="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.RaisePropertyChanged(System.Object,Infragistics.Scheduler.Data.AppointmentProperty)"/>
+            <seealso cref="P:Infragistics.Scheduler.DataBindableItemBase.DataObject"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourceItemsSourceProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourceItemsSource"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourceItemsSource">
+            <summary><see cref="T:Infragistics.Scheduler.Appointment">appointments</see>が作成されるデータ オブジェクトのリストを返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourcePropertyMappingsProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourcePropertyMappings"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+      <member name="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourcePropertyMappings">
+        <summary>
+          異なる名前を持つ基となるデータ オブジェクトのプロパティに <see cref="T:Infragistics.Scheduler.ScheduleResource"/> プロパティをマップできるようにするコレクションを返します。
+        </summary>
+        <remarks>
+          <p class="body">基となるデータ オブジェクトのプロパティの名前が、それがバインドされているスケジュール オブジェクトのプロパティの名前とすべて同じである場合、マッピングは自動的に存在すると見なします。この場合、明示的なマッピングは必要ありません。</p>
+          <p class="body">
+            基となるデータ オブジェクトのプロパティがスケジュール オブジェクト プロパティと同じ名前を持つが、開発者がマッピングを設定しない場合は、<see cref="!:SchedulePropertyMapping&lt;T&gt;.DataObjectPropertyName"/> プロパティとして null 値を持つ <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMapping"/> を追加します。
+          </p>
+          <p class="body">
+            バインド プロパティの値がスケジュール オブジェクト プロパティの値に一致しない場合、 <see cref="!:SchedulePropertyMapping&lt;T&gt;.ConvertCallback"/> および <see cref="!:SchedulePropertyMapping&lt;T&gt;.ConvertBackCallback"/> メソッドを使用してデータを双方向に変換することができます。
+          </p>
+          <p class="body">
+            以下の <see cref="T:Infragistics.Scheduler.ScheduleResource"/> プロパティにマッピングが必要です。<ul>
+              <li>
+                <see cref="P:Infragistics.Scheduler.ScheduleResource.Id"/>
+              </li>
+              <li>
+                <see cref="P:Infragistics.Scheduler.ScheduleResource.DisplayName"/>
+              </li>
+            </ul>
+          </p>
+        </remarks>
+      </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.RaisePropertyChanged(System.Object,Infragistics.Scheduler.Data.AppointmentProperty)">
+            <summary>指定した <paramref name="dataObject"/> プロパティ値の変更をデータソースへ通知します。</summary>
+            <param name="dataObject">プロパティが変更したデータ オブジェクト。</param>
+            <param name="property">値が変更されたプロパティを識別する<see cref="T:Infragistics.Scheduler.Data.AppointmentProperty">定数</see>。</param>
+            <remarks>
+            <p class="body">比較的多くのデータオブジェクトが <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentItemsSource"/> にある場合、データ オブジェクトの INotifyPropertyChanged インターフェイスで PropertyChanged イベントを処理することによりパフォーマンスに影響する場合があります。この問題を回避するには、<see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.HandleAppointmentItemsPropertyChanged"/> プロパティを false に設定します。</p>
+            <p class="body">データソースがこの方法で作成された場合、対応する <see cref="T:Infragistics.Scheduler.Appointment"/> オブジェクトの状態を基になるデータ オブジェクトの状態と自動的に同期できません。</p>
+            <p class="body">このメソッドを使用して影響されるデータ オブジェクトとプロパティ値に手動でプロパティの変更通知を送信するため、予定オブジェクトの状態を基になるデータ オブジェクトの状態と確実に同期できます。</p>
+            </remarks>
+        </member>
+      <member name="T:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping">
+        <summary>
+          <see cref="T:Infragistics.Scheduler.Appointment"/> や <see cref="T:Infragistics.Scheduler.ScheduleResource"/> などスケジュール オブジェクトのプロパティ マッピングをカプセル化します。
+        </summary>
+      </member>
+      <member name="M:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.#ctor">
+        <summary>
+          新しい <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping"/> を初期化します。
+        </summary>
+      </member>
+      <member name="F:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.ConvertBackCallbackProperty">
+        <summary>
+          <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.ConvertBackCallback"/> のバインド可能なプロパティを識別します。
+        </summary>
+      </member>
+      <member name="P:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.ConvertBackCallback">
+        <summary>
+          値をプロパティが予期するタイプに変換する機会を提供するために、スケジュール オブジェクト プロパティの値が基本データ オブジェクトの対応するプロパティに割り当てる前に呼び出されるデリゲートへの参照。
+        </summary>
+        <remarks>
+          <p class="body">
+            変換をスキップするには、このメソッドに渡された値と同じ値を返します。null が返された場合、基本データ オブジェクト プロパティに null 値が割り当てられます。そのプロパティで null 値が無効な場合、例外が発生されます。
+          </p>
+        </remarks>
+      </member>
+      <member name="F:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.ConvertCallbackProperty">
+        <summary>
+          <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.ConvertCallback"/> のバインド可能なプロパティを識別します。
+        </summary>
+      </member>
+      <member name="P:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.ConvertCallback">
+        <summary>
+          値を変換するチャンスを提供するために、値がスケジュール オブジェクト プロパティに割り当てられる前に呼び出されるデリゲートへの参照。
+        </summary>
+        <remarks>
+          <p class="body">
+            変換をスキップするには、このメソッドに渡された値と同じ値を返します。null が返された場合、スケジュール オブジェクト プロパティに null 値が割り当てられます。そのプロパティに null 値が無効な場合、例外が発生されます。
+          </p>
+        </remarks>
+      </member>
+      <member name="F:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.DataObjectPropertyNameProperty">
+        <summary>
+          <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.DataObjectPropertyName"/> のバインド可能なプロパティを識別します。
+        </summary>
+      </member>
+      <member name="P:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.DataObjectPropertyName">
+        <summary>
+          このインスタンスが関連付けられているスケジュール オブジェクトのプロパティ名。
+        </summary>
+      </member>
+      <member name="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMappingCollection">
+        <summary>
+          <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMapping"/> オブジェクトのコレクションクラス。
+        </summary>
+      </member>
+      <member name="M:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMappingCollection.Add(Infragistics.Scheduler.Data.AppointmentProperty,System.String)">
+        <summary>
+          指定した <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.Property"/> および <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.DataObjectPropertyName"/> で <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMapping"/> を作成します。
+        </summary>
+        <param name="property">
+          マッピングが追加される <see cref="T:Infragistics.Scheduler.Appointment"/> プロパティを識別する <see cref="T:Infragistics.Scheduler.Data.AppointmentProperty"/> 定数。
+        </param>
+        <param name="dataObjectPropertyName">マップするための基になるデータ オブジェクトのプロパティの名前。</param>
+        <returns>
+          <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMapping"/> インスタンス。
+        </returns>
+      </member>
+      <member name="T:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMappingCollection">
+        <summary>
+          <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMapping"/> オブジェクトのコレクションクラス。
+        </summary>
+      </member>
+      <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMappingCollection.Add(Infragistics.Scheduler.Data.ScheduleResourceProperty,System.String)">
+        <summary>
+          指定した <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.Property"/> および <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMapping.DataObjectPropertyName"/> で <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMapping"/> を作成します。
+        </summary>
+        <param name="property">
+          マッピングが追加される <see cref="T:Infragistics.Scheduler.ScheduleResource"/> プロパティを識別する <see cref="T:Infragistics.Scheduler.Data.ScheduleResourceProperty"/> 定数。
+        </param>
+        <param name="dataObjectPropertyName">マップするための基になるデータ オブジェクトのプロパティの名前。</param>
+        <returns>
+          <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMapping"/> インスタンス。
+        </returns>
+      </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler">
+            <summary>Scheduler コンポーネントのプライマリ ビューを表します。</summary>
+        </member>
+      <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.OnPropertyChanging(System.String)">
+        <summary>
+          プロパティが変更される前に呼び出されます。
+        </summary>
+        <param name="propertyName">プロパティ名。</param>
+      </member>
+      <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.OnPropertyChanged(System.String)">
+        <summary>
+          プロパティが変更された後に呼び出されます。
+        </summary>
+        <param name="propertyName">プロパティ名。</param>
+      </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.#ctor">
+            <summary>新しい <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler"/> を初期化します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeBackgroundBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeBackgroundBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeBackgroundBrush">
+            <summary>AgendaView で <see cref="T:Infragistics.Scheduler.Appointment"/> 終了時間の Background を塗りつぶすブラシを返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontAttributesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontAttributes"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontAttributes">
+            <summary>AgendaView の予定終了時間のフォント スタイルを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontFamilyProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontFamily"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontFamily">
+            <summary>AgendaView の予定終了時間のフォント ファミリを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontSizeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontSize"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontSize">
+            <summary>AgendaView の予定終了時間のフォント サイズを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeSelectedBackgroundBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeSelectedBackgroundBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeSelectedBackgroundBrush">
+            <summary>AgendaView で選択された <see cref="T:Infragistics.Scheduler.Appointment"/> の終了時間の Background を塗りつぶすブラシを返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeSelectedTextBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeSelectedTextBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeSelectedTextBrush">
+            <summary>AgendaView で選択された <see cref="T:Infragistics.Scheduler.Appointment"/> の終了時間のテキストを描画するブラシを返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeTextBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeTextBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentEndTimeTextBrush">
+            <summary>AgendaView で <see cref="T:Infragistics.Scheduler.Appointment"/> 終了時間のテキストを描画するブラシを返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationBackgroundBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationBackgroundBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationBackgroundBrush">
+            <summary>AgendaView で <see cref="T:Infragistics.Scheduler.Appointment"/> 場所の Background を塗りつぶすブラシを返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontAttributesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontAttributes"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontAttributes">
+            <summary>AgendaView の予定の場所のフォント スタイルを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontFamilyProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontFamily"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontFamily">
+            <summary>AgendaView の予定の場所のフォント ファミリを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontSizeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontSize"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontSize">
+            <summary>AgendaView の予定の場所のフォント サイズを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationSelectedBackgroundBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationSelectedBackgroundBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationSelectedBackgroundBrush">
+            <summary>AgendaView で選択された <see cref="T:Infragistics.Scheduler.Appointment"/> の場所の Background を塗りつぶすブラシを返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationSelectedTextBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationSelectedTextBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationSelectedTextBrush">
+            <summary>AgendaView で選択された <see cref="T:Infragistics.Scheduler.Appointment"/> の場所のテキストを描画するブラシを返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationTextBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationTextBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentLocationTextBrush">
+            <summary>AgendaView で <see cref="T:Infragistics.Scheduler.Appointment"/> 場所のテキストを描画するブラシを返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentMarginProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentMargin"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentMargin">
+            <summary>AgendaView で <see cref="T:Infragistics.Scheduler.Appointment"/> を描画するときに使用する余白を返すか、設定します。</summary>
+        </member>
+      <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentScopeProperty">
+        <summary>
+          <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentScope"/> のバインド可能なプロパティを識別します。
+        </summary>
+      </member>
+      <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentScope">
+        <summary>
+          AgendaView で表示される予定のスコープを返すか、設定します。
+        </summary>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.SelectedDate"/>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentScope"/>
+        <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+      </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSeparatorLineBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSeparatorLineBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSeparatorLineBrush">
+            <summary>AgendaView で <see cref="T:Infragistics.Scheduler.Appointment"/> の間の分割線を描画するブラシを返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeBackgroundBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeBackgroundBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeBackgroundBrush">
+            <summary>AgendaView で <see cref="T:Infragistics.Scheduler.Appointment"/> 開始時間の Background を塗りつぶすブラシを返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontAttributesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontAttributes"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontAttributes">
+            <summary>AgendaView の予定開始時間のフォント スタイルを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontFamilyProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontFamily"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontFamily">
+            <summary>AgendaView の予定開始時間のフォント ファミリを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontSizeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontSize"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontSize">
+            <summary>AgendaView の予定開始時間のフォント サイズを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeSelectedBackgroundBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeSelectedBackgroundBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeSelectedBackgroundBrush">
+            <summary>AgendaView で選択された <see cref="T:Infragistics.Scheduler.Appointment"/> の開始時間の Background を塗りつぶすブラシを返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeSelectedTextBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeSelectedTextBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeSelectedTextBrush">
+            <summary>AgendaView で選択された <see cref="T:Infragistics.Scheduler.Appointment"/> の開始時間のテキストを描画するブラシを返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeTextBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeTextBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentStartTimeTextBrush">
+            <summary>AgendaView で <see cref="T:Infragistics.Scheduler.Appointment"/> 開始時間のテキストを描画するブラシを返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectBackgroundBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectBackgroundBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectBackgroundBrush">
+            <summary>AgendaView で <see cref="T:Infragistics.Scheduler.Appointment"/> 件名の Background を塗りつぶすブラシを返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontAttributesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontAttributes"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontAttributes">
+            <summary>AgendaView の予定の件名のフォント スタイルを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontFamilyProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontFamily"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontFamily">
+            <summary>AgendaView の予定の件名のフォント ファミリを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontSizeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontSize"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontSize">
+            <summary>AgendaView の予定の件名のフォント サイズを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectSelectedBackgroundBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectSelectedBackgroundBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectSelectedBackgroundBrush">
+            <summary>AgendaView で選択された <see cref="T:Infragistics.Scheduler.Appointment"/> の件名の Background を塗りつぶすブラシを返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectSelectedTextBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectSelectedTextBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectSelectedTextBrush">
+            <summary>AgendaView で選択された <see cref="T:Infragistics.Scheduler.Appointment"/> の件名のテキストを描画するブラシを返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectTextBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectTextBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentSubjectTextBrush">
+            <summary>AgendaView で <see cref="T:Infragistics.Scheduler.Appointment"/> 件名のテキストを描画するブラシを返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewBackgroundBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewBackgroundBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewBackgroundBrush">
+            <summary>AgendaView の Background を塗りつぶすブラシを返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderBackgroundBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderBackgroundBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderBackgroundBrush">
+            <summary>AgendaView で日ヘッダーの Background を塗りつぶすブラシを返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontAttributesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontAttributes"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontAttributes">
+            <summary>AgendaView の予定の件名のフォント スタイルを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontFamilyProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontFamily"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontFamily">
+            <summary>AgendaView の予定の件名のフォント ファミリを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontSizeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontSize"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontSize">
+            <summary>AgendaView の予定の件名のフォント サイズを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderMarginProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderMargin"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderMargin">
+            <summary>MonthView で日ヘッダーのテキストを描画するときに使用する余白を返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderSeparatorLineBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderSeparatorLineBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderSeparatorLineBrush">
+            <summary>AgendaView で日ヘッダーおよび日の <see cref="T:Infragistics.Scheduler.Appointment"/> の間の分割線を描画するブラシを返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderTextBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderTextBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewDayHeaderTextBrush">
+            <summary>AgendaView で日ヘッダーのテキストを描画するブラシを返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewInterDaySpacingProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewInterDaySpacing"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewInterDaySpacing">
+            <summary>MonthView で月の間の間隔を取得または設定します。</summary>
+        </member>
+      <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMaximumDateProperty">
+        <summary>
+          <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMaximumDate"/> のバインド可能なプロパティを識別します。
+        </summary>
+      </member>
+      <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMaximumDate">
+        <summary>
+          AgendaView で予定を表示する最大日付を返すか、設定します。このプロパティが設定される場合、値は <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MinimumDate"/> および <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MaximumDate"/> 日付の間に制約されます。
+        </summary>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MinimumDate"/>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MaximumDate"/>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMinimumDate"/>
+      </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontAttributesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontAttributes"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontAttributes">
+            <summary>AgendaView のメッセージのフォント スタイルを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontFamilyProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontFamily"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontFamily">
+            <summary>AgendaView のメッセージのフォント ファミリを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontSizeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontSize"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontSize">
+            <summary>AgendaView のメッセージのフォント サイズを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageTextBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageTextBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMessageTextBrush">
+            <summary>AgendaView で 'No Events' メッセージのテキストを描画するブラシを返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+      <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMinimumDateProperty">
+        <summary>
+          <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMinimumDate"/> のバインド可能なプロパティを識別します。
+        </summary>
+      </member>
+      <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMinimumDate">
+        <summary>
+          AgendaView で予定を表示する最小日付を返すか、設定します。このプロパティが設定される場合、値は <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MinimumDate"/> および <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MinimumDate"/> 日付の間に制約されます。
+        </summary>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MinimumDate"/>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MaximumDate"/>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMaximumDate"/>
+      </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.DataSourceProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.DataSource"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.DataSource">
+            <summary>コントロールで表示するアクティビティ データの取得で使用する <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource"/> を返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleDataSource"/>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MaximumDateProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MaximumDate"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MaximumDate">
+            <summary>コントロールで表示可能な最も早い <see cref="T:System.DateTime"/> を返すか、設定します。現在の日付の 5 年後の日にデフォルトで設定されます。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MinimumDate"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMinimumDate"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMaximumDate"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MinimumDateProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MinimumDate"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MinimumDate">
+            <summary>コントロールで表示可能な最も遅い <see cref="T:System.DateTime"/> を返すか、設定します。現在の日付の 5 年前の日にデフォルトで設定されます。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MaximumDate"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMinimumDate"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMaximumDate"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAgendaVisibilityProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAgendaVisibility"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAgendaVisibility">
+            <summary>MonthView で AgendaView の表示状態を取得または設定します。true の場合、MonthView は、Appointments のリストの上にある選択されている日の Appointments を表示する AgendaView を表示します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentScope"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMinimumDate"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMaximumDate"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontAttributesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontAttributes"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontAttributes">
+            <summary>MonthView の予定のフォント スタイルを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontFamilyProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontFamily"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontFamily">
+            <summary>MonthView の予定のフォント ファミリを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontSizeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontSize"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontSize">
+            <summary>MonthView の予定のフォント サイズを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAppointmentFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewBackgroundBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewBackgroundBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewBackgroundBrush">
+            <summary>MonthView の Background を塗りつぶすブラシを返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayActivityIndicatorBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayActivityIndicatorBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+      <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayActivityIndicatorBrush">
+        <summary>
+          <see cref="T:Infragistics.Scheduler.Appointment"/> に割り当てられたリソースがない場合、MonthView の 1 日のアクティビティの内容 (インジケータまたはサブジェクト) を塗りつぶすめに使用するブラシを返すか設定します。<see cref="T:Infragistics.Scheduler.Appointment"/> に割り当てられている <see cref="T:Infragistics.Scheduler.ScheduleResource"/> がある場合、このプロパティは無視され、<see cref="T:Infragistics.Scheduler.ScheduleResource"/> に関連付けられたブラシが代わりに使用されます。
+        </summary>
+        <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        <seealso cref="T:Infragistics.Scheduler.ScheduleResource"/>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayContentDisplayMode"/>
+      </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayBackgroundBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayBackgroundBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayBackgroundBrush">
+            <summary>MonthView で日の Background を塗りつぶすブラシを返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayContentDisplayModeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayContentDisplayMode"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayContentDisplayMode">
+            <summary>MonthView 日で表示されるコンテンツのタイプを取得または設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayContentDisplayMode"/>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+            <seealso cref="T:Infragistics.Scheduler.ActivityBase"/>
+            <seealso cref="T:Infragistics.Scheduler.ScheduleResource"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontAttributesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontAttributes"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontAttributes">
+            <summary>MonthView の日のフォント スタイルを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontFamilyProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontFamily"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontFamily">
+            <summary>MonthView の日のフォント ファミリを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontSizeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontSize"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontSize">
+            <summary>MonthView の日のフォント サイズを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderBackgroundBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderBackgroundBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderBackgroundBrush">
+            <summary>MonthView 曜日ヘッダーの背景を塗りつぶすブラシを返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontAttributesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontAttributes"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontAttributes">
+            <summary>週ヘッダーの MonthView の日のフォント スタイルを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontFamilyProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontFamily"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontFamily">
+            <summary>週ヘッダーの MonthView の日のフォント ファミリを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontSizeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontSize"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontSize">
+            <summary>週ヘッダーの MonthView の日のフォント サイズを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderMarginProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderMargin"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderMargin">
+            <summary>MonthView の月の曜日ヘッダーのテキストを描画するときに使用する余白を返すか、設定します。注: Top および Bottom 余白値のみが適用されます。Left および Right 値が無視されます。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderTextBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderTextBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderTextBrush">
+            <summary>MonthView 曜日ヘッダーのテキストを描画するブラシを返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderVisibilityProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderVisibility"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayOfWeekHeaderVisibility">
+            <summary>MonthView 曜日ヘッダーの表示状態を返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayTextBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayTextBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewDayTextBrush">
+            <summary>MonthView で日のテキストを描画するブラシを返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewHorizontalSeparatorVisibilityProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewHorizontalSeparatorVisibility"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewHorizontalSeparatorVisibility">
+            <summary>MonthView の週の間の水平セパレーターの表示状態を返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewInterMonthSpacingProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewInterMonthSpacing"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewInterMonthSpacing">
+            <summary>MonthView で月の間の間隔を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayBackgroundBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayBackgroundBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayBackgroundBrush">
+            <summary>MonthView で先頭日の Background を塗りつぶすブラシを返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontAttributesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontAttributes"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontAttributes">
+            <summary>MonthView の先頭日のフォント スタイルを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontFamilyProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontFamily"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontFamily">
+            <summary>MonthView の先頭日のフォント ファミリを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontSizeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontSize"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontSize">
+            <summary>MonthView の先頭日のフォント サイズを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayTextBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayTextBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayTextBrush">
+            <summary>MonthView で先頭日のテキストを描画するブラシを返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayVisibilityProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayVisibility"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewLeadingDayVisibility">
+            <summary>MonthView で先頭日 (特定の月の最初の週にある以前の月の日) の表示状態を返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameBackgroundBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameBackgroundBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameBackgroundBrush">
+            <summary>MonthView で月名の背景を塗りつぶすブラシを返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontAttributesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontAttributes"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontAttributes">
+            <summary>MonthView の月名のフォント スタイルを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontFamilyProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontFamily"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontFamily">
+            <summary>MonthView の月名のフォント ファミリを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontSizeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontSize"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontSize">
+            <summary>MonthView の月名のフォント サイズを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameMarginProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameMargin"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameMargin">
+            <summary>MonthView で月名のテキストを描画するときに使用する余白を返すか、設定します。</summary>
+        </member>
+      <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameSeparatorLineBrushProperty">
+        <summary>
+          <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameSeparatorLineBrush"/> のバインド可能なプロパティを識別します。
+        </summary>
+      </member>
+      <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameSeparatorLineBrush">
+        <summary>
+          MonthView で月名の下の分割線を描画するブラシを返すか、設定します。
+        </summary>
+      </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameTextBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameTextBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameTextBrush">
+            <summary>MonthView で月名のテキストを描画するときに使用するブラシを返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameVisibilityProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNameVisibility"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewNamerVisibility">
+            <summary>MonthView で月名の表示状態を返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewScrollDirectionProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewScrollDirection"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewScrollDirection">
+            <summary>MonthView がスクロールする方向を決定する <see cref="T:Infragistics.Scheduler.Core.SchedulerViewScrollDirection"/> を返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Core.SchedulerViewMode"/>
+            <seealso cref="T:Infragistics.Scheduler.Core.SchedulerViewScrollDirection"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewSelectedDayBackgroundBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewSelectedDayBackgroundBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewSelectedDayBackgroundBrush">
+            <summary>MonthView で選択された日の背景を塗りつぶすブラシを返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewSelectedDayTextBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewSelectedDayTextBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewSelectedDayTextBrush">
+            <summary>MonthView で選択された日のテキストを描画するブラシを返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewSeparatorLineBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewSeparatorLineBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewSeparatorLineBrush">
+            <summary>MonthView の分割線を描画するブラシを返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTodayHighlightBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTodayHighlightBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTodayHighlightBrush">
+            <summary>MonthView で今日を表す日の強調表示した丸を描画するブラシを返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTodayTextBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTodayTextBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTodayTextBrush">
+            <summary>MonthView で今日を表す日のテキストを描画するブラシを返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayBackgroundBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayBackgroundBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayBackgroundBrush">
+            <summary>MonthView で後続日の Background を塗りつぶすブラシを返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontAttributesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontAttributes"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontAttributes">
+            <summary>MonthView の後続日のフォント スタイルを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontFamilyProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontFamily"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontFamily">
+            <summary>MonthView の後続日のフォント ファミリを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontSizeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontSize"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontSize">
+            <summary>MonthView の後続日のフォント サイズを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayTextBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayTextBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayTextBrush">
+            <summary>MonthView で後続日のテキストを描画するブラシを返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayVisibilityProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayVisibility"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewTrailingDayVisibility">
+            <summary>MonthView で後続日 (特定の月の最後の週にある以後の月の日) の表示状態を返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewVerticalSeparatorVisibilityProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewVerticalSeparatorVisibility"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewVerticalSeparatorVisibility">
+            <summary>MonthView の曜日の間の垂直セパレーターの表示状態を返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberBackgroundBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberBackgroundBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberBackgroundBrush">
+            <summary>MonthView で週番号の背景を塗りつぶすブラシを返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontAttributesProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontAttributes"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontAttributes">
+            <summary>MonthView の週番号のフォント スタイルを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontSize"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontFamilyProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontFamily"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontFamily">
+            <summary>MonthView の週番号のフォント ファミリを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontSize"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontSizeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontSize"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontSize">
+            <summary>MonthView の週番号のフォント サイズを返すか、設定します。</summary>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontFamily"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberFontAttributes"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberTextBrushProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberTextBrush"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberTextBrush">
+            <summary>MonthView で週番号のテキストを描画するブラシを返すか、設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberVisibilityProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberVisibility"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewWeekNumberVisibility">
+            <summary>MonthView で週番号の表示状態を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.SelectedAppointmentProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.SelectedAppointment"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.SelectedAppointment">
+            <summary>MonthView で現在選択されている <see cref="T:Infragistics.Scheduler.Appointment"/> を返すか、設定します。<see cref="T:Infragistics.Scheduler.Appointment"/> が選択されていない場合は null を返します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+        </member>
+      <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.SelectedDateProperty">
+        <summary>
+          <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.SelectedDate"/> のバインド可能なプロパティを識別します。
+        </summary>
+      </member>
+      <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.SelectedDate">
+        <summary>
+          Scheduler で現在選択されている日付を返すか、設定します。日付が選択されていない場合は null を返します。
+        </summary>
+      </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewModeProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewMode"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewMode">
+            <summary>コンポーネントで表示されているビューを決定する <see cref="T:Infragistics.Scheduler.Core.SchedulerViewMode"/> を返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Core.SchedulerViewMode"/>
+        </member>
+        <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewSplitOrientationProperty">
+            <summary><see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewSplitOrientation"/> のバインド可能なプロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewSplitOrientation">
+            <summary>プライマリおよびセコンダリ ビューが垂直方向または水平方向に分割されるかどうかを決定する <see cref="T:Infragistics.Scheduler.Core.SchedulerViewSplitOrientation"/> を返すか、設定します。</summary>
+            <seealso cref="T:Infragistics.Scheduler.Core.SchedulerViewMode"/>
+          <seealso cref="T:Infragistics.Scheduler.Core.SchedulerViewSplitOrientationMode"/>
+        </member>
+      <member name="F:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewSplitOrientationModeProperty">
+        <summary>
+          <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewSplitOrientationMode"/> のバインド可能なプロパティを識別します。
+        </summary>
+      </member>
+      <member name="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewSplitOrientationMode">
+        <summary>
+          ビュー間の分割方向がコントロールの比率の変更やコードに基づいて自動的に変更されるかどうかを決定する <see cref="T:Infragistics.Scheduler.Core.SchedulerViewSplitOrientationMode"/> を返すか、設定します。
+        </summary>
+        <remarks>
+          このプロパティが <see cref="F:Infragistics.Scheduler.Core.SchedulerViewSplitOrientationMode.Auto"/> (デフォルト) に設定される場合、コントロールは自動的に <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewSplitOrientation"/> をコントロールの現在の縦横比に最適な値に設定します。特に、コントロールの幅がコントロールの高さより大きい場合、コントロールの利用可能な幅を最適に使用するためにビューが左右に並べて表示されるために <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewSplitOrientation"/> が自動的に <see cref="F:Infragistics.Scheduler.Core.SchedulerViewSplitOrientation.Vertical"/> に設定されます。同様に、コントロールの高さがコントロールの幅より大きい場合、コントロールの利用可能な高さを最適に使用するためにビューが上下に並べて表示されるために <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewSplitOrientation"/> が自動的に <see cref="F:Infragistics.Scheduler.Core.SchedulerViewSplitOrientation.Horizontal"/> に設定されます。このプロパティが <see cref="F:Infragistics.Scheduler.Core.SchedulerViewSplitOrientationMode.Manual"/> に設定される場合、コントロールは自動的に <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewSplitOrientation"/> を設定しません。この場合、開発者が <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewSplitOrientation"/> をアプリケーションに適切な値に設定する必要があります。
+        </remarks>
+        <seealso cref="T:Infragistics.Scheduler.Core.SchedulerViewMode"/>
+        <seealso cref="T:Infragistics.Scheduler.Core.SchedulerViewSplitOrientation"/>
+        <seealso cref="T:Infragistics.Scheduler.Core.SchedulerViewSplitOrientationMode"/>
+      </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.EnsureDayVisibleInAgendaView(System.DateTime,System.Boolean,System.Boolean)">
+            <summary>指定した日付が <see cref="F:Infragistics.Scheduler.Core.SchedulerViewMode.AgendaView"/> で表示されることを確認します。表示されていない場合、日をビューにスクロールします。</summary>
+            <remarks><see cref="F:Infragistics.Scheduler.Core.SchedulerViewMode.AgendaView"/> がプライマリまたはセコンダリ ビュー モードとして選択されていない (<see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewMode"/> および <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAgendaVisibility"/> プロパティを参照) 場合、このメソッドの呼び出しに影響なしで、呼び出しが false を返します。</remarks>
+          <param name="date">
+            ビューにスクロールする日付。<see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentScope"/> が <see cref="F:Infragistics.XamarinForms.Scheduler.Core.AgendaViewAppointmentScope.OnlyAppointmentsForSelectedDate"/> に設定される場合以外、日付が <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMinimumDate"/> および <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewMaximumDate"/> 内にある必要があります。
+          </param>
+            <param name="animated">アニメーション付きのスクロールを実行するには True。すぐのスクロールを実行するには False。</param>
+            <param name="scrollDayToTop">指定した日付が表示可能で、日付を表示領域の上にスクロールするには True。指定した日付が表示可能なことのみを確認するには False。</param>
+            <returns>成功の場合は True、そうでない場合は False。</returns>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewMode"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthViewAgendaVisibility"/>
+            <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AgendaViewAppointmentScope"/>
+            <seealso cref="F:Infragistics.Scheduler.Core.AgendaViewAppointmentScope.OnlyAppointmentsForSelectedDate"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.EnsureDayVisibleInMonthView(System.DateTime,System.Boolean)">
+            <summary>指定した日付によって表現される日が <see cref="F:Infragistics.Scheduler.Core.SchedulerViewMode.MonthView"/> で表示されることを確認します。表示されていない場合、日付をビューにスクロールします。</summary>
+            <remarks>コントロールの <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewMode"/> プロパティが <see cref="F:Infragistics.Scheduler.Core.SchedulerViewMode.MonthView"/> に設定されていない場合、このメソッドの呼び出しは影響がなく、呼び出しが false を返します。</remarks>
+            <param name="date">ビューにスクロールする日を表す日付。日付がコントロールの最大日付と最小日付の間にある必要があります。</param>
+            <param name="animated">アニメーション付きのスクロールを実行するには True。すぐのスクロールを実行するには False。</param>
+            <returns>成功の場合は True、そうでない場合は False。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.EnsureMonthVisibleInMonthView(System.DateTime,System.Boolean)">
+            <summary>指定した日付を含む月が <see cref="F:Infragistics.Scheduler.Core.SchedulerViewMode.MonthView"/> で表示されることを確認します。表示されていない場合、月をビューにスクロールします。</summary>
+            <remarks>コントロールの <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ViewMode"/> プロパティが <see cref="F:Infragistics.Scheduler.Core.SchedulerViewMode.MonthView"/> に設定されていない場合、このメソッドの呼び出しは影響がなく、呼び出しが false を返します。</remarks>
+            <param name="date">含まれている月がビューにスクロールする日付。日付がコントロールの最大日付と最小日付の間にある必要があります。</param>
+            <param name="animated">アニメーション付きのスクロールを実行するには True。すぐのスクロールを実行するには False。</param>
+            <returns>成功の場合は True、そうでない場合は False。</returns>
+            <seealso cref="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.EnsureDayVisibleInMonthView(System.DateTime,System.Boolean)"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ExportVisualModel">
+            <summary>メイン ビューの <see cref="T:Infragistics.Scheduler.Core.VisualModelExport"/> インスタンスとしてエクスポートされた <see cref="T:Infragistics.Scheduler.Core.VisualModel"/> を返します。コントロールが 2 つ以上のビュー (MonthView と AgendaView など) を表示されている場合、セコンダリ ビューのエクスポート データを取得するには、<see cref="T:Infragistics.Scheduler.Core.SchedulerViewMode"/> パラメーターを受けるオーバーロードを呼び出します。</summary>
+            <returns><see cref="T:Infragistics.Scheduler.Core.VisualModelExport"/> インスタンスとしてエクスポートされた VisualModel。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ExportVisualModel(Infragistics.Scheduler.Core.SchedulerViewMode)">
+            <summary>指定したビューの <see cref="T:Infragistics.Scheduler.Core.VisualModelExport"/> インスタンスとしてエクスポートされた <see cref="T:Infragistics.Scheduler.Core.VisualModel"/> を返します。</summary>
+            <param name="viewMode"><see cref="T:Infragistics.Scheduler.Core.VisualModel"/> をエクスポートするビュー。</param>
+            <returns><see cref="T:Infragistics.Scheduler.Core.VisualModelExport"/> インスタンスとしてエクスポートされた <see cref="T:Infragistics.Scheduler.Core.VisualModel"/>。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ExportVisualModelSerialized">
+            <summary>メイン ビューの文字列としてシリアル化された <see cref="T:Infragistics.Scheduler.Core.VisualModel"/> を返します。コントロールが 2 つ以上のビュー (MonthView と AgendaView など) を表示されている場合、セコンダリ ビューのエクスポート データを取得するには、<see cref="T:Infragistics.Scheduler.Core.SchedulerViewMode"/> パラメーターを受けるオーバーロードを呼び出します。</summary>
+            <returns>文字列としてシリアル化された <see cref="T:Infragistics.Scheduler.Core.VisualModel"/>。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.ExportVisualModelSerialized(Infragistics.Scheduler.Core.SchedulerViewMode)">
+            <summary>文字列としてシリアル化された <see cref="T:Infragistics.Scheduler.Core.VisualModel"/> を返します。</summary>
+            <param name="viewMode"><see cref="T:Infragistics.Scheduler.Core.VisualModel"/> をエクスポートするビュー。</param>
+            <returns>文字列としてシリアル化された <see cref="T:Infragistics.Scheduler.Core.VisualModel"/>。</returns>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.Init">
+            <summary>このコントロールのインスタンスを XAML で宣言する場合、ランタイムにすべての必要な型が利用可能なことを確認するには、このメソッドをコードで呼び出します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.Refresh">
+            <summary>コントロールのビューを無効にして、レイアウトのビジュアル コンテンツを更新します。</summary>
+        </member>
+      <member name="M:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.SuspendRefreshAndPerformAction(System.Action)">
+        <summary>このメソッドは、コントロー ルレイアウトの更新を一時的に中断した後に、指定されたアクションを実行します。アクションが完了すると、コントロールのレイアウトが更新され、アクションで加えられた変更はコントロールの UI に反映されます。コントロールのレイアウトに影響を与える複数のプロパティを設定する場合、このメソッドを使用してパフォーマンスを向上させます。</summary>
+        <param name="action">コントロールの更新が中断されているときに実行するアクション。</param>
+      </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AppointmentClicked">
+            <summary><see cref="T:Infragistics.Scheduler.Appointment"/> が <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler"/> でクリックされたときに発生します。</summary>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AppointmentSelected">
+            <summary><see cref="T:Infragistics.Scheduler.Appointment"/> が <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler"/> で選択されたときに発生します。</summary>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.DayClicked">
+            <summary>日をクリックすると発生します。</summary>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.DayOfWeekHeaderClicked">
+            <summary>曜日ヘッダーをクリックすると発生します。</summary>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthHeaderClicked">
+            <summary>月ヘッダーがクリックされたときに発生します。</summary>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.SelectedDateChanged">
+            <summary>Scheduler で新しい日付が選択されたときに発生します。</summary>
+        </member>
+        <member name="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.WeekNumberClicked">
+            <summary>週番号がクリックされたときに発生します。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentClickedEventArgs">
+            <summary><see cref="T:Infragistics.Scheduler.Appointment"/> が <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler"/> でクリックされたときに発生します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.AppointmentClickedEventArgs.#ctor">
+            <summary>新しい <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentClickedEventArgs"/> を初期化します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.AppointmentClickedEventArgs.AllowSelection">
+            <summary>このクリックが処理され、<see cref="T:Infragistics.Scheduler.Appointment"/> が選択されるかどうかを返すか、設定します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.AppointmentClickedEventArgs.ClickedAppointment">
+            <summary>クリックされた <see cref="T:Infragistics.Scheduler.Appointment"/> を返します (読み取り専用)。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.AppointmentClickedEventArgs.ClickedInDate">
+            <summary><see cref="T:Infragistics.Scheduler.Appointment"/> がクリックされた日付を返します。単一日の <see cref="T:Infragistics.Scheduler.Appointment"/> の場合、<see cref="T:Infragistics.Scheduler.Appointment"/> が発生する日付を返します。複数日の <see cref="T:Infragistics.Scheduler.Appointment"/> の場合、クリックされた <see cref="T:Infragistics.Scheduler.Appointment"/> 部分を含む日付を返します。(読み取り専用)</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.AppointmentClickedEventArgs.ViewMode">
+            <summary>クリックされた <see cref="T:Infragistics.Scheduler.Appointment"/> と関連付けられた <see cref="T:Infragistics.Scheduler.Core.SchedulerViewMode"/> を返します (読み取り専用)。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentClickedEventHandler">
+            <summary><see cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AppointmentClicked"/> イベントのハンドラー。</summary>
+        </member>
+      <member name="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMapping">
+        <summary>
+          <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentPropertyMappings"/> のプロパティ マッピングをカプセル化します。
+        </summary>
+        <remarks>
+          <p class="body">
+            <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource"/> クラスは、 <see cref="T:Infragistics.Scheduler.Appointment">予定</see> を表すデータ オブジェクトを取得するアイテム ソースを指定する機能を提供します。
+          </p>
+          <p class="body">データ オブジェクト プロパティの名前、またはデータ型が対応する予定プロパティの名前、またはデータ型と一致しない場合、マッピングを使用して名前、または型を解決します。</p>
+          <p class="body">データ オブジェクト プロパティの名前、またはデータ型が対応する予定プロパティの名前、またはデータ型と一致しない場合、マッピングを使用して名前、または型を解決します。</p>
+          <p class="body">
+            たとえば、StartDate というデータ オブジェクト プロパティがあるとします。これは、予定の <see cref="P:Infragistics.Scheduler.ActivityBase.Start">Start</see> プロパティ値が取得されるプロパティです。
+          </p>
+          <p class="body">
+            この 2 つのプロパティ間のマッピングを作成するために、新しい AppointmentPropertyMapping オブジェクトが、<see cref="!:SchedulePropertyMapping&lt;T&gt;.Property">Property</see> 値 <see cref="T:Infragistics.Scheduler.Data.AppointmentProperty">Start</see>、<see cref="!:SchedulePropertyMapping&lt;T&gt;.DataObjectPropertyName">DataObjectPropertyName</see> StartDate で、すなわちデータ オブジェクト プロパティの実際の名前で作成されます。
+          </p>
+          <p class="body">この AppointmentPropertyMapping オブジェクトは、ScheduleListDataSource の AppointmentPropertyMappings コレクションに追加されます。 これはデータソースに対して、予定の Start プロパティーがデータ オブジェクトの StartDate というプロパティから取得、または割り当てられることを意味します。</p>
+          <p class="body">
+            プロパティ マッピングを使用して、<see cref="!:SchedulePropertyMapping&lt;T&gt;.ConvertCallback">ConvertCallback</see> および <see cref="!:SchedulePropertyMapping&lt;T&gt;.ConvertBackCallback">ConvertBackCallback</see> プロパティで、予定プロパティと対応するデータ オブジェクト プロパティとの間で双方向の変換を実行することもできます。このプロパティは、予定とその基となるデータ オブジェクトとの間でデータが転送されるたびに呼び出され、値を変更する機能を提供するデリゲートを受け入れます。
+          </p>
+        </remarks>
+        <seealso cref="T:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource"/>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentPropertyMappings"/>
+        <seealso cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.AppointmentItemsSource"/>
+        <seealso cref="T:Infragistics.Scheduler.Appointment"/>
+      </member>
+      <member name="M:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMapping.#ctor">
+        <summary>新しいインスタンスを作成します。</summary>
+      </member>
+      <member name="F:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMapping.PropertyProperty">
+        <summary>
+          <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMapping.Property"/> のバインド可能なプロパティを識別します。
+        </summary>
+      </member>
+      <member name="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMappingsCollection">
+        <summary>
+          <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentPropertyMapping"/> オブジェクトのコレクションクラス。
+        </summary>
+      </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentSelectedEventArgs">
+            <summary><see cref="T:Infragistics.Scheduler.Appointment"/> が <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler"/> で選択されたときに発生します。</summary>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.AppointmentSelectedEventArgs.#ctor">
+            <summary>新しい <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentSelectedEventArgs"/> を初期化します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.AppointmentSelectedEventArgs.SelectedAppointment">
+            <summary>新しく選択された <see cref="T:Infragistics.Scheduler.Appointment"/> を返します (読み取り専用)。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.AppointmentSelectedEventArgs.SelectedInDate">
+            <summary><see cref="T:Infragistics.Scheduler.Appointment"/> が選択された日付を返します。単一日の <see cref="T:Infragistics.Scheduler.Appointment"/> の場合、<see cref="T:Infragistics.Scheduler.Appointment"/> が発生する日付を返します。複数日の <see cref="T:Infragistics.Scheduler.Appointment"/> の場合、選択された <see cref="T:Infragistics.Scheduler.Appointment"/> 部分を含む日付を返します。(読み取り専用)</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.AppointmentSelectedEventArgs.ViewMode">
+            <summary>選択された <see cref="T:Infragistics.Scheduler.Appointment"/> と関連付けられた <see cref="T:Infragistics.Scheduler.Core.SchedulerViewMode"/> を返します (読み取り専用)。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.AppointmentSelectedEventHandler">
+            <summary><see cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.AppointmentSelected"/> イベントのハンドラー。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.DayClickedEventArgs">
+            <summary>日をクリックすると発生します。</summary>
+            <seealso cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.DayClicked"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.DayClickedEventArgs.#ctor">
+            <summary>新しい <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.DayClickedEventArgs"/> を初期化します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.DayClickedEventArgs.ClickedDate">
+            <summary>クリックされた日付を返します (読み取り専用)。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.DayClickedEventArgs.ViewMode">
+            <summary>クリックされた日付と関連付けられた <see cref="T:Infragistics.Scheduler.Core.SchedulerViewMode"/> を返します (読み取り専用)。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.DayClickedEventHandler">
+            <summary><see cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.DayClicked"/> イベントのハンドラー。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.DayOfWeekHeaderClickedEventArgs">
+            <summary>曜日ヘッダーをクリックすると発生します。</summary>
+            <seealso cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.DayOfWeekHeaderClicked"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.DayOfWeekHeaderClickedEventArgs.#ctor">
+            <summary>新しい <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.DayOfWeekHeaderClickedEventArgs"/> を初期化します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.DayOfWeekHeaderClickedEventArgs.DayOfWeek">
+            <summary>曜日番号を返します (読み取り専用)。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.DayOfWeekHeaderClickedEventArgs.Month">
+            <summary>月番号を返します (読み取り専用)。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.DayOfWeekHeaderClickedEventArgs.Year">
+            <summary>年番号を返します (読み取り専用)。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.DayOfWeekHeaderClickedEventHandler">
+            <summary><see cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.DayOfWeekHeaderClicked"/> イベントのハンドラー。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.MonthHeaderClickedEventArgs">
+            <summary>月ヘッダーがクリックされたときに発生します。</summary>
+            <seealso cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthHeaderClicked"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.MonthHeaderClickedEventArgs.#ctor">
+            <summary>新しい <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.MonthHeaderClickedEventArgs"/> を初期化します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.MonthHeaderClickedEventArgs.Month">
+            <summary>月番号を返します (読み取り専用)。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.MonthHeaderClickedEventArgs.Year">
+            <summary>年番号を返します (読み取り専用)。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.MonthHeaderClickedEventHandler">
+            <summary><see cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.MonthHeaderClicked"/> イベントのハンドラー。</summary>
+        </member>
+      <member name="T:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMapping">
+        <summary>
+          <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ScheduleListDataSource.ResourcePropertyMappings"/> のプロパティ マッピングをカプセル化します。
+        </summary>
+      </member>
+      <member name="M:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMapping.#ctor">
+        <summary>新しいインスタンスを作成します。</summary>
+      </member>
+      <member name="F:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMapping.PropertyProperty">
+        <summary>
+          <see cref="P:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMapping.Property"/> のバインド可能なプロパティを識別します。
+        </summary>
+      </member>
+      <member name="T:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMappingsCollection">
+        <summary>
+          <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.ResourcePropertyMapping"/> オブジェクトのコレクションクラス。
+        </summary>
+      </member>
+      <member name="T:Infragistics.XamarinForms.Controls.Scheduler.SchedulePropertyMappingsCollection`1">
+        <summary>
+          プロパティ マッピング コレクションの基本クラス。
+        </summary>
+        <typeparam name="T">
+          <see cref="T:Infragistics.Scheduler.Data.AppointmentProperty"/> または <see cref="T:Infragistics.Scheduler.Data.ScheduleResourceProperty"/> 型の列挙体。
+        </typeparam>
+      </member>
+      <member name="T:Infragistics.XamarinForms.Controls.Scheduler.SelectedDateChangedEventArgs">
+        <summary>
+          日をクリックすると発生します。
+        </summary>
+        <seealso cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.SelectedDateChanged"/>
+      </member>
+      <member name="M:Infragistics.XamarinForms.Controls.Scheduler.SelectedDateChangedEventArgs.#ctor">
+        <summary>
+          新しい <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.SelectedDateChangedEventArgs"/> を初期化します。
+        </summary>
+      </member>
+      <member name="P:Infragistics.XamarinForms.Controls.Scheduler.SelectedDateChangedEventArgs.SelectedDate">
+        <summary>
+          新しく選択された日付を返します (読み取り専用)。
+        </summary>
+      </member>
+      <member name="T:Infragistics.XamarinForms.Controls.Scheduler.SelectedDateChangedEventHandler">
+        <summary>
+          <see cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.SelectedDateChanged"/> イベントのハンドラー。
+        </summary>
+      </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.WeekNumberClickedEventArgs">
+            <summary>週番号がクリックされたときに発生します。</summary>
+            <seealso cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.WeekNumberClicked"/>
+        </member>
+        <member name="M:Infragistics.XamarinForms.Controls.Scheduler.WeekNumberClickedEventArgs.#ctor">
+            <summary>新しい <see cref="T:Infragistics.XamarinForms.Controls.Scheduler.WeekNumberClickedEventArgs"/> を初期化します。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.WeekNumberClickedEventArgs.Month">
+            <summary>月番号を返します (読み取り専用)。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.WeekNumberClickedEventArgs.WeekNumber">
+            <summary>週番号を返します (読み取り専用)。</summary>
+        </member>
+        <member name="P:Infragistics.XamarinForms.Controls.Scheduler.WeekNumberClickedEventArgs.Year">
+            <summary>年番号を返します (読み取り専用)。</summary>
+        </member>
+        <member name="T:Infragistics.XamarinForms.Controls.Scheduler.WeekNumberClickedEventHandler">
+            <summary><see cref="E:Infragistics.XamarinForms.Controls.Scheduler.XamScheduler.WeekNumberClicked"/> イベントのハンドラー。</summary>
+        </member>
+    </members>
+</doc>

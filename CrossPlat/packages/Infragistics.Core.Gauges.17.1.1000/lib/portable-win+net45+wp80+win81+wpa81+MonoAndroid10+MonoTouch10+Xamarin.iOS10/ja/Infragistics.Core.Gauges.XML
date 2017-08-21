@@ -1,0 +1,1613 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+    <assembly>
+        <name>Infragistics.Core.Gauges</name>
+    </assembly>
+    <members>
+        <member name="T:Infragistics.Controls.Gauges.Implementation.XamBulletGraph">
+            <summary>ブレット グラフを表します。</summary>
+        </member>
+        <member name="E:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.PropertyChanged">
+            <summary>クラスのプロパティが変更されているときに通知を発生します。</summary>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.OnPropertyChanged(System.String)">
+            <summary>PropertyChanged イベントを発生するために使用されます。</summary>
+            <param name="propertyName">変更されたプロパティ。</param>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.Animating">
+            <summary>ブレット グラフがアニメーションを再生されているかどうかを示す値を取得します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TransitionProgress">
+            <summary>コントロールがアニメーションを再生されているときのトランジション進行状況を取得します。</summary>
+        </member>
+        <member name="E:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.FormatLabel">
+            <summary>ブレット グラフのラベルが書式設定されたときに発生するイベント。</summary>
+        </member>
+        <member name="E:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.AlignLabel">
+            <summary>ブレット グラフのラベルがスケールと整列されたときに発生するイベント。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.Orientation">
+            <summary>スケールの向きを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.OrientationProperty">
+            <summary>Orientation プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ScaleBackgroundBrush">
+            <summary>スケールの背景ブラシを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ScaleBackgroundOutline">
+            <summary>スケールの背景アウトラインを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ScaleBackgroundThickness">
+            <summary>スケールの背景アウトラインの太さを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.Ranges">
+            <summary>ブレット グラフで描画するためのスケールの範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.RangesProperty">
+            <summary>Ranges プロパティを識別します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.RangeBrushesProperty">
+            <summary>RangeBrushes プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.RangeBrushes">
+            <summary>ブレット グラフ範囲のパレットとして使用されるブラシのコレクションを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.RangeOutlinesProperty">
+            <summary>RangeOutlines プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.RangeOutlines">
+            <summary>ブレット グラフ アウトラインのパレットとして使用されるブラシのコレクションを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.MinimumValue">
+            <summary>このスケールの最小値を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ActualMinimumValue">
+            <summary>スケールの解決済み最小値を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.MinimumValueProperty">
+            <summary>MinimumValue プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.MaximumValue">
+            <summary>このスケールの最大値を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ActualMaximumValue">
+            <summary>スケールの解決された最大値を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.MaximumValueProperty">
+            <summary>MaximumValue プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TargetValue">
+            <summary>ターゲット値バーで示された値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TargetValueProperty">
+            <summary>TargetValue プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TargetValueName">
+            <summary>ターゲット値に使用される名前を取得または設定します。名前はデフォルトのターゲット値ツールチップで表示されます。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.Value">
+            <summary>バーが終了する値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ValueProperty">
+            <summary>ActualValue プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ValueName">
+            <summary>実際値に使用される名前を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ValueNameProperty">
+            <summary>ActualValueName プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.RangeInnerExtent">
+            <summary>0 から 1 の値でコントロールの前と下から計測された、描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.RangeInnerExtentProperty">
+            <summary>ScaleStartExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.RangeOuterExtent">
+            <summary>ブレットグラフの前/下から計測された、0 から 1 の値で範囲の描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.RangeOuterExtentProperty">
+            <summary>RangeOuterExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ValueInnerExtent">
+            <summary>0 から 1 の値でブレット グラフの前/下から計測された、実際の値の形状を描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ValueInnerExtentProperty">
+            <summary>ValueInnerExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ValueOuterExtent">
+            <summary>ブレットグラフの前/下から計測される、0 から 1 の値で実際値の形状の描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ValueOuterExtentProperty">
+            <summary>ValueEndExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.Interval">
+            <summary>スケールに使用する間隔を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.IntervalProperty">
+            <summary>Interval プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TicksPostInitial">
+            <summary>スケールの MinimumValue に追加された、メモリの追加を開始する値。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TicksPostInitialProperty">
+            <summary>TicksPostInitial プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TicksPreTerminal">
+            <summary>スケールの MinimumValue から差し引かれた、目盛りの追加を停止する値。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TicksPreTerminalProperty">
+            <summary>TicksPreTerminal プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.LabelInterval">
+            <summary>描画ラベルに使用する間隔を取得または設定します。このデフォルトはスケールの目盛りとして同じ間隔になります。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.LabelIntervalProperty">
+            <summary>LabelInterval プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.LabelExtent">
+            <summary>スケールの下から計測される、0 から 1 の値でラベルを配置する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレット グラフのラベルを非表示できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.LabelExtentProperty">
+            <summary>LabelExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.LabelsPostInitial">
+            <summary>ラベルの追加を開始するための値で、スケールの MinimumValue に追加されます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.LabelsPostInitialProperty">
+            <summary>LabelsPostInitial プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.LabelsPreTerminal">
+            <summary>スケールの MaximumValue から差し引かれた、ラベルの追加を停止する値。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.LabelsPreTerminalProperty">
+            <summary>LabelsPreTerminal プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.MinorTickCount">
+            <summary>主目盛間に配置する副目盛数を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.MinorTickCountProperty">
+            <summary>MinorTickCount プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TickStartExtent">
+            <summary>ブレットグラフの前/下から計測された、0 から 1 の値で主目盛の描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TickStartExtentProperty">
+            <summary>TickStartExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TickEndExtent">
+            <summary>ブレットグラフの前/下から計測される、0 から 1 の値で主目盛の描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TickEndExtentProperty">
+            <summary>TickEndExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TickStrokeThickness">
+            <summary>目盛を描画するときに使用するストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TickStrokeThicknessProperty">
+            <summary>TickStrokeThickness プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TickBrush">
+            <summary>主目盛のブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TickBrushProperty">
+            <summary>TickBrush プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.FontBrush">
+            <summary>ラベル フォントのブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.FontBrushProperty">
+            <summary>FontBrush プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ValueBrush">
+            <summary>実際の値要素に使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ValueBrushProperty">
+            <summary>ValueBrush プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ValueOutline">
+            <summary>実際の値要素のアウトラインに使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ValueOutlineProperty">
+            <summary>ValueOutline プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ValueStrokeThickness">
+            <summary>実際の値要素を描画する際に使用するストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ValueStrokeThicknessProperty">
+            <summary>ValueStrokeThickness プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.MinorTickStartExtent">
+            <summary>ブレットグラフの前/下から計測される、0 から 1 の値で副目盛の描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.MinorTickStartExtentProperty">
+            <summary>MinorTickStartExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.MinorTickEndExtent">
+            <summary>ブレットグラフの前/下から計測される、0 から 1 の値で副目盛の描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.MinorTickEndExtentProperty">
+            <summary>MinorTickEndExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.MinorTickStrokeThickness">
+            <summary>副目盛を描画するときに使用するストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.MinorTickStrokeThicknessProperty">
+            <summary>MinorTickStrokeThickness プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.MinorTickBrush">
+            <summary>副目盛のブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.MinorTickBrushProperty">
+            <summary>MinorTickBrush プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.IsScaleInverted">
+            <summary>スケールが反転されるかどうかを示す値を取得または設定します。スケールが反転された場合、スケール値が右から左へ増加します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.IsScaleInvertedProperty">
+            <summary>ScaleSweepDirection プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.BackingBrush">
+            <summary>ブレット グラフのバッキングを塗りつぶすために使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.BackingBrushProperty">
+            <summary>BackingBrush プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.BackingOutline">
+            <summary>バッキングのアウトラインを描画するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.BackingOutlineProperty">
+            <summary>BackingOutline プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.BackingStrokeThickness">
+            <summary>バッキング アウトラインのストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.BackingStrokeThicknessProperty">
+            <summary>BackingStrokeThickness プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.BackingInnerExtent">
+            <summary>ブレット グラフ バッキングの内側範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.BackingInnerExtentProperty">
+            <summary>BackingInnerExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.BackingOuterExtent">
+            <summary>ブレット グラフ バッキングの外側範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.BackingOuterExtentProperty">
+            <summary>BackingOuterExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ScaleStartExtent">
+            <summary>0 から 1 の値で ブレットグラフの前/下から計測される、実際値の形状の描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ScaleStartExtentProperty">
+            <summary>ScaleStartExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ScaleEndExtent">
+            <summary>ブレットグラフの前/下から計測された、0 から 1 の値でスケールの描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ScaleEndExtentProperty">
+            <summary>ScaleEndExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TargetValueBrush">
+            <summary>比較マーカーの塗りつぶしを描画する際に使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TargetValueBrushProperty">
+            <summary>TargetValueBrush プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TargetValueBreadth">
+            <summary>ターゲット値要素の幅を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TargetValueBreadthProperty">
+            <summary>TargetValueBreadth プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TargetValueInnerExtent">
+            <summary>0 から 1 の値でコントロールの前/下から計測される、ターゲット値の描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TargetValueInnerExtentProperty">
+            <summary>ScaleStartExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TargetValueOuterExtent">
+            <summary>0 から 1 の値でコントロールの前/下から計測される、ターゲット値の描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TargetValueOuterExtentProperty">
+            <summary>ScaleStartExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TargetValueOutline">
+            <summary>ターゲット値のアウトラインを描画する際に使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TargetValueOutlineProperty">
+            <summary>TargetValueOutline プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TargetValueStrokeThickness">
+            <summary>ターゲット値バーのアウトラインのストローク幅を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TargetValueStrokeThicknessProperty">
+            <summary>TargetValueStrokeThickness プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TransitionDuration">
+            <summary>ブレットグラフで変更をアニメーション化するミリ秒を数値で取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.TransitionDurationProperty">
+            <summary>TransitionDuration プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ShowToolTipTimeout">
+            <summary>ツールチップの表示を遅延するミリ秒を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ShowToolTipTimeoutProperty">
+            <summary>ShowToolTipTimeout プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ToolTip">
+            <summary>このコントロールに適用される ToolTip オブジェクトを取得または設定します。<para>これは依存プロパティです。</para>
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ToolTipProperty">
+            <summary>ToolTip 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ShowToolTip">
+            <summary>ツールチップが有効されるかどうかを示す値を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.Font">
+            <summary>フォントを取得または設定します。</summary>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.GetValueForPoint(Infragistics.Portable.Point)">
+            <summary>ブレット グラフの範囲内で任意のポイントでブレット グラフのメイン スケールの値を取得します。</summary>
+            <param name="point">関連付けられている値を取得するポイント。</param>
+            <returns>必要なポイントと等しいブレット グラフ上の値。</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ExportVisualData">
+            <summary>外部ツールと機能に使用するため、このコントロールに関するビジュアル情報をエクスポートします。</summary>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.ExportSerializedVisualData">
+            <summary>シリアル化された文字列でビジュアルを返します。</summary>
+            <returns>シリアル化された文字列のビジュアル。</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.Flush">
+            <summary>そのビジュアルの印刷または評価の前に、ブレット グラフで遅延されている作業を強制的に終了します。</summary>
+            <remarks>これは、ブレット グラフのビジュアルを同期して保存されるか評価される場合のみ呼び出されます。このメソッドを頻繁に呼び出すとブレット グラフのパフォーマンスが低下します。</remarks>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamBulletGraph.PixelScalingRatio">
+            <summary>コントロールのピクセル密度に影響するために使用されるスケール値を取得または設定します。</summary>
+            <remarks>より高いスケール比率はビジュアルを向上しますが、メモリの使用を増加します。より低い値はコントロールをぼやけます。</remarks>
+        </member>
+        <member name="T:Infragistics.Controls.Gauges.Implementation.XamLinearGauge">
+            <summary>定義済みスケールで単一の値を表示するためのリニア ゲージ。</summary>
+        </member>
+        <member name="E:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.PropertyChanged">
+            <summary>クラスのプロパティが変更されているときに通知を発生します。</summary>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.OnPropertyChanged(System.String)">
+            <summary>PropertyChanged イベントを発生するために使用されます。</summary>
+            <param name="propertyName">変更されたプロパティ。</param>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.Animating">
+            <summary>ブレット グラフがアニメーションを再生されているかどうかを示す値を取得します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.TransitionProgress">
+            <summary>コントロールがアニメーションを再生されているときのトランジション進行状況を取得します。</summary>
+        </member>
+        <member name="E:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.FormatLabel">
+            <summary>ゲージのラベルが書式設定されるときに発生するイベント。</summary>
+        </member>
+        <member name="E:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.AlignLabel">
+            <summary>リニア ゲージのラベルがスケールに沿って整列されるときに発生するイベント。</summary>
+        </member>
+        <member name="E:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ValueChanged">
+            <summary>Value プロパティが変更されるときに発生されます。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.Orientation">
+            <summary>スケールの向きを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.OrientationProperty">
+            <summary>Orientation プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.Ranges">
+            <summary>リニア ゲージで描画するためのスケールの範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.RangesProperty">
+            <summary>Ranges プロパティを識別します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.RangeBrushesProperty">
+            <summary>RangeBrushes プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.RangeBrushes">
+            <summary>リニア ゲージ範囲のパレットとして使用されるブラシのコレクションを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.RangeOutlinesProperty">
+            <summary>RangeOutlines プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.RangeOutlines">
+            <summary>リニア ゲージ アウトラインのパレットとして使用されるブラシのコレクションを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.MinimumValue">
+            <summary>このスケールの最小値を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ActualMinimumValue">
+            <summary>スケールの解決済み最小値を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.MinimumValueProperty">
+            <summary>MinimumValue プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.MaximumValue">
+            <summary>このスケールの最大値を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ActualMaximumValue">
+            <summary>スケールの解決された最大値を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.MaximumValueProperty">
+            <summary>MaximumValue プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.Value">
+            <summary>針が配置する値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ValueProperty">
+            <summary>Value 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleShape">
+            <summary>多数のオプションから針を描画する際に使用する図形を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleShapeProperty">
+            <summary>NeedleShape 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleName">
+            <summary>針に使用される名前を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleNameProperty">
+            <summary>NeedleName プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.RangeInnerExtent">
+            <summary>0 から 1 の値でコントロールの前と下から計測された、描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.RangeInnerExtentProperty">
+            <summary>ScaleStartExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ScaleInnerExtent">
+            <summary>0 から 1 の値で (方向が水平/垂直の場合に) コントロールの下/前から計測された、スケールの描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ScaleInnerExtentProperty">
+            <summary>ScaleInnerExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.RangeOuterExtent">
+            <summary>リニア ゲージの前/下から計測される、0 から 1 の値で範囲の描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.RangeOuterExtentProperty">
+            <summary>RangeOuterExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ScaleOuterExtent">
+            <summary>(方向が水平/垂直の場合に) リニア ゲージの下/前から計測された、0 から 1 の値でスケールの描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ScaleOuterExtentProperty">
+            <summary>ScaleOuterExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleInnerExtent">
+            <summary>0 から 1 の値でリニア ゲージの前/下から計測される、針ジオメトリの描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleInnerExtentProperty">
+            <summary>NeedleStartExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleOuterExtent">
+            <summary>リニア ゲージの前/下から計測される、0 から 1 の値で針ジオメトリの描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleOuterExtentProperty">
+            <summary>NeedleEndExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleInnerBaseWidth">
+            <summary>針の内部ベースの幅を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleInnerBaseWidthProperty">
+            <summary>NeedleInnerBaseWidth プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleOuterBaseWidth">
+            <summary>針の外部ベースの幅を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleOuterBaseWidthProperty">
+            <summary>NeedleOuterBaseWidth プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleInnerPointWidth">
+            <summary>針の内部ポイントの幅を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleInnerPointWidthProperty">
+            <summary>NeedleInnerPointWidth プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleOuterPointWidth">
+            <summary>針の外部ポイントの幅を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleOuterPointWidthProperty">
+            <summary>NeedleOuterPointWidth プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleInnerPointExtent">
+            <summary>針の内部ポイントの範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleInnerPointExtentProperty">
+            <summary>NeedleInnerPointExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleOuterPointExtent">
+            <summary>針の外部ポイントの範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleOuterPointExtentProperty">
+            <summary>NeedleOuterPointExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.Interval">
+            <summary>スケールに使用する間隔を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.IntervalProperty">
+            <summary>Interval プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.TicksPostInitial">
+            <summary>スケールの MinimumValue に追加された、メモリの追加を開始する値。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.TicksPostInitialProperty">
+            <summary>TicksPostInitial プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.TicksPreTerminal">
+            <summary>スケールの MinimumValue から差し引かれた、目盛りの追加を停止する値。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.TicksPreTerminalProperty">
+            <summary>TicksPreTerminal プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.LabelInterval">
+            <summary>描画ラベルに使用する間隔を取得または設定します。このデフォルトはスケールの目盛りとして同じ間隔になります。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.LabelIntervalProperty">
+            <summary>LabelInterval プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.LabelExtent">
+            <summary>スケールの下から計測される、0 から 1 の値でラベルを配置する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージのラベルを非表示できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.LabelExtentProperty">
+            <summary>LabelExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.LabelsPostInitial">
+            <summary>ラベルの追加を開始するための値で、スケールの MinimumValue に追加されます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.LabelsPostInitialProperty">
+            <summary>LabelsPostInitial プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.LabelsPreTerminal">
+            <summary>スケールの MaximumValue から差し引かれた、ラベルの追加を停止する値。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.LabelsPreTerminalProperty">
+            <summary>LabelsPreTerminal プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.MinorTickCount">
+            <summary>主目盛間に配置する副目盛数を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.MinorTickCountProperty">
+            <summary>MinorTickCount プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.TickStartExtent">
+            <summary>リニア ゲージの前/下から計測される、0 から 1 の値で主目盛の描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.TickStartExtentProperty">
+            <summary>TickStartExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.TickEndExtent">
+            <summary>リニア ゲージの前/下から計測される、0 から 1 の値で主目盛の描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.TickEndExtentProperty">
+            <summary>TickEndExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.TickStrokeThickness">
+            <summary>目盛を描画するときに使用するストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.TickStrokeThicknessProperty">
+            <summary>TickStrokeThickness プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.TickBrush">
+            <summary>主目盛のブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.TickBrushProperty">
+            <summary>TickBrush プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.FontBrush">
+            <summary>ラベル フォントのブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.FontBrushProperty">
+            <summary>FontBrush プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleBreadth">
+            <summary>針の幅を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleBreadthProperty">
+            <summary>NeedleBreadth プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleBrush">
+            <summary>針要素のブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleBrushProperty">
+            <summary>NeedleBrush プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleOutline">
+            <summary>針要素のアウトラインを描画するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleOutlineProperty">
+            <summary>NeedleOutline プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleStrokeThickness">
+            <summary>実際の値要素を描画する際に使用するストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleStrokeThicknessProperty">
+            <summary>NeedleStrokeThickness プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.MinorTickStartExtent">
+            <summary>リニア ゲージの前/下から計測される、0 から 1 の値で副目盛の描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.MinorTickStartExtentProperty">
+            <summary>MinorTickStartExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.MinorTickEndExtent">
+            <summary>リニア ゲージの前/下から計測される、0 から 1 の値で副目盛の描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.MinorTickEndExtentProperty">
+            <summary>MinorTickEndExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.MinorTickStrokeThickness">
+            <summary>副目盛を描画するときに使用するストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.MinorTickStrokeThicknessProperty">
+            <summary>MinorTickStrokeThickness プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.MinorTickBrush">
+            <summary>副目盛のブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.MinorTickBrushProperty">
+            <summary>MinorTickBrush プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.IsScaleInverted">
+            <summary>スケールが反転されるかどうかを示す値を取得または設定します。スケールが反転された場合、スケール値が右から左へ増加します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.IsScaleInvertedProperty">
+            <summary>ScaleSweepDirection プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.BackingBrush">
+            <summary>リニア ゲージのバッキングを塗りつぶすために使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.BackingBrushProperty">
+            <summary>BackingBrush プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.BackingOutline">
+            <summary>バッキングのアウトラインを描画するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.BackingOutlineProperty">
+            <summary>BackingOutline プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.BackingStrokeThickness">
+            <summary>バッキング アウトラインのストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.BackingStrokeThicknessProperty">
+            <summary>BackingStrokeThickness プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.BackingInnerExtent">
+            <summary>リニア ゲージ バッキングの内部範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.BackingInnerExtentProperty">
+            <summary>BackingInnerExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.BackingOuterExtent">
+            <summary>リニア ゲージ バッキングの外部範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.BackingOuterExtentProperty">
+            <summary>BackingOuterExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ScaleStartExtent">
+            <summary>0 から 1 の値でリニア ゲージの前/下から計測される、スケールの描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ScaleStartExtentProperty">
+            <summary>ScaleStartExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ScaleEndExtent">
+            <summary>リニア ゲージの前/下から計測される、0 から 1 の値でスケールの描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、リニア ゲージの標準サイズを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ScaleEndExtentProperty">
+            <summary>ScaleEndExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ScaleBrush">
+            <summary>リニア ゲージのスケールを塗りつぶすために使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ScaleBrushProperty">
+            <summary>ScaleBrush プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ScaleOutline">
+            <summary>スケールのアウトラインを描画するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ScaleOutlineProperty">
+            <summary>ScaleOutline プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ScaleStrokeThickness">
+            <summary>スケールのアウトラインのストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ScaleStrokeThicknessProperty">
+            <summary>ScaleStrokeThickness プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.IsNeedleDraggingEnabled">
+            <summary>針のドラッグが有効かどうかを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.IsNeedleDraggingEnabledProperty">
+            <summary>IsNeedleDraggingEnabled プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.TransitionDuration">
+            <summary>リニア ゲージがアニメーション化する変更をミリ秒数を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.TransitionDurationProperty">
+            <summary>TransitionDuration プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ShowToolTipTimeout">
+            <summary>ツールチップの表示を遅延するミリ秒を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ShowToolTipTimeoutProperty">
+            <summary>ShowToolTipTimeout プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ToolTip">
+            <summary>現在のシリーズ オブジェクトの ToolTip を取得または設定します。<para>これは依存プロパティです。</para>
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ToolTipProperty">
+            <summary>ToolTip 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ShowToolTip">
+            <summary>ツールチップが有効されるかどうかを示す値を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.Font">
+            <summary>フォントを取得または設定します。</summary>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.GetValueForPoint(Infragistics.Portable.Point)">
+            <summary>ゲージ内の境界線に特定のポイントのゲージのメイン スケールの値を取得します。</summary>
+            <param name="point">関連付けられている値を取得するポイント。</param>
+            <returns>指定したポイントと等しいゲージの値。</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleContainsPoint(Infragistics.Portable.Point)">
+            <summary>メイン ゲージの針境界ボックスが指定したポイントを含む場合に True を返します。それ以外の場合 False を返します。</summary>
+            <param name="point">チェックする点。</param>
+            <returns>針境界ボックスがポイントを含む場合は True。</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.NeedleContainsPoint(Infragistics.Portable.Point,System.Boolean)">
+            <summary>メイン ゲージの針境界ボックスが指定したポイントを含む場合に True を返します。それ以外の場合 False を返します。</summary>
+            <param name="point">チェックする点。</param>
+            <param name="isFinger">タッチ対応の境界コンテナーを使用するかどうか。</param>
+            <returns>針境界ボックスがポイントを含む場合は True。</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ExportVisualData">
+            <summary>外部ツールと機能に使用するため、このコントロールに関するビジュアル情報をエクスポートします。</summary>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.ExportSerializedVisualData">
+            <summary>シリアル化された文字列でビジュアルを返します。</summary>
+            <returns>シリアル化された文字列のビジュアル。</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.Flush">
+            <summary>ビジュアルのプリントまたは評価の前に、保留中の作業をリニア ゲージで強制的に終了します。</summary>
+            <remarks>これは、リニア ゲージのビジュアルを同期して保存されるか評価される場合のみ呼び出されます。このメソッドを頻繁に呼び出すとリニア ゲージのパフォーマンスが低下します。</remarks>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGauge.PixelScalingRatio">
+            <summary>コントロールのピクセル密度に影響するために使用されるスケール値を取得または設定します。</summary>
+            <remarks>より高いスケール比率はビジュアルを向上しますが、メモリの使用を増加します。より低い値はコントロールをぼやけます。</remarks>
+        </member>
+        <member name="T:Infragistics.Controls.Gauges.Implementation.XamRadialGauge">
+            <summary>定義済みスケールで単一の値を表示するためのラジアル ゲージ。</summary>
+        </member>
+        <member name="E:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.PropertyChanged">
+            <summary>クラスのプロパティが変更されているときに通知を発生します。</summary>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.OnPropertyChanged(System.String)">
+            <summary>PropertyChanged イベントを発生するために使用されます。</summary>
+            <param name="propertyName">変更されたプロパティ。</param>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ScaleValue(System.Double)">
+            <summary>ゲージのメイン スケールの値をゲージの中心点の周りのラジアン角度に変換します。</summary>
+            <param name="value">スケールする値。</param>
+            <returns>値のラジアン角度。</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.UnscaleValue(System.Double)">
+            <summary>ラジアン角度の値をゲージのメイン スケールとともに表される値に変換します。</summary>
+            <param name="angle">値に変換するラジアン角度。</param>
+            <returns>ゲージのメイン スケールの値。</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.GetValueForPoint(Infragistics.Portable.Point)">
+            <summary>ゲージ内の境界線に特定のポイントのゲージのメイン スケールの値を取得します。</summary>
+            <param name="point">関連付けられている値を取得するポイント。</param>
+            <returns>指定したポイントと等しいゲージの値。</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.GetPointForValue(System.Double,System.Double)">
+            <summary>特定のスケール値および範囲でゲージのポイントを取得します。</summary>
+            <param name="value">ゲージのスケールの値。</param>
+            <param name="extent">設定する範囲。</param>
+            <returns>特定の値および範囲に相対するポイント。</returns>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.RangeBrushesProperty">
+            <summary>RangeBrushes プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.RangeBrushes">
+            <summary>ゲージ範囲のパレットとして使用されるブラシのコレクションを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.RangeOutlinesProperty">
+            <summary>RangeOutlines プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.RangeOutlines">
+            <summary>ゲージ アウトラインのパレットとして使用されるブラシのコレクションを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.MinimumValue">
+            <summary>このスケールの最小値を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ActualMinimumValue">
+            <summary>スケールの解決済み最小値を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.MinimumValueProperty">
+            <summary>MinimumValue プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.MaximumValue">
+            <summary>このスケールの最大値を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ActualMaximumValue">
+            <summary>スケールの解決された最大値を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.MaximumValueProperty">
+            <summary>MaximumValue プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.Interval">
+            <summary>スケールに使用する間隔を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.IntervalProperty">
+            <summary>Interval プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.CenterX">
+            <summary>値範囲 0 から 1 でゲージの中心の x 位置を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.CenterXProperty">
+            <summary>CenterX プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.CenterY">
+            <summary>値範囲 0 から 1 でゲージの中心の y 位置を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.CenterYProperty">
+            <summary>CenterY プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.Value">
+            <summary>ゲージの針がポイントする値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ValueProperty">
+            <summary>Value プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ScaleStartAngle">
+            <summary>スケールの開始角度を度数で取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ScaleStartAngleProperty">
+            <summary>ScaleStartAngle プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ScaleEndAngle">
+            <summary>スケールの終了角度を度数で取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ScaleEndAngleProperty">
+            <summary>ScaleEndAngle プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ScaleSweepDirection">
+            <summary>スケールが開始角度から終了角度へ軸周辺を移動する方向を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ScaleSweepDirectionProperty">
+            <summary>ScaleSweepDirection プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.TransitionDuration">
+            <summary>ゲージがアニメーション化する変更をミリ秒数を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.TransitionDurationProperty">
+            <summary>TransitionDuration プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.TransitionEasingFunction">
+            <summary>現在のシリーズをモーフィングするために使用するイージング関数を取得または設定します。<para>これは依存プロパティです。</para>
+            </summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.TransitionEasingFunctionProperty">
+            <summary>TransitionEasingFunction 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedleBrush">
+            <summary>針の塗りつぶしを描画する際に使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedleBrushProperty">
+            <summary>NeedleBrush プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedleOutline">
+            <summary>針のアウトラインを描画する際に使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedleOutlineProperty">
+            <summary>NeedleOutline プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedleStartExtent">
+            <summary>ゲージの中心から測定される、針の描画を開始する範囲 ( -1 から 1) を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedleStartExtentProperty">
+            <summary>NeedleStartExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedleEndExtent">
+            <summary>ゲージの中心から測定される、針の描画を終了する範囲 ( -1 から 1) を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedleEndExtentProperty">
+            <summary>NeedleEndExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedleShape">
+            <summary>多数のオプションから針を描画する際に使用する図形を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedleShapeProperty">
+            <summary>NeedleShape プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedleStartWidthRatio">
+            <summary>(0 から 1) 値を使用するそのポイントの針の幅を取得または設定します。注: このプロパティでは、一部の針の形のみ優先されます。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedleStartWidthRatioProperty">
+            <summary>NeedleStartWidth プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedleEndWidthRatio">
+            <summary>(0 から 1) 値を使用するそのポイントの針の幅を取得または設定します。注: このプロパティでは、一部の針の形のみ優先されます。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedleEndWidthRatioProperty">
+            <summary>NeedleEndWidth プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedleBaseFeatureWidthRatio">
+            <summary>0 から 1 の値でベース (bulb など) に最も近い機能で針の幅を取得または設定します。注: このプロパティでは、一部の針の形 (NeedleWithBulb、RectangleWithBulb、TrapezoidWithBulb、および TriangleWithBulb) のみ優先されます。 0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedleBaseFeatureWidthRatioProperty">
+            <summary>NeedleBaseFeatureWidth プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedleBaseFeatureExtent">
+            <summary>0 から 1 の値でベース (bulb など) に最も近い機能の範囲を取得または設定します。注: このプロパティでは、一部の針の形 (NeedleWithBulb、RectangleWithBulb、TrapezoidWithBulb、および TriangleWithBulb) のみ優先されます。 0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedleBaseFeatureExtentProperty">
+            <summary>NeedleBaseFeatureExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedlePointFeatureWidthRatio">
+            <summary>0 から 1 の値でポイント (針のテーパリング ポイントなど) に最も近い機能で針の幅を取得または設定します。注: このプロパティでは、一部の針の形のみ優先されます。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedlePointFeatureWidthRatioProperty">
+            <summary>NeedlePointFeatureWidth プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedlePointFeatureExtent">
+            <summary>-1 から 1 の値でポイント (針のテーパリング ポイントなど) に最も近い機能の範囲を取得または設定します。注: このプロパティでは、一部の針の形のみ優先されます。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedlePointFeatureExtentProperty">
+            <summary>NeedlePointFeatureExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedlePivotWidthRatio">
+            <summary>0 から 1 の値を使用する針のキャップ幅を取得または設定します。注: 針にキャップを設定する場合のみ効果があります。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedlePivotWidthRatioProperty">
+            <summary>NeedlePivotWidth プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedlePivotInnerWidthRatio">
+            <summary>0 から 1 の値で針キャップ内側の切り抜きセクションの幅を取得または設定します。注: 切抜きセクションのある針にキャップを設定した場合のみ効果があります。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedlePivotInnerWidthRatioProperty">
+            <summary>NeedlePivotWidth プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedlePivotShape">
+            <summary>針キャップに使用する図形を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedlePivotShapeProperty">
+            <summary>NeedlePivotShape プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ScaleStartExtent">
+            <summary>0 から 1 の値でゲージの中心から計測される、スケールの描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedlePivotBrush">
+            <summary>針キャップを塗りつぶすために使用するブラシを取得または設定します。注: 特定のキャップの形のみに適用されます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedlePivotBrushProperty">
+            <summary>NeedlePivotBrush プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedlePivotOutline">
+            <summary>針キャップのアウトラインに使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedlePivotOutlineProperty">
+            <summary>NeedlePivotOutline プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedleStrokeThickness">
+            <summary>針のアウトラインのストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedleStrokeThicknessProperty">
+            <summary>NeedleStrokeThickness プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedlePivotStrokeThickness">
+            <summary>針キャップのアウトラインに使用するストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedlePivotStrokeThicknessProperty">
+            <summary>NeedlePivotStrokeThickness プロパティを識別します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ScaleStartExtentProperty">
+            <summary>ScaleStartExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ScaleEndExtent">
+            <summary>ゲージの中心から計測される、0 から 1 の値でスケールの描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ScaleEndExtentProperty">
+            <summary>ScaleEndExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.LabelExtent">
+            <summary>ゲージの中央から計測される、0 から 1 の値でラベルを配置する位置を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.LabelExtentProperty">
+            <summary>LabelExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.LabelInterval">
+            <summary>描画ラベルに使用する間隔を取得または設定します。このデフォルトはスケールの目盛りとして同じ間隔になります。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.LabelIntervalProperty">
+            <summary>LabelInterval プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.TickStartExtent">
+            <summary>ゲージの中心から計測される、0 から 1 の値で主目盛の描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.TickStartExtentProperty">
+            <summary>TickStartExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.TickEndExtent">
+            <summary>ゲージの中心から計測される、0 から 1 の値で主目盛の描画を停止する位置を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.TickEndExtentProperty">
+            <summary>TickEndExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.TickStrokeThickness">
+            <summary>目盛を描画するときに使用するストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.TickStrokeThicknessProperty">
+            <summary>TickStrokeThickness プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.TickBrush">
+            <summary>主目盛のブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.TickBrushProperty">
+            <summary>TickBrush プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.FontBrush">
+            <summary>ラベル フォントのブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.FontBrushProperty">
+            <summary>FontBrush プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.MinorTickStartExtent">
+            <summary>ゲージの中心から計測される、0 から 1 の値で副目盛の描画を開始する位置を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.MinorTickStartExtentProperty">
+            <summary>MinorTickStartExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.MinorTickEndExtent">
+            <summary>ゲージの中心から計測される、0 から 1 の値で副目盛の描画を終了する位置を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.MinorTickEndExtentProperty">
+            <summary>MinorTickEndExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.MinorTickStrokeThickness">
+            <summary>副目盛を描画するときに使用するストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.MinorTickStrokeThicknessProperty">
+            <summary>MinorTickStrokeThickness プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.MinorTickBrush">
+            <summary>副目盛のブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.MinorTickBrushProperty">
+            <summary>MinorTickBrush プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.MinorTickCount">
+            <summary>主目盛間に配置する副目盛数を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.MinorTickCountProperty">
+            <summary>MinorTickCount プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ScaleBrush">
+            <summary>スケールの背景を塗りつぶすために使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ScaleBrushProperty">
+            <summary>ScaleBrush プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.BackingBrush">
+            <summary>ゲージのバッキングを塗りつぶすために使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.BackingBrushProperty">
+            <summary>BackingBrush プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.BackingOutline">
+            <summary>バッキングのアウトラインを描画するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.BackingOutlineProperty">
+            <summary>BackingOutline プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.BackingStrokeThickness">
+            <summary>バッキング アウトラインのストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.BackingStrokeThicknessProperty">
+            <summary>BackingStrokeThickness プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.BackingOuterExtent">
+            <summary>ゲージ バッキングの外側の範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.BackingOuterExtentProperty">
+            <summary>BackingOuterExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.BackingOversweep">
+            <summary>フィットで表示する場合にバッキングに適用するオーバー スイープを取得または設定します。0 以上の値でなければなりません。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.BackingOversweepProperty">
+            <summary>BackingSweepDelta プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ScaleOversweep">
+            <summary>スケール背景に適用するスイープの追加角度を取得または設定します。0 以上の値でなければなりません。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ScaleOversweepProperty">
+            <summary>ScaleSweepDelta プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ScaleOversweepShape">
+            <summary>スケールの塗りつぶし領域以外に使用するオーバースィープ図形を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ScaleOversweepShapeProperty">
+            <summary>ScaleSweepDelta プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.BackingCornerRadius">
+            <summary>フィット スケール バッキングに使用する角丸の半径を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.BackingCornerRadiusProperty">
+            <summary>BackingCornerRadius プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.BackingInnerExtent">
+            <summary>ゲージ バッキングの内部範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.BackingInnerExtentProperty">
+            <summary>BackingInnerExtent プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.BackingShape">
+            <summary>ゲージのバッキングに使用する図形のタイプを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.BackingShapeProperty">
+            <summary>BackingShape プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.Ranges">
+            <summary>ゲージで描画するための範囲を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.RangesProperty">
+            <summary>Ranges プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.RadiusMultiplier">
+            <summary>ゲージの標準範囲に適用する倍数因子を取得または設定します。このゲージの半径は、コントロールの最小の幅と高さを 2.0 で割った値によって定義されます。値に倍数因子を取り入れます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.RadiusMultiplierProperty">
+            <summary>RadiusMultiplier プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.DuplicateLabelOmissionStrategy">
+            <summary>最初と最後のラベルが同じ値の場合、ラベルを省く使用する方法を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.DuplicateLabelOmissionStrategyProperty">
+            <summary>DuplicateLabelOmissionStrategy プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.IsNeedleDraggingEnabled">
+            <summary>針のドラッグが有効かどうかを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.IsNeedleDraggingEnabledProperty">
+            <summary>IsNeedleDraggingEnabled プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.IsNeedleDraggingConstrained">
+            <summary>ドラッグ操作で針が最小値と最大値の間の範囲に制約されるかどうかを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.IsNeedleDraggingConstrainedProperty">
+            <summary>IsNeedleDraggingRestricted プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.Font">
+            <summary>フォントを取得または設定します。</summary>
+        </member>
+        <member name="E:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.FormatLabel">
+            <summary>ゲージ ラベルの書式設定時に発生するイベント。</summary>
+        </member>
+        <member name="E:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.AlignLabel">
+            <summary>ゲージ ラベルがスケールに沿って配置されると発生するイベント。</summary>
+        </member>
+        <member name="E:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ValueChanged">
+            <summary>Value プロパティが変更されるときに発生されます。</summary>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedleContainsPoint(Infragistics.Portable.Point)">
+            <summary>メイン ゲージの針境界ボックスが指定したポイントを含む場合に True を返します。それ以外の場合 False を返します。</summary>
+            <param name="point">チェックする点。</param>
+            <returns>針境界ボックスがポイントを含む場合は True。</returns>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.NeedleContainsPoint(Infragistics.Portable.Point,System.Boolean)">
+            <summary>メイン ゲージの針境界ボックスが指定したポイントを含む場合に True を返します。それ以外の場合 False を返します。</summary>
+            <param name="point">チェックする点。</param>
+            <param name="isFinger">タッチ対応の境界コンテナーを使用するかどうか。</param>
+            <returns>針境界ボックスがポイントを含む場合は True。</returns>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.Animating">
+            <summary>ラジアル ゲージがアニメーションを再生されているかどうかを示す値を取得します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.TransitionProgress">
+            <summary>コントロールがアニメーションを再生されているときのトランジション進行状況を取得します。</summary>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.Flush">
+            <summary>ビジュアルの印刷または評価の前に、ラジアル ゲージで遅延された作業を強制的に終了します。</summary>
+            <remarks>これは、ラジアル ゲージのビジュアルを同期して保存または評価される場合のみ呼び出されます。このメソッドを頻繁に呼び出すとラジアル ゲージのパフォーマンスが低下します。</remarks>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ExportVisualData">
+            <summary>外部ツールと機能に使用するため、このコントロールに関するビジュアル情報をエクスポートします。</summary>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ExportSerializedVisualData">
+            <summary>シリアル化された文字列でビジュアルを返します。</summary>
+            <returns>シリアル化された文字列のビジュアル。</returns>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.PixelScalingRatio">
+            <summary>コントロールのピクセル密度に影響するために使用されるスケール値を取得または設定します。</summary>
+            <remarks>より高いスケール比率はビジュアルを向上しますが、メモリの使用を増加します。より低い値はコントロールをぼやけます。</remarks>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGauge.ActualPixelScalingRatio">
+            <summary>スケール変換を適用するためにメイン キャンバスの描画コンテキストにより使用される実際のスケール値を取得または設定します。</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Gauges.Implementation.FormatLinearGraphLabelEventArgs">
+            <summary>FormatLinearGraphLabel のイベント引数を表します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.FormatLinearGraphLabelEventArgs.ActualMinimumValue">
+            <summary>グラフの最小値を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.FormatLinearGraphLabelEventArgs.ActualMaximumValue">
+            <summary>グラフの最大値を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.FormatLinearGraphLabelEventArgs.Value">
+            <summary>グラフの値を取得します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.FormatLinearGraphLabelEventArgs.Label">
+            <summary>使用するラベルを取得または設定します。</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Gauges.Implementation.FormatRadialGaugeLabelEventArgs">
+            <summary>FormatRadialGaugeLabel のイベント属性を表します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.FormatRadialGaugeLabelEventArgs.ActualMinimumValue">
+            <summary>ラジアル ゲージの最小値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.FormatRadialGaugeLabelEventArgs.ActualMaximumValue">
+            <summary>ラジアル ゲージの最大値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.FormatRadialGaugeLabelEventArgs.StartAngle">
+            <summary>ラベルの開始角度を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.FormatRadialGaugeLabelEventArgs.EndAngle">
+            <summary>ラベルの終了角度を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.FormatRadialGaugeLabelEventArgs.Angle">
+            <summary>ラベル角度を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.FormatRadialGaugeLabelEventArgs.Value">
+            <summary>ラベル値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.FormatRadialGaugeLabelEventArgs.Label">
+            <summary>ラベル テキストを取得または設定します。</summary>
+        </member>
+      <member name="T:Infragistics.Controls.Gauges.Implementation.LinearGraphRangeCollection">
+        <summary>
+          リニア ゲージ範囲 (開始、終了など) を表すコレクション。System.Collections.ObjectModel.ObservableCollection から継承し、<see cref="T:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange"/> オブジェクトを含みます。
+        </summary>
+      </member>
+      <member name="T:Infragistics.Controls.Gauges.Implementation.RadialGaugeRangeCollection">
+        <summary>
+          ラジアル ゲージ範囲 (開始、終了など) を表すコレクション。System.Collections.ObjectModel.ObservableCollection から継承し、<see cref="T:Infragistics.Controls.Gauges.Implementation.XamRadialGaugeRange"/> オブジェクトを含みます。
+        </summary>
+      </member>
+        <member name="T:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange">
+            <summary>XamBulletGraph および XamLinearGauge コントロールの範囲を表します。</summary>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange.#ctor">
+            <summary><see cref="T:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange"/> クラスの新しいインスタンスを初期化します。</summary>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange.PropertyUpdateOverride(System.String,System.Object,System.Object)">
+            <summary>プロパティ値を変更すると呼び出されます。</summary>
+            <param name="propertyName">プロパティの名前。</param>
+            <param name="oldValue">古い値。</param>
+            <param name="newValue">新しい値。</param>
+        </member>
+        <member name="E:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange.PropertyChanged">
+            <summary>プロパティ値が変更されるときに発生します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange.Name">
+            <summary>範囲の名前を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange.NameProperty">
+            <summary>Name 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange.Brush">
+            <summary>範囲を塗りつぶすために使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange.BrushProperty">
+            <summary>Brushes 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange.Outline">
+            <summary>範囲を描画する際に使用するアウトラインを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange.OutlineProperty">
+            <summary>Outlines 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange.StartValue">
+            <summary>スケールに沿って範囲を開始する値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange.StartValueProperty">
+            <summary>StartValue 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange.EndValue">
+            <summary>スケールに沿って範囲を終了する値を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange.EndValueProperty">
+            <summary>EndValue  依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange.InnerStartExtent">
+            <summary>範囲の内側の移動を描画を開始するゲージの前/下からの距離 (0 から 1) を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準幅/高さを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange.InnerStartExtentProperty">
+            <summary>InnerStartExtent 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange.InnerEndExtent">
+            <summary>範囲の内側の移動を描画を終了するゲージの前/下からの距離 (0 から 1) を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準幅/高さを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange.InnerEndExtentProperty">
+            <summary>InnerEndExtent 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange.OuterStartExtent">
+            <summary>範囲の外部スイープの描画を開始する、ブレットグラフの前/下から計測された距離 (0 から 1) を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準幅/高さを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange.OuterStartExtentProperty">
+            <summary>OuterStartExtent 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange.OuterEndExtent">
+            <summary>範囲の外側の移動を描画を終了するゲージの前/下からの距離 (0 から 1) を取得または設定します。0.5 から 1 の間の値を使用し、ブレットグラフの標準幅/高さを超えて拡張できます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange.OuterEndExtentProperty">
+            <summary>OuterEndExtent 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange.StrokeThickness">
+            <summary>この範囲のアウトラインを描画するときに使用するストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamLinearGraphRange.StrokeThicknessProperty">
+            <summary>StrokeThickness 依存プロパティを識別します。</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Gauges.Implementation.XamRadialGaugeRange">
+            <summary>XamRadialGauge コントロールの範囲を表します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGaugeRange.Name">
+            <summary>範囲の名前を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.XamRadialGaugeRange.NameProperty">
+            <summary>Name 依存プロパティを識別します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGaugeRange.Brush">
+            <summary>範囲を塗りつぶすために使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGaugeRange.Outline">
+            <summary>範囲を描画する際に使用するアウトラインを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGaugeRange.StartValue">
+            <summary>スケールに沿って範囲を開始する値を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGaugeRange.EndValue">
+            <summary>スケールに沿って範囲を終了する値を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGaugeRange.InnerStartExtent">
+            <summary>範囲の外側の移動を描画を開始するゲージの中心からの距離 (0 から 1) を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGaugeRange.InnerEndExtent">
+            <summary>範囲の内側の移動を描画を終了するゲージの中心からの距離 (0 から 1) を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGaugeRange.OuterStartExtent">
+            <summary>範囲の外側の移動を描画を開始するゲージの中心からの距離 (0 から 1) を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGaugeRange.OuterEndExtent">
+            <summary>範囲の外側の移動を描画を終了するゲージの中心からの距離 (0 から 1) を取得または設定します。0.5 から 1 の間の値を使用し、ゲージの標準範囲を超えて拡張できます。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.XamRadialGaugeRange.StrokeThickness">
+            <summary>この範囲のアウトラインを描画するときに使用するストロークの太さを取得または設定します。</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Gauges.Implementation.RadialGaugeDuplicateLabelOmissionStrategy">
+            <summary>ラベルの解除の複数の方法を指定する列挙型。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugeDuplicateLabelOmissionStrategy.OmitLast">
+            <summary>最後のラベルを解除します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugeDuplicateLabelOmissionStrategy.OmitFirst">
+            <summary>最初のラベルを解除します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugeDuplicateLabelOmissionStrategy.OmitNeither">
+            <summary>ラベルを解除しません。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugeDuplicateLabelOmissionStrategy.OmitBoth">
+            <summary>両方のラベルを解除します。</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Gauges.Implementation.RadialGaugeBackingShape">
+            <summary>ラジアル ゲージの背景領域に使用可能な図形を指定する列挙型。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugeBackingShape.Circular">
+            <summary>円形の背景図形。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugeBackingShape.Fitted">
+            <summary>フィットの背景図形。</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Gauges.Implementation.RadialGaugeScaleOversweepShape">
+            <summary>オーバースイープ図形を指定する列挙型。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugeScaleOversweepShape.Auto">
+            <summary>デフォルトのオーバースイープ図形。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugeScaleOversweepShape.Circular">
+            <summary>円形のオーバースイープ図形。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugeScaleOversweepShape.Fitted">
+            <summary>フィットのオーバースイープ図形。</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Gauges.Implementation.RadialGaugeNeedleShape">
+            <summary>プリセットの針図形を指定する列挙型。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugeNeedleShape.None">
+            <summary>図形なし。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugeNeedleShape.Rectangle">
+            <summary>長方形図形。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugeNeedleShape.Triangle">
+            <summary>三角形図形。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugeNeedleShape.Needle">
+            <summary>針の図形。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugeNeedleShape.Trapezoid">
+            <summary>台形図形。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugeNeedleShape.RectangleWithBulb">
+            <summary>端にバルブのある長方形図形。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugeNeedleShape.TriangleWithBulb">
+            <summary>端にバルブのある三角形図形。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugeNeedleShape.NeedleWithBulb">
+            <summary>端にバルブのある針図形。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugeNeedleShape.TrapezoidWithBulb">
+            <summary>端にバルブのある台形図形。</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Gauges.Implementation.RadialGaugePivotShape">
+            <summary>針ピボットの図形を指定する列挙型。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugePivotShape.None">
+            <summary>ピボット図形なし。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugePivotShape.Circle">
+            <summary>丸図形のピボット。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugePivotShape.CircleWithHole">
+            <summary>穴を含む丸図形のピボット。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugePivotShape.CircleOverlay">
+            <summary>針の上にオーバーレイされる丸図形のピボット。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugePivotShape.CircleOverlayWithHole">
+            <summary>針の上にオーバーレイされる穴を含む丸図形のピボット。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugePivotShape.CircleUnderlay">
+            <summary>針の下に描画される丸図形のピボット。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.RadialGaugePivotShape.CircleUnderlayWithHole">
+            <summary>針の下に描画される穴を含む丸図形のピボット。</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Gauges.Implementation.FormatRadialGaugeLabelHandler">
+            <summary>FormatRadialGaugeLabel のデリゲートを表します。</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Gauges.Implementation.AlignRadialGaugeLabelHangler">
+            <summary>AlignRadialGaugeLabel のデリゲートを表します。</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Gauges.Implementation.AlignRadialGaugeLabelEventArgs">
+            <summary>AlignRadialGaugeLabel のイベント属性を表します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.AlignRadialGaugeLabelEventArgs.Width">
+            <summary>ラベル幅を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.AlignRadialGaugeLabelEventArgs.Height">
+            <summary>ラベルの高さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.AlignRadialGaugeLabelEventArgs.OffsetX">
+            <summary>ラベルの X オフセットを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.AlignRadialGaugeLabelEventArgs.OffsetY">
+            <summary>ラベルの Y オフセットを取得または設定します。</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Gauges.Implementation.LinearGraphNeedleShape">
+            <summary>プリセットの針図形の列挙体。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.LinearGraphNeedleShape.Custom">
+            <summary>カスタムなユーザー定義の針図形。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.LinearGraphNeedleShape.Rectangle">
+            <summary>長方形のような針図形。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.LinearGraphNeedleShape.Triangle">
+            <summary>三角形のような針図形。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.LinearGraphNeedleShape.Needle">
+            <summary>針のような針図形。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.LinearGraphNeedleShape.Trapezoid">
+            <summary>台形のような針図形。</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Gauges.Implementation.LinearScaleOrientation">
+            <summary>リニア スケールの向きを説明します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.LinearScaleOrientation.Horizontal">
+            <summary>スケールは水平方向です。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.LinearScaleOrientation.Vertical">
+            <summary>スケールは水垂直向です。</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Gauges.Implementation.TitlesPosition">
+            <summary>スケールの開始/終了に相対するタイトルの位置を指定する列挙型。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.TitlesPosition.ScaleStart">
+            <summary>タイトルはスケールの開始 (最小値) に配置されます。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.TitlesPosition.ScaleEnd">
+            <summary>タイトルはスケールの終了 (最大値) に配置されます。</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Gauges.Implementation.LinearGraphTooltipDataContext">
+            <summary>ツールチップの DataContext を表します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.LinearGraphTooltipDataContext.Item">
+            <summary>現在の DataContext の項目を取得します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.LinearGraphTooltipDataContext.ItemName">
+            <summary>現在のデータ コンテキストの項目の名前を取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.LinearGraphTooltipDataContext.Outline">
+            <summary>現在のデータ コンテキストの項目のアウトラインを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.LinearGraphTooltipDataContext.Brush">
+            <summary>項目を色付けするために使用するブラシを取得または設定します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.LinearGraphTooltipDataContext.Thickness">
+            <summary>項目のアウトラインの太さを取得します。</summary>
+        </member>
+        <member name="P:Infragistics.Controls.Gauges.Implementation.LinearGraphTooltipDataContext.Label">
+            <summary>項目のラベルを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.LinearGraphTooltipDataContext.LabelProperty">
+            <summary>Item 依存プロパティを識別します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.LinearGraphTooltipDataContext.ItemProperty">
+            <summary>Item 依存プロパティを識別します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.LinearGraphTooltipDataContext.ItemNameProperty">
+            <summary>ItemName 依存プロパティを識別します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.LinearGraphTooltipDataContext.ItemBrushProperty">
+            <summary>ItemBrush 依存プロパティを識別します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.LinearGraphTooltipDataContext.ThicknessProperty">
+            <summary>Thickness 依存プロパティを識別します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.LinearGraphTooltipDataContext.OutlineProperty">
+            <summary>Outlines 依存プロパティを識別します。</summary>
+        </member>
+        <member name="M:Infragistics.Controls.Gauges.Implementation.LinearGraphTooltipDataContext.RaisePropertyChanged(System.String,System.Object,System.Object)">
+            <summary>指定されたプロパティ名の PropertyChanged イベントを発生させます。</summary>
+            <param name="propertyName">プロパティ名</param>
+            <param name="oldValue">古いプロパティの値</param>
+            <param name="newValue">新しいプロパティの値</param>
+        </member>
+        <member name="E:Infragistics.Controls.Gauges.Implementation.LinearGraphTooltipDataContext.PropertyChanged">
+            <summary>プロパティ値を変更したときに発生します。</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Gauges.Implementation.FormatLinearGraphLabelHandler">
+            <summary>FormatLinearGraphLabel のデリゲートを表します。</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Gauges.Implementation.AlignLinearGraphLabelHandler">
+            <summary>AlignLinearGraphLabel のデリゲートを表します。</summary>
+        </member>
+        <member name="T:Infragistics.Controls.Gauges.Implementation.AlignLinearGraphLabelEventArgs">
+            <summary>AlignLinearGraphLabel のイベント引数を表します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.AlignLinearGraphLabelEventArgs.Width">
+            <summary>ラベルの幅を取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.AlignLinearGraphLabelEventArgs.Height">
+            <summary>ラベルの高さを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.AlignLinearGraphLabelEventArgs.OffsetX">
+            <summary>ラベルの X オフセットを取得または設定します。</summary>
+        </member>
+        <member name="F:Infragistics.Controls.Gauges.Implementation.AlignLinearGraphLabelEventArgs.OffsetY">
+            <summary>ラベルの Y オフセットを取得または設定します。</summary>
+        </member>
+    </members>
+</doc>

@@ -99,6 +99,9 @@
     <EmbeddedResource Include="Views\Other\DevExpressPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Other\ThreadPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -196,6 +199,9 @@
     <Compile Include="Views\Other\SettingsPage.cs" />
     <Compile Include="Views\Other\DevExpressPage.xaml.cs">
       <DependentUpon>DevExpressPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Other\ThreadPage.xaml.cs">
+      <DependentUpon>ThreadPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

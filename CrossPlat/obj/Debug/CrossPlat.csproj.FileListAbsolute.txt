@@ -92,3 +92,4 @@
 /Users/ken/Desktop/Kitchen Sink/CrossPlat/obj/Debug/CrossPlat.Views.Other.DevExpressPage.xaml.g.cs
 /Users/ken/Desktop/Kitchen Sink/CrossPlat/obj/Debug/CrossPlat.dll
 /Users/ken/Desktop/Kitchen Sink/CrossPlat/obj/Debug/CrossPlat.pdb
+/Users/ken/Desktop/Kitchen Sink/CrossPlat/obj/Debug/CrossPlat.Views.Other.ThreadPage.xaml.g.cs

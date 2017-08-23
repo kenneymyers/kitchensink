@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CrossPlat.Views.Other.ThreadPage">
+	<ContentPage.Content>
+        <StackLayout Margin="15,30,15,15">
+         <Label x:Name="lblTimer" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" FontSize="24" TextColor="Black" />
+        <Button x:Name="StartButton" HorizontalOptions="FillAndExpand" BackgroundColor="Silver" TextColor="Black" Text="Start" Clicked="ThreadOnStart" />
+        <Button x:Name="StopButton" HorizontalOptions="FillAndExpand" BackgroundColor="Silver" TextColor="Black" Text="Stop" Clicked="ThreadOnSleep" />
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

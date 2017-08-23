@@ -7,6 +7,7 @@
             <Button Margin="5,10,5,5" Text="Binding" BackgroundColor="Silver" TextColor="Black" Clicked="Binding_Clicked" />
             <Button Margin="5,10,5,5" Text="Setings" BackgroundColor="Silver" TextColor="Black" Clicked="Settings_Clicked" />
             <Button Margin="5,10,5,5" Text="DevExpress Grid" BackgroundColor="Silver" TextColor="Black" Clicked="DevExpress_Clicked" />
+            <Button Margin="5,10,5,5" Text="Thread" BackgroundColor="Silver" TextColor="Black" Clicked="Thread_Clicked" />
         </StackLayout>           
 	</ContentPage.Content>
 </ContentPage>
